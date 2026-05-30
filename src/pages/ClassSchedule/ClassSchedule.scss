@@ -1,0 +1,779 @@
+// src/pages/ClassSchedule/ClassSchedule.scss
+@use '../../assets/styles/abstracts/variables' as *;
+@use '../../assets/styles/abstracts/mixins' as *;
+@use "sass:color";
+
+// ── Page layout ────────────────────────────────────────────────────────────
+.cs-page {
+  padding: 16px;
+}
+
+.cs-layout { 
+  @include grid-3col(280px, 1fr, 270px);
+  margin-top: 12px;
+  height: calc(100vh - 180px);
+  min-height: 0; // fix overflow trong grid
+}
+
+// ── LEFT sidebar ───────────────────────────────────────────────────────────
+.cs-sidebar {
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border-radius: $radius;
+  border: 1px solid $border-color;
+  padding: 12px;
+  overflow: hidden;
+
+  &__title {
+    font-weight: 700;
+    font-size: .9rem;
+    color: $text-primary;
+    margin: 0 0 2px;
+  }
+
+  &__hint {
+    font-size: .75rem;
+    color: $text-secondary;
+    margin: 0 0 10px;
+  }
+}
+
+.cs-class-list {
+  // flex: 1;
+  // overflow-y: auto;
+  display: flex;
+  // flex-direction: column;
+  gap: 6px;
+  flex-wrap: wrap;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #dee2e6;
+    border-radius: 4px;
+  }
+  &__filter{
+    text-align: center;
+    color:$error;
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+  
+}
+
+.cs-class-card {
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid $primary;
+  background: $bg-stripe;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: grab;
+  user-select: none;
+  transition: $transition;
+  gap: 4px;
+  flex: 0 0 calc(49% - 2px);
+
+  &:hover {
+    background: #eef4ff;
+    transform: translateX(2px);
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &--selected {
+    background: #eef4ff;
+    box-shadow: 0 0 0 2px $primary-color;
+  }
+
+  &__code {
+    font-size: .82rem;
+    font-weight: 700;
+    color: $text-primary;
+    white-space: nowrap;
+  }
+
+  &__course {
+    font-size: .75rem;
+    color: $text-secondary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// ── CENTER grid ────────────────────────────────────────────────────────────
+.cs-grid-wrap {
+  background: $white;
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #dee2e6;
+    border-radius: 4px;
+  }
+}
+
+.sg {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+
+  //— fix row 14:00 bị nhỏ
+  tbody tr {
+    height: 56px;
+  }
+
+  &__time-col {
+    width: 58px;
+  }
+
+  &__day-col {
+    min-width: 110px;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: $white;
+    z-index: 10;
+    padding: 10px 4px;
+    font-size: .82rem;
+    font-weight: 700;
+    color: $text-primary;
+    border-bottom: 2px solid $border-color;
+    text-align: center;
+
+    &.sg__time-col {
+      left: 0;
+      z-index: 11;
+    }
+  }
+
+  &__time {
+    position: sticky;
+    left: 0;
+    background: $white;
+    z-index: 5;
+    font-size: .78rem;
+    color: $text-secondary;
+    font-weight: 600;
+    padding: 0 6px;
+    text-align: right;
+    white-space: nowrap;
+    border-right: 2px solid $border-color;
+    border-bottom: 1px solid color.scale($border-color,$lightness:5%);
+  }
+
+  &__cell {
+    border: 1px solid $border-color;
+    height: 56px;
+    vertical-align: top;
+    padding: 2px;
+    transition: background .15s;
+    cursor: default;
+
+    &--over {
+      background: #eff6ff;
+      outline: 2px dashed $primary;
+      outline-offset: -2px;
+    }
+
+    &--block {
+      padding: 3px;
+      vertical-align: top;
+    }
+  }
+}
+
+// ── Schedule block in grid ─────────────────────────────────────────────────
+.sg-block {
+  border-radius: 6px;
+  padding: 5px 8px 5px 6px;
+  height: 100%;
+  color: $white;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow: hidden;
+  transition: filter .15s;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &__del {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .35);
+    color: $white;
+    font-size: .68rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+
+    &:hover {
+      background: rgba(255, 255, 255, .6);
+    }
+  }
+
+  &__code {
+    font-size: .78rem;
+    font-weight: 700;
+    display: block;
+    padding-right: 18px; // avoid del button
+  }
+
+  &__time {
+    font-size: .7rem;
+    opacity: .9;
+    display: block;
+  }
+
+  &__room {
+    font-size: .7rem;
+    opacity: .9;
+    display: block;
+  }
+}
+
+// ── RIGHT form panel ───────────────────────────────────────────────────────
+.cs-form {
+  background: $white;
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &--edit {
+    border-color: $primary;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, .15);
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #dee2e6;
+    border-radius: 4px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: .95rem;
+    color: $text-primary;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__footer {
+    display: flex;
+    gap: 8px;
+    padding-top: 4px;
+    margin-top: auto;
+
+    .btn {
+      flex: 1;
+    }
+  }
+}
+
+// ── Form field ─────────────────────────────────────────────────────────────
+.cs-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &--error .cs-label {
+    color: $error;
+  }
+}
+
+.cs-label {
+  font-size: .82rem;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+.cs-req {
+  color: $error;
+  margin-left: 2px;
+}
+
+.cs-err {
+  font-size: .75rem;
+  color: $error;
+}
+
+.cs-hint-text {
+  font-size: .8rem;
+  color: $text-secondary;
+  background: $bg-stripe;
+  border-radius: 6px;
+  padding: 8px 10px;
+  border: 1px dashed $border-color;
+  margin: 0;
+}
+
+// ── Selected class display ─────────────────────────────────────────────────
+.cs-selected-cls {
+  border-left: 4px solid $primary;
+  background: $bg-stripe;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    strong {
+      font-size: .82rem;
+    }
+
+    span {
+      font-size: .75rem;
+      color: $text-secondary;
+    }
+  }
+}
+
+.cs-clear-btn {
+  background: none;
+  border: none;
+  color: $text-secondary;
+  cursor: pointer;
+  font-size: .85rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+
+  &:hover {
+    background: #fee2e2;
+    color: $error;
+  }
+}
+
+// ── Day selector ───────────────────────────────────────────────────────────
+.cs-day-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.cs-day-btn {
+  padding: 5px 2px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background: $white;
+  font-size: .75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition;
+  color: $text-primary;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+  }
+
+  &--on {
+    background: $primary;
+    color: white;
+    border-color: $primary;
+  }
+}
+
+// ── Time selector ──────────────────────────────────────────────────────────
+.cs-time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.cs-time-btn {
+  padding: 5px 2px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background: $white;
+  font-size: .74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition;
+  color: $text-primary;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+  }
+
+  &--on {
+    background: $primary;
+    color: white;
+    border-color: $primary;
+  }
+}
+
+.cs-preview-time {
+  font-size: .8rem;
+  color: $primary;
+  font-weight: 600;
+  margin: 2px 0 0;
+}
+
+// ── Duration selector ──────────────────────────────────────────────────────
+.cs-duration-row {
+  display: flex;
+  gap: 6px;
+}
+
+.cs-duration-btn {
+  flex: 1;
+  padding: 6px 4px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background: $white;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+  }
+
+  &--on {
+    background: $primary;
+    color: white;
+    border-color: $primary;
+  }
+}
+
+// ── Room selector ──────────────────────────────────────────────────────────
+.cs-room-list {
+  // display: flex; 
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // gap: 4px;
+  @include grid-col(2)
+}
+
+.cs-room-btn {
+  padding: 7px 10px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background: $white;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition;
+  text-align: left;
+  color: $text-primary;
+  flex: 0 0 calc(50% - 4px);
+
+
+  &:hover {
+    border-color: $primary;
+    background: #eef4ff;
+  }
+
+  &--on {
+    background: $primary;
+    color: white;
+    border-color: $primary;
+  }
+}
+
+// ── Preview summary card ───────────────────────────────────────────────────
+.cs-summary {
+  background: $bg-stripe;
+  border-left: 4px solid $primary;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__title {
+    font-weight: 700;
+    font-size: .82rem;
+    margin: 0 0 4px;
+    color: $text-primary;
+  }
+
+  p {
+    margin: 0;
+    font-size: .8rem;
+    color: $text-secondary;
+
+    strong {
+      color: $text-primary;
+    }
+  }
+}
+
+// ── Additions cho refactor ─────────────────────────────────────────────────
+.cs-sidebar__search{
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid $border-color;
+  border-radius:6px;
+  font-size: .8rem;
+  margin-bottom: 6px;
+  box-sizing:border-box;
+  outline:none;
+  &:focus{border-color: $primary;}
+}
+
+// Card đang drag ?? Không có 
+.cs-class-card--dragging{
+  opacity: .4;
+  transform: scale(.97);
+  transition: opacity .15s, transform .15s;
+  pointer-events: none;
+}
+
+// ── Conflict overlay trên cell ĐÃ có lịch ─────────────────────────────────
+// (khác với sg__cell--conflict dành cho cell TRỐNG)
+.sg__cell--conflict-block {
+  position: relative;
+  outline: 3px dashed #ef4444 !important;
+  outline-offset: -3px;
+}
+ 
+.sg-conflict-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(239, 68, 68, .85);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  color: white;
+  pointer-events: none;
+  gap: 2px;
+ 
+  span {
+    font-size: .8rem;
+    font-weight: 700;
+  }
+  small {
+    font-size: .68rem;
+    opacity: .9;
+  }
+}
+ 
+// @keyframes flashRed {
+//   from { background: rgba(239, 68, 68, .6); }
+//   to   { background: rgba(239, 68, 68, .9); }
+// }
+// Cần position: relative trên cell có block
+.sg__cell--block {
+  position: relative;
+  
+}
+// Multiple blocks trong 1 cell
+.sg-multi {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  height: 100%;
+  overflow: hidden;
+  &--expanded { overflow: visible; z-index: 20; position: relative; }
+}
+
+ 
+// Mini block (khi nhiều lớp cùng slot)
+.sg-block--mini {
+  flex-shrink: 0;
+  min-height: 40px;
+}
+// Nút "+N lớp nữa"
+.sg-more-btn {
+  background: rgba(255,255,255,.2);
+  border: 1px dashed rgba(255,255,255,.5);
+  border-radius: 4px;
+  color: white;
+  font-size: .7rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 6px;
+  text-align: center;
+  width: 100%;
+  &:hover { background: rgba(255,255,255,.35); }
+}
+// Ghost preview khi drag qua cell trống
+.sg-block--ghost {
+  opacity: .65;
+  border: 2px dashed rgba(255,255,255,.8);
+  animation: pulse .8s ease-in-out infinite alternate;
+  cursor: grabbing;
+  pointer-events: none;
+}
+@keyframes pulse {
+  from { opacity: .5; }
+  to   { opacity: .8; }
+}
+ 
+// Cell conflict (đỏ) khi drag qua ô đã có lịch trùng
+.sg__cell--conflict {
+  background: #fff1f2 !important;
+  outline: 2px dashed #ef4444;
+  outline-offset: -2px;
+}
+ 
+.sg-block--conflict {
+  background: #ef4444 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .78rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 6px;
+  height: 100%;
+  pointer-events: none;
+}
+ 
+// Cell đang được chọn trong form (highlight nhẹ)
+.sg__cell--selected {
+  background: #eff6ff;
+}
+
+// ── Stack display (ReactBits deck style) ──────────────────────────────────
+.sg-stack {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+ 
+  &:hover .sg-stack__card--top {
+    filter: brightness(1.1);
+  }
+}
+ 
+.sg-stack__card {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  padding: 5px 8px;
+  color: white;
+  overflow: hidden;
+  transition: transform .2s ease, filter .15s;
+ 
+  &--top {
+    // Top card hiển thị đầy đủ info
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+}
+
+// Badge số lớp phía dưới stack
+.sg-stack__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.3);
+  border-radius: 10px;
+  font-size: .68rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  margin-top: 2px;
+  width: fit-content;
+}
+
+// ── Expanded list (khi click stack để mở) ─────────────────────────────────
+.sg-expanded {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  z-index: 30;
+ 
+  &__close {
+    background: rgba(255,255,255,.15);
+    border: 1px dashed rgba(255,255,255,.5);
+    border-radius: 4px;
+    color: white;
+    font-size: .68rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 2px 6px;
+    text-align: center;
+    &:hover { background: rgba(255,255,255,.3); }
+  }
+ 
+  &::-webkit-scrollbar { width: 3px; }
+  &::-webkit-scrollbar-thumb { background: rgba(255,255,255,.3); border-radius: 3px; }
+}
+
+ 
+// ── Date fields ───────────────────────────────────────────────────────────
+.cs-field-group {
+  display: flex;
+  flex-direction: column;
+  gap:8px  
+}
+ 
+.cs-date-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  font-size: .8rem;
+  outline: none;
+  box-sizing: border-box;
+  color: $text-primary;
+  cursor: pointer;
+ 
+  &:focus { border-color: $primary; }
+ 
+  .cs-field--error & {
+    border-color: $error;
+  }
+}
+
+.cs-duration-info {
+  font-size: .8rem;
+  color: $primary;
+  background: #eef4ff;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 0;
+ 
+  strong { color: $text-primary; }
+}

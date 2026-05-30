@@ -1,0 +1,433 @@
+@use '../../assets/styles/abstracts/mixins' as *;
+@use '../../assets/styles/abstracts/variables' as *;
+
+
+// ── Trang signin ──────────────────────────────────────────────────────────
+.signin-page {
+  @include flex-center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a0a3e, #3d1a7a);
+}
+
+// ── Form base — dùng chung cho cả 3 màn hình ──────────────────────────────
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+  width: 15.5em;
+  border: 2px solid $purple-dark;
+  border-bottom-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+  box-shadow: -10px 0px 0px $purple-dark, -10px 5px 5px rgba(0, 0, 0, .2);
+  overflow: hidden;
+  position: relative;
+  transition: all $transition;
+
+  // ── Header ──────────────────────────────────────────────────────────────
+  &__header {   
+    @include flex-center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 3.5em;    
+    color: $white;
+  }
+
+  &__title {
+    top: 0.35em;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__subtitle {
+    top: 60%;
+    left: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+    color: $signIn;
+  }
+
+  // ── Field group (bao input) ──────────────────────────────────────────────
+  &__field {   
+    @include flex-center-col;
+    align-items: flex-end;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 10%;    
+    transition: all $transition;
+
+    input {
+      width: 100%;
+      border: 2px solid $signIn;
+      border-radius: 0.5em;
+      height: 2.5em;
+      padding-left: 1em;
+      font-size: 0.95em;
+      outline: none;
+      transition: all 0.5s ease;
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2);
+    }
+  }
+
+  // ── Link button ──────────────────────────────────────────────────────────
+  &__link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: $signIn;
+    padding: 0.5em 0 0;
+    transition: all $transition;
+
+    &:hover {
+      color: $purple-dark;
+      text-decoration: underline;
+    }
+  }
+
+  // ── Footer (nút submit + sign up) ────────────────────────────────────────
+  &__footer {    
+    @include flex-center-col;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 10%;    
+    color: $purple;
+    transition: all $transition;
+  }
+
+  &__submit {
+    width: 100%;
+    border: 2px solid $signIn;
+    border-radius: 0.5em;
+    height: 2.5em;
+    font-size: 0.95em;
+    font-weight: bold;
+    color: $white;
+    background-color: $signIn;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    transition: all $transition;
+
+    &:active {
+      color: $signIn;
+      background-color: $white;
+      width: 90%;
+    }
+  }
+
+  &__bottom {
+    padding-top: 0.9em;
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    gap: 4px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    padding: 0;
+    span{
+      font-weight: 800;
+      font-size: 1.2em;
+    }
+
+  }
+
+  // ── Background animating block ───────────────────────────────────────────
+  &__bg {
+    width: 100%;
+    height: 3.5em;
+    background-color: $signIn;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    transition: all 0.5s ease;
+    box-shadow: inset 5px 0 $purple-dark;
+  }
+
+  // ── White corner filter ──────────────────────────────────────────────────
+  &__corner {
+    width: 3.5em;
+    height: 3.5em;
+    top: 2.5px;
+    right: 2.5px;
+    position: absolute;
+    z-index: 2;
+    border-top-right-radius: 1.25em;
+    box-shadow: 35px -35px 0 -1px $white;
+  }
+
+  // ── Social icons ─────────────────────────────────────────────────────────
+  &__social {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 4.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 15%;
+    background: $white;
+    margin-top: auto;
+
+    svg {
+      transition: all $transition;
+
+      &:hover {
+        transform: scale(1.25);
+        margin: 0.5em;
+      }
+    }
+  }
+}
+
+// ── ::placeholder chung ───────────────────────────────────────────────────
+::placeholder {
+  color: $signIn;
+  font-weight: bold;
+}
+
+// ── LOGIN form ────────────────────────────────────────────────────────────
+.signin-form--login {
+  height: 27em;
+
+  &:hover {
+    width: 16em;
+    height: 27.5em;
+  }
+
+  .signin-form__field {
+    height: 5em;
+  }
+
+  .signin-form__field--password {
+    height: 6em;
+  }
+
+  .signin-form__footer {
+    height: 7em;
+  }
+
+  // Hover email → bg xuống email
+  .signin-form__field:not(.signin-form__field--password):hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 3.8em;
+      transform: translateY(4.2em);
+    }
+
+    input {
+      color: $white;
+      border-color: $white;
+      background: $signIn;
+      height: 3em;
+    }
+
+    ::placeholder {
+      color: $white;
+    }
+  }
+
+  // Hover password → bg xuống password
+  .signin-form__field--password:hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 5.5em;
+      transform: translateY(8.6em);
+    }
+
+    input {
+      color: $white;
+      border-color: $white;
+      background: $signIn;
+      height: 3em;
+    }
+
+    ::placeholder {
+      color: $white;
+    }
+
+    .signin-form__link {
+      color: $white;
+      padding-right: 5%;
+    }
+  }
+
+  // Hover footer → bg xuống footer
+  .signin-form__footer:hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 8em;
+      transform: translateY(14.2em);
+    }
+
+    p,
+    .signin-form__link {
+      color: $white;
+    }
+
+    .signin-form__submit {
+      border-color: $white;
+      height: 3em;
+    }
+  }
+}
+
+// ── FORGOT form ───────────────────────────────────────────────────────────
+.signin-form--forgot {
+  height: 20em;
+
+  &:hover {
+    width: 16em;
+    height: 20.5em;
+  }
+
+  .signin-form__field {
+    height: 5em;
+    margin-top: 1em;
+  }
+
+  .signin-form__footer {
+    height: 7em;
+    margin-top: 0.4em;
+  }
+
+  .signin-form__field:hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 4.5em;
+      transform: translateY(5em);
+    }
+
+    input {
+      color: $white;
+      border-color: $white;
+      background: $signIn;
+      height: 3em;
+    }
+
+    ::placeholder {
+      color: $white;
+    }
+  }
+
+  .signin-form__footer:hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 8em;
+      transform: translateY(9.5em);
+    }
+
+    p,
+    .signin-form__link {
+      color: $white;
+    }
+
+    .signin-form__submit {
+      border-color: $white;
+      height: 3em;
+    }
+  }
+}
+
+// ── RESET form ────────────────────────────────────────────────────────────
+.signin-form--reset {
+  height: 24em;
+
+  &:hover {
+    width: 16em;
+    height: 24.5em;
+  }
+
+  .signin-form__field {
+    height: 5em;
+    margin-top: 1.5em;
+  }
+
+  .signin-form__field--password {
+    height: 6em;
+    margin-top: 0;
+  }
+
+  .signin-form__footer {
+    height: 7em;
+  }
+  .signin-form__link{
+    font-size: 1.1em;
+  }
+
+  .signin-form__field:not(.signin-form__field--password):hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 4.5em;
+      transform: translateY(5.2em);
+    }
+
+    input {
+      color: $white;
+      border-color: $white;
+      background:$signIn;
+      height: 3em;
+    }
+
+    ::placeholder {
+      color: $white;
+    }
+  }
+
+  .signin-form__field--password:hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 4.8em;
+      transform: translateY(10.5em);
+    }
+
+    input {
+      color: $white;
+      border-color: $white;
+      background: $signIn;
+      height: 3em;
+    }
+
+    ::placeholder {
+      color: $white;
+    }
+  }
+
+  .signin-form__footer:hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 5.6em;
+      transform: translateY(16.6em);
+    }
+
+    p,
+    .signin-form__link {
+      color: $white;
+    }
+
+    .signin-form__submit {
+      border-color: $white;
+      height: 3em;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+@use '../../assets/styles/abstracts/variables' as *;
+@use '../../assets/styles/abstracts/mixins' as *;
+
+// ── Page wrapper ──────────────────────────────────────────
+.register-page {
+  @include flex-center;
+  min-height: 100vh;
+  background: $bg-gradient;
+}
+
+// ── Form card ─────────────────────────────────────────────
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: $radius-card;
+  position: relative;
+}
+
+.title {
+  font-size: 28px;
+  color: $royal-blue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+
+  // Dot tĩnh
+  &::before {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: $royal-blue;
+  }
+
+  //Dot pulse animation
+  &::after {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: $royal-blue;
+    animation: pulse 1s linear infinite;
+  }
+}
+
+// ── Message + Sign in link ───────────────────────────────────
+.message,
+.signin {
+  color: $text-muted;
+  font-size: 14px;
+}
+
+// ── Sign in ───────────────────────────────────────────
+.signin {
+  text-align: left;
+
+  button {
+    background: none;
+    border: none;
+    color: $royal-blue;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    margin-left: 6px;
+
+    &:hover {
+      text-decoration: underline $royal-blue;
+    }
+  }
+}
+
+// ── Submit button ─────────────────────────────────────
+.submit {
+  border: none;
+  outline: none;
+  background-color: $royal-blue;
+  padding: 10px;
+  border-radius: $radius-input;
+  color: $white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $royal-blue-hover;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+
+// ── Pulse animation ──────────────────────────
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

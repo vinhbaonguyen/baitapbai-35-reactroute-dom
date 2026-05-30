@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-05-30T10:49:09.555Z",
+  "input": ".understand-anything\\knowledge-graph.json",
+  "output": ".understand-anything\\intermediate\\review.json",
+  "nodeCount": 104,
+  "edgeCount": 254,
+  "issueCount": 0,
+  "issues": []
+}

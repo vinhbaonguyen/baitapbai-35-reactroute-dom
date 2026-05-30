@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sơ Đồ Cấu Trúc Dự Án Vạn Năng</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style type="text/css">
+        body { margin: 0; padding: 0; background-color: #1a1a1a; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; }
+        #title-bar { padding: 15px; background-color: #242424; text-align: center; font-size: 20px; font-weight: bold; border-bottom: 2px solid #3a3a3a; }
+        #network-container { width: 100vw; height: calc(100vh - 65px); cursor: grab; }
+        #network-container:active { cursor: grabbing; }
+    </style>
+</head>
+<body>
+    <div id="title-bar">Bộ Lọc Sơ Đồ Vạn Năng (Tự Động Phân Tích & Bù Liên Kết Cho Mọi Dự Án)</div>
+    <div id="network-container"></div>
+    <div id="layers-panel" aria-hidden="false">
+        <button id="layers-toggle">Layers ▸</button>
+        <div id="layers-list" hidden></div>
+    </div>
+
+    <script type="text/javascript">
+        // Layers panel styles & helpers
+        const style = document.createElement('style');
+        style.innerHTML = `
+            #layers-panel{position:fixed;right:12px;top:72px;width:260px;background:#0f1720;color:#fff;border:1px solid #2b2b2b;border-radius:8px;z-index:9999;box-shadow:0 6px 24px rgba(0,0,0,0.6);overflow:hidden}
+            #layers-panel #layers-toggle{width:100%;background:#111827;border:none;color:#fff;padding:8px 12px;text-align:left;font-weight:600;cursor:pointer}
+            #layers-list{max-height:60vh;overflow:auto;padding:8px 12px}
+            .layer-item{display:flex;align-items:center;gap:8px;padding:6px;border-bottom:1px dashed rgba(255,255,255,0.03)}
+            .layer-item label{flex:1;font-size:13px}
+            #layers-panel.highlight{outline:3px solid rgba(255,193,7,0.9);transform:translateY(-4px)}
+            @keyframes pulseOutline{0%{box-shadow:0 0 0 0 rgba(255,193,7,0.0)}50%{box-shadow:0 0 12px 6px rgba(255,193,7,0.14)}100%{box-shadow:0 0 0 0 rgba(255,193,7,0.0)}}
+            #layers-panel.pulse{animation:pulseOutline 1.2s ease-in-out 2}
+        `;
+        document.head.appendChild(style);
+        // Hàm dọn dẹp và chuẩn hóa ID đường dẫn tổng quát
+        function cleanNodeId(id) {
+            if (!id) return "";
+            let s = id.trim().toLowerCase();
+            s = s.replace(/^file:/, '');
+            s = s.replace(/^(\.\.\/)+/, '');
+            s = s.replace(/^(\.\/)+/, '');
+            s = s.replace(/^@\//, '');
+            if (!s.endsWith('.jsx') && !s.endsWith('.js') && !s.endsWith('.scss') && !s.endsWith('.css') && !s.endsWith('.ts') && !s.endsWith('.tsx')) {
+                s = s + '.jsx';
+            }
+            return s;
+        }
+
+        // Hàm trích xuất tên thư mục cha hoặc tiền tố để tìm liên kết tương quan
+        function getModuleName(path) {
+            const parts = path.split('/');
+            if (parts.length > 1) {
+                // Nếu nằm trong thư mục con (ví dụ: pages/course/course.jsx -> lấy "course")
+                return parts[parts.length - 2];
+            }
+            // Nếu nằm ở thư mục ngoài, lấy phần chữ đầu tiên trước dấu chấm
+            return parts[0].split('.')[0].replace('constant', '').replace('field', '').replace('modal', '').replace('picker', '');
+        }
+
+                fetch('knowledge-graph.validated.json')
+            .then(response => response.json())
+            .then(data => {
+                const nodeSet = new Map();
+                const rawNodes = data.nodes || [];
+                const rawEdges = data.edges || [];
+
+                let mainRouterId = "";
+
+                // 1. 🌟 PHÂN NHÓM MÀU SẮC THEO KIẾN TRÚC TỔNG QUÁT (Áp dụng cho mọi dự án)
+                rawNodes.forEach(node => {
+                    if (node.type !== 'file') return;
+                    
+                    const cleanId = cleanNodeId(node.id);
+                    if (!cleanId) return;
+
+                    // Tự động nhận diện file Router chính của hệ thống
+                    if (cleanId.includes('route') || cleanId.includes('app.js') || cleanId.includes('main.')) {
+                        if (!mainRouterId || cleanId.includes('index') || cleanId.includes('router')) {
+                            mainRouterId = cleanId;
+                        }
+                    }
+
+                    let nodeColor = '#2196f3'; // Xanh dương: File thông thường (Utils, Services, Hooks)
+                    let size = 26; 
+
+                    if (cleanId.includes('page/') || cleanId.includes('pages/')) { 
+                        nodeColor = '#e91e63'; // Hồng: Các màn hình giao diện chính (Pages)
+                        size = 35; 
+                    } else if (cleanId.includes('route') || cleanId.includes('router')) { 
+                        nodeColor = '#ff9800'; // Cam: Trung tâm điều hướng (Routes)
+                        size = 40; 
+                    } else if (cleanId.includes('constant') || cleanId.includes('field') || cleanId.includes('schema')) {
+                        nodeColor = '#009688'; // Xanh ngọc: File cấu hình dữ liệu (Constants/Fields)
+                        size = 24;
+                    } else if (cleanId.includes('modal') || cleanId.includes('picker') || cleanId.includes('popup')) {
+                        nodeColor = '#9c27b0'; // Tím: Các thành phần hộp thoại phụ trợ (Modals/Pickers)
+                        size = 28;
+                    }
+
+                    if (nodeSet.has(cleanId)) return;
+
+                    nodeSet.set(cleanId, {
+                        id: cleanId,
+                        label: node.name,
+                        shape: 'dot',
+                        size: size,
+                        color: { background: nodeColor, border: '#ffffff' },
+                        font: { color: '#ffffff', size: 12, face: 'Segoe UI' },
+                        hasParentEdge: false
+                    });
+                });
+
+                // 2. Nạp danh sách các đường nối hiện có từ file JSON
+                const edgesArray = [];
+                rawEdges.forEach(edge => {
+                    let from = edge.source || edge.from;
+                    let to = edge.target || edge.to;
+
+                    if (from && to) {
+                        const cleanFrom = cleanNodeId(from);
+                        const cleanTo = cleanNodeId(to);
+
+                        if (nodeSet.has(cleanFrom) && nodeSet.has(cleanTo)) {
+                            const isDuplicate = edgesArray.some(e => e.from === cleanFrom && e.to === cleanTo);
+                            if (!isDuplicate) {
+                                edgesArray.push({
+                                    from: cleanFrom,
+                                    to: cleanTo,
+                                    arrows: 'to',
+                                    color: { color: '#848484' },
+                                    width: 1.5
+                                });
+                                nodeSet.get(cleanTo).hasParentEdge = true;
+                            }
+                        }
+                    }
+                });
+
+                // 🌟 3. THUẬT TOÁN VẠN NĂNG: Tự động phân tích tương quan thư mục để bù đắp liên kết thiếu
+                nodeSet.forEach((node, id) => {
+                    // TH 1: Bù liên kết cho các file bổ trợ (Constants, Fields, Modals, Pickers) bị mồ côi
+                    if (id.includes('constant') || id.includes('field') || id.includes('modal') || id.includes('picker')) {
+                        const moduleName = getModuleName(id); // Lấy tên phân hệ (ví dụ: "student", "product")
+                        
+                        if (moduleName && moduleName.length > 2) {
+                            nodeSet.forEach((targetNode, targetId) => {
+                                // Tìm các file Page chính thuộc cùng phân hệ đó để tự động gom cụm
+                                if ((targetId.includes('page/') || targetId.includes('pages/')) && targetId.includes(moduleName) && targetId !== id) {
+                                    const pathExists = edgesArray.some(e => 
+                                        (e.from === targetId && e.to === id) || (e.from === id && e.to === targetId)
+                                    );
+                                    if (!pathExists) {
+                                        // Nếu là Modal/Picker thì trỏ từ Page vào, nếu là Constants thì trỏ từ Page sang
+                                        const isComponent = id.includes('modal') || id.includes('picker');
+                                        edgesArray.push({
+                                            from: targetId,
+                                            to: id,
+                                            arrows: 'to',
+                                            color: { color: isComponent ? '#9c27b0' : '#009688', dash: true },
+                                            width: 1.5
+                                        });
+                                        node.hasParentEdge = true;
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+
+                // TH 2: Kết nối bù toàn bộ các file trang chính (Pages) bị thiếu mũi tên từ Router chính
+                if (mainRouterId) {
+                    nodeSet.forEach((node, id) => {
+                        if ((id.includes('page/') || id.includes('pages/')) && !node.hasParentEdge && id !== mainRouterId) {
+                            // Đảm bảo chỉ bù vào file màn hình chính, bỏ qua các file con nằm sâu nếu đã có cụm
+                            edgesArray.push({
+                                from: mainRouterId,
+                                to: id,
+                                arrows: 'to',
+                                color: { color: '#ff9800', dash: true }, 
+                                width: 1.5
+                            });
+                        }
+                    });
+                }
+
+                // 4. Khởi tạo đồ thị
+                const container = document.getElementById('network-container');
+                const nodesDataSet = new vis.DataSet(Array.from(nodeSet.values()));
+                const edgesDataSet = new vis.DataSet(edgesArray);
+                const graphData = { nodes: nodesDataSet, edges: edgesDataSet };
+
+                const options = {
+                    physics: {
+                        enabled: true,
+                        barnesHut: { 
+                            gravitationalConstant: -4000, 
+                            centralGravity: 0.1, 
+                            springLength: 160,
+                            springConstant: 0.04
+                        },
+                        stabilization: { enabled: false }
+                    },
+                    interaction: { dragNodes: true, dragView: true, selectable: true, hover: true }
+                };
+
+                const network = new vis.Network(container, graphData, options);
+
+                // Đồng bộ kéo thả đóng băng tọa độ thông minh
+                network.on("dragStart", function (params) {
+                    if (params.nodes.length > 0) {
+                        const nodeId = params.nodes[0];
+                        nodesDataSet.update({ id: nodeId, fixed: { x: false, y: false } });
+                        network.setOptions({ physics: { enabled: false } });
+                    }
+                });
+
+                network.on("dragEnd", function (params) {
+                    network.setOptions({ physics: { enabled: true } });
+                    if (params.nodes.length > 0) {
+                        const nodeId = params.nodes[0];
+                        nodesDataSet.update({ id: nodeId, fixed: { x: true, y: true } });
+                    }
+                });
+
+                network.on("doubleClick", function (params) {
+                    if (params.nodes.length > 0) {
+                        const nodeId = params.nodes[0];
+                        nodesDataSet.update({ id: nodeId, fixed: { x: false, y: false } });
+                    }
+                });
+
+                // --- Layers UI wiring ---
+                const layersPanel = document.getElementById('layers-panel');
+                const layersToggle = document.getElementById('layers-toggle');
+                const layersList = document.getElementById('layers-list');
+
+                function buildLayersUI(layers){
+                    layersList.innerHTML = '';
+                    layers.forEach(layer => {
+                        const div = document.createElement('div');
+                        div.className = 'layer-item';
+                        const cb = document.createElement('input');
+                        cb.type = 'checkbox'; cb.checked = true; cb.id = 'cb-'+layer.id;
+                        const lbl = document.createElement('label'); lbl.htmlFor = cb.id; lbl.textContent = layer.name + ' (' + (layer.nodeIds?.length||0) + ')';
+                        div.appendChild(cb); div.appendChild(lbl);
+                        layersList.appendChild(div);
+
+                        cb.addEventListener('change', () => {
+                            const show = cb.checked;
+                            (layer.nodeIds||[]).forEach(nid => {
+                                const clean = cleanNodeId(nid);
+                                if(nodesDataSet.get(clean)){
+                                    nodesDataSet.update({ id: clean, hidden: !show });
+                                }
+                            });
+                        });
+                    });
+                }
+
+                layersToggle.addEventListener('click', ()=>{
+                    const isHidden = layersList.hasAttribute('hidden');
+                    if(isHidden) { layersList.removeAttribute('hidden'); layersToggle.textContent = 'Layers ▾' }
+                    else { layersList.setAttribute('hidden',''); layersToggle.textContent = 'Layers ▸' }
+                });
+
+                // If the graph JSON contains layers, wire them
+                if(Array.isArray(data.layers) && data.layers.length){
+                    buildLayersUI(data.layers);
+                    // Auto-open and highlight panel briefly
+                    layersList.removeAttribute('hidden'); layersToggle.textContent = 'Layers ▾';
+                    layersPanel.classList.add('highlight','pulse');
+                    setTimeout(()=>{ layersPanel.classList.remove('pulse'); }, 2600);
+                }
+            })
+            .catch(err => {
+                document.getElementById('network-container').innerHTML = `<div style="padding:50px;color:#ff5722;text-align:center;">⚠️ Lỗi: ${err}</div>`;
+            });
+    </script>
+</body>
+</html>

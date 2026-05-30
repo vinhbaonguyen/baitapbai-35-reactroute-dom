@@ -1,0 +1,22 @@
+@use '../../assets/styles/abstracts/variables' as *;
+.footer {
+    width: 100%;
+    background-color: $footer-bg;
+    padding: 10px 0;
+
+    // Element
+    &__inner {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__copyright {
+        margin: 0;
+        color: #fff;
+        font-size: 0.9rem;
+
+        i {
+            margin: 0 4px;
+        }
+    }
+}

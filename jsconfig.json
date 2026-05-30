@@ -1,0 +1,31 @@
+// {
+//   "compilerOptions": {
+//     "baseUrl": "src",
+//     "ignoreDeprecations": "6.0"
+//   },
+//   "include": ["src"]
+// }
+
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["src/*"],
+//       "constants/*": ["src/constants/*"]
+//     },
+//     "ignoreDeprecations": "6.0"
+//   }
+// }
+
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "constants/*": ["src/constants/*"],
+      "utils/*": ["src/utils/*"],
+      "components/*": ["src/components/*"]
+    },
+    "ignoreDeprecations": "6.0"
+  }
+}

@@ -1,0 +1,169 @@
+@use '../../assets/styles/abstracts/mixins' as *;
+@use '../../assets/styles/abstracts/variables' as *;
+
+.header {
+    width: 100%;
+    background-color: $white;
+
+    // Element
+    &__wrapper {
+        display: flex;
+        width: 98%;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        width: 140px;
+        text-align: left;
+        flex-shrink: 0;
+
+        &-img {
+            width: 80%;
+            height: auto;
+            aspect-ratio: 4/3;
+            transition: transform 0.4s ease-in-out;
+
+            &:hover {
+                transform: translateY(10px);
+            }
+        }
+
+        &-desc {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+    }
+
+    &__title {
+        flex: 1;
+        height: 60px;
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 100%;
+            height: 100%;
+
+            text {
+                animation: stroke 5s infinite alternate;
+                stroke-width: 2;
+                font-size: 30px;
+            }
+        }
+    }
+
+    &__auth {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+
+        &-user {
+            font-weight: 600;
+            color: $black;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        &-role {
+            font-size: 1rem;
+            background: $primary;
+            color: $white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 6px;
+        }
+
+        &-btn {
+            min-width: 90px;
+            color: #14396A;
+            font-size: 1rem;
+            text-shadow: 1px 1px 0px #7CACDE;
+            box-shadow: 1px 1px 1px #BEE2F9;
+            padding: 4px 10px;
+            border-radius: 10px;
+            border: 2px solid $primary;
+            background: linear-gradient(to top, #63B8EE, #468CCF);
+            cursor: pointer;
+            white-space: nowrap;
+
+            &:hover {
+                background: linear-gradient(to top, #468CCF, #63B8EE);
+            }
+
+            i {
+                margin-right: 6px;
+            }
+        }
+    }
+}
+
+// SVG animation
+@keyframes stroke {
+    0% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+    }
+
+    70% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+    }
+
+    80% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+        stroke-width: 3;
+    }
+
+    100% {
+        fill: rgba(72, 138, 204, 1);
+        stroke: rgba(54, 95, 160, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+    }
+}
+
+// Responsive
+@media (max-width:992px) {
+    .header {
+        &__auth {
+            // display: flex;
+            // flex-direction: column;
+            @include flex-center-col;
+        }
+
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        &__wrapper {
+            @include flex-center-col;
+            margin-bottom: 10px;
+        }
+
+        &__title svg {
+            height: 10%;
+            padding: 0;
+
+            text {
+                animation: stroke 5s infinite alternate;
+                stroke-width: 2;
+                stroke: #365FA0;
+                font-size: 24px;
+            }
+        }
+
+        &__logo-img {
+            width: 160px;
+        }
+    }
+}

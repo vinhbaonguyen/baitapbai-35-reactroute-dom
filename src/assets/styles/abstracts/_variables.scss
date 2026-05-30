@@ -1,0 +1,95 @@
+// ============================================================================
+// 1. COLOR PALETTE — màu chính dùng toàn hệ thống
+// ============================================================================
+$primary: #4a90d9;
+$primary-home:     #7c3f00;
+$primary-hover: #357abd;
+$primary-dark: #24135a;
+$primary-color: #6366f1;
+
+$royal-blue: royalblue;
+$royal-blue-hover: rgb(56, 90, 194);
+
+$history:#7c3aed;
+$view:#A4D6B6;
+$signIn: #6041bf;
+$purple-dark: #24135a;
+
+$danger: #e74c3c;
+$danger-hover: #c0392b;
+
+$text: #333;
+$text-primary: #111827;
+$text-secondary: #6b7280;
+$text-light: #666;
+$text-muted: rgba(88, 87, 87, 0.822);
+$text-home:#2d1b00;
+
+$white: #ffffff;
+$black: #000000;
+
+// ============================================================================
+// 2. SUPPORTING COLORS — dùng cho stats, badges, charts
+// ============================================================================
+$orange: #ff8c42;
+$pink: #ff6b9d;
+$purple: #9b59b6;
+
+$success: #22c55e;
+$warning: #ca8a04;
+$error: red;
+
+// ============================================================================
+// 3. BACKGROUND & GRADIENTS
+// ============================================================================
+$bg: #f5f0eb;
+$bg-stripe: #f8f9fa;
+$bg-gradient: linear-gradient(135deg, #1a0a3e, #3d1a7a);
+
+$footer-bg: #0bd;
+$card-bg: #ffffff;
+$content-bg: #f2f2f2;
+
+// ============================================================================
+// 4. BORDER & RADIUS
+// ============================================================================
+$border: #dee2e6;
+
+$border-color: rgba(105, 105, 105, 0.397);
+// $border-color: #e5e7eb;
+
+$radius: 10px;
+$radius-card: 20px;
+$radius-input: 10px;
+
+// ============================================================================
+// 5. SHADOWS
+// ============================================================================
+$shadow: 0 4px 20px rgba(0, 0, 0, .08);
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+// ============================================================================
+// 6. TRANSITIONS
+// ============================================================================
+$transition: .25s ease;
+$transition-speed: .4s;
+
+// ============================================================================
+// 7. LAYOUT CONSTANTS (menu, header…)
+// ============================================================================
+$menu-width: 250px;
+$menu-bg: #4f6b81;
+$menu-text: #ddd;
+$menu-link: #fff;
+
+$menu-gradient-top: #628297;
+$menu-hover-top: #3b3f48;
+$menu-hover-bottom: #3c434d;
+
+$header-height: 130px;
+
+// ============================================================================
+// 8. EMBEDDED SVG (hamburger icon)
+// ============================================================================
+$hamburger-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");

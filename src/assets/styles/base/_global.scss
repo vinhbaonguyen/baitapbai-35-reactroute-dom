@@ -1,0 +1,21 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  height: 100%;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+/* Selector bên dưới dùng để xác định tọa độ của alert 
+khi kết thúc 1 action để nó không bị che bởi modal
+ z-index của modal là 1100 tham khảo modalStyle.js */
+.my-swal-container {
+  z-index: 9999 !important;
+}

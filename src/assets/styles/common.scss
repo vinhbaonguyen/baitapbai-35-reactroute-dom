@@ -1,0 +1,418 @@
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+
+//Phần SCSS được áp dụng cho validate dữ liệu cho Form
+// ── Input error border ────────────────────────────────
+.input--error {
+    border-color: $error !important;
+    border-width: 1.5px !important;
+}
+
+// ── Error message ─────────────────────────────────────
+/* error text */
+.error-msg {
+    display: block;
+    color: $error;
+    font-size: 1.0rem;
+    margin-top: 2px;
+    padding-left: 4px;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+//Picker Modal Component trong components\CommonPickers===========
+.picker-grid {
+    @include grid-col(3);
+    width: 100%;
+}
+
+.picker-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+
+    // Tạo thêm modifier cho dạng hàng (row)
+    &--row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+}
+
+.picker-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid #dee2e6;
+    background: $white;
+    transition: all .15s;
+
+    &:hover {
+        border-color: $primary;
+        // border-color: lighten($primary, 20%);
+        background-color: #f8f9fa;
+    }
+
+    &--active {
+        border-color: $primary;
+        background: #eaf3fb;
+        font-weight: 700;
+
+        .picker-item__text {
+            font-weight: 700;
+            color: $text;
+        }
+
+        .picker-item__check {
+            color: $primary;
+            font-weight: 700;
+        }
+    }
+
+    &__text {
+        font-size: 0.9rem;
+        color: $text;
+    }
+
+    &__icon {
+        @include flex-center;
+        width: 32px;
+        font-size: 1.8rem;
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &--label {
+            margin: 0;
+            font-weight: 700;
+            color: $text;
+            font-size: 0.9rem;
+        }
+
+        &--desc {
+            margin-bottom: 4px;
+            font-size: 0.8rem;
+            color: $text-light;
+        }
+    }
+}
+
+//Phần này chuyên cho SkillPickerModal phần input other Skill và 
+// CoursePickerModal phần search
+.picker-other {
+    display: flex;
+    margin: 8px 0px;
+
+    &__input {
+        // flex: 1;
+        padding: 6px 10px;
+        border-radius: 6px;
+        width: 80%;
+        margin-right: 8px;
+        border: 1.5px solid $border;
+        outline: none;
+        font-size: 0.9rem;
+    }
+}
+
+.picker-other-display {
+    margin-bottom: 8px;
+
+    &__quantity {
+        font-size: 0.78rem;
+        color: $text-light;
+        margin: 0 0 6px;
+        font-weight: 700;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px
+    }
+
+    &__skill {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 10px;
+        border-radius: 20px;
+        background: $primary;
+        color: $white;
+        font-size: 0.78rem;
+        font-weight: 600;
+    }
+
+    &__delete {
+        cursor: pointer;
+        font-weight: 900;
+    }
+}
+
+.base-picker-btn {
+    @include flex-center-space-between;
+    flex: 1;
+    width: 100%;
+    padding: 6px 10px;
+    border: 1.5px solid $border;
+    border-radius: $radius;
+    background: $white;
+    cursor: pointer;
+    font-size: .9rem;
+    color: $text;
+    text-align: left;
+    transition: border-color .2s;
+    min-height: 34px;
+
+    &:hover {
+        border-color: $primary;
+    }
+
+    &__placeholder {
+        color: $text-light;
+        font-style: italic;
+    }
+
+    &__arrow {
+        color: $text-light;
+        font-size: .7rem;
+        flex-shrink: 0;
+        margin-left: 8px;
+    }
+}
+
+.base-picker-btn:disabled {
+    opacity: 0.5;   
+    cursor: crosshair;
+    border: solid 1px $error;
+
+}
+
+// ── Tags preview bên trong picker button ──────────────────────────────────
+.base-tags-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    // flex: 1;
+    align-items: center;
+}
+
+//Đổi .lm-tag ⇒ .base-tag
+.base-tag {
+    background: #eef4ff;
+    color: #2563eb;
+    border: 1px solid $border;
+    border-radius: 20px;
+    padding: 1px 8px;
+    font-size: .75rem;
+    font-weight: 600;
+
+    &--more {
+        background: #f0f0f0;
+        color: $text-light;
+        border-color: #ddd;
+    }
+}
+
+.form-item {
+    @include flex-center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+
+    &__label {
+        font-weight: 500;
+        margin-bottom: 4px;
+        display: inline-block;
+    }
+
+    &__required {
+        color: $error;
+        margin-left: 4px;
+    }
+
+    &__control {
+
+        input,
+        select {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid $border;
+            border-radius: 4px;
+        }
+
+        input::placeholder {
+            color: $primary-color;
+            font-size: 0.68rem;
+
+        }
+    }
+
+    &__error {
+        min-height: 18px;
+        margin-top: 2px;
+    }
+
+    &--error {
+
+        input,
+        select {
+            border-color: $error;
+        }
+    }
+
+    /* ===== LAYOUT ===== */
+
+    &--vertical {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &--horizontal {
+        display: flex;
+        align-items: flex-start;
+
+        .form-item__label {
+            width: 140px;
+            margin-bottom: 0;
+        }
+
+        .form-item__control {
+            flex: 1;
+        }
+
+        .form-item__input {
+            width: 100%;
+        }
+
+        .form-item__error {
+            margin-left: 140px;
+            width: 100%;
+
+            input,
+            select {
+                border-color: $error;
+            }
+        }
+    }
+
+    /* ===== VARIANT (MODAL) ===== */
+    &--lecture.form-item--horizontal {
+        .form-item__label {
+            width: 160px;
+        }
+
+        .form-item__error {
+            margin-left: 160px;
+
+        }
+    }
+
+    &--shared.form-item--horizontal,
+    &--default.form-item--horizontal {
+        .form-item__label {
+            width: 130px;
+        }
+
+        .form-item__error {
+            margin-left: 130px;
+        }
+    }
+
+    &--auth.form-item--horizontal {
+        .form-item__label {
+            width: 130px;
+        }
+
+        .form-item__error {
+            margin-left: 0px;
+        }
+    }
+
+
+    // auth (register/login)
+    &--auth {
+        width: 100%;
+
+        .form-item__label {
+            display: none; // dùng floating label thay thế
+        }
+
+        .form-item__control {
+            position: relative;
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 8px;
+            border: 1px solid $border;
+            border-radius: $radius-input;
+            outline: none;
+            font-size: 14px;
+            box-sizing: border-box;
+
+            &:focus {
+                border-color: $royal-blue;
+            }
+        }
+
+        /* ===== FLOATING LABEL ===== */
+        .form-item__control span {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: $text-light;
+            font-size: 0.9em;
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+
+        input:focus+span,
+        input:not(:placeholder-shown)+span {
+            top: -8px;
+            font-size: 0.75em;
+            font-weight: 600;
+            color: $royal-blue;
+        }
+
+        /* ===== ERROR ===== */
+        &.form-item--error input {
+            border-color: $error;
+        }
+
+        .form-item__error {
+            margin-top: 2px;
+        }
+    }
+}
+
+.form-item__radio-group {
+    display: flex;
+    gap: 16px;
+}
+
+.form-item__radio {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
