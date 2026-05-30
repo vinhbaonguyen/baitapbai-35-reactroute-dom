@@ -3859,5 +3859,28 @@
         }
       ]
     }
+    ,
+    {
+      "id": "tour:auth-flow",
+      "title": "Authentication Flow (Luồng Đăng Nhập/Đăng Ký)",
+      "description": "Follow the authentication path: Login component → auth state slice → utils attaching auth token.",
+      "steps": [
+        {
+          "title": "Login Component (mapped)",
+          "text": "Mapped to the existing project login form (`pages/SignIn/LoginForm.jsx`).",
+          "nodeId": "file:pages/SignIn/LoginForm.jsx"
+        },
+        {
+          "title": "Auth Reducer (mapped)",
+          "text": "Mapped to the existing auth reducers handling login state (`reducers/authReducers.js`).",
+          "nodeId": "file:reducers/authReducers.js"
+        },
+        {
+          "title": "Attach Auth Header (mapped)",
+          "text": "Mapped to the existing request helper used for API calls (`utils/requestAPI.js`).",
+          "nodeId": "file:utils/requestAPI.js"
+        }
+      ]
+    }
   ]
 }
