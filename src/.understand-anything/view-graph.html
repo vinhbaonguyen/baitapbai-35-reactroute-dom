@@ -44,6 +44,14 @@
             #layers-panel.highlight{outline:3px solid rgba(255,193,7,0.9);transform:translateY(-4px)}
             @keyframes pulseOutline{0%{box-shadow:0 0 0 0 rgba(255,193,7,0.0)}50%{box-shadow:0 0 12px 6px rgba(255,193,7,0.14)}100%{box-shadow:0 0 0 0 rgba(255,193,7,0.0)}}
             #layers-panel.pulse{animation:pulseOutline 1.2s ease-in-out 2}
+            /* Tour dropdown styles */
+            #tour-panel{position:fixed;right:12px;top:320px;width:320px;background:#071021;color:#fff;border:1px solid #142033;border-radius:8px;z-index:9999;box-shadow:0 6px 24px rgba(0,0,0,0.6);overflow:hidden}
+            #tour-panel #tour-toggle{width:100%;background:#081826;border:none;color:#fff;padding:8px 12px;text-align:left;font-weight:600;cursor:pointer}
+            #tour-list{max-height:40vh;overflow:auto;padding:8px 12px}
+            .tour-dropdown{display:flex;flex-direction:column;gap:6px;padding:6px}
+            .tour-item{padding:8px 10px;border-radius:6px;background:transparent;color:#dfeffb;cursor:pointer;border:1px solid transparent}
+            .tour-item:hover{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.04)}
+            .tour-item.selected{background:linear-gradient(90deg,#0b3954,#0f5b7d);border-color:rgba(255,255,255,0.06);box-shadow:0 4px 10px rgba(10,30,60,0.6)}
         `;
         document.head.appendChild(style);
         // Hàm dọn dẹp và chuẩn hóa ID đường dẫn tổng quát
@@ -297,14 +305,39 @@
 
                 function buildTourUI(tourList){
                     if(!Array.isArray(tourList) || !tourList.length) return;
-                    const tour = tourList.find(t => t.id === 'tour:classic-user-flow') || tourList[0];
-                    tourPanel.dataset.activeTour = tour.id || (tour.title||'tour');
-                    tourToggle.textContent = 'Tour ▾';
-                    tourControls.removeAttribute('hidden');
-                    tourInfo.textContent = tour.title + ' — ' + (tour.description || '');
+                    const tourListContainer = document.getElementById('tour-list');
+                    tourListContainer.innerHTML = '';
 
-                    // build explicit steps array (prefer steps property)
-                    const steps = Array.isArray(tour.steps) ? tour.steps : (Array.isArray(tour.nodeIds) ? tour.nodeIds.map(nid=>({ nodeId: nid })) : []);
+                    const dropdown = document.createElement('div');
+                    dropdown.className = 'tour-dropdown';
+
+                    // create items for each tour
+                    tourList.forEach(t => {
+                        const item = document.createElement('div');
+                        item.className = 'tour-item';
+                        item.tabIndex = 0;
+                        item.textContent = t.title || t.id || 'tour';
+                        item.addEventListener('click', ()=> selectTour(t, item));
+                        item.addEventListener('keypress', (e)=>{ if(e.key === 'Enter') selectTour(t, item); });
+                        dropdown.appendChild(item);
+                    });
+
+                    tourListContainer.appendChild(dropdown);
+
+                    // fuzzy match helper
+                    function findBestMatchId(nid){
+                        if(!nid) return null;
+                        const clean = cleanNodeId(nid);
+                        if(nodesDataSet.get(clean)) return clean;
+                        const base = clean.split('/').pop().split('.')[0];
+                        for(const key of nodeSet.keys()) if(key.includes(base)) return key;
+                        const module = getModuleName(clean);
+                        for(const key of nodeSet.keys()) if(module && key.includes(module)) return key;
+                        return null;
+                    }
+
+                    let activeTour = null;
+                    let steps = [];
                     let idx = -1;
                     let currentHighlighted = null;
 
@@ -313,20 +346,29 @@
                             const orig = nodeSet.get(currentHighlighted);
                             if(orig) nodesDataSet.update({ id: currentHighlighted, color: orig.color, size: orig.size });
                             currentHighlighted = null;
-                            network.unselectAll();
+                            try { network.unselectAll(); } catch(e){}
                         }
                     }
 
                     function focusAndHighlight(nid){
                         if(!nid) return;
-                        const clean = cleanNodeId(nid);
-                        if(!nodesDataSet.get(clean)) return;
+                        const match = findBestMatchId(nid);
+                        if(!match) return;
                         clearHighlight();
-                        currentHighlighted = clean;
-                        const node = nodesDataSet.get(clean);
-                        nodesDataSet.update({ id: clean, color: { background:'#ffd54f', border:'#ff6f00' }, size: Math.max(42, (node.size||26)+18) });
-                        try { network.focus(clean, { scale: 1.4, animation: { duration: 400 } }); } catch(e){}
-                        try { network.selectNodes([clean]); } catch(e){}
+                        currentHighlighted = match;
+                        const node = nodesDataSet.get(match);
+                        nodesDataSet.update({ id: match, color: { background:'#ffd54f', border:'#ff6f00' }, size: Math.max(42, (node.size||26)+18) });
+                        try { network.focus(match, { scale: 1.4, animation: { duration: 400 } }); } catch(e){}
+                        try { network.selectNodes([match]); } catch(e){}
+                    }
+
+                    function loadTour(tour){
+                        activeTour = tour;
+                        tourPanel.dataset.activeTour = tour.id || (tour.title||'tour');
+                        tourInfo.textContent = tour.title + ' — ' + (tour.description || '');
+                        steps = Array.isArray(tour.steps) ? tour.steps : (Array.isArray(tour.nodeIds) ? tour.nodeIds.map(nid=>({ nodeId: nid })) : []);
+                        idx = -1;
+                        tourControls.removeAttribute('hidden');
                     }
 
                     function showStep(i){
@@ -340,16 +382,30 @@
                         focusAndHighlight(nid);
                     }
 
-                    tourStart.onclick = ()=> showStep(0);
-                    tourPrev.onclick = ()=> showStep(Math.max(0, idx - 1));
-                    tourNext.onclick = ()=> showStep(Math.min(steps.length - 1, idx + 1));
-                    tourStop.onclick = ()=> { clearHighlight(); idx = -1; tourInfo.textContent = tour.title + ' — ' + (tour.description||''); };
+                    function selectTour(t, itemEl){
+                        // mark selection
+                        Array.from(dropdown.children).forEach(ch => ch.classList.remove('selected'));
+                        if(itemEl) itemEl.classList.add('selected');
+                        loadTour(t);
+                    }
+
+                    // wire buttons
+                    tourStart.onclick = ()=> { if(activeTour) showStep(0); };
+                    tourPrev.onclick = ()=> { if(activeTour) showStep(Math.max(0, idx - 1)); };
+                    tourNext.onclick = ()=> { if(activeTour) showStep(Math.min(steps.length - 1, idx + 1)); };
+                    tourStop.onclick = ()=> { clearHighlight(); idx = -1; if(activeTour) tourInfo.textContent = activeTour.title + ' — ' + (activeTour.description||''); };
+
+                    // initialize: prefer classic user flow if present
+                    const preferred = tourList.find(t => t.id === 'tour:classic-user-flow') || tourList[0];
+                    // select the preferred item
+                    const preferredItem = Array.from(dropdown.children).find(ch => ch.textContent === (preferred.title || preferred.id));
+                    if(preferredItem) selectTour(preferred, preferredItem);
                 }
 
                 tourToggle.addEventListener('click', ()=>{
-                    const isHidden = tourControls.hasAttribute('hidden');
-                    if(isHidden) { tourControls.removeAttribute('hidden'); tourToggle.textContent = 'Tour ▾' }
-                    else { tourControls.setAttribute('hidden',''); tourToggle.textContent = 'Tour ▸' }
+                    const isHidden = tourList.hasAttribute('hidden');
+                    if(isHidden) { tourList.removeAttribute('hidden'); tourToggle.textContent = 'Tour ▾' }
+                    else { tourList.setAttribute('hidden',''); tourToggle.textContent = 'Tour ▸' }
                 });
 
                 if(Array.isArray(data.tour) && data.tour.length){
