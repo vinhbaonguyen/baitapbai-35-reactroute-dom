@@ -18,6 +18,18 @@
         <button id="layers-toggle">Layers ▸</button>
         <div id="layers-list" hidden></div>
     </div>
+    <div id="tour-panel" aria-hidden="false">
+        <button id="tour-toggle">Tour ▸</button>
+        <div id="tour-controls" hidden style="padding:8px 12px;">
+            <div id="tour-info" style="margin-bottom:8px;font-size:13px;color:#f3f3f3"></div>
+            <div style="display:flex;gap:8px;justify-content:space-between">
+                <button id="tour-start" style="flex:1">Start Tour</button>
+                <button id="tour-prev" style="flex:1">◂ Prev</button>
+                <button id="tour-next" style="flex:1">Next ▸</button>
+                <button id="tour-stop" style="flex:1">Stop</button>
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript">
         // Layers panel styles & helpers
@@ -271,6 +283,79 @@
                     layersList.removeAttribute('hidden'); layersToggle.textContent = 'Layers ▾';
                     layersPanel.classList.add('highlight','pulse');
                     setTimeout(()=>{ layersPanel.classList.remove('pulse'); }, 2600);
+                }
+
+                // --- Tour UI wiring ---
+                const tourPanel = document.getElementById('tour-panel');
+                const tourToggle = document.getElementById('tour-toggle');
+                const tourControls = document.getElementById('tour-controls');
+                const tourInfo = document.getElementById('tour-info');
+                const tourStart = document.getElementById('tour-start');
+                const tourPrev = document.getElementById('tour-prev');
+                const tourNext = document.getElementById('tour-next');
+                const tourStop = document.getElementById('tour-stop');
+
+                function buildTourUI(tourList){
+                    if(!Array.isArray(tourList) || !tourList.length) return;
+                    // Find our classic flow tour if present, otherwise pick the first
+                    let tour = tourList.find(t => t.id === 'tour:classic-user-flow') || tourList[0];
+                    tourPanel.dataset.activeTour = tour.id || (tour.title||'tour');
+                    tourToggle.textContent = 'Tour ▾';
+                    tourControls.removeAttribute('hidden');
+                    tourInfo.textContent = tour.title + ' — ' + (tour.description || '');
+
+                    // attach handlers
+                    let currentIdx = -1;
+                    let highlighted = null;
+
+                    function resetHighlight(nodeId){
+                        if(!nodeId) return;
+                        const original = nodeSet.get(nodeId);
+                        if(original){
+                            nodesDataSet.update({ id: nodeId, color: original.color, size: original.size });
+                        }
+                    }
+
+                    function highlightNode(nodeId){
+                        if(!nodeId) return;
+                        // reset previous
+                        if(highlighted && highlighted !== nodeId) resetHighlight(highlighted);
+                        highlighted = nodeId;
+                        const n = nodesDataSet.get(nodeId);
+                        if(n){
+                            nodesDataSet.update({ id: nodeId, color: { background: '#ffd54f', border: '#ff6f00' }, size: Math.max(40, (n.size||26) + 16) });
+                            try { network.focus(nodeId, { scale: 1.4, animation: { duration: 400 } }); } catch (e){}
+                            network.selectNodes([nodeId]);
+                        }
+                    }
+
+                    function goToStep(idx){
+                        const steps = tour.steps || tour.nodeIds || [];
+                        if(idx < 0 || idx >= steps.length) return;
+                        currentIdx = idx;
+                        const step = steps[idx];
+                        const nid = step.nodeId || step;
+                        const title = step.title || ('Step ' + (idx+1));
+                        const text = step.text || '';
+                        tourInfo.innerHTML = '<strong>' + title + '</strong><div style="font-size:12px;color:#dcdcdc;margin-top:6px">' + text + '</div>';
+                        const clean = cleanNodeId(nid);
+                        if(nodesDataSet.get(clean)) highlightNode(clean);
+                    }
+
+                    tourStart.addEventListener('click', ()=>{ goToStep(0); });
+                    tourPrev.addEventListener('click', ()=>{ goToStep(Math.max(0, currentIdx - 1)); });
+                    tourNext.addEventListener('click', ()=>{ goToStep(Math.min((tour.steps||tour.nodeIds||[]).length - 1, currentIdx + 1)); });
+                    tourStop.addEventListener('click', ()=>{ if(highlighted) resetHighlight(highlighted); currentIdx = -1; tourInfo.textContent = tour.title + ' — ' + (tour.description||''); network.unselectAll(); });
+                }
+
+                tourToggle.addEventListener('click', ()=>{
+                    const isHidden = tourControls.hasAttribute('hidden');
+                    if(isHidden) { tourControls.removeAttribute('hidden'); tourToggle.textContent = 'Tour ▾' }
+                    else { tourControls.setAttribute('hidden',''); tourToggle.textContent = 'Tour ▸' }
+                });
+
+                if(Array.isArray(data.tour) && data.tour.length){
+                    buildTourUI(data.tour);
                 }
             })
             .catch(err => {

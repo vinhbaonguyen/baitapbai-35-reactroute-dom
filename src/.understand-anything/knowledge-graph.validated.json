@@ -3815,5 +3815,49 @@
         "file:components/CommonPickers/StudentListPickerModal.jsx"
       ]
     }
+    ,
+    {
+      "order": 4,
+      "id": "tour:classic-user-flow",
+      "title": "Classic User Flow: Entry → Routing → Component → State",
+      "description": "Step through main.jsx → App.jsx → routes/index.jsx → pages/Cart/Cart.jsx → FormRenderer → PickerBtn → store initialization and cart reducers.",
+      "steps": [
+        {
+          "title": "Entry & App",
+          "text": "Application entry mounts in `main.jsx` and renders `App.jsx`.",
+          "nodeId": "file:main.jsx"
+        },
+        {
+          "title": "App → Router",
+          "text": "`App.jsx` imports the router defined in `routes/index.jsx`.",
+          "nodeId": "file:App.jsx"
+        },
+        {
+          "title": "Router → Cart Page",
+          "text": "Route definitions include the `Cart` page which is implemented at `pages/Cart/Cart.jsx`.",
+          "nodeId": "file:routes/index.jsx"
+        },
+        {
+          "title": "Cart Page",
+          "text": "The `Cart` page is the user-facing page component for the shopping cart.",
+          "nodeId": "file:pages/Cart/Cart.jsx"
+        },
+        {
+          "title": "Form Renderer",
+          "text": "Shared form renderer component which uses picker controls.",
+          "nodeId": "file:components/FormControls/FormRenderer.jsx"
+        },
+        {
+          "title": "Picker Button",
+          "text": "A small UI control (`PickerBtn`) used by the form renderer.",
+          "nodeId": "file:components/FormControls/PickerBtn.jsx"
+        },
+        {
+          "title": "Store Init & Cart Reducer",
+          "text": "Redux store is initialized (reducers/index.js) and cart state is handled by cart-related reducers/actions located under `reducers`/`actions`.",
+          "nodeId": "file:reducers/index.js"
+        }
+      ]
+    }
   ]
 }
