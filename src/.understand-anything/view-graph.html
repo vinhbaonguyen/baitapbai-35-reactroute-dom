@@ -20,13 +20,14 @@
     </div>
     <div id="tour-panel" aria-hidden="false">
         <button id="tour-toggle">Tour ▸</button>
-        <div id="tour-controls" hidden style="padding:8px 12px;">
-            <div id="tour-info" style="margin-bottom:8px;font-size:13px;color:#f3f3f3"></div>
-            <div style="display:flex;gap:8px;justify-content:space-between">
-                <button id="tour-start" style="flex:1">Start Tour</button>
-                <button id="tour-prev" style="flex:1">◂ Prev</button>
-                <button id="tour-next" style="flex:1">Next ▸</button>
-                <button id="tour-stop" style="flex:1">Stop</button>
+        <div id="tour-list" hidden></div>
+        <div id="tour-controls" hidden>
+            <div id="tour-info" style="padding:8px 12px;margin-bottom:8px;font-size:13px;color:#f3f3f3"></div>
+            <div style="display:flex;gap:8px;padding:0 12px 12px 12px;">
+                <button id="tour-start" style="flex:1;padding:8px">Start Tour</button>
+                <button id="tour-prev" style="flex:1;padding:8px">◂ Prev</button>
+                <button id="tour-next" style="flex:1;padding:8px">Next ▸</button>
+                <button id="tour-stop" style="flex:1;padding:8px">Stop</button>
             </div>
         </div>
     </div>
@@ -284,8 +285,7 @@
                     layersPanel.classList.add('highlight','pulse');
                     setTimeout(()=>{ layersPanel.classList.remove('pulse'); }, 2600);
                 }
-
-                // --- Tour UI wiring ---
+                // --- Tour UI wiring (robust) ---
                 const tourPanel = document.getElementById('tour-panel');
                 const tourToggle = document.getElementById('tour-toggle');
                 const tourControls = document.getElementById('tour-controls');
@@ -297,55 +297,53 @@
 
                 function buildTourUI(tourList){
                     if(!Array.isArray(tourList) || !tourList.length) return;
-                    // Find our classic flow tour if present, otherwise pick the first
-                    let tour = tourList.find(t => t.id === 'tour:classic-user-flow') || tourList[0];
+                    const tour = tourList.find(t => t.id === 'tour:classic-user-flow') || tourList[0];
                     tourPanel.dataset.activeTour = tour.id || (tour.title||'tour');
                     tourToggle.textContent = 'Tour ▾';
                     tourControls.removeAttribute('hidden');
                     tourInfo.textContent = tour.title + ' — ' + (tour.description || '');
 
-                    // attach handlers
-                    let currentIdx = -1;
-                    let highlighted = null;
+                    // build explicit steps array (prefer steps property)
+                    const steps = Array.isArray(tour.steps) ? tour.steps : (Array.isArray(tour.nodeIds) ? tour.nodeIds.map(nid=>({ nodeId: nid })) : []);
+                    let idx = -1;
+                    let currentHighlighted = null;
 
-                    function resetHighlight(nodeId){
-                        if(!nodeId) return;
-                        const original = nodeSet.get(nodeId);
-                        if(original){
-                            nodesDataSet.update({ id: nodeId, color: original.color, size: original.size });
+                    function clearHighlight(){
+                        if(currentHighlighted){
+                            const orig = nodeSet.get(currentHighlighted);
+                            if(orig) nodesDataSet.update({ id: currentHighlighted, color: orig.color, size: orig.size });
+                            currentHighlighted = null;
+                            network.unselectAll();
                         }
                     }
 
-                    function highlightNode(nodeId){
-                        if(!nodeId) return;
-                        // reset previous
-                        if(highlighted && highlighted !== nodeId) resetHighlight(highlighted);
-                        highlighted = nodeId;
-                        const n = nodesDataSet.get(nodeId);
-                        if(n){
-                            nodesDataSet.update({ id: nodeId, color: { background: '#ffd54f', border: '#ff6f00' }, size: Math.max(40, (n.size||26) + 16) });
-                            try { network.focus(nodeId, { scale: 1.4, animation: { duration: 400 } }); } catch (e){}
-                            network.selectNodes([nodeId]);
-                        }
+                    function focusAndHighlight(nid){
+                        if(!nid) return;
+                        const clean = cleanNodeId(nid);
+                        if(!nodesDataSet.get(clean)) return;
+                        clearHighlight();
+                        currentHighlighted = clean;
+                        const node = nodesDataSet.get(clean);
+                        nodesDataSet.update({ id: clean, color: { background:'#ffd54f', border:'#ff6f00' }, size: Math.max(42, (node.size||26)+18) });
+                        try { network.focus(clean, { scale: 1.4, animation: { duration: 400 } }); } catch(e){}
+                        try { network.selectNodes([clean]); } catch(e){}
                     }
 
-                    function goToStep(idx){
-                        const steps = tour.steps || tour.nodeIds || [];
-                        if(idx < 0 || idx >= steps.length) return;
-                        currentIdx = idx;
-                        const step = steps[idx];
+                    function showStep(i){
+                        if(i < 0 || i >= steps.length) return;
+                        idx = i;
+                        const step = steps[i];
                         const nid = step.nodeId || step;
-                        const title = step.title || ('Step ' + (idx+1));
+                        const title = step.title || ('Step ' + (i+1));
                         const text = step.text || '';
                         tourInfo.innerHTML = '<strong>' + title + '</strong><div style="font-size:12px;color:#dcdcdc;margin-top:6px">' + text + '</div>';
-                        const clean = cleanNodeId(nid);
-                        if(nodesDataSet.get(clean)) highlightNode(clean);
+                        focusAndHighlight(nid);
                     }
 
-                    tourStart.addEventListener('click', ()=>{ goToStep(0); });
-                    tourPrev.addEventListener('click', ()=>{ goToStep(Math.max(0, currentIdx - 1)); });
-                    tourNext.addEventListener('click', ()=>{ goToStep(Math.min((tour.steps||tour.nodeIds||[]).length - 1, currentIdx + 1)); });
-                    tourStop.addEventListener('click', ()=>{ if(highlighted) resetHighlight(highlighted); currentIdx = -1; tourInfo.textContent = tour.title + ' — ' + (tour.description||''); network.unselectAll(); });
+                    tourStart.onclick = ()=> showStep(0);
+                    tourPrev.onclick = ()=> showStep(Math.max(0, idx - 1));
+                    tourNext.onclick = ()=> showStep(Math.min(steps.length - 1, idx + 1));
+                    tourStop.onclick = ()=> { clearHighlight(); idx = -1; tourInfo.textContent = tour.title + ' — ' + (tour.description||''); };
                 }
 
                 tourToggle.addEventListener('click', ()=>{
@@ -356,6 +354,9 @@
 
                 if(Array.isArray(data.tour) && data.tour.length){
                     buildTourUI(data.tour);
+                    // briefly highlight tour panel so it's discoverable
+                    tourPanel.classList.add('highlight','pulse');
+                    setTimeout(()=> tourPanel.classList.remove('pulse'), 2600);
                 }
             })
             .catch(err => {
