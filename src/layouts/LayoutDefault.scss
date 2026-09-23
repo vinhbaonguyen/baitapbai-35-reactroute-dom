@@ -20,7 +20,8 @@ main {
 }
 
 // ── Hamburger button ──────────────────────────────────────────────────────
-input[type="checkbox"] {
+// input[type="checkbox"]
+ #toggle {
     position: absolute;
     opacity: 0;
 

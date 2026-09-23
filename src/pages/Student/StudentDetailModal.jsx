@@ -27,14 +27,25 @@ const TagList = ({ items = [] }) => (
 
 )
 // ── Main component ─────────────────────────────────────────────────────────
-export default function StudentDetailModal({ student, onClose, courseData }) {
+export default function StudentDetailModal({ student, onClose, courseData, studentCourses }) {
     const nodeRef = useRef(null)
     if (!student) return null
-    const courseName = courseData?.find(c => c.id === student.courseId)?.courseName ?? 'underfined'
+    // console.log("Data courseData ", courseData);
+    // student ở đây chính là 1 object của mappedData trong Student.jsx
+    // console.log("Data student ", student);
 
+    // const courseIds = student.courseIds ?? [];
+    // const displayCourseNames = courseIds.length > 0
+    //     ? courseIds.map(id => {
+    //         const course = courseData.find(c => Number(c.id) === Number(id));
+    //         return course ? course.courseName : `ID: ${id}`;
+    //     }).join(', ')
+    //     : 'Chưa Đăng Ký Khóa học';
+
+    // console.log("hasPaidFee raw:", student.hasPaidFee, typeof student.hasPaidFee)
     return (
         <Modal
-            isOpen={true}
+            isOpen={!!student}
             onRequestClose={onClose}
             style={getModalStyle('580px')}
             shouldFocusAfterRender={false}
@@ -58,15 +69,14 @@ export default function StudentDetailModal({ student, onClose, courseData }) {
             {/* Header */}
             <div className="ld-header">
                 <div className="ld-avatar">
-                    {/* {student.studentName?.charAt(0).toUpperCase() ?? '?'} */}
                     {getInitials(student.studentName ?? '')}
                 </div>
                 <div>
                     <h3 className="ld-header__name">{student.studentName}</h3>
                     <span className="ld-header__code">{student.studentCode}</span>
-                    <span className={`badge badge--${student.status?.toLowerCase()}`}>
+                    {/* <span className={`badge badge--${student.status?.toLowerCase()}`}>
                         {student.status}
-                    </span>
+                    </span> */}
                 </div>
                 <button className='ld-close' onClick={onClose}>X</button>
             </div>
@@ -78,18 +88,84 @@ export default function StudentDetailModal({ student, onClose, courseData }) {
                 <InfoRow label="Email" value={student.email} />
                 <InfoRow label="SĐT" value={student.phone} />
                 <InfoRow label="Địa chỉ" value={student.address} />
-                <InfoRow label="Trạng Thái" value={student.status} />
-
+                <InfoRow
+                    label="Trạng Thái"
+                    value={
+                        <span className={`badge badge--${student.status?.toLowerCase()}`}>
+                            {student.status}
+                        </span>
+                    }
+                />
             </div>
             {/* Lớp đang theo học */}
-            <SectionTitle>🏫 Đang Theo Học Khóa</SectionTitle>
-            <div className="ld-row">
-                {/* <span className="ld-row__label">Khóa Học</span> */}
-                {/* <TagList items={student.courseId} /> */}
-                {/* <InfoRow label="Khóa Học" value={student.courseId}/> */}
-                <InfoRow label="Khóa Học" value={courseName} />
+            {/* <SectionTitle>🏫 Đang Theo Học Khóa</SectionTitle>
+            <div className="ld-grid">
+                <InfoRow label="Khóa Học" value={displayCourseNames} />
+                <InfoRow
+                    label="Học Phí"
+                    value={
+                        <span className={`badge ${student.hasPaidFee ? 'badge--active' : 'badge--suspended'}`}>
+                            {student.hasPaidFee ? 'Đã Đóng' : 'Chưa Đóng'}
+                        </span>
+                    }
+                />
 
+            </div> */}
+            {/* Khóa học & Học phí */}
+            <SectionTitle>🏫 Khóa Học & Học Phí</SectionTitle>
+            <div className="ld-grid">
+                <InfoRow
+                    label="Tổng quan việc Đóng Học Phí"
+                    value={(() => {
+                        const total = studentCourses?.length ?? 0;
+                        const paid = studentCourses?.filter(sc => sc.hasPaidFee).length ?? 0;
+                        const color = paid === total && total > 0 ? 'badge--active' : 'badge--suspended';
+                        return (
+                            <span className={`badge ${color}`}>
+                                {total > 0 ? `${paid} / ${total} khóa học Đã Đóng Phí` : 'Chưa Đăng Ký Khóa Học'}
+                            </span>
+                        )
+                    })()}
+                />
             </div>
+            {/* Bảng chi tiết từng course */}
+            {studentCourses?.length > 0 && (
+                <table className="ld-fee-table">
+                    <thead>
+                        <tr>
+                            <th>Khóa Học</th>
+                            <th>Học Phí</th>
+                            <th>Trạng Thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {studentCourses.map(sc => {
+                            // Tìm course tương ứng trong courseData theo courseId
+                            const course = courseData.find(c => Number(c.id) === Number(sc.courseId));
+                            return (
+                                <tr key={sc.id}>
+                                    <td>{course?.courseName ?? `ID: ${sc.courseId}`}</td>
+                                    <td>
+                                        {course?.tuitionFee
+                                            ? `${course.tuitionFee.toLocaleString('vi-VN')} VND`
+                                            : '-'
+                                        }
+                                    </td>
+                                    <td>
+                                        <span className={`badge ${sc.hasPaidFee ? 'badge--active' : 'badge--suspended'}`}>
+                                            {sc.hasPaidFee ? '✅Đã Đóng' : '❌Chưa Đóng'}
+                                        </span>
+                                    </td>
+                                </tr>
+                            )
+                        })}
+
+                    </tbody>
+
+                </table>
+
+            )}
+
             {/* Thời gian */}
             <SectionTitle>🕐 Thời Gian</SectionTitle>
             <div className="ld-grid">

@@ -22,8 +22,8 @@
   background: $white;
   border-radius: $radius;
   border: 1px solid $border-color;
-  padding: 12px;
-  overflow: hidden;
+  padding: 4px;
+  overflow: auto;
 
   &__title {
     font-weight: 700;

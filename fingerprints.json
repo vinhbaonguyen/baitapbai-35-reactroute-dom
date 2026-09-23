@@ -1,0 +1,7706 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "b9812be0708e337e4e3de261ad7ccac7d909fbce",
+  "generatedAt": "2026-07-08T22:46:31.320Z",
+  "files": {
+    "eslint.config.js": {
+      "filePath": "eslint.config.js",
+      "contentHash": "bceb70e27d6dd774b2e61672d86f5fffa1d74db526b8b1cb2687dd3dc4976b89",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@eslint/js",
+          "specifiers": [
+            "js"
+          ]
+        },
+        {
+          "source": "globals",
+          "specifiers": [
+            "globals"
+          ]
+        },
+        {
+          "source": "eslint-plugin-react-hooks",
+          "specifiers": [
+            "reactHooks"
+          ]
+        },
+        {
+          "source": "eslint-plugin-react-refresh",
+          "specifiers": [
+            "reactRefresh"
+          ]
+        },
+        {
+          "source": "eslint/config",
+          "specifiers": [
+            "defineConfig",
+            "globalIgnores"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 31,
+      "hasStructuralAnalysis": true
+    },
+    "src/actions/authActions.js": {
+      "filePath": "src/actions/authActions.js",
+      "contentHash": "ec8bb0fb9a0c80ceec7c9d7a208aabd4f3ded375257b1004b4ea57dd6c3ac29c",
+      "functions": [
+        {
+          "name": "loginAction",
+          "params": [
+            "user"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "logoutAction",
+          "params": [],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "LOGIN",
+        "LOGOUT",
+        "loginAction",
+        "logoutAction"
+      ],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "src/actions/masterDataAction.js": {
+      "filePath": "src/actions/masterDataAction.js",
+      "contentHash": "3d9cc6e4352b824926e0003eff56ae625e06919b2d5ec3cfee4bb03b7d7e318c",
+      "functions": [
+        {
+          "name": "setMasterData",
+          "params": [
+            "payload"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "updateMasterEntity",
+          "params": [
+            "entity",
+            "action",
+            "item"
+          ],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "SET_MASTER_DATA",
+        "UPDATE_MASTER_ENTITY",
+        "setMasterData",
+        "updateMasterEntity"
+      ],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "src/actions/scoreAction.js": {
+      "filePath": "src/actions/scoreAction.js",
+      "contentHash": "28219dd82126c35c22bbfd0bc551a37b771c8bef1c9609f6bdc6b9000dd12ff5",
+      "functions": [
+        {
+          "name": "setScores",
+          "params": [
+            "scores"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "addScore",
+          "params": [
+            "score"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "updateScoreAction",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "deleteScoreAction",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "SET_SCORES",
+        "ADD_SCORE",
+        "UPDATE_SCORE",
+        "DELETE_SCORE",
+        "setScores",
+        "addScore",
+        "updateScoreAction",
+        "deleteScoreAction"
+      ],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "src/App.css": {
+      "filePath": "src/App.css",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "src/App.jsx": {
+      "filePath": "src/App.jsx",
+      "contentHash": "d7ca230b2bb4b3ae15a9f2de6c89ef3dfeca0ca1027e36fd941c0b9ef95c358a",
+      "functions": [
+        {
+          "name": "App",
+          "params": [],
+          "exported": false,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "RouterProvider"
+          ]
+        },
+        {
+          "source": "./routes",
+          "specifiers": [
+            "router"
+          ]
+        },
+        {
+          "source": "./hooks/useFetchMasterData",
+          "specifiers": [
+            "useFetchMasterData"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "src/assets/styles/abstracts/_mixins.scss": {
+      "filePath": "src/assets/styles/abstracts/_mixins.scss",
+      "contentHash": "da7959a2387f79a0ac4a0bcff0134cf8df3c42bed7e24324f463d730a5f3f768",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 126,
+      "hasStructuralAnalysis": false
+    },
+    "src/assets/styles/abstracts/_variables.scss": {
+      "filePath": "src/assets/styles/abstracts/_variables.scss",
+      "contentHash": "be9b01071321dd18314be1ad799f257892eae57ebd65da217d42dde1aa5a0d2c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 97,
+      "hasStructuralAnalysis": false
+    },
+    "src/assets/styles/base/_global.scss": {
+      "filePath": "src/assets/styles/base/_global.scss",
+      "contentHash": "12ecffba29ea795b616e4fce09f4afc636f81dd409469a7d4c3460ce198336a2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": false
+    },
+    "src/assets/styles/common.scss": {
+      "filePath": "src/assets/styles/common.scss",
+      "contentHash": "24234d971147b14167df71b3cf08a7b20d82e8fb410dcd3809a655a89f6c94b0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 303,
+      "hasStructuralAnalysis": false
+    },
+    "src/assets/styles/pages/main.scss": {
+      "filePath": "src/assets/styles/pages/main.scss",
+      "contentHash": "1a5e72cc35e21aed01533c6ec91d6d8e7a503aa7c467b3ca2ca28af319cc2299",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 28,
+      "hasStructuralAnalysis": false
+    },
+    "src/components/common/table/tableRender.jsx": {
+      "filePath": "src/components/common/table/tableRender.jsx",
+      "contentHash": "8aee105bb5e6b44dc6785ba369d727ba743bce829b79b1cdcdf051310267cd1f",
+      "functions": [
+        {
+          "name": "renderCell",
+          "params": [
+            "col",
+            "row",
+            "fieldMap"
+          ],
+          "exported": true,
+          "lineCount": 85
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/score/score.constants.js",
+          "specifiers": [
+            "CERTIFICATE_OPTIONS"
+          ]
+        },
+        {
+          "source": "../../../utils/field.util.jsx",
+          "specifiers": [
+            "formatValue"
+          ]
+        }
+      ],
+      "exports": [
+        "renderCell"
+      ],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/BranchPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/BranchPickerModal.jsx",
+      "contentHash": "4544242ea3de12c1b03673565bbeb71c93efecadc096c6ea88b50ce695c6531a",
+      "functions": [
+        {
+          "name": "BranchPickerModal",
+          "params": [
+            "{ current",
+            "branchOpts",
+            "onSelect",
+            "onClose }"
+          ],
+          "exported": false,
+          "lineCount": 71
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "branch"
+          ],
+          "exported": false,
+          "lineCount": 16
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertError"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/ClassPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/ClassPickerModal.jsx",
+      "contentHash": "305ffec3df1ed86fa07bbb53fde6ebb0d90e18813d95eaaa76ca8068aafc03bf",
+      "functions": [
+        {
+          "name": "getKey",
+          "params": [
+            "cls"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "toggle",
+          "params": [
+            "key"
+          ],
+          "exported": false,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../services/classService",
+          "specifiers": [
+            "getAll"
+          ]
+        },
+        {
+          "source": "@/services/classService",
+          "specifiers": [
+            "* as classService"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 153,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/ContractPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/ContractPickerModal.jsx",
+      "contentHash": "c68c520c14ea43c5f4a382e1d1766de964fb596439f40d343d1ac9387985ddcf",
+      "functions": [
+        {
+          "name": "ContractPickerModal",
+          "params": [
+            "{ current",
+            "onSelect",
+            "onClose",
+            "isAdmin",
+            "isEditMode }"
+          ],
+          "exported": false,
+          "lineCount": 68
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../constants/lecturer/lecturer.constants",
+          "specifiers": [
+            "CONTRACT_TYPES"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/CoursePickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/CoursePickerModal.jsx",
+      "contentHash": "ca002eb81a357ef64c39df3aa000e1a79db6f8798c7f41892bb2ab8522f86e15",
+      "functions": [
+        {
+          "name": "normalizeSelected",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "isActive",
+          "params": [
+            "courseId"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "courseId"
+          ],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "handleConfirm",
+          "params": [],
+          "exported": false,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertError"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertConfirm"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/PageComponent.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 196,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/DegreePickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/DegreePickerModal.jsx",
+      "contentHash": "c5c134d3e84f6f81cf4c200528210d6bf9dbcd205fb3816cb55382793e535fc1",
+      "functions": [
+        {
+          "name": "DegreePickerModal",
+          "params": [
+            "{ current",
+            "onSelect",
+            "onClose",
+            "degreeOpts"
+          ],
+          "exported": false,
+          "lineCount": 73
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "degree"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "handleConfirm",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 79,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/LecturePickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/LecturePickerModal.jsx",
+      "contentHash": "6de301f0af9b85cffab23c92fba616027dae758c7aa61ee377ba6f7f0f29f697",
+      "functions": [
+        {
+          "name": "LecturePickerModal",
+          "params": [
+            "{ lectureData",
+            "selected",
+            "onSave",
+            "onClose }"
+          ],
+          "exported": false,
+          "lineCount": 91
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "lectureId"
+          ],
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertError"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/PageComponent.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 101,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/ScoreStudentPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/ScoreStudentPickerModal.jsx",
+      "contentHash": "c6e820e110c48c9251b1e916054299ce43cfc77d1e6d55e576cd50b9140a58cb",
+      "functions": [
+        {
+          "name": "handlePick",
+          "params": [
+            "studentId"
+          ],
+          "exported": false,
+          "lineCount": 2
+        },
+        {
+          "name": "handleConfirm",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectStudents"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 161,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/SkillPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/SkillPickerModal.jsx",
+      "contentHash": "f6beac0f7635ebebc45a9545a9fe8df8985353b13232cbf4c4667cd3fefd7f74",
+      "functions": [
+        {
+          "name": "SkillPickerModal",
+          "params": [
+            "{ selected",
+            "onSave",
+            "onClose }"
+          ],
+          "exported": false,
+          "lineCount": 116
+        },
+        {
+          "name": "toogle",
+          "params": [
+            "skill"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "addCustom",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../constants/lecturer/lecturer.constants",
+          "specifiers": [
+            "PRESET_SKILLS"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 125,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/SpecialtyPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "contentHash": "b0ac64c94d2d88a384e1cca7533e4aecd3893a0b1992ae1b792cc714fe6f8dd6",
+      "functions": [
+        {
+          "name": "SpecialtyPickerModal",
+          "params": [
+            "{ current",
+            "onSelect",
+            "onClose",
+            "modalTitle }"
+          ],
+          "exported": false,
+          "lineCount": 70
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "specialtyName"
+          ],
+          "exported": false,
+          "lineCount": 2
+        },
+        {
+          "name": "handleConfirm",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "../../constants/lecturer/lecturer.constants",
+          "specifiers": [
+            "SPECIALTY_LIST"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/StatusPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/StatusPickerModal.jsx",
+      "contentHash": "bfa480fc04727663489ff06323465bc079bbc6a666869e899173dab46e1d1e03",
+      "functions": [
+        {
+          "name": "StatusPickerModal",
+          "params": [
+            "{ current",
+            "onSelect",
+            "onClose",
+            "statusOpts"
+          ],
+          "exported": false,
+          "lineCount": 72
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "status"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "handleConfirm",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/StudentListPickerModal copy.jsx": {
+      "filePath": "src/components/CommonPickers/StudentListPickerModal copy.jsx",
+      "contentHash": "799356313f575acce2e2a515f9575208b10a76260557e92a7c50683a114798fa",
+      "functions": [
+        {
+          "name": "fetchData",
+          "params": [],
+          "exported": false,
+          "lineCount": 62
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "id"
+          ],
+          "exported": false,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../services/studentCourseService.js",
+          "specifiers": [
+            "* as studentCourseService"
+          ]
+        },
+        {
+          "source": "../../services/studentService.js",
+          "specifiers": [
+            "* as studentService"
+          ]
+        },
+        {
+          "source": "@/constants/modalStyles.js",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors.js",
+          "specifiers": [
+            "selectStudents"
+          ]
+        },
+        {
+          "source": "@/hooks/useLookupMap.js",
+          "specifiers": [
+            "useLookupMaps"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 181,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/StudentListPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/StudentListPickerModal.jsx",
+      "contentHash": "7edf67a38d26caa964e54df4a0fabd62624ad98f132104b90827edff55d31b55",
+      "functions": [
+        {
+          "name": "formatVND",
+          "params": [
+            "amount"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "buildGmailLink",
+          "params": [
+            "{ to",
+            "subject",
+            "body }"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "buildSendMailLink",
+          "params": [
+            "{ student",
+            "courseName",
+            "tuitionFee }"
+          ],
+          "exported": false,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useEffect",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectStudents",
+            "selectCourses",
+            "selectClasses",
+            "selectStudentClass"
+          ]
+        },
+        {
+          "source": "../../services/studentCourseService",
+          "specifiers": [
+            "* as studentCourseService"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertInfo"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 545,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/Footer/Footer.jsx": {
+      "filePath": "src/components/Footer/Footer.jsx",
+      "contentHash": "d1ddb826fa3e47fdb71e3f28e3743fc60a2405f96de79754080c23400205ede4",
+      "functions": [
+        {
+          "name": "Footer",
+          "params": [],
+          "exported": false,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "./Footer.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/Footer/Footer.scss": {
+      "filePath": "src/components/Footer/Footer.scss",
+      "contentHash": "4c40ef00cfb4b0a6736f652f00f2f40dc13b429afd80b823af49dcdeabdc057f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": false
+    },
+    "src/components/FormControls/FormItem.jsx": {
+      "filePath": "src/components/FormControls/FormItem.jsx",
+      "contentHash": "e1faf469f9f0b661cd14179d03995162c10ffb881b0f942feace2a1e843a0c1a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/FormControls/FormRenderer.jsx": {
+      "filePath": "src/components/FormControls/FormRenderer.jsx",
+      "contentHash": "f66d4e4490146f028263ffb5e00f8c468afc663562493c567e15a1a6446c01a5",
+      "functions": [
+        {
+          "name": "normalizeType",
+          "params": [
+            "f"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "getDisplayValue",
+          "params": [
+            "fieldName",
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "./FormItem",
+          "specifiers": [
+            "FormItem"
+          ]
+        },
+        {
+          "source": "./PickerControl",
+          "specifiers": [
+            "PickerControl"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 203,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/FormControls/PickerBtn.jsx": {
+      "filePath": "src/components/FormControls/PickerBtn.jsx",
+      "contentHash": "8e8e2781577e5c225abd33eee559b4ecf1b41cf0de480606e62cc48cfe2acbdc",
+      "functions": [
+        {
+          "name": "renderContent",
+          "params": [],
+          "exported": false,
+          "lineCount": 20
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "PickerBtn"
+      ],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/FormControls/PickerControl.jsx": {
+      "filePath": "src/components/FormControls/PickerControl.jsx",
+      "contentHash": "e1f1cec372e3ba13807b660766a18dd15024cfb1e6d51d00df6ccda70a355db8",
+      "functions": [
+        {
+          "name": "renderContent",
+          "params": [
+            "value",
+            "placeholder",
+            "displayValue",
+            "displayType"
+          ],
+          "exported": false,
+          "lineCount": 32
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "PickerControl"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/Header/Header.jsx": {
+      "filePath": "src/components/Header/Header.jsx",
+      "contentHash": "fdd8a49c03ca78e112018cbe12032fd9cdd0b0a813ed8eb5a66697c70f3768a0",
+      "functions": [
+        {
+          "name": "Header",
+          "params": [],
+          "exported": false,
+          "lineCount": 51
+        },
+        {
+          "name": "handleLogoutIn",
+          "params": [],
+          "exported": false,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useNavigate"
+          ]
+        },
+        {
+          "source": "../../assets/image/logo-rikkei2.png",
+          "specifiers": [
+            "logo"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useDispatch",
+            "useSelector"
+          ]
+        },
+        {
+          "source": "../../actions/authActions",
+          "specifiers": [
+            "loginAction",
+            "logoutAction"
+          ]
+        },
+        {
+          "source": "./Header.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 58,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/Header/Header.scss": {
+      "filePath": "src/components/Header/Header.scss",
+      "contentHash": "6b7e64801a5a89a5b29de4f56490c3942703dd38a7b06fd44936513c070c2f1c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 169,
+      "hasStructuralAnalysis": false
+    },
+    "src/components/PageComponent/DataTable.jsx": {
+      "filePath": "src/components/PageComponent/DataTable.jsx",
+      "contentHash": "dfa6b9768bfd82b490415d895bd5d68b5d26e7e1617fd15887d4fea8971b527c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "memo",
+            "useMemo"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "Reorder"
+          ]
+        },
+        {
+          "source": "./../common/table/tableRender.jsx",
+          "specifiers": [
+            "renderCell"
+          ]
+        },
+        {
+          "source": "../../utils/field.util",
+          "specifiers": [
+            "buildFieldMap"
+          ]
+        },
+        {
+          "source": "./PageComponent.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 92,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PageComponent/HistoryModal.jsx": {
+      "filePath": "src/components/PageComponent/HistoryModal.jsx",
+      "contentHash": "3155fff546c4375c47c1f6f22b2438c3f98524425f1b4688c85594f583726921",
+      "functions": [
+        {
+          "name": "HistoryModal",
+          "params": [
+            "{ entityCode",
+            "logs",
+            "loading",
+            "onClose",
+            "fields"
+          ],
+          "exported": false,
+          "lineCount": 100
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "memo"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "../../utils/date.utils",
+          "specifiers": [
+            "formatDateHistory"
+          ]
+        },
+        {
+          "source": "../../utils/field.util.jsx",
+          "specifiers": [
+            "buildFieldMap",
+            "formatValue"
+          ]
+        },
+        {
+          "source": "./PageComponent.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 118,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PageComponent/PageComponent.scss": {
+      "filePath": "src/components/PageComponent/PageComponent.scss",
+      "contentHash": "256abf2e1a298d87ed4729985453932f6016bb26dca1728a62548a43922b4eb8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1256,
+      "hasStructuralAnalysis": false
+    },
+    "src/components/PageComponent/PageHeader.jsx": {
+      "filePath": "src/components/PageComponent/PageHeader.jsx",
+      "contentHash": "d910ced53271d0216863e90b9d4ec75683b0438419b2a24f78085bc45311cc98",
+      "functions": [
+        {
+          "name": "PageHeader",
+          "params": [
+            "{title",
+            "desc}"
+          ],
+          "exported": false,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "memo"
+          ]
+        },
+        {
+          "source": "./PageComponent.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PageComponent/Pagination.jsx": {
+      "filePath": "src/components/PageComponent/Pagination.jsx",
+      "contentHash": "8aa9cf3eaee4513c49627b1cb8c3932ffcf94bf277848d8ec5f38f6e0b040db8",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "memo",
+            "useMemo"
+          ]
+        },
+        {
+          "source": "./PageComponent.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 84,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PageComponent/SharedModal.jsx": {
+      "filePath": "src/components/PageComponent/SharedModal.jsx",
+      "contentHash": "631852fa6611c126f4eeb7e5fc4ee0467294538ac98acc79a579b5431e30643b",
+      "functions": [
+        {
+          "name": "SharedModal",
+          "params": [
+            "{ title",
+            "fields",
+            "editItem",
+            "onSave",
+            "onClose",
+            "statusOpts",
+            "newCode",
+            "courseData",
+            "displayMaps }"
+          ],
+          "exported": false,
+          "lineCount": 252
+        },
+        {
+          "name": "handleTogglePaid",
+          "params": [
+            "courseId"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "sweetalert2",
+          "specifiers": [
+            "Swal"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "memo",
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "../../hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "../FormControls/FormRenderer",
+          "specifiers": [
+            "FormRenderer"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertError"
+          ]
+        },
+        {
+          "source": "../CommonPickers/ClassPickerModal",
+          "specifiers": [
+            "ClassPickerModal"
+          ]
+        },
+        {
+          "source": "../FormControls/FormItem",
+          "specifiers": [
+            "FormItem"
+          ]
+        },
+        {
+          "source": "../CommonPickers/StatusPickerModal",
+          "specifiers": [
+            "StatusPickerModal"
+          ]
+        },
+        {
+          "source": "../FormControls/PickerControl",
+          "specifiers": [
+            "PickerControl"
+          ]
+        },
+        {
+          "source": "@/constants/students/student.constants.jsx",
+          "specifiers": [
+            "STUDENT_STATUS_OPTIONS"
+          ]
+        },
+        {
+          "source": "../CommonPickers/CoursePickerModal",
+          "specifiers": [
+            "CoursePickerModal"
+          ]
+        },
+        {
+          "source": "../CommonPickers/SpecialtyPickerModal",
+          "specifiers": [
+            "SpecialtyPickerModal"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "./PageComponent.scss",
+          "specifiers": []
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 275,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PageComponent/Toolbar.jsx": {
+      "filePath": "src/components/PageComponent/Toolbar.jsx",
+      "contentHash": "63df698d69611a4a33ebefeb34509f9eef01d06118c511e04dcb18eebd88b2b8",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "memo"
+          ]
+        },
+        {
+          "source": "./PageComponent.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 50,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ProtectRoute.jsx": {
+      "filePath": "src/components/ProtectRoute.jsx",
+      "contentHash": "00167a23852295e7a7936775c7e3007eb32efbb0f17a4d256beb554062e5bb13",
+      "functions": [
+        {
+          "name": "ProtectRoute",
+          "params": [
+            "{ children }"
+          ],
+          "exported": false,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "Navigate"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/classes/classes.constant.js": {
+      "filePath": "src/constants/classes/classes.constant.js",
+      "contentHash": "c898b6a500ab8b1986421c7a060d1460e7f4216a8c7d93b5e19ad1c4b1f6ebda",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "CLASSES_SORT_OPTION",
+        "CLASSES_TABLE_COLUMNS",
+        "CLASSES_STATUS_OPTIONS",
+        "BRAND_NAME"
+      ],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/classes/classes.fields.js": {
+      "filePath": "src/constants/classes/classes.fields.js",
+      "contentHash": "4e60a50799ae4b18e926dc80f14ceb8078e6932cabe3609d0b2cd8ebafcb8fe5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "CLASSES_FIELDS"
+      ],
+      "totalLines": 121,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/classRoom/classroom.constants.js": {
+      "filePath": "src/constants/classRoom/classroom.constants.js",
+      "contentHash": "3f9b388d3d0500c6e64dbb49bbaf8076c55da14684d8a8fb14b8e3a41447bd75",
+      "functions": [
+        {
+          "name": "generateTimeSlots",
+          "params": [
+            "startHour",
+            "endHour"
+          ],
+          "exported": false,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "SLOT_DURATION_MINUTES",
+        "SLOTS_PER_HOUR",
+        "TIME_SLOTS",
+        "ROOMS",
+        "DAYS",
+        "DURATION_OPTIONS",
+        "CLASS_COLORS",
+        "SCHEDULE_FIELDS"
+      ],
+      "totalLines": 71,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/courses/course.constants.jsx": {
+      "filePath": "src/constants/courses/course.constants.jsx",
+      "contentHash": "ee89a79afcf17689548590003e77cbb673c45705159f90934506bc60c0afeabf",
+      "functions": [
+        {
+          "name": "formatVND",
+          "params": [
+            "amount"
+          ],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "COURSE_TABLE_COLUMNS",
+        "COURSE_SORT_OPTIONS",
+        "COURSE_STATUS_OPTIONS"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/courses/course.fields.js": {
+      "filePath": "src/constants/courses/course.fields.js",
+      "contentHash": "dd3b67083a93a3ce6d4902b44e37533f7f0fa362a8f756f13eead122467ae107",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "COURSE_FIELDS"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/home/enrollmentstatusmodal.constants.js": {
+      "filePath": "src/constants/home/enrollmentstatusmodal.constants.js",
+      "contentHash": "d508958c34f4e5f240d62feea86abb0ec72581eaebdfec59edc7f7cb53c65ecc",
+      "functions": [
+        {
+          "name": "getSummaryPillsConfig",
+          "params": [
+            "summary"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getSummaryPills",
+          "params": [
+            "summary"
+          ],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "getSummaryPillsConfig",
+        "ENROLLTABLE_SCHEDULE_STATUS",
+        "FILTERS",
+        "DAY_MAP",
+        "ENROLLTABLE_COLUMN_NAME",
+        "TABLE_HEADERS",
+        "getSummaryPills"
+      ],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/lecturer/lecture.fields.js": {
+      "filePath": "src/constants/lecturer/lecture.fields.js",
+      "contentHash": "c84ec988e8118310ab7ac769fb36454fa18999d08938a9c878bf0f3afffa22ea",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "LECTURE_FIELDS"
+      ],
+      "totalLines": 160,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/lecturer/lecturer.constants.js": {
+      "filePath": "src/constants/lecturer/lecturer.constants.js",
+      "contentHash": "977ecc1a148fd0e40dd5daf4bcc1db411cbd469f9fdc9277d8db99b62bf10a68",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "CONTRACT_TYPES",
+        "CONTRACT_SALARY",
+        "CONTRACT_DESCRIPTION",
+        "PRESET_SKILLS",
+        "LECTURE_STATUS_OPTIONS",
+        "SORT_OPTION",
+        "LECTURE_TABLE_COLUMNS",
+        "SPECIALTY_LIST",
+        "LECTURE_DEGREE_OPTIONS"
+      ],
+      "totalLines": 100,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/login/login.fields.js": {
+      "filePath": "src/constants/login/login.fields.js",
+      "contentHash": "f2590190c29e9bc6d265de748d356f2f24ebec75a0fa57a1430bdd77ff2cdb1b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "LOGIN_FIELDS",
+        "FORGOT_FIELDS",
+        "RESET_FIELDS"
+      ],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/modalStyles.js": {
+      "filePath": "src/constants/modalStyles.js",
+      "contentHash": "66ce62ffe537a9266e66c3f03b3194a379cda3da7a88ab9d5c5ca7eb1a0a5980",
+      "functions": [
+        {
+          "name": "getModalStyle",
+          "params": [
+            "width"
+          ],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "BASE_MODAL_STYLE",
+        "getModalStyle"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/profile/profile.password.fields.js": {
+      "filePath": "src/constants/profile/profile.password.fields.js",
+      "contentHash": "f9b2fed7fffaba86fb557e19adb4508ea83213148be7b8e6ad8087859875bf80",
+      "functions": [
+        {
+          "name": "PROFILE_PASSWORD_FIELDS",
+          "params": [
+            "isAdmin"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "PROFILE_PASSWORD_FIELDS"
+      ],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/register/register.fields.js": {
+      "filePath": "src/constants/register/register.fields.js",
+      "contentHash": "5126d0d5bbf4bc99a4c16e4060962baff8d9a7b001370cdc2732f8ed0c7568a6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "REGISTER_FIELD"
+      ],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/score/score.constants.js": {
+      "filePath": "src/constants/score/score.constants.js",
+      "contentHash": "5e75edad1bd82ce0bbb879f6f536d81027bbdc2f791352a740f43dd12085debc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "SCORE_RESULT_OPTIONS",
+        "CERTIFICATE_OPTIONS",
+        "SCORE_TABLE_COLUMNS",
+        "SCORE_SORT_OPTIONS"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/score/score.fields.js": {
+      "filePath": "src/constants/score/score.fields.js",
+      "contentHash": "a71ecc02c04edac6d55a8464f77b85f80e0f29219549176a7c1dc718f32c2747",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "SCORE_FIELDS"
+      ],
+      "totalLines": 151,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/students/student.constants.jsx": {
+      "filePath": "src/constants/students/student.constants.jsx",
+      "contentHash": "cb03e6713223f070ca60ba7e23760e009a586613cc3231690090f5064ba9a237",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "STUDENT_TABLE_COLUMNS",
+        "STUDENT_SORT_OPTIONS",
+        "STUDENT_STATUS_OPTIONS"
+      ],
+      "totalLines": 41,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/students/student.fields.js": {
+      "filePath": "src/constants/students/student.fields.js",
+      "contentHash": "4bbcce824b5e0b217ee07883068021cc168fb73b72bb4d2418fbf081b64fde7d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "STUDENTS_FIELDS"
+      ],
+      "totalLines": 150,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/users/user.constants.jsx": {
+      "filePath": "src/constants/users/user.constants.jsx",
+      "contentHash": "5b7836c155703e2b4188b4f2bf00246fbf930ef04d826c50a606a60aee03eaed",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "USER_TABLE_COLUMNS",
+        "USER_SORT_OPTIONS",
+        "USER_STATUS_OPTIONS"
+      ],
+      "totalLines": 25,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/users/user.fields.js": {
+      "filePath": "src/constants/users/user.fields.js",
+      "contentHash": "9b6f33d4f361bc5f3c95e775c592e9ef70ca041d05f5cad66590d5a29d86731f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "USER_FIELDS"
+      ],
+      "totalLines": 83,
+      "hasStructuralAnalysis": true
+    },
+    "src/helpers/homeHelpers.js": {
+      "filePath": "src/helpers/homeHelpers.js",
+      "contentHash": "215a2deb8683662b61ee880e4dcd0be6836b90df16691e5fc0f78e15397342a5",
+      "functions": [
+        {
+          "name": "buildScoreStats",
+          "params": [
+            "scores"
+          ],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "getDonutData",
+          "params": [
+            "stats"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "getLegendData",
+          "params": [
+            "stats"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "getGreeting",
+          "params": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "buildConicGradient",
+          "params": [
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "feeDonutData",
+          "params": [
+            "feeOverview"
+          ],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "buildScoreStats",
+        "getDonutData",
+        "getLegendData",
+        "getGreeting",
+        "buildConicGradient",
+        "feeDonutData"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useAuditLog.jsx": {
+      "filePath": "src/hooks/useAuditLog.jsx",
+      "contentHash": "3d20c9a0f400556c0217d01c4d7863e3cad0814ea46d07c8e0fc65ad6092ab34",
+      "functions": [
+        {
+          "name": "useAuditLog",
+          "params": [
+            "entityType"
+          ],
+          "exported": false,
+          "lineCount": 48
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useCallback",
+            "useState"
+          ]
+        },
+        {
+          "source": "../services/auditLogService",
+          "specifiers": [
+            "createLog",
+            "getByEntity"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useComponentData.jsx": {
+      "filePath": "src/hooks/useComponentData.jsx",
+      "contentHash": "1f3a42f9a5d726831bf8ba5bd5a2f8fd6a97a1ca3e3d5bdfa46248b67ce54424",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useCallback",
+            "useEffect",
+            "useMemo",
+            "useState"
+          ]
+        },
+        {
+          "source": "./useFetchData",
+          "specifiers": [
+            "useFetchData"
+          ]
+        },
+        {
+          "source": "./useSearch",
+          "specifiers": [
+            "useSearch"
+          ]
+        },
+        {
+          "source": "./useCrud",
+          "specifiers": [
+            "useCrud"
+          ]
+        },
+        {
+          "source": "./usePagination",
+          "specifiers": [
+            "usePagination"
+          ]
+        },
+        {
+          "source": "./useSort",
+          "specifiers": [
+            "useSort"
+          ]
+        },
+        {
+          "source": "./useReorder",
+          "specifiers": [
+            "useReorder"
+          ]
+        },
+        {
+          "source": "../utils/compareData",
+          "specifiers": [
+            "compareData"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertConfirm",
+            "alertError",
+            "alertSuccess"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 170,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useCrud.jsx": {
+      "filePath": "src/hooks/useCrud.jsx",
+      "contentHash": "8e8c9ce8d9cd0bd1cd5191af0b672094ff73113f8630e44d7828c755ab3dd6ee",
+      "functions": [
+        {
+          "name": "useCrud",
+          "params": [
+            "service"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "create",
+          "params": [
+            "formData"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "formData"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": false,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useFetchData.jsx": {
+      "filePath": "src/hooks/useFetchData.jsx",
+      "contentHash": "724a4fa5be3b442b48bcc10bbebb8afc2f8aff1804bf8cb8b714f71ed8f0d630",
+      "functions": [
+        {
+          "name": "useFetchData",
+          "params": [
+            "service",
+            "enrich"
+          ],
+          "exported": false,
+          "lineCount": 32
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useEffect",
+            "useState"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useFetchMasterData.js": {
+      "filePath": "src/hooks/useFetchMasterData.js",
+      "contentHash": "f4225262ca6646f1464a4168d43001d8fa4ccbe1571e495d61c4719d14938dca",
+      "functions": [
+        {
+          "name": "useFetchMasterData",
+          "params": [],
+          "exported": false,
+          "lineCount": 20
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectMasterLoaded"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useDispatch",
+            "useSelector"
+          ]
+        },
+        {
+          "source": "../services/courseService",
+          "specifiers": [
+            "* as courseService"
+          ]
+        },
+        {
+          "source": "../services/studentService",
+          "specifiers": [
+            "* as studentService"
+          ]
+        },
+        {
+          "source": "../services/lectureService",
+          "specifiers": [
+            "* as lectureService"
+          ]
+        },
+        {
+          "source": "../services/classService",
+          "specifiers": [
+            "* as classesService"
+          ]
+        },
+        {
+          "source": "../services/classScheduleService",
+          "specifiers": [
+            "* as classScheduleService"
+          ]
+        },
+        {
+          "source": "../services/studentClassService",
+          "specifiers": [
+            "* as studentClassService"
+          ]
+        },
+        {
+          "source": "../services/studentCourseService",
+          "specifiers": [
+            "* as studentCourseService"
+          ]
+        },
+        {
+          "source": "@/actions/masterDataAction",
+          "specifiers": [
+            "setMasterData"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useForm.jsx": {
+      "filePath": "src/hooks/useForm.jsx",
+      "contentHash": "d724fc446ed1c554d484605d225cec406d55568b107abbeeadafee71576e8347",
+      "functions": [
+        {
+          "name": "useForm",
+          "params": [
+            "{ fields",
+            "editItem",
+            "dependencies",
+            "onFieldsChange }"
+          ],
+          "exported": false,
+          "lineCount": 129
+        },
+        {
+          "name": "handleBlur",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useCallback",
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "./../validators/formValidator",
+          "specifiers": [
+            "validateForm"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 140,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useLookupMap.js": {
+      "filePath": "src/hooks/useLookupMap.js",
+      "contentHash": "d7124f76a5cfedad6c49a6430ea900267c1de0709b05546c8c771c197056b2b5",
+      "functions": [
+        {
+          "name": "useLookupMaps",
+          "params": [
+            "data",
+            "keyField",
+            "fieldName"
+          ],
+          "exported": false,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useMemo"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/usePagination.jsx": {
+      "filePath": "src/hooks/usePagination.jsx",
+      "contentHash": "530677a1dbbe3d5e2f6f81f9191bf3cef5bfc64f20bd7392c083012f76cbfac6",
+      "functions": [
+        {
+          "name": "usePagination",
+          "params": [
+            "data",
+            "initialPageSize"
+          ],
+          "exported": false,
+          "lineCount": 31
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useMemo",
+            "useState"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 34,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useReorder.jsx": {
+      "filePath": "src/hooks/useReorder.jsx",
+      "contentHash": "e0d03b1d101d8dacd2829928fdad2b32a3da70c67015d5bf7a6d0a6c5bcdd1b6",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useEffect",
+            "useRef"
+          ]
+        },
+        {
+          "source": "sweetalert2",
+          "specifiers": [
+            "Swal"
+          ]
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 56,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useSearch.jsx": {
+      "filePath": "src/hooks/useSearch.jsx",
+      "contentHash": "3335d7c26e9240b326ef3e0c8a0e4d3356ca90e045d901c105e53a49801b58bc",
+      "functions": [
+        {
+          "name": "useSearch",
+          "params": [
+            "delay"
+          ],
+          "exported": false,
+          "lineCount": 24
+        },
+        {
+          "name": "onSearchChange",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useSort.jsx": {
+      "filePath": "src/hooks/useSort.jsx",
+      "contentHash": "7d42b4f9910b7a2055e921371afb78b58a9de17763044e7ba9ad0c1589d54a12",
+      "functions": [
+        {
+          "name": "useSort",
+          "params": [
+            "data",
+            "customSort"
+          ],
+          "exported": false,
+          "lineCount": 59
+        },
+        {
+          "name": "onSortField",
+          "params": [
+            "field"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "toggleSortOrder",
+          "params": [],
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useMemo",
+            "useState"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 62,
+      "hasStructuralAnalysis": true
+    },
+    "src/index.css": {
+      "filePath": "src/index.css",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "src/layouts/LayoutDefault.jsx": {
+      "filePath": "src/layouts/LayoutDefault.jsx",
+      "contentHash": "d7c6f2ed3d37236a9b3161dcfb69041a0006e8c81b24b9f22751c0803edc81a2",
+      "functions": [
+        {
+          "name": "LayoutDefault",
+          "params": [],
+          "exported": false,
+          "lineCount": 81
+        },
+        {
+          "name": "navLinkActive",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "closeMenu",
+          "params": [],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "handleBlogEnter",
+          "params": [],
+          "exported": false,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useState",
+            "useRef"
+          ]
+        },
+        {
+          "source": "react-dom",
+          "specifiers": [
+            "ReactDOM"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "NavLink",
+            "Outlet"
+          ]
+        },
+        {
+          "source": "../components/Header/Header",
+          "specifiers": [
+            "Header"
+          ]
+        },
+        {
+          "source": "../components/Footer/Footer",
+          "specifiers": [
+            "Footer"
+          ]
+        },
+        {
+          "source": "./LayoutDefault.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    "src/layouts/LayoutDefault.scss": {
+      "filePath": "src/layouts/LayoutDefault.scss",
+      "contentHash": "77a5871e2364743db7bd9ef84edb72c91a4e75a3b5e0fcdc08dd5294634fa3ba",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 177,
+      "hasStructuralAnalysis": false
+    },
+    "src/main.jsx": {
+      "filePath": "src/main.jsx",
+      "contentHash": "ed127674e860452e6828294ba8488ab2222c2e10e84c7ea7f0aed823c53bc67e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "StrictMode"
+          ]
+        },
+        {
+          "source": "react-dom/client",
+          "specifiers": [
+            "createRoot"
+          ]
+        },
+        {
+          "source": "./App.jsx",
+          "specifiers": [
+            "App"
+          ]
+        },
+        {
+          "source": "redux",
+          "specifiers": [
+            "createStore"
+          ]
+        },
+        {
+          "source": "./reducers/index.js",
+          "specifiers": [
+            "allReducers"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "Provider"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "./assets/styles/pages/main.scss",
+          "specifiers": []
+        },
+        {
+          "source": "animate.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [],
+      "totalLines": 25,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/About.jsx": {
+      "filePath": "src/pages/About.jsx",
+      "contentHash": "2d294a38e82e94bc6eb92347a71024dc54442c3af1ddb5baba6413ca02c70d52",
+      "functions": [
+        {
+          "name": "About",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/blog/BlogLayout.jsx": {
+      "filePath": "src/pages/blog/BlogLayout.jsx",
+      "contentHash": "782f375d34fc638b843d0c7bcc9030af498ddc0f60db75f0862c033c375b8b74",
+      "functions": [
+        {
+          "name": "BlogLayout",
+          "params": [],
+          "exported": false,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "Outlet"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/blog/BlogNews.jsx": {
+      "filePath": "src/pages/blog/BlogNews.jsx",
+      "contentHash": "39ce73bcc068a008678e964294aa25f5192b64ee0d87c7b1c13e9ac0e02fceb5",
+      "functions": [
+        {
+          "name": "BlogNews",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/blog/BlogRelated.jsx": {
+      "filePath": "src/pages/blog/BlogRelated.jsx",
+      "contentHash": "71577d18151bd01f795fd8c69f4d5aa9501ba7eabcdd8b9d2473d4eab6821db2",
+      "functions": [
+        {
+          "name": "BlogRelated",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Cart/Cart.jsx": {
+      "filePath": "src/pages/Cart/Cart.jsx",
+      "contentHash": "e9b9e88526e6c61622782b16ddd5ee91ca36d60b255c2cf717d65386d9215ff0",
+      "functions": [
+        {
+          "name": "Cart",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Classes/Class.jsx": {
+      "filePath": "src/pages/Classes/Class.jsx",
+      "contentHash": "0e548ebb14689ab28e859c929a137a58adc99316cf37ed0868c9f80fc64b661d",
+      "functions": [
+        {
+          "name": "Class",
+          "params": [],
+          "exported": false,
+          "lineCount": 241
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/hooks/useComponentData",
+          "specifiers": [
+            "useComponentData"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useEffect",
+            "useMemo",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/hooks/useAuditLog",
+          "specifiers": [
+            "useAuditLog"
+          ]
+        },
+        {
+          "source": "@/constants/classes/classes.fields",
+          "specifiers": [
+            "CLASSES_FIELDS"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/PageHeader",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/Toolbar",
+          "specifiers": [
+            "Toolbar"
+          ]
+        },
+        {
+          "source": "@/constants/classes/classes.constant",
+          "specifiers": [
+            "CLASSES_SORT_OPTION",
+            "CLASSES_TABLE_COLUMNS"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/DataTable",
+          "specifiers": [
+            "DataTable"
+          ]
+        },
+        {
+          "source": "./ClassModal",
+          "specifiers": [
+            "ClassModal"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/HistoryModal",
+          "specifiers": [
+            "HistoryModal"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/Pagination",
+          "specifiers": [
+            "Pagination"
+          ]
+        },
+        {
+          "source": "../../services/lectureService",
+          "specifiers": [
+            "* as lectureService"
+          ]
+        },
+        {
+          "source": "@/services/classService",
+          "specifiers": [
+            "* as classService"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertConfirm",
+            "alertError",
+            "alertInfo"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useDispatch",
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectClasses",
+            "selectCourses",
+            "selectLectures"
+          ]
+        },
+        {
+          "source": "@/actions/masterDataAction",
+          "specifiers": [
+            "updateMasterEntity"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useLocation",
+            "useNavigate"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 262,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Classes/ClassModal.jsx": {
+      "filePath": "src/pages/Classes/ClassModal.jsx",
+      "contentHash": "bc188e014c6d9173cb711ce6e6e3ce996d258ffe55841080e27574026615c7eb",
+      "functions": [
+        {
+          "name": "generateClassCodeForClass",
+          "params": [
+            "courseName",
+            "allClasses",
+            "branch"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 92
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "@/utils/class.utils",
+          "specifiers": [
+            "generateClassCode",
+            "getClassIndexInMonth"
+          ]
+        },
+        {
+          "source": "@/constants/classes/classes.fields",
+          "specifiers": [
+            "CLASSES_FIELDS"
+          ]
+        },
+        {
+          "source": "@/hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertConfirm",
+            "alertError",
+            "alertSuccess"
+          ]
+        },
+        {
+          "source": "@/components/FormControls/FormRenderer",
+          "specifiers": [
+            "FormRenderer"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/LecturePickerModal",
+          "specifiers": [
+            "LecturePickerModal"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/StatusPickerModal",
+          "specifiers": [
+            "StatusPickerModal"
+          ]
+        },
+        {
+          "source": "@/constants/classes/classes.constant",
+          "specifiers": [
+            "BRAND_NAME",
+            "CLASSES_STATUS_OPTIONS"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/CoursePickerModal",
+          "specifiers": [
+            "CoursePickerModal"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/BranchPickerModal",
+          "specifiers": [
+            "BranchPickerModal"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/StudentListPickerModal",
+          "specifiers": [
+            "StudentListPickerModal"
+          ]
+        },
+        {
+          "source": "../../services/studentClassService",
+          "specifiers": [
+            "* as studentClassService"
+          ]
+        },
+        {
+          "source": "@/services/studentCourseService",
+          "specifiers": [
+            "* as studentCourseService"
+          ]
+        },
+        {
+          "source": "@/utils/compareData",
+          "specifiers": [
+            "compareData"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "@/hooks/useLookupMap",
+          "specifiers": [
+            "useLookupMaps"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectCourses",
+            "selectLectures",
+            "selectStudentCourse",
+            "selectStudents"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 472,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/ClassSchedule/ClassSchedule.jsx": {
+      "filePath": "src/pages/ClassSchedule/ClassSchedule.jsx",
+      "contentHash": "46626fecf522dcb4a6de0733413ec69db3276b8444d4739b47194f3ec900e109",
+      "functions": [
+        {
+          "name": "getColor",
+          "params": [
+            "classId"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "addHours",
+          "params": [
+            "time",
+            "h"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "toMinutes",
+          "params": [
+            "time"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "ClassSchedule",
+          "params": [],
+          "exported": false,
+          "lineCount": 567
+        },
+        {
+          "name": "checkRoomConflict",
+          "params": [
+            "formData",
+            "excludeId"
+          ],
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "isCellConflict",
+          "params": [
+            "classId",
+            "dayKey",
+            "time"
+          ],
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "handleDragStart",
+          "params": [
+            "e",
+            "classId"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "handleDragEnd",
+          "params": [],
+          "exported": false,
+          "lineCount": 23
+        },
+        {
+          "name": "handleCellDrop",
+          "params": [
+            "e",
+            "day",
+            "time"
+          ],
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "toggleDay",
+          "params": [
+            "day"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "setField",
+          "params": [
+            "field",
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "validate",
+          "params": [],
+          "exported": false,
+          "lineCount": 17
+        },
+        {
+          "name": "handleSave",
+          "params": [],
+          "exported": false,
+          "lineCount": 61
+        },
+        {
+          "name": "handleDelete",
+          "params": [
+            "id"
+          ],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "handleEdit",
+          "params": [
+            "sched"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "resetForm",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useMemo",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useDispatch",
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectClasses",
+            "selectClassSchedules",
+            "selectCourses",
+            "selectLectures"
+          ]
+        },
+        {
+          "source": "@/services/classScheduleService",
+          "specifiers": [
+            "* as classScheduleService"
+          ]
+        },
+        {
+          "source": "@/actions/masterDataAction",
+          "specifiers": [
+            "updateMasterEntity"
+          ]
+        },
+        {
+          "source": "@/constants/classRoom/classroom.constants",
+          "specifiers": [
+            "ROOMS",
+            "TIME_SLOTS",
+            "DAYS",
+            "DURATION_OPTIONS",
+            "CLASS_COLORS",
+            "SCHEDULE_FIELDS",
+            "SLOTS_PER_HOUR"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertConfirm",
+            "alertError",
+            "alertSuccess"
+          ]
+        },
+        {
+          "source": "@/utils/compareData",
+          "specifiers": [
+            "compareData"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/PageHeader",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "./ScheduleGridCell",
+          "specifiers": [
+            "ScheduleGridCell"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useLocation",
+            "useNavigate"
+          ]
+        },
+        {
+          "source": "./ClassSchedule.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 605,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/ClassSchedule/ClassSchedule.scss": {
+      "filePath": "src/pages/ClassSchedule/ClassSchedule.scss",
+      "contentHash": "6a0e2a8356cc6c27e18730b3aadea74fee2ce79b9683d25e295d20104140ac36",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 779,
+      "hasStructuralAnalysis": false
+    },
+    "src/pages/ClassSchedule/ScheduleGridCell.jsx": {
+      "filePath": "src/pages/ClassSchedule/ScheduleGridCell.jsx",
+      "contentHash": "36efd91c9bb13367ecd11c7842e97cbf5a7f287f0acd79a2055855ca1d79bb2f",
+      "functions": [
+        {
+          "name": "getColor",
+          "params": [
+            "classId"
+          ],
+          "exported": false,
+          "lineCount": 215
+        },
+        {
+          "name": "isDimmed",
+          "params": [
+            "sched"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "isMatched",
+          "params": [
+            "sched"
+          ],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "memo"
+          ]
+        },
+        {
+          "source": "@/constants/classRoom/classroom.constants",
+          "specifiers": [
+            "SLOTS_PER_HOUR",
+            "TIME_SLOTS",
+            "DAYS",
+            "CLASS_COLORS"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 222,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Contact.jsx": {
+      "filePath": "src/pages/Contact.jsx",
+      "contentHash": "b7c5910880b5cead5e2fbe4a929438b21f58e1e3edb307529c3999b393def81e",
+      "functions": [
+        {
+          "name": "Contact",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Course/Course.jsx": {
+      "filePath": "src/pages/Course/Course.jsx",
+      "contentHash": "fe2b3cb146497de4cd42be64a604bbdd979511642d7051b033c447c7495c5817",
+      "functions": [
+        {
+          "name": "Course",
+          "params": [],
+          "exported": false,
+          "lineCount": 118
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useState"
+          ]
+        },
+        {
+          "source": "../../services/courseService",
+          "specifiers": [
+            "* as courseService"
+          ]
+        },
+        {
+          "source": "../../hooks/useComponentData",
+          "specifiers": [
+            "useComponentData"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/PageHeader",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/Toolbar",
+          "specifiers": [
+            "Toolbar"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/DataTable",
+          "specifiers": [
+            "DataTable"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/SharedModal",
+          "specifiers": [
+            "SharedModal"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/Pagination",
+          "specifiers": [
+            "Pagination"
+          ]
+        },
+        {
+          "source": "../../hooks/useAuditLog",
+          "specifiers": [
+            "useAuditLog"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/HistoryModal",
+          "specifiers": [
+            "HistoryModal"
+          ]
+        },
+        {
+          "source": "../../constants/courses/course.constants",
+          "specifiers": [
+            "COURSE_SORT_OPTIONS",
+            "COURSE_STATUS_OPTIONS",
+            "COURSE_TABLE_COLUMNS"
+          ]
+        },
+        {
+          "source": "../../constants/courses/course.fields",
+          "specifiers": [
+            "COURSE_FIELDS"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useDispatch"
+          ]
+        },
+        {
+          "source": "@/actions/masterDataAction",
+          "specifiers": [
+            "updateMasterEntity"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 134,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/AssignClassPopup.jsx": {
+      "filePath": "src/pages/Home/components/AssignClassPopup.jsx",
+      "contentHash": "6c1cde1e93183688cb1250a52aec0f1bdaedab84d1240b4caf4045070f653fa1",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 137,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/DonutChart.jsx": {
+      "filePath": "src/pages/Home/components/DonutChart.jsx",
+      "contentHash": "d3387a2190a8e89a0309f7ca7ca976358258f1a3829d735ba42c1d0dde85c9bc",
+      "functions": [
+        {
+          "name": "DonutChart",
+          "params": [
+            "{ data }"
+          ],
+          "exported": true,
+          "lineCount": 45
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/helpers/homeHelpers",
+          "specifiers": [
+            "buildConicGradient"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        }
+      ],
+      "exports": [
+        "DonutChart"
+      ],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentFooter.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentFooter.jsx",
+      "contentHash": "5f458eaf91d6d57c262016f3a6b0cedea241be6882f77ca8bea7acc9f8464715",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentHeader.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentHeader.jsx",
+      "contentHash": "ca482696fd19887a4c9b054b1e4a64d382a5f4da64ecafed20818a7ba64dc94c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentSummary.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentSummary.jsx",
+      "contentHash": "55a1d04e5db630cdfbb47fc1530c45a7565dc847433544ad3d8b0568c4ca17a9",
+      "functions": [
+        {
+          "name": "EnrollmentSummary",
+          "params": [
+            "{ summary",
+            "summaryPills }"
+          ],
+          "exported": false,
+          "lineCount": 45
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentTable.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentTable.jsx",
+      "contentHash": "eeca0e8ed7fcb7685cf8b856173e4bb1e54d16d02f68b61cf19731e5495d7ae5",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect"
+          ]
+        },
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "DAY_MAP",
+            "ENROLLTABLE_COLUMN_NAME",
+            "ENROLLTABLE_SCHEDULE_STATUS"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 120,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentToolbar.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentToolbar.jsx",
+      "contentHash": "3d2cff39313851d3eb4352ba6dd64387cabc4c421e66bec05cf1a2b3009ea31f",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "FILTERS"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/HomeClassSchedule.jsx": {
+      "filePath": "src/pages/Home/components/HomeClassSchedule.jsx",
+      "contentHash": "08beb985d2dfa7aa77ce2722ad6e3e4e6ddce81f1922222ac446cea4b9aaa3b1",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "DAY_MAP"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 83,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/HomeFilterCard.jsx": {
+      "filePath": "src/pages/Home/components/HomeFilterCard.jsx",
+      "contentHash": "3227178f71459f75f117bbcb6b51b9924883303bcd98820ffab6fe556ab35e45",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 58,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/LectureAssignmentTable.jsx": {
+      "filePath": "src/pages/Home/components/LectureAssignmentTable.jsx",
+      "contentHash": "5185ba6a0e127a5fc1a4ace74d9177cd556cb73cc844560de41736d66da9ed4f",
+      "functions": [
+        {
+          "name": "handleOpenAssignPopup",
+          "params": [
+            "row"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "handleSelectCourse",
+          "params": [
+            "courseId"
+          ],
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "DAY_MAP",
+            "TABLE_HEADERS"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useState"
+          ]
+        },
+        {
+          "source": "./AssignClassPopup",
+          "specifiers": [
+            "AssignClassPopup"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 149,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/WarningCard.jsx": {
+      "filePath": "src/pages/Home/components/WarningCard.jsx",
+      "contentHash": "eef0028ae2c4155f735b0c8d6b5ac2d63c90f4a88f25fb844f2447ad3b953263",
+      "functions": [
+        {
+          "name": "WarningCard",
+          "params": [
+            "{ icon",
+            "title",
+            "items",
+            "renderItem",
+            "footer",
+            "type",
+            "variants }"
+          ],
+          "exported": false,
+          "lineCount": 50
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 54,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/WarningCards.jsx": {
+      "filePath": "src/pages/Home/components/WarningCards.jsx",
+      "contentHash": "43d6ea8b377ec28c4af46dc2360b0870e624ab2de3784cf8ad8abaa58aeb5692",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "./WarningCard",
+          "specifiers": [
+            "WarningCard"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 113,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/Enrollmentstatusmodal.jsx": {
+      "filePath": "src/pages/Home/Enrollmentstatusmodal.jsx",
+      "contentHash": "10f030c12bc087da96ca41c7a8f29f027eb879c35d14e2cf8c1fbb4fb63831de",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "getSummaryPillsConfig"
+          ]
+        },
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useMemo"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentSummary",
+          "specifiers": [
+            "EnrollmentSummary"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentToolbar",
+          "specifiers": [
+            "EnrollmentToolbar"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentTable",
+          "specifiers": [
+            "EnrollmentTable"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentFooter",
+          "specifiers": [
+            "EnrollmentFooter"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentHeader",
+          "specifiers": [
+            "EnrollmentHeader"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 201,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/Home.jsx": {
+      "filePath": "src/pages/Home/Home.jsx",
+      "contentHash": "60d10ac651b7baf684aa0ef05b138519ea68b2cec7c0a912363965f989b26db5",
+      "functions": [
+        {
+          "name": "Home",
+          "params": [],
+          "exported": false,
+          "lineCount": 793
+        },
+        {
+          "name": "goToEditClass",
+          "params": [
+            "classId"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "handleCourseRowClick",
+          "params": [
+            "course"
+          ],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useState",
+            "useEffect",
+            "useMemo"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useNavigate"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectClasses",
+            "selectClassSchedules",
+            "selectCourses",
+            "selectLectures",
+            "selectStudents",
+            "selectStudentClass"
+          ]
+        },
+        {
+          "source": "@/utils/string.utils",
+          "specifiers": [
+            "getInitials"
+          ]
+        },
+        {
+          "source": "@/constants/courses/course.constants",
+          "specifiers": [
+            "COURSE_STATUS_OPTIONS"
+          ]
+        },
+        {
+          "source": "@/hooks/useLookupMap",
+          "specifiers": [
+            "useLookupMaps"
+          ]
+        },
+        {
+          "source": "../../services/scoreService",
+          "specifiers": [
+            "* as scoreService"
+          ]
+        },
+        {
+          "source": "./../ClassSchedule/ClassSchedule",
+          "specifiers": [
+            "ClassSchedule"
+          ]
+        },
+        {
+          "source": "@/constants/students/student.constants.jsx",
+          "specifiers": [
+            "STUDENT_STATUS_OPTIONS"
+          ]
+        },
+        {
+          "source": "@/helpers/homeHelpers",
+          "specifiers": [
+            "buildScoreStats",
+            "feeDonutData",
+            "getDonutData",
+            "getGreeting",
+            "getLegendData"
+          ]
+        },
+        {
+          "source": "./components/WarningCards",
+          "specifiers": [
+            "WarningCards"
+          ]
+        },
+        {
+          "source": "./components/HomeFilterCard",
+          "specifiers": [
+            "HomeFilterCard"
+          ]
+        },
+        {
+          "source": "./components/HomeClassSchedule",
+          "specifiers": [
+            "HomeClassSchedule"
+          ]
+        },
+        {
+          "source": "./Enrollmentstatusmodal",
+          "specifiers": [
+            "Enrollmentstatusmodal"
+          ]
+        },
+        {
+          "source": "./components/DonutChart",
+          "specifiers": [
+            "DonutChart"
+          ]
+        },
+        {
+          "source": "./Lectureassignmentmodal",
+          "specifiers": [
+            "Lectureassignmentmodal"
+          ]
+        },
+        {
+          "source": "../Student/StudentDetailModal",
+          "specifiers": [
+            "StudentDetailModal"
+          ]
+        },
+        {
+          "source": "./Home.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 845,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/Home.scss": {
+      "filePath": "src/pages/Home/Home.scss",
+      "contentHash": "be94ba21cd91cc9d0e33ad0c8e76839c7defa77df1a7705bca1c6dcc8a5ede98",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1544,
+      "hasStructuralAnalysis": false
+    },
+    "src/pages/Home/Lectureassignmentmodal.jsx": {
+      "filePath": "src/pages/Home/Lectureassignmentmodal.jsx",
+      "contentHash": "a9ac531673a46bc6c40ebeb35394de97a6ae2a0bcf337f04454c29ef3211ec8a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentHeader",
+          "specifiers": [
+            "EnrollmentHeader"
+          ]
+        },
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "getSummaryPills"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentToolbar",
+          "specifiers": [
+            "EnrollmentToolbar"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentSummary",
+          "specifiers": [
+            "EnrollmentSummary"
+          ]
+        },
+        {
+          "source": "./components/LectureAssignmentTable",
+          "specifiers": [
+            "LectureAssignmentTable"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentFooter",
+          "specifiers": [
+            "EnrollmentFooter"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 196,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Lecturer/Lecture.jsx": {
+      "filePath": "src/pages/Lecturer/Lecture.jsx",
+      "contentHash": "87c8c6af3de03d9b708967fd24e76510f6a3f3ac8298b58e589b4b35427b088b",
+      "functions": [
+        {
+          "name": "Lecture",
+          "params": [],
+          "exported": false,
+          "lineCount": 120
+        },
+        {
+          "name": "handleHistory",
+          "params": [
+            "lecture"
+          ],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useMemo",
+            "useState"
+          ]
+        },
+        {
+          "source": "./../../components/PageComponent/PageHeader",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/Toolbar",
+          "specifiers": [
+            "Toolbar"
+          ]
+        },
+        {
+          "source": "../../hooks/useComponentData",
+          "specifiers": [
+            "useComponentData"
+          ]
+        },
+        {
+          "source": "../../hooks/useAuditLog",
+          "specifiers": [
+            "useAuditLog"
+          ]
+        },
+        {
+          "source": "../../services/lectureService",
+          "specifiers": [
+            "* as lectureService"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/DataTable",
+          "specifiers": [
+            "DataTable"
+          ]
+        },
+        {
+          "source": "./LectureDetailModal",
+          "specifiers": [
+            "LectureDetailModal"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/Pagination",
+          "specifiers": [
+            "Pagination"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/HistoryModal",
+          "specifiers": [
+            "HistoryModal"
+          ]
+        },
+        {
+          "source": "./LectureModal",
+          "specifiers": [
+            "LectureModal"
+          ]
+        },
+        {
+          "source": "../../constants/lecturer/lecturer.constants",
+          "specifiers": [
+            "SORT_OPTION",
+            "LECTURE_TABLE_COLUMNS"
+          ]
+        },
+        {
+          "source": "../../constants/lecturer/lecture.fields",
+          "specifiers": [
+            "LECTURE_FIELDS"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useDispatch",
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/actions/masterDataAction",
+          "specifiers": [
+            "updateMasterEntity"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectClasses"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 138,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Lecturer/LectureDetailModal.jsx": {
+      "filePath": "src/pages/Lecturer/LectureDetailModal.jsx",
+      "contentHash": "f6e82dc4088007301b456af963625df25f8499d25b73015a96da503ce8abebbd",
+      "functions": [
+        {
+          "name": "SectionTitle",
+          "params": [
+            "{ children }"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "InfoRow",
+          "params": [
+            "{ label",
+            "value }"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "TagList",
+          "params": [
+            "{ items"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "LectureDetailModal",
+          "params": [
+            "{ lecture",
+            "onClose }"
+          ],
+          "exported": false,
+          "lineCount": 85
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "../../utils/date.utils.js",
+          "specifiers": [
+            "formatDateDisplay"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "./LectureDetailModal.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 114,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Lecturer/LectureDetailModal.scss": {
+      "filePath": "src/pages/Lecturer/LectureDetailModal.scss",
+      "contentHash": "a793f1946a601a777e082b401ffaaba8bf65a5f75386175516dbda4599f35153",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 162,
+      "hasStructuralAnalysis": false
+    },
+    "src/pages/Lecturer/LectureModal.jsx": {
+      "filePath": "src/pages/Lecturer/LectureModal.jsx",
+      "contentHash": "ef9e8ced127bc1d5ad11dc8fbac2d07dd8edf7abbed2be6f1f7251273ef7be37",
+      "functions": [
+        {
+          "name": "generateCode",
+          "params": [
+            "contractType",
+            "allLectures"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "LectureModal",
+          "params": [
+            "{ editItem",
+            "allLectures",
+            "onSave",
+            "onClose }"
+          ],
+          "exported": false,
+          "lineCount": 373
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "Children",
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "sweetalert2",
+          "specifiers": [
+            "Swal"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "../../constants/lecturer/lecturer.constants",
+          "specifiers": [
+            "CONTRACT_DESCRIPTION",
+            "CONTRACT_SALARY",
+            "LECTURE_DEGREE_OPTIONS",
+            "LECTURE_STATUS_OPTIONS"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "../../components/CommonPickers/ContractPickerModal",
+          "specifiers": [
+            "ContractPickerModal"
+          ]
+        },
+        {
+          "source": "../../components/CommonPickers/SkillPickerModal",
+          "specifiers": [
+            "SkillPickerModal"
+          ]
+        },
+        {
+          "source": "../../components/CommonPickers/ClassPickerModal",
+          "specifiers": [
+            "ClassPickerModal"
+          ]
+        },
+        {
+          "source": "../../components/CommonPickers/StatusPickerModal",
+          "specifiers": [
+            "StatusPickerModal"
+          ]
+        },
+        {
+          "source": "../../components/CommonPickers/SpecialtyPickerModal",
+          "specifiers": [
+            "SpecialtyPickerModal"
+          ]
+        },
+        {
+          "source": "../../hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "../../components/FormControls/FormRenderer",
+          "specifiers": [
+            "FormRenderer"
+          ]
+        },
+        {
+          "source": "../../components/FormControls/FormItem",
+          "specifiers": [
+            "FormItem"
+          ]
+        },
+        {
+          "source": "../../components/FormControls/PickerControl",
+          "specifiers": [
+            "PickerControl"
+          ]
+        },
+        {
+          "source": "../../constants/lecturer/lecture.fields",
+          "specifiers": [
+            "LECTURE_FIELDS"
+          ]
+        },
+        {
+          "source": "../../utils/field.util.jsx",
+          "specifiers": [
+            "buildFormFields"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertError"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectClasses"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/DegreePickerModal",
+          "specifiers": [
+            "DegreePickerModal"
+          ]
+        },
+        {
+          "source": "./LectureModal.scss",
+          "specifiers": []
+        },
+        {
+          "source": "../../assets/styles/common.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 434,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Lecturer/LectureModal.scss": {
+      "filePath": "src/pages/Lecturer/LectureModal.scss",
+      "contentHash": "5124c3996a731cc10f0bf2fb78ac85f9a9a0c1930942d303ad78ba8d4d4db477",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": false
+    },
+    "src/pages/NotFound/NotFound.jsx": {
+      "filePath": "src/pages/NotFound/NotFound.jsx",
+      "contentHash": "1ac2f2e3be4b5089be48b002b19dd322e1eb55ab56747507a49ef83394edbdab",
+      "functions": [
+        {
+          "name": "NotFound",
+          "params": [],
+          "exported": false,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useRef"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useNavigate"
+          ]
+        },
+        {
+          "source": "lottie-web",
+          "specifiers": [
+            "lottie"
+          ]
+        },
+        {
+          "source": "./NotFound.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/NotFound/NotFound.scss": {
+      "filePath": "src/pages/NotFound/NotFound.scss",
+      "contentHash": "901434ec7356311e5a4f9174ec9af0eff7ed8f945013cbd616ddb954544b50ac",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 20,
+      "hasStructuralAnalysis": false
+    },
+    "src/pages/Profile/Profile.jsx": {
+      "filePath": "src/pages/Profile/Profile.jsx",
+      "contentHash": "55b37f5133c1bf7d2ef8560f0a423de70361b7d6cca9b58eb091abd0af12810a",
+      "functions": [
+        {
+          "name": "Profile",
+          "params": [],
+          "exported": false,
+          "lineCount": 269
+        },
+        {
+          "name": "validatePassword",
+          "params": [],
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "handleSavePwd",
+          "params": [],
+          "exported": false,
+          "lineCount": 36
+        },
+        {
+          "name": "handleSaveProfile",
+          "params": [],
+          "exported": false,
+          "lineCount": 69
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useDispatch",
+            "useSelector"
+          ]
+        },
+        {
+          "source": "../../actions/authActions",
+          "specifiers": [
+            "loginAction"
+          ]
+        },
+        {
+          "source": "../../services/userService",
+          "specifiers": [
+            "* as userService"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/PageHeader",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "../../constants/users/user.fields",
+          "specifiers": [
+            "USER_FIELDS"
+          ]
+        },
+        {
+          "source": "../../hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "../../components/FormControls/FormRenderer",
+          "specifiers": [
+            "FormRenderer"
+          ]
+        },
+        {
+          "source": "../../components/FormControls/FormItem",
+          "specifiers": [
+            "FormItem"
+          ]
+        },
+        {
+          "source": "../../utils/string.utils",
+          "specifiers": [
+            "getInitials"
+          ]
+        },
+        {
+          "source": "../../utils/date.utils",
+          "specifiers": [
+            "formatDateDisplay"
+          ]
+        },
+        {
+          "source": "@/utils/compareData",
+          "specifiers": [
+            "compareData"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertConfirm",
+            "alertError",
+            "alertSuccess"
+          ]
+        },
+        {
+          "source": "@/constants/profile/profile.password.fields",
+          "specifiers": [
+            "PROFILE_PASSWORD_FIELDS"
+          ]
+        },
+        {
+          "source": "@/utils/field.util",
+          "specifiers": [
+            "buildFormFields"
+          ]
+        },
+        {
+          "source": "./Profile.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 287,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Profile/Profile.scss": {
+      "filePath": "src/pages/Profile/Profile.scss",
+      "contentHash": "978744080344b4f1b6ffd4bb2573cc820f517f84d1c0efcfa239267ccf85180a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 92,
+      "hasStructuralAnalysis": false
+    },
+    "src/pages/Register/Register.jsx": {
+      "filePath": "src/pages/Register/Register.jsx",
+      "contentHash": "5854a5f1544ddaa1de7de58bb088ef635ee3a0a8b280b8d72256cb3cce8a136d",
+      "functions": [
+        {
+          "name": "Register",
+          "params": [],
+          "exported": false,
+          "lineCount": 98
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 39
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "sweetalert2",
+          "specifiers": [
+            "Swal"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useNavigate"
+          ]
+        },
+        {
+          "source": "../../constants/register/register.fields",
+          "specifiers": [
+            "REGISTER_FIELD"
+          ]
+        },
+        {
+          "source": "../../services/userService",
+          "specifiers": [
+            "create",
+            "findByEmail"
+          ]
+        },
+        {
+          "source": "./../../hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "../../components/FormControls/FormItem",
+          "specifiers": [
+            "FormItem"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertError",
+            "alertSuccess"
+          ]
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
+        },
+        {
+          "source": "./Register.scss",
+          "specifiers": []
+        },
+        {
+          "source": "../../assets/styles/common.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 110,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Register/Register.scss": {
+      "filePath": "src/pages/Register/Register.scss",
+      "contentHash": "588dc16b6d25469f4a06d4a392d1fa45bf678b7157ac7f66fb900f3dd5028bf6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 117,
+      "hasStructuralAnalysis": false
+    },
+    "src/pages/Score/Score.jsx": {
+      "filePath": "src/pages/Score/Score.jsx",
+      "contentHash": "d23da664002a7ff250e8d6657f940844fdb6cf8063d71ca267f1d1b23b19b552",
+      "functions": [
+        {
+          "name": "Score",
+          "params": [],
+          "exported": false,
+          "lineCount": 128
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/Toolbar",
+          "specifiers": [
+            "Toolbar"
+          ]
+        },
+        {
+          "source": "@/services/scoreService",
+          "specifiers": [
+            "* as scoreServive"
+          ]
+        },
+        {
+          "source": "@/constants/score/score.fields",
+          "specifiers": [
+            "SCORE_FIELDS"
+          ]
+        },
+        {
+          "source": "@/hooks/useComponentData",
+          "specifiers": [
+            "useComponentData"
+          ]
+        },
+        {
+          "source": "@/hooks/useAuditLog",
+          "specifiers": [
+            "useAuditLog"
+          ]
+        },
+        {
+          "source": "@/constants/score/score.constants",
+          "specifiers": [
+            "SCORE_SORT_OPTIONS",
+            "SCORE_TABLE_COLUMNS"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/PageHeader",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/DataTable",
+          "specifiers": [
+            "DataTable"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectClasses",
+            "selectCourses",
+            "selectStudents"
+          ]
+        },
+        {
+          "source": "./ScoreDetailModal",
+          "specifiers": [
+            "ScoreDetailModal"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/HistoryModal",
+          "specifiers": [
+            "HistoryModal"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/Pagination",
+          "specifiers": [
+            "Pagination"
+          ]
+        },
+        {
+          "source": "./ScoreModal",
+          "specifiers": [
+            "ScoreModal"
+          ]
+        },
+        {
+          "source": "@/hooks/useLookupMap",
+          "specifiers": [
+            "useLookupMaps"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 148,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Score/ScoreDetailModal.jsx": {
+      "filePath": "src/pages/Score/ScoreDetailModal.jsx",
+      "contentHash": "028a7a432c23112778e71b4f2e77771c72d207236ae6a48353114f89086b8f93",
+      "functions": [
+        {
+          "name": "SectionTitle",
+          "params": [
+            "{ children }"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "InfoRow",
+          "params": [
+            "{ label",
+            "value }"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "ScoreDetailModal",
+          "params": [
+            "{score",
+            "onClose}"
+          ],
+          "exported": false,
+          "lineCount": 69
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "@/utils/date.utils",
+          "specifiers": [
+            "formatDateDisplay"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../Lecturer/LectureDetailModal.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 87,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Score/ScoreModal.jsx": {
+      "filePath": "src/pages/Score/ScoreModal.jsx",
+      "contentHash": "5a86442c42045cba2547b32b632de3516f7d2f8bdb2e3e1d270a354a11d9e090",
+      "functions": [
+        {
+          "name": "calculateResult",
+          "params": [
+            "score1",
+            "score2"
+          ],
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "ScoreModal",
+          "params": [
+            "{ editItem",
+            "onClose",
+            "onSave",
+            "existingScores"
+          ],
+          "exported": false,
+          "lineCount": 327
+        },
+        {
+          "name": "lockedFields",
+          "params": [
+            "("
+          ],
+          "exported": false,
+          "lineCount": 26
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "@/constants/score/score.fields",
+          "specifiers": [
+            "SCORE_FIELDS"
+          ]
+        },
+        {
+          "source": "@/hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectClasses",
+            "selectClassSchedules",
+            "selectCourses",
+            "selectStudents"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/services/studentClassService",
+          "specifiers": [
+            "* as studentClassService"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertError"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "@/components/FormControls/FormRenderer",
+          "specifiers": [
+            "FormRenderer"
+          ]
+        },
+        {
+          "source": "@/hooks/useLookupMap",
+          "specifiers": [
+            "useLookupMaps"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/CoursePickerModal",
+          "specifiers": [
+            "CoursePickerModal"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/ClassPickerModal",
+          "specifiers": [
+            "ClassPickerModal"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/StudentListPickerModal",
+          "specifiers": [
+            "StudentListPickerModal"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/ScoreStudentPickerModal",
+          "specifiers": [
+            "ScoreStudentPickerModal"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 369,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/SignIn/AuthHeader.jsx": {
+      "filePath": "src/pages/SignIn/AuthHeader.jsx",
+      "contentHash": "0d7663250806fc723880fcab55002cea5fc3806a4e22e77f9287b3210d6ab98c",
+      "functions": [
+        {
+          "name": "AuthHeader",
+          "params": [
+            "{ title",
+            "subtitle }"
+          ],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/SignIn/ForgotForm.jsx": {
+      "filePath": "src/pages/SignIn/ForgotForm.jsx",
+      "contentHash": "42086388d4550a3e245c79dd694eec4c56955bcb7b7e74035eefad7c7fa7d738",
+      "functions": [
+        {
+          "name": "ForgotForm",
+          "params": [
+            "{ loading",
+            "onSubmit",
+            "onGoToLogin }"
+          ],
+          "exported": false,
+          "lineCount": 59
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../constants/login/login.fields",
+          "specifiers": [
+            "FORGOT_FIELDS"
+          ]
+        },
+        {
+          "source": "../../hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "sweetalert2",
+          "specifiers": [
+            "Swal"
+          ]
+        },
+        {
+          "source": "./SignFormWrapper",
+          "specifiers": [
+            "SignFormWrapper"
+          ]
+        },
+        {
+          "source": "./AuthHeader",
+          "specifiers": [
+            "AuthHeader"
+          ]
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 68,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/SignIn/LoginForm.jsx": {
+      "filePath": "src/pages/SignIn/LoginForm.jsx",
+      "contentHash": "b7c537c289d60fe448558230351a7b6edcd16a15c95243ed40ba5342b80f2748",
+      "functions": [
+        {
+          "name": "LoginForm",
+          "params": [
+            "{ onSubmit",
+            "loading",
+            "onGotoForgot",
+            "onGotoRegister }"
+          ],
+          "exported": false,
+          "lineCount": 89
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "./SignFormWrapper",
+          "specifiers": [
+            "SignFormWrapper"
+          ]
+        },
+        {
+          "source": "./AuthHeader",
+          "specifiers": [
+            "AuthHeader"
+          ]
+        },
+        {
+          "source": "../../constants/login/login.fields",
+          "specifiers": [
+            "LOGIN_FIELDS"
+          ]
+        },
+        {
+          "source": "../../hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "sweetalert2",
+          "specifiers": [
+            "Swal"
+          ]
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 96,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/SignIn/ResetForm.jsx": {
+      "filePath": "src/pages/SignIn/ResetForm.jsx",
+      "contentHash": "35cfe6acccff96da5b4255e6d58d8f61fbe188ef9a3a122636dfe397852fea1c",
+      "functions": [
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "sweetalert2",
+          "specifiers": [
+            "Swal"
+          ]
+        },
+        {
+          "source": "./SignFormWrapper",
+          "specifiers": [
+            "SignFormWrapper"
+          ]
+        },
+        {
+          "source": "./AuthHeader",
+          "specifiers": [
+            "AuthHeader"
+          ]
+        },
+        {
+          "source": "../../hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "@/constants/login/login.fields",
+          "specifiers": [
+            "RESET_FIELDS"
+          ]
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/SignIn/SignFormWrapper.jsx": {
+      "filePath": "src/pages/SignIn/SignFormWrapper.jsx",
+      "contentHash": "cfdb644737f03016fe98f10c211d7bf9fbf5843a59e564b364c94309c0b3f0e3",
+      "functions": [
+        {
+          "name": "SignFormWrapper",
+          "params": [
+            "{ className",
+            "onSubmit",
+            "children }"
+          ],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/SignIn/SignIn.jsx": {
+      "filePath": "src/pages/SignIn/SignIn.jsx",
+      "contentHash": "e16155862fb61172285469daa023794c6c96d688f1eb70166121f40f171e29f7",
+      "functions": [
+        {
+          "name": "SignIn",
+          "params": [],
+          "exported": false,
+          "lineCount": 135
+        },
+        {
+          "name": "handleLogin",
+          "params": [
+            "data"
+          ],
+          "exported": false,
+          "lineCount": 37
+        },
+        {
+          "name": "handleFindAccount",
+          "params": [
+            "data"
+          ],
+          "exported": false,
+          "lineCount": 24
+        },
+        {
+          "name": "handleResetPassword",
+          "params": [
+            "data"
+          ],
+          "exported": false,
+          "lineCount": 28
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useState"
+          ]
+        },
+        {
+          "source": "sweetalert2",
+          "specifiers": [
+            "Swal"
+          ]
+        },
+        {
+          "source": "../../services/userService",
+          "specifiers": [
+            "findByEmail",
+            "updatePassword"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useNavigate"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useDispatch"
+          ]
+        },
+        {
+          "source": "../../actions/authActions",
+          "specifiers": [
+            "loginAction"
+          ]
+        },
+        {
+          "source": "./LoginForm",
+          "specifiers": [
+            "LoginForm"
+          ]
+        },
+        {
+          "source": "./ForgotForm",
+          "specifiers": [
+            "ForgotForm"
+          ]
+        },
+        {
+          "source": "./ResetForm",
+          "specifiers": [
+            "ResetForm"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertConfirm",
+            "alertError",
+            "alertSuccess"
+          ]
+        },
+        {
+          "source": "./SignIn.scss",
+          "specifiers": []
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 148,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/SignIn/SignIn.scss": {
+      "filePath": "src/pages/SignIn/SignIn.scss",
+      "contentHash": "3d3b932dff6470dc005f2a6e948d6c6707035ac01948641c9fff127753dc35eb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 433,
+      "hasStructuralAnalysis": false
+    },
+    "src/pages/Student/Student.jsx": {
+      "filePath": "src/pages/Student/Student.jsx",
+      "contentHash": "85a853cfee40b5b041d1f45cceb8fe1226fec2233f43ae53fcef418519e2ec6d",
+      "functions": [
+        {
+          "name": "Student",
+          "params": [],
+          "exported": false,
+          "lineCount": 419
+        },
+        {
+          "name": "generateStudentCode",
+          "params": [
+            "existingStudents"
+          ],
+          "exported": false,
+          "lineCount": 22
+        },
+        {
+          "name": "handleSaveStudent",
+          "params": [
+            "formData"
+          ],
+          "exported": false,
+          "lineCount": 209
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useEffect",
+            "useMemo",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/PageHeader",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/Toolbar",
+          "specifiers": [
+            "Toolbar"
+          ]
+        },
+        {
+          "source": "@/constants/students/student.fields",
+          "specifiers": [
+            "STUDENTS_FIELDS"
+          ]
+        },
+        {
+          "source": "@/hooks/useAuditLog",
+          "specifiers": [
+            "useAuditLog"
+          ]
+        },
+        {
+          "source": "@/hooks/useComponentData",
+          "specifiers": [
+            "useComponentData"
+          ]
+        },
+        {
+          "source": "../../services/studentService",
+          "specifiers": [
+            "* as studentService"
+          ]
+        },
+        {
+          "source": "@/constants/students/student.constants.jsx",
+          "specifiers": [
+            "STUDENT_SORT_OPTIONS",
+            "STUDENT_STATUS_OPTIONS",
+            "STUDENT_TABLE_COLUMNS"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/DataTable",
+          "specifiers": [
+            "DataTable"
+          ]
+        },
+        {
+          "source": "./StudentDetailModal",
+          "specifiers": [
+            "StudentDetailModal"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/SharedModal",
+          "specifiers": [
+            "SharedModal"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/HistoryModal",
+          "specifiers": [
+            "HistoryModal"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/Pagination",
+          "specifiers": [
+            "Pagination"
+          ]
+        },
+        {
+          "source": "@/services/studentCourseService",
+          "specifiers": [
+            "* as studentCourseService"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertConfirm",
+            "alertError",
+            "alertSuccess"
+          ]
+        },
+        {
+          "source": "@/utils/compareData",
+          "specifiers": [
+            "compareData"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useDispatch",
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/actions/masterDataAction",
+          "specifiers": [
+            "updateMasterEntity"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectCourses"
+          ]
+        },
+        {
+          "source": "@/hooks/useLookupMap",
+          "specifiers": [
+            "useLookupMaps"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 442,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Student/StudentDetailModal.jsx": {
+      "filePath": "src/pages/Student/StudentDetailModal.jsx",
+      "contentHash": "3c7f424cbebdace5b5176c54ccff0eb85fe4e29f32b227e273a7349162700d10",
+      "functions": [
+        {
+          "name": "SectionTitle",
+          "params": [
+            "{ children }"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "InfoRow",
+          "params": [
+            "{ label",
+            "value }"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "TagList",
+          "params": [
+            "{ items"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "StudentDetailModal",
+          "params": [
+            "{ student",
+            "onClose",
+            "courseData",
+            "studentCourses }"
+          ],
+          "exported": false,
+          "lineCount": 152
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../../constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "../../utils/date.utils.js",
+          "specifiers": [
+            "formatDateDisplay"
+          ]
+        },
+        {
+          "source": "@/utils/string.utils",
+          "specifiers": [
+            "getInitials"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "../Lecturer/LectureDetailModal.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 182,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Users/User.jsx": {
+      "filePath": "src/pages/Users/User.jsx",
+      "contentHash": "9adc2a363b2f4d54bab6a4a9ced3f7a95e8bc76f066e6bf93a089a32ecb91821",
+      "functions": [
+        {
+          "name": "User",
+          "params": [],
+          "exported": false,
+          "lineCount": 86
+        },
+        {
+          "name": "handleHistory",
+          "params": [
+            "user"
+          ],
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useState"
+          ]
+        },
+        {
+          "source": "../../services/userService",
+          "specifiers": [
+            "* as userService"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/PageHeader",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/Toolbar",
+          "specifiers": [
+            "Toolbar"
+          ]
+        },
+        {
+          "source": "../../hooks/useComponentData",
+          "specifiers": [
+            "useComponentData"
+          ]
+        },
+        {
+          "source": "../../hooks/useAuditLog",
+          "specifiers": [
+            "useAuditLog"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/DataTable",
+          "specifiers": [
+            "DataTable"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/SharedModal",
+          "specifiers": [
+            "SharedModal"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/HistoryModal",
+          "specifiers": [
+            "HistoryModal"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/Pagination",
+          "specifiers": [
+            "Pagination"
+          ]
+        },
+        {
+          "source": "../../constants/users/user.fields.js",
+          "specifiers": [
+            "USER_FIELDS"
+          ]
+        },
+        {
+          "source": "../../constants/users/user.constants.jsx",
+          "specifiers": [
+            "USER_TABLE_COLUMNS",
+            "USER_SORT_OPTIONS",
+            "USER_STATUS_OPTIONS"
+          ]
+        },
+        {
+          "source": "./User.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 103,
+      "hasStructuralAnalysis": true
+    },
+    "src/reducers/authReducers.js": {
+      "filePath": "src/reducers/authReducers.js",
+      "contentHash": "d366520a841b2b9d154906a1c82224395fb09d035e1d86132c1913a48b150229",
+      "functions": [
+        {
+          "name": "authReducer",
+          "params": [
+            "state",
+            "action"
+          ],
+          "exported": false,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../actions/authActions",
+          "specifiers": [
+            "LOGIN",
+            "LOGOUT"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 30,
+      "hasStructuralAnalysis": true
+    },
+    "src/reducers/index.js": {
+      "filePath": "src/reducers/index.js",
+      "contentHash": "0ed294349092833e0e3e6e7c02671a5dfd77a0a2be7e08de54d6895a5561f90e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "redux",
+          "specifiers": [
+            "combineReducers"
+          ]
+        },
+        {
+          "source": "./authReducers",
+          "specifiers": [
+            "authReducer"
+          ]
+        },
+        {
+          "source": "./masterDataReducer",
+          "specifiers": [
+            "masterDataReducer"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 31,
+      "hasStructuralAnalysis": true
+    },
+    "src/reducers/masterDataReducer.js": {
+      "filePath": "src/reducers/masterDataReducer.js",
+      "contentHash": "46d303c363cc325b6e42457e76e2ab4b967740dfddaeea4e6128f2afc4938d87",
+      "functions": [
+        {
+          "name": "masterDataReducer",
+          "params": [
+            "state",
+            "action"
+          ],
+          "exported": false,
+          "lineCount": 43
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/actions/masterDataAction",
+          "specifiers": [
+            "SET_MASTER_DATA",
+            "UPDATE_MASTER_ENTITY"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 57,
+      "hasStructuralAnalysis": true
+    },
+    "src/reducers/scoreReducer.js": {
+      "filePath": "src/reducers/scoreReducer.js",
+      "contentHash": "7dc1bcc7cfa9f43049962611ff51bab0cb3039ecb92db45bf87582b74ce24db2",
+      "functions": [
+        {
+          "name": "scoreReducer",
+          "params": [
+            "state",
+            "action"
+          ],
+          "exported": false,
+          "lineCount": 35
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../constants/score/score.constants",
+          "specifiers": [
+            "SET_SCORES",
+            "ADD_SCORE",
+            "UPDATE_SCORE",
+            "DELETE_SCORE"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 47,
+      "hasStructuralAnalysis": true
+    },
+    "src/routes/index.jsx": {
+      "filePath": "src/routes/index.jsx",
+      "contentHash": "521bef89be5e10bdafc259fb3a28090349e62da72d56700fcbc49f3caaed99c4",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "../layouts/LayoutDefault",
+          "specifiers": [
+            "LayoutDefault"
+          ]
+        },
+        {
+          "source": "../pages/Home/Home",
+          "specifiers": [
+            "Home"
+          ]
+        },
+        {
+          "source": "../pages/Contact",
+          "specifiers": [
+            "Contact"
+          ]
+        },
+        {
+          "source": "../pages/blog/BlogLayout",
+          "specifiers": [
+            "BlogLayout"
+          ]
+        },
+        {
+          "source": "../pages/blog/BlogNews",
+          "specifiers": [
+            "BlogNews"
+          ]
+        },
+        {
+          "source": "../pages/blog/BlogRelated",
+          "specifiers": [
+            "BlogRelated"
+          ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "createBrowserRouter",
+            "Navigate"
+          ]
+        },
+        {
+          "source": "../pages/About",
+          "specifiers": [
+            "About"
+          ]
+        },
+        {
+          "source": "../pages/Register/Register",
+          "specifiers": [
+            "Register"
+          ]
+        },
+        {
+          "source": "../pages/Course/Course",
+          "specifiers": [
+            "Course"
+          ]
+        },
+        {
+          "source": "../pages/Classes/Class",
+          "specifiers": [
+            "Class"
+          ]
+        },
+        {
+          "source": "../pages/SignIn/SignIn",
+          "specifiers": [
+            "SignIn"
+          ]
+        },
+        {
+          "source": "../components/ProtectRoute",
+          "specifiers": [
+            "ProtectRoute"
+          ]
+        },
+        {
+          "source": "../pages/Users/User",
+          "specifiers": [
+            "User"
+          ]
+        },
+        {
+          "source": "../pages/Profile/Profile",
+          "specifiers": [
+            "Profile"
+          ]
+        },
+        {
+          "source": "../pages/NotFound/NotFound",
+          "specifiers": [
+            "NotFound"
+          ]
+        },
+        {
+          "source": "../pages/Lecturer/Lecture",
+          "specifiers": [
+            "Lecture"
+          ]
+        },
+        {
+          "source": "@/pages/Student/Student",
+          "specifiers": [
+            "Student"
+          ]
+        },
+        {
+          "source": "@/pages/ClassSchedule/ClassSchedule",
+          "specifiers": [
+            "ClassSchedule"
+          ]
+        },
+        {
+          "source": "@/pages/Score/Score",
+          "specifiers": [
+            "Score"
+          ]
+        }
+      ],
+      "exports": [
+        "router"
+      ],
+      "totalLines": 60,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/auditLogService.js": {
+      "filePath": "src/services/auditLogService.js",
+      "contentHash": "ee7257598098f89c1fe26d73ebbf2c68e303867c17d918c456d096ab6f214472",
+      "functions": [
+        {
+          "name": "getByEntity",
+          "params": [
+            "entityType",
+            "entityId"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "createLog",
+          "params": [
+            "log"
+          ],
+          "exported": true,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/requestAPI",
+          "specifiers": [
+            "get",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getByEntity",
+        "createLog"
+      ],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/classScheduleService.js": {
+      "filePath": "src/services/classScheduleService.js",
+      "contentHash": "7c2548332b15b755fc6ba66c797952e065ac527d20187fe86e81d3b7bf2befb5",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "getByClassId",
+          "params": [
+            "classId"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "create",
+          "params": [
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "getByClassId",
+        "create",
+        "update",
+        "remove"
+      ],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/classService.js": {
+      "filePath": "src/services/classService.js",
+      "contentHash": "9334f2f36282b15068963318bab29f8d24bb5ba4d48f8440ced3f648e3f46ff6",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getById",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getByCourseId",
+          "params": [
+            "courseId"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "create",
+          "params": [
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updateOrder",
+          "params": [
+            "reorderedPageData",
+            "startIndex"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "getById",
+        "getByCourseId",
+        "create",
+        "update",
+        "remove",
+        "updateOrder"
+      ],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/courseService.js": {
+      "filePath": "src/services/courseService.js",
+      "contentHash": "4d44e0ceafcdba9914e1b1bf43ad7c2f2eada155d0d53e1e8c4961837c066935",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "create",
+          "params": [
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updateOrder",
+          "params": [
+            "reorderedPageData",
+            "startIndex"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "create",
+        "update",
+        "updateOrder",
+        "remove"
+      ],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/lectureService.js": {
+      "filePath": "src/services/lectureService.js",
+      "contentHash": "a4c654a4546cee6e971bae19ba128b32a26755449c110143779673fb32a933d9",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "create",
+          "params": [
+            "lecture"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updateOrder",
+          "params": [
+            "reorderedPageData",
+            "startIndex"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "create",
+        "update",
+        "updateOrder",
+        "remove"
+      ],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/scoreService.js": {
+      "filePath": "src/services/scoreService.js",
+      "contentHash": "1d8d020b272817c26203131961c678cdbf8ba827528f851f63c1886aef01741a",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getByClass",
+          "params": [
+            "classId"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getByStudent",
+          "params": [
+            "studentId"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "create",
+          "params": [
+            "score"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updateOrder",
+          "params": [
+            "reorderedPageData",
+            "startIndex"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "getByClass",
+        "getByStudent",
+        "create",
+        "update",
+        "remove",
+        "updateOrder"
+      ],
+      "totalLines": 30,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/studentClassService.js": {
+      "filePath": "src/services/studentClassService.js",
+      "contentHash": "72d52de3fadf681a1894200173ccbe32929acabd012aec5887e7c3c840be11d8",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getByStudentId",
+          "params": [
+            "studentId"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getByClassId",
+          "params": [
+            "classId"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "create",
+          "params": [
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "assignStudents",
+          "params": [
+            "classId",
+            "studentIds"
+          ],
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "getByStudentId",
+        "getByClassId",
+        "create",
+        "remove",
+        "update",
+        "assignStudents"
+      ],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/studentCourseService.js": {
+      "filePath": "src/services/studentCourseService.js",
+      "contentHash": "2f2dd058ffc571f74617d0314889c5b41f9a48ca7802c6d74494faeb9930f22d",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getByStudent",
+          "params": [
+            "studentId"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getByCourse",
+          "params": [
+            "courseId"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "create",
+          "params": [
+            "studentId",
+            "courseId",
+            "hasPaidFee"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "courseId"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updatePaidFee",
+          "params": [
+            "id",
+            "hasPaidFee"
+          ],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "getByStudent",
+        "getByCourse",
+        "create",
+        "update",
+        "remove",
+        "updatePaidFee"
+      ],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/studentService.js": {
+      "filePath": "src/services/studentService.js",
+      "contentHash": "7484cf0aca00c466436005545ae0153eb41f3078a84a2fd081c7501cfc395fec",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "create",
+          "params": [
+            "student"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updateOrder",
+          "params": [
+            "reorderedPageData",
+            "startIndex"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "create",
+        "update",
+        "remove",
+        "updateOrder"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/userService.js": {
+      "filePath": "src/services/userService.js",
+      "contentHash": "82a93fba50b0584498114ee6c26a5e542668240da4f73f8589b00b537af0e46e",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "findByEmail",
+          "params": [
+            "email"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updatePassword",
+          "params": [
+            "id",
+            "newPassword"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "create",
+          "params": [
+            "user"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updateOrder",
+          "params": [
+            "reorderedPageData",
+            "startIndex"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "findByEmail",
+        "updatePassword",
+        "create",
+        "update",
+        "updateOrder",
+        "remove"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "src/store/selectors/masterDataSelectors.js": {
+      "filePath": "src/store/selectors/masterDataSelectors.js",
+      "contentHash": "d3f7bb7ae93ccfd94e988c1d7bd947b95f600eae121b4e72d733014a1b17a8f8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "selectCourses",
+        "selectLectures",
+        "selectStudents",
+        "selectClasses",
+        "selectClassSchedules",
+        "selectStudentClass",
+        "selectMasterLoaded",
+        "selectStudentCourse"
+      ],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "src/store/selectors/scoreSelectors.js": {
+      "filePath": "src/store/selectors/scoreSelectors.js",
+      "contentHash": "0462181b949aa7e7ade4ea446b7e0c4b118ade0011363de273c972f66be7328a",
+      "functions": [
+        {
+          "name": "selectScoresByClassId",
+          "params": [
+            "state",
+            "classId"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "selectScoresByStudentId",
+          "params": [
+            "state",
+            "studentId"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "selectScoreById",
+          "params": [
+            "state",
+            "scoreId"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "selectScoresByCourseId",
+          "params": [
+            "state",
+            "courseId"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "selectScoresList",
+        "selectScoresLoaded",
+        "selectScoresByClassId",
+        "selectScoresByStudentId",
+        "selectScoreById",
+        "selectScoresByCourseId"
+      ],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/alert.js": {
+      "filePath": "src/utils/alert.js",
+      "contentHash": "360d084d9cd3dab893da6ce15e784a5c24e4523fe71a2f433dc4a9bb158b87cc",
+      "functions": [
+        {
+          "name": "fire",
+          "params": [
+            "options"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "alertSuccess",
+          "params": [
+            "{title",
+            "...options}"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "alertError",
+          "params": [
+            "{title",
+            "...options}"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "alertInfo",
+          "params": [
+            "title",
+            "text",
+            "options"
+          ],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "sweetalert2",
+          "specifiers": [
+            "Swal"
+          ]
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "alertSuccess",
+        "alertError",
+        "alertInfo",
+        "alertConfirm"
+      ],
+      "totalLines": 62,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/class.utils.js": {
+      "filePath": "src/utils/class.utils.js",
+      "contentHash": "6bef899c3948192410fab7dcc83e9d011103931964a5848880f1749041c99f6d",
+      "functions": [
+        {
+          "name": "generateClassCode",
+          "params": [
+            "{ courseName",
+            "branch",
+            "index }"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "getClassIndexInMonth",
+          "params": [
+            "classes"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./string.utils",
+          "specifiers": [
+            "toCourseCode"
+          ]
+        }
+      ],
+      "exports": [
+        "generateClassCode",
+        "getClassIndexInMonth"
+      ],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/compareData.js": {
+      "filePath": "src/utils/compareData.js",
+      "contentHash": "200c91c872ef468f12f6f087b1678280b0c84b7230d0033f565fa9f25f362d85",
+      "functions": [
+        {
+          "name": "compareData",
+          "params": [
+            "{ formData",
+            "editItem",
+            "fields }"
+          ],
+          "exported": true,
+          "lineCount": 49
+        },
+        {
+          "name": "normalizedByField",
+          "params": [
+            "value",
+            "fieldConfig"
+          ],
+          "exported": false,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lodash",
+          "specifiers": [
+            "isEqual"
+          ]
+        }
+      ],
+      "exports": [
+        "compareData"
+      ],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/date.utils.js": {
+      "filePath": "src/utils/date.utils.js",
+      "contentHash": "16f468bb6e9168fd11ba33a94a6295985868f5dad47f6310a4962d4ca7dc0349",
+      "functions": [
+        {
+          "name": "formatDateDisplay",
+          "params": [
+            "date",
+            "locale"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "formatDate",
+          "params": [
+            "date"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "formatDateHistory",
+          "params": [
+            "date"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "formatDateDisplay",
+        "formatDateHistory"
+      ],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/field.util.jsx": {
+      "filePath": "src/utils/field.util.jsx",
+      "contentHash": "6939d72a3a2bdb6b13ecfad03bb1b3a7e8336b8c55765567b16e49afcdc62af8",
+      "functions": [
+        {
+          "name": "formatValue",
+          "params": [
+            "value",
+            "fieldConfig",
+            "mode"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "buildFieldMap",
+          "params": [
+            "fields"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./date.utils",
+          "specifiers": [
+            "formatDateDisplay"
+          ]
+        }
+      ],
+      "exports": [
+        "buildFormFields",
+        "formatValue",
+        "buildFieldMap"
+      ],
+      "totalLines": 93,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/requestAPI.js": {
+      "filePath": "src/utils/requestAPI.js",
+      "contentHash": "54b629fbe1cb778ac780126e704330cd854545cd358008c96287581f27f649d7",
+      "functions": [
+        {
+          "name": "handleResponse",
+          "params": [
+            "res"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "get",
+          "params": [
+            "path"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "post",
+          "params": [
+            "path",
+            "body"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "patch",
+          "params": [
+            "path",
+            "body"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "del",
+          "params": [
+            "path"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "get",
+        "post",
+        "patch",
+        "del"
+      ],
+      "totalLines": 40,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/string.utils.js": {
+      "filePath": "src/utils/string.utils.js",
+      "contentHash": "c3090b68cf3bb69f689367f2bd7ab7476e97bd3a94919c4306b873e7cbe8bea1",
+      "functions": [
+        {
+          "name": "getInitials",
+          "params": [
+            "fullName"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "toCourseCode",
+          "params": [
+            "courseName"
+          ],
+          "exported": true,
+          "lineCount": 16
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "getInitials",
+        "toCourseCode"
+      ],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "src/validators/formValidator.js": {
+      "filePath": "src/validators/formValidator.js",
+      "contentHash": "475001d3d914c9318884ace7b0a20e42a64582a71c33937db4a8f8d8447d35dc",
+      "functions": [
+        {
+          "name": "validateForm",
+          "params": [
+            "form",
+            "fields",
+            "fieldName",
+            "editItem"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "getErrorMessage",
+          "params": [
+            "field",
+            "value",
+            "form",
+            "editItem"
+          ],
+          "exported": false,
+          "lineCount": 42
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "validateForm"
+      ],
+      "totalLines": 71,
+      "hasStructuralAnalysis": true
+    },
+    "vite.config.js": {
+      "filePath": "vite.config.js",
+      "contentHash": "fc105bf7f2ee3c567f765e1e4f63a5c3856989140a1fac0f854f2b98ae4d8fcd",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vite",
+          "specifiers": [
+            "defineConfig"
+          ]
+        },
+        {
+          "source": "@vitejs/plugin-react-swc",
+          "specifiers": [
+            "react"
+          ]
+        },
+        {
+          "source": "path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

@@ -1366,6 +1366,266 @@
         "javascript"
       ],
       "complexity": "moderate"
+    },
+    {
+      "id": "file:App.css",
+      "type": "file",
+      "name": "App.css",
+      "filePath": "App.css",
+      "summary": "Stylesheet file App.css",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:assets/styles/abstracts/_mixins.scss",
+      "type": "file",
+      "name": "_mixins.scss",
+      "filePath": "assets/styles/abstracts/_mixins.scss",
+      "summary": "Stylesheet file assets/styles/abstracts/_mixins.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:assets/styles/abstracts/_variables.scss",
+      "type": "file",
+      "name": "_variables.scss",
+      "filePath": "assets/styles/abstracts/_variables.scss",
+      "summary": "Stylesheet file assets/styles/abstracts/_variables.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:assets/styles/base/_global.scss",
+      "type": "file",
+      "name": "_global.scss",
+      "filePath": "assets/styles/base/_global.scss",
+      "summary": "Stylesheet file assets/styles/base/_global.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:assets/styles/common.scss",
+      "type": "file",
+      "name": "common.scss",
+      "filePath": "assets/styles/common.scss",
+      "summary": "Stylesheet file assets/styles/common.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:assets/styles/pages/main.scss",
+      "type": "file",
+      "name": "main.scss",
+      "filePath": "assets/styles/pages/main.scss",
+      "summary": "Stylesheet file assets/styles/pages/main.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:components/Footer/Footer.scss",
+      "type": "file",
+      "name": "Footer.scss",
+      "filePath": "components/Footer/Footer.scss",
+      "summary": "Stylesheet file components/Footer/Footer.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:components/Header/Header.scss",
+      "type": "file",
+      "name": "Header.scss",
+      "filePath": "components/Header/Header.scss",
+      "summary": "Stylesheet file components/Header/Header.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:components/PageComponent/PageComponent.scss",
+      "type": "file",
+      "name": "PageComponent.scss",
+      "filePath": "components/PageComponent/PageComponent.scss",
+      "summary": "Stylesheet file components/PageComponent/PageComponent.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:index.css",
+      "type": "file",
+      "name": "index.css",
+      "filePath": "index.css",
+      "summary": "Stylesheet file index.css",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:layouts/LayoutDefault.scss",
+      "type": "file",
+      "name": "LayoutDefault.scss",
+      "filePath": "layouts/LayoutDefault.scss",
+      "summary": "Stylesheet file layouts/LayoutDefault.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:pages/ClassSchedule/ClassSchedule.scss",
+      "type": "file",
+      "name": "ClassSchedule.scss",
+      "filePath": "pages/ClassSchedule/ClassSchedule.scss",
+      "summary": "Stylesheet file pages/ClassSchedule/ClassSchedule.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:pages/Home/Home.scss",
+      "type": "file",
+      "name": "Home.scss",
+      "filePath": "pages/Home/Home.scss",
+      "summary": "Stylesheet file pages/Home/Home.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:pages/Lecturer/LectureDetailModal.scss",
+      "type": "file",
+      "name": "LectureDetailModal.scss",
+      "filePath": "pages/Lecturer/LectureDetailModal.scss",
+      "summary": "Stylesheet file pages/Lecturer/LectureDetailModal.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:pages/Lecturer/LectureModal.scss",
+      "type": "file",
+      "name": "LectureModal.scss",
+      "filePath": "pages/Lecturer/LectureModal.scss",
+      "summary": "Stylesheet file pages/Lecturer/LectureModal.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:pages/NotFound/NotFound.scss",
+      "type": "file",
+      "name": "NotFound.scss",
+      "filePath": "pages/NotFound/NotFound.scss",
+      "summary": "Stylesheet file pages/NotFound/NotFound.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:pages/Profile/Profile.scss",
+      "type": "file",
+      "name": "Profile.scss",
+      "filePath": "pages/Profile/Profile.scss",
+      "summary": "Stylesheet file pages/Profile/Profile.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:pages/Register/Register.scss",
+      "type": "file",
+      "name": "Register.scss",
+      "filePath": "pages/Register/Register.scss",
+      "summary": "Stylesheet file pages/Register/Register.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:pages/SignIn/SignIn.scss",
+      "type": "file",
+      "name": "SignIn.scss",
+      "filePath": "pages/SignIn/SignIn.scss",
+      "summary": "Stylesheet file pages/SignIn/SignIn.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "type": "file",
+      "name": "sweetalert2.min.css",
+      "filePath": "node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "summary": "Stylesheet file node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
     }
   ],
   "edges": [
@@ -3636,8 +3896,7 @@
       "weight": 0.7,
       "from": "file:utils/field.util.jsx",
       "to": "file:utils/date.utils.js"
-    }
-    ,
+    },
     {
       "source": "file:routes/index.jsx",
       "target": "file:pages/Cart/Cart.jsx",
@@ -3655,6 +3914,402 @@
       "type": "imports",
       "direction": "forward",
       "weight": 0.5
+    },
+    {
+      "source": "file:main.jsx",
+      "target": "file:assets/styles/pages/main.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:main.jsx",
+      "to": "file:assets/styles/pages/main.scss"
+    },
+    {
+      "source": "file:hooks/useReorder.jsx",
+      "target": "file:node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:hooks/useReorder.jsx",
+      "to": "file:node_modules/sweetalert2/dist/sweetalert2.min.css"
+    },
+    {
+      "source": "file:layouts/LayoutDefault.jsx",
+      "target": "file:layouts/LayoutDefault.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:layouts/LayoutDefault.jsx",
+      "to": "file:layouts/LayoutDefault.scss"
+    },
+    {
+      "source": "file:utils/alert.js",
+      "target": "file:node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:utils/alert.js",
+      "to": "file:node_modules/sweetalert2/dist/sweetalert2.min.css"
+    },
+    {
+      "source": "file:pages/ClassSchedule/ClassSchedule.jsx",
+      "target": "file:pages/ClassSchedule/ClassSchedule.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/ClassSchedule/ClassSchedule.jsx",
+      "to": "file:pages/ClassSchedule/ClassSchedule.scss"
+    },
+    {
+      "source": "file:pages/Home/Home.jsx",
+      "target": "file:pages/Home/Home.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/Home/Home.jsx",
+      "to": "file:pages/Home/Home.scss"
+    },
+    {
+      "source": "file:pages/Lecturer/LectureDetailModal.jsx",
+      "target": "file:pages/Lecturer/LectureDetailModal.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/Lecturer/LectureDetailModal.jsx",
+      "to": "file:pages/Lecturer/LectureDetailModal.scss"
+    },
+    {
+      "source": "file:pages/Lecturer/LectureModal.jsx",
+      "target": "file:pages/Lecturer/LectureModal.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/Lecturer/LectureModal.jsx",
+      "to": "file:pages/Lecturer/LectureModal.scss"
+    },
+    {
+      "source": "file:pages/Lecturer/LectureModal.jsx",
+      "target": "file:assets/styles/common.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/Lecturer/LectureModal.jsx",
+      "to": "file:assets/styles/common.scss"
+    },
+    {
+      "source": "file:pages/NotFound/NotFound.jsx",
+      "target": "file:pages/NotFound/NotFound.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/NotFound/NotFound.jsx",
+      "to": "file:pages/NotFound/NotFound.scss"
+    },
+    {
+      "source": "file:pages/Profile/Profile.jsx",
+      "target": "file:pages/Profile/Profile.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/Profile/Profile.jsx",
+      "to": "file:pages/Profile/Profile.scss"
+    },
+    {
+      "source": "file:pages/Register/Register.jsx",
+      "target": "file:node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/Register/Register.jsx",
+      "to": "file:node_modules/sweetalert2/dist/sweetalert2.min.css"
+    },
+    {
+      "source": "file:pages/Register/Register.jsx",
+      "target": "file:pages/Register/Register.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/Register/Register.jsx",
+      "to": "file:pages/Register/Register.scss"
+    },
+    {
+      "source": "file:pages/Register/Register.jsx",
+      "target": "file:assets/styles/common.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/Register/Register.jsx",
+      "to": "file:assets/styles/common.scss"
+    },
+    {
+      "source": "file:pages/SignIn/ForgotForm.jsx",
+      "target": "file:node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/SignIn/ForgotForm.jsx",
+      "to": "file:node_modules/sweetalert2/dist/sweetalert2.min.css"
+    },
+    {
+      "source": "file:pages/SignIn/LoginForm.jsx",
+      "target": "file:node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/SignIn/LoginForm.jsx",
+      "to": "file:node_modules/sweetalert2/dist/sweetalert2.min.css"
+    },
+    {
+      "source": "file:pages/SignIn/ResetForm.jsx",
+      "target": "file:node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/SignIn/ResetForm.jsx",
+      "to": "file:node_modules/sweetalert2/dist/sweetalert2.min.css"
+    },
+    {
+      "source": "file:pages/SignIn/SignIn.jsx",
+      "target": "file:pages/SignIn/SignIn.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/SignIn/SignIn.jsx",
+      "to": "file:pages/SignIn/SignIn.scss"
+    },
+    {
+      "source": "file:pages/SignIn/SignIn.jsx",
+      "target": "file:node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/SignIn/SignIn.jsx",
+      "to": "file:node_modules/sweetalert2/dist/sweetalert2.min.css"
+    },
+    {
+      "source": "file:pages/Student/StudentDetailModal.jsx",
+      "target": "file:pages/Lecturer/LectureDetailModal.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:pages/Student/StudentDetailModal.jsx",
+      "to": "file:pages/Lecturer/LectureDetailModal.scss"
+    },
+    {
+      "source": "file:components/CommonPickers/CoursePickerModal.jsx",
+      "target": "file:components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/CommonPickers/CoursePickerModal.jsx",
+      "to": "file:components/PageComponent/PageComponent.scss"
+    },
+    {
+      "source": "file:components/CommonPickers/LecturePickerModal.jsx",
+      "target": "file:components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/CommonPickers/LecturePickerModal.jsx",
+      "to": "file:components/PageComponent/PageComponent.scss"
+    },
+    {
+      "source": "file:components/Footer/Footer.jsx",
+      "target": "file:components/Footer/Footer.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/Footer/Footer.jsx",
+      "to": "file:components/Footer/Footer.scss"
+    },
+    {
+      "source": "file:components/Header/Header.jsx",
+      "target": "file:components/Header/Header.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/Header/Header.jsx",
+      "to": "file:components/Header/Header.scss"
+    },
+    {
+      "source": "file:components/PageComponent/DataTable.jsx",
+      "target": "file:components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/PageComponent/DataTable.jsx",
+      "to": "file:components/PageComponent/PageComponent.scss"
+    },
+    {
+      "source": "file:components/PageComponent/HistoryModal.jsx",
+      "target": "file:components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/PageComponent/HistoryModal.jsx",
+      "to": "file:components/PageComponent/PageComponent.scss"
+    },
+    {
+      "source": "file:components/PageComponent/PageHeader.jsx",
+      "target": "file:components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/PageComponent/PageHeader.jsx",
+      "to": "file:components/PageComponent/PageComponent.scss"
+    },
+    {
+      "source": "file:components/PageComponent/Pagination.jsx",
+      "target": "file:components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/PageComponent/Pagination.jsx",
+      "to": "file:components/PageComponent/PageComponent.scss"
+    },
+    {
+      "source": "file:components/PageComponent/SharedModal.jsx",
+      "target": "file:components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/PageComponent/SharedModal.jsx",
+      "to": "file:components/PageComponent/PageComponent.scss"
+    },
+    {
+      "source": "file:components/PageComponent/SharedModal.jsx",
+      "target": "file:node_modules/sweetalert2/dist/sweetalert2.min.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/PageComponent/SharedModal.jsx",
+      "to": "file:node_modules/sweetalert2/dist/sweetalert2.min.css"
+    },
+    {
+      "source": "file:components/PageComponent/Toolbar.jsx",
+      "target": "file:components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:components/PageComponent/Toolbar.jsx",
+      "to": "file:components/PageComponent/PageComponent.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:assets/styles/common.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:assets/styles/common.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:components/Footer/Footer.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:components/Footer/Footer.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:components/Header/Header.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:components/Header/Header.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:components/PageComponent/PageComponent.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:pages/Home/Home.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:pages/Home/Home.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:pages/Lecturer/LectureDetailModal.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:pages/Lecturer/LectureDetailModal.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:pages/Lecturer/LectureModal.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:pages/Lecturer/LectureModal.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:pages/NotFound/NotFound.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:pages/NotFound/NotFound.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:pages/Profile/Profile.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:pages/Profile/Profile.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:pages/Register/Register.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:pages/Register/Register.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:pages/SignIn/SignIn.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:pages/SignIn/SignIn.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:layouts/LayoutDefault.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:layouts/LayoutDefault.scss"
+    },
+    {
+      "source": "file:assets/styles/pages/main.scss",
+      "target": "file:pages/ClassSchedule/ClassSchedule.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "from": "file:assets/styles/pages/main.scss",
+      "to": "file:pages/ClassSchedule/ClassSchedule.scss"
     }
   ],
   "layers": [
@@ -3781,6 +4436,33 @@
         "file:utils/requestAPI.js",
         "file:utils/string.utils.js",
         "file:validators/formValidator.js"
+      ]
+    },
+    {
+      "id": "layer:styles",
+      "name": "Styles Layer",
+      "description": "CSS and SCSS stylesheet files for UI styling.",
+      "nodeIds": [
+        "file:App.css",
+        "file:assets/styles/abstracts/_mixins.scss",
+        "file:assets/styles/abstracts/_variables.scss",
+        "file:assets/styles/base/_global.scss",
+        "file:assets/styles/common.scss",
+        "file:assets/styles/pages/main.scss",
+        "file:components/Footer/Footer.scss",
+        "file:components/Header/Header.scss",
+        "file:components/PageComponent/PageComponent.scss",
+        "file:index.css",
+        "file:layouts/LayoutDefault.scss",
+        "file:pages/ClassSchedule/ClassSchedule.scss",
+        "file:pages/Home/Home.scss",
+        "file:pages/Lecturer/LectureDetailModal.scss",
+        "file:pages/Lecturer/LectureModal.scss",
+        "file:pages/NotFound/NotFound.scss",
+        "file:pages/Profile/Profile.scss",
+        "file:pages/Register/Register.scss",
+        "file:pages/SignIn/SignIn.scss",
+        "file:node_modules/sweetalert2/dist/sweetalert2.min.css"
       ]
     }
   ],

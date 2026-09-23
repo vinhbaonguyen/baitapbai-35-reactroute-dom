@@ -9,6 +9,7 @@
 import { combineReducers } from 'redux'
 import authReducer from './authReducers'
 import masterDataReducer from './masterDataReducer'
+
 const allReducers = combineReducers({
     auth: authReducer,              // state.auth.currentUser, state.auth.isLoggedIn
     masterData: masterDataReducer   // state.masterData.courses, .lectures, .students, .loaded

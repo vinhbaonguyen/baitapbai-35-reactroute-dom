@@ -1,13 +1,17 @@
-import React, { useRef, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import Modal from 'react-modal'
-import { PRESET_SKILLS } from '../../constants/lecturer/lecturer.constants'
+// import { PRESET_SKILLS } from '../../constants/lecturer/lecturer.constants'
 import { getModalStyle } from '../../constants/modalStyles'
 import Draggable from 'react-draggable'
+import { confirmPickerSelection } from '@/utils/confirmPickerSelection'
+import { PRESET_SKILLS } from '@/constants/lecturer/lecture.master.fieldsConfig'
 
 
-export default function SkillPickerModal({ selected = [], onSave, onClose }) {
+
+export default function SkillPickerModal({ selected = [], onSave, onClose, onEmptyConfirm }) {
     const [picked, setPicked] = useState([...selected])
     const [input, setInput] = useState('')
+    const [search, setSearch] = useState('')
 
     const toogle = (skill) =>
         setPicked(prev => prev.includes(skill)
@@ -19,19 +23,49 @@ export default function SkillPickerModal({ selected = [], onSave, onClose }) {
         if (s && !picked.includes(s)) setPicked(pre => [...pre, s])
         setInput('')
     }
+
+    // const handleConfirm = async () => {
+    //     if(!picked.length){
+    //         const confirm = await alertConfirm({
+    //             title: 'Bạn chưa chọn Kỹ Năng cho Giảng Viên',
+    //             confirmButtonText: 'Quay lại Chọn',
+    //             cancelButtonText: 'Thoát'
+    //         })
+    //         if (confirm.isConfirmed) return;
+    //         if(confirm.isDismissed) onEmptyConfirm();
+    //         onClose();
+    //         return;
+    //     }
+    //     onSave(picked);
+    //     onClose()
+    // }
+    const handleConfirm = () => confirmPickerSelection({
+        picked,
+        onSave,
+        onClose,
+        onEmptyConfirm,
+        emptyTitle: 'Bạn chưa chọn Kỹ Năng'
+    })
+
+
+
     const nodeRef = useRef(null)
+
+    const filteredData = useMemo(() => {
+        return PRESET_SKILLS.filter(skill => skill.toLowerCase().trim().includes(search?.toLowerCase().trim()))
+    }, [search])
 
     return (
         <Modal
             isOpen={true}
             onRequestClose={onClose}
-            style={getModalStyle('420px')}
+            style={getModalStyle('520px')}
             shouldFocusAfterRender={false}
             shouldReturnFocusAfterClose={false}
             ariaHideApp={false}              // ✅ tắt aria-hide hoàn toàn
             contentElement={(props, children) => (
                 <Draggable
-                    handle='.modal__title'
+                    handle='.modal__header'
                     nodeRef={nodeRef}
                     defaultPosition={{ x: -180, y: -270 }}
                     position={null}
@@ -42,11 +76,28 @@ export default function SkillPickerModal({ selected = [], onSave, onClose }) {
                 </Draggable>
             )}
         >
-            <h4 className='modal__title'>Chọn Kỹ Năng</h4>
-            {/* Preset list */}
+            <h4 className='modal__header'>Chọn Kỹ Năng</h4>
+            {/* ── THANH TÌM KIẾM + NÚT BATCH ── */}
+            <div className='modal__search' >
+                <input
+                    type="text"
+                    placeholder="Tìm theo tên kỹ năng"
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                />
+
+                <button
+                    type="button"
+                    className="btn btn--outline btn--unpaid"
+                    onClick={() => setPicked([])}
+                    disabled={picked.length === 0}
+                >
+                    Bỏ chọn tất cả
+                </button>
+            </div>
             {/* picker-list picker-list--row */}
             <div className='picker-grid'>
-                {PRESET_SKILLS.map(s => {
+                {filteredData?.map(s => {
                     const isActive = picked.includes(s);
                     return (
                         <span
@@ -92,7 +143,9 @@ export default function SkillPickerModal({ selected = [], onSave, onClose }) {
 
             <div className="modal__footer">
                 <button className='btn btn--outline' onClick={onClose}>Hủy</button>
-                <button className='btn btn--primary' onClick={() => { onSave(picked); }}>
+                <button
+                    className='btn btn--primary'
+                    onClick={handleConfirm}>
                     Xác Nhận ({picked.length})
                 </button>
             </div>

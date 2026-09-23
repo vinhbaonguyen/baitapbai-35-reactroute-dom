@@ -31,143 +31,7 @@
     }
 }
 
-//Picker Modal Component trong components\CommonPickers===========
-.picker-grid {
-    @include grid-col(3);
-    width: 100%;
-}
 
-.picker-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 16px;
-
-    // Tạo thêm modifier cho dạng hàng (row)
-    &--row {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 4px;
-    }
-}
-
-.picker-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid #dee2e6;
-    background: $white;
-    transition: all .15s;
-
-    &:hover {
-        border-color: $primary;
-        // border-color: lighten($primary, 20%);
-        background-color: #f8f9fa;
-    }
-
-    &--active {
-        border-color: $primary;
-        background: #eaf3fb;
-        font-weight: 700;
-
-        .picker-item__text {
-            font-weight: 700;
-            color: $text;
-        }
-
-        .picker-item__check {
-            color: $primary;
-            font-weight: 700;
-        }
-    }
-
-    &__text {
-        font-size: 0.9rem;
-        color: $text;
-    }
-
-    &__icon {
-        @include flex-center;
-        width: 32px;
-        font-size: 1.8rem;
-    }
-
-    &__content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        &--label {
-            margin: 0;
-            font-weight: 700;
-            color: $text;
-            font-size: 0.9rem;
-        }
-
-        &--desc {
-            margin-bottom: 4px;
-            font-size: 0.8rem;
-            color: $text-light;
-        }
-    }
-}
-
-//Phần này chuyên cho SkillPickerModal phần input other Skill và 
-// CoursePickerModal phần search
-.picker-other {
-    display: flex;
-    margin: 8px 0px;
-
-    &__input {
-        // flex: 1;
-        padding: 6px 10px;
-        border-radius: 6px;
-        width: 80%;
-        margin-right: 8px;
-        border: 1.5px solid $border;
-        outline: none;
-        font-size: 0.9rem;
-    }
-}
-
-.picker-other-display {
-    margin-bottom: 8px;
-
-    &__quantity {
-        font-size: 0.78rem;
-        color: $text-light;
-        margin: 0 0 6px;
-        font-weight: 700;
-    }
-
-    &__content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px
-    }
-
-    &__skill {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 3px 10px;
-        border-radius: 20px;
-        background: $primary;
-        color: $white;
-        font-size: 0.78rem;
-        font-weight: 600;
-    }
-
-    &__delete {
-        cursor: pointer;
-        font-weight: 900;
-    }
-}
 
 .base-picker-btn {
     @include flex-center-space-between;
@@ -202,9 +66,9 @@
 }
 
 .base-picker-btn:disabled {
-    opacity: 0.5;   
+    opacity: 0.5;
     cursor: crosshair;
-    border: solid 1px $error;
+    border: solid 1px $menu-text;
 
 }
 
@@ -243,6 +107,38 @@
         font-weight: 500;
         margin-bottom: 4px;
         display: inline-block;
+    }
+
+    &__radio-group {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__radio {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__check-box-group {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+    }
+
+    &__check-box-label {
+        margin-left: 8px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+        justify-content: center;
+
+    }
+
+    &__textarea {
+        margin-top: 0px;
+        border: solid 2px $text-light;
+
     }
 
     &__required {
@@ -404,15 +300,4 @@
             margin-top: 2px;
         }
     }
-}
-
-.form-item__radio-group {
-    display: flex;
-    gap: 16px;
-}
-
-.form-item__radio {
-    display: flex;
-    align-items: center;
-    gap: 4px;
 }

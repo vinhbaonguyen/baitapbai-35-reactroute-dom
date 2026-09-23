@@ -1,0 +1,1289 @@
+[
+  {
+    "collection": "courses",
+    "id": 8,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 9,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 10,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 11,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 12,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 12,
+    "field": "tuitionFee",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 13,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 14,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 15,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 16,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 17,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 18,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 19,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 20,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 21,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "courses",
+    "id": 22,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 1,
+    "field": "createdAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "classes",
+    "id": 2,
+    "field": "createdAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "classes",
+    "id": 3,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 4,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 5,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 6,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 7,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 8,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 9,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 10,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 11,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 12,
+    "field": "lectureName",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classes",
+    "id": 12,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 1,
+    "field": "hourRate",
+    "from": "150000",
+    "to": 150000,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 1,
+    "field": "totalHours",
+    "from": "101",
+    "to": 101,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 1,
+    "field": "monthSalary",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 2,
+    "field": "monthSalary",
+    "from": "11499997",
+    "to": 11499997,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 3,
+    "field": "monthSalary",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 5,
+    "field": "experienceYears",
+    "from": "6",
+    "to": 6,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 5,
+    "field": "hourRate",
+    "from": "240000",
+    "to": 240000,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 5,
+    "field": "totalHours",
+    "from": "140",
+    "to": 140,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 5,
+    "field": "monthSalary",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 6,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 6,
+    "field": "hourRate",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 6,
+    "field": "totalHours",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 6,
+    "field": "monthSalary",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 7,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 7,
+    "field": "hourRate",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 7,
+    "field": "totalHours",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 8,
+    "field": "",
+    "from": "130000",
+    "reason": "remove empty field name"
+  },
+  {
+    "collection": "lectures",
+    "id": 8,
+    "field": "createdAt",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 8,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 8,
+    "field": "experienceYears",
+    "from": "5",
+    "to": 5,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 8,
+    "field": "hourRate",
+    "from": "115000",
+    "to": 115000,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 8,
+    "field": "totalHours",
+    "from": "110",
+    "to": 110,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 8,
+    "field": "monthSalary",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 9,
+    "field": "createdAt",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 9,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 9,
+    "field": "monthSalary",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 9,
+    "field": "experienceYears",
+    "from": "4",
+    "to": 4,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 9,
+    "field": "hourRate",
+    "from": "140000",
+    "to": 140000,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 9,
+    "field": "totalHours",
+    "from": "110",
+    "to": 110,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 10,
+    "field": "createdAt",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 10,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 10,
+    "field": "experienceYears",
+    "from": "4",
+    "to": 4,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 10,
+    "field": "hourRate",
+    "from": "185000",
+    "to": 185000,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 10,
+    "field": "totalHours",
+    "from": "145",
+    "to": 145,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 10,
+    "field": "monthSalary",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 11,
+    "field": "createdAt",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 11,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 11,
+    "field": "experienceYears",
+    "from": "3",
+    "to": 3,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 11,
+    "field": "hourRate",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 11,
+    "field": "totalHours",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 11,
+    "field": "monthSalary",
+    "from": "35000000",
+    "to": 35000000,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 12,
+    "field": "createdAt",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 12,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 12,
+    "field": "experienceYears",
+    "from": "3",
+    "to": 3,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 12,
+    "field": "hourRate",
+    "from": "115000",
+    "to": 115000,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 12,
+    "field": "totalHours",
+    "from": "108",
+    "to": 108,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 12,
+    "field": "monthSalary",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 13,
+    "field": "",
+    "from": "1",
+    "reason": "remove empty field name"
+  },
+  {
+    "collection": "lectures",
+    "id": 13,
+    "field": "createdAt",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 13,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 13,
+    "field": "hourRate",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 13,
+    "field": "totalHours",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 13,
+    "field": "monthSalary",
+    "from": "17999999",
+    "to": 17999999,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 14,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 14,
+    "field": "hourRate",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 14,
+    "field": "totalHours",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 14,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "lectures",
+    "id": 15,
+    "field": "assignedClasses",
+    "to": [],
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 15,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 15,
+    "field": "hourRate",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 15,
+    "field": "totalHours",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 16,
+    "field": "assignedClasses",
+    "to": [],
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 16,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "lectures",
+    "id": 16,
+    "field": "hourRate",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 16,
+    "field": "totalHours",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "lectures",
+    "id": 16,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 2,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 2,
+    "field": "createdAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 3,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 3,
+    "field": "createdAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 4,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 4,
+    "field": "createdAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 5,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 6,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 8,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 10,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 11,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 12,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 14,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 14,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 15,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 15,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 16,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 16,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 99,
+    "field": "hasPaidFee",
+    "to": false,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 99,
+    "field": "dob",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 100,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 100,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 101,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 101,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "students",
+    "id": 102,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "students",
+    "id": 102,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "users",
+    "id": 7,
+    "field": "password",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "users",
+    "id": 7,
+    "field": "updatedAt",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "users",
+    "id": 8,
+    "field": "updatedAt",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "users",
+    "id": 8,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "users",
+    "id": 9,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "users",
+    "id": 10,
+    "field": "updatedAt",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "users",
+    "id": 10,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "users",
+    "id": 11,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "users",
+    "id": 12,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "users",
+    "id": 13,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classSchedules",
+    "id": 9,
+    "field": "startDate",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "classSchedules",
+    "id": 9,
+    "field": "endDate",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 1,
+    "field": "scoreAtFirstTime",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 1,
+    "field": "examDateFirstTime",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 1,
+    "field": "scoreAtSecondTime",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 1,
+    "field": "examDateSecondTime",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 2,
+    "field": "scoreAtFirstTime",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 2,
+    "field": "examDateFirstTime",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 2,
+    "field": "scoreAtSecondTime",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 2,
+    "field": "examDateSecondTime",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 3,
+    "field": "examDate",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 3,
+    "field": "scoreAtSecondTime",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "scores",
+    "id": 3,
+    "field": "examDateSecondTime",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 3,
+    "field": "note",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 4,
+    "field": "examDate",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 4,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 4,
+    "field": "note",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 5,
+    "field": "examDate",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 5,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 5,
+    "field": "scoreAtSecondTime",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "scores",
+    "id": 5,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 5,
+    "field": "examDateSecondTime",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 5,
+    "field": "note",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 6,
+    "field": "examDate",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 6,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 6,
+    "field": "note",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 7,
+    "field": "examDate",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 7,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 7,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 7,
+    "field": "note",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 8,
+    "field": "examDate",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 8,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 8,
+    "field": "scoreAtSecondTime",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "scores",
+    "id": 8,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 8,
+    "field": "examDateSecondTime",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 8,
+    "field": "note",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 9,
+    "field": "examDate",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 9,
+    "field": "sortOrder",
+    "to": null,
+    "reason": "add missing schema field"
+  },
+  {
+    "collection": "scores",
+    "id": 9,
+    "field": "scoreAtSecondTime",
+    "from": "",
+    "to": null,
+    "reason": "normalize number field"
+  },
+  {
+    "collection": "scores",
+    "id": 9,
+    "field": "updatedAt",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 9,
+    "field": "examDateSecondTime",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  },
+  {
+    "collection": "scores",
+    "id": 9,
+    "field": "note",
+    "from": "",
+    "to": null,
+    "reason": "use null for empty value"
+  }
+]

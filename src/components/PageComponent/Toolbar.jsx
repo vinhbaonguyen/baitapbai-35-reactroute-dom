@@ -9,12 +9,35 @@ function Toolbar({
   onSortField,
   toggleSortOrder,
   sortOptions,
-  sortOrder }) {
+  sortOrder,
+  filters = []
+
+}) {
   return (
     <div className="toolbar">
-      <button className='btn btn--primary' onClick={onAdd}>
-        Thêm Mới
-      </button>
+      {
+        onAdd && (
+          <button className='btn btn--primary' onClick={onAdd}>
+            Thêm Mới
+          </button>
+        )}
+
+      {/* Render động các dropdown filter -> trang nào không cần thì không truyền, tự ẩn */}
+      {
+        filters.map(f => (
+          <>
+            <label className='toolbar__label'>Bộ Lọc theo</label>
+            <select
+              key={f.key}
+              className='toolbar__select'
+              value={f.value}
+              onChange={e => f.onChange(e.target.value)}
+            >
+              {f.options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+            </select>
+          </>
+        ))
+      }
       <input
         className='toolbar__search'
         type='text'
@@ -29,15 +52,21 @@ function Toolbar({
           value={sortField}
           onChange={e => onSortField(e.target.value)}
         >
-          <option value='default'>Lựa Chọn</option>
+          <option value='default'>
+            Lựa Chọn
+          </option>
           {sortOptions?.map(opt =>
-            <option key={opt.value} value={opt.value}>{opt.label}</option>
+            <option
+              key={opt.value}
+              value={opt.value}
+            >
+              {opt.label}
+            </option>
           )}
         </select>
         <button
           onClick={() => toggleSortOrder(sortField)}
           disabled={!sortField || sortField === 'default'}
-
         >
           {sortOrder === 'asc' ? '↑' : '↓'}
 

@@ -25,13 +25,13 @@
   transition: all $transition;
 
   // ── Header ──────────────────────────────────────────────────────────────
-  &__header {   
+  &__header {
     @include flex-center;
     position: relative;
     z-index: 2;
     width: 100%;
-    height: 3.5em;    
-    color: $white;
+    height: 3.5em;
+    color: $view;
   }
 
   &__title {
@@ -53,13 +53,13 @@
   }
 
   // ── Field group (bao input) ──────────────────────────────────────────────
-  &__field {   
+  &__field {
     @include flex-center-col;
     align-items: flex-end;
     position: relative;
     z-index: 2;
     width: 100%;
-    padding: 0 10%;    
+    padding: 0 10%;
     transition: all $transition;
 
     input {
@@ -93,12 +93,12 @@
   }
 
   // ── Footer (nút submit + sign up) ────────────────────────────────────────
-  &__footer {    
+  &__footer {
     @include flex-center-col;
     position: relative;
     z-index: 2;
     width: 100%;
-    padding: 0 10%;    
+    padding: 0 10%;
     color: $purple;
     transition: all $transition;
   }
@@ -137,7 +137,8 @@
 
   &__link {
     padding: 0;
-    span{
+
+    span {
       font-weight: 800;
       font-size: 1.2em;
     }
@@ -346,7 +347,7 @@
   }
 }
 
-// ── RESET form ────────────────────────────────────────────────────────────
+//── RESET form ──────────────────────────────────────────────────────────── 
 .signin-form--reset {
   height: 24em;
 
@@ -368,36 +369,20 @@
   .signin-form__footer {
     height: 7em;
   }
-  .signin-form__link{
+
+  .signin-form__link {
     font-size: 1.1em;
   }
 
-  .signin-form__field:not(.signin-form__field--password):hover {
+  .signin-form__field:not(.signin-form__field--password)
+                     :not(.signin-form__field--otp)
+                     :not(.signin-form__field--confirm)
+                     :hover {
     padding: 0 5%;
 
     ~.signin-form__bg {
       height: 4.5em;
       transform: translateY(5.2em);
-    }
-
-    input {
-      color: $white;
-      border-color: $white;
-      background:$signIn;
-      height: 3em;
-    }
-
-    ::placeholder {
-      color: $white;
-    }
-  }
-
-  .signin-form__field--password:hover {
-    padding: 0 5%;
-
-    ~.signin-form__bg {
-      height: 4.8em;
-      transform: translateY(10.5em);
     }
 
     input {
@@ -412,17 +397,78 @@
     }
   }
 
+  .signin-form__field--otp:hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 4.8em; // giống password
+      transform: translateY(4.2em); // vị trí OTP (field đầu tiên)
+    }
+
+    input {
+      color: $white;
+      border-color: $white;
+      background: $signIn;
+      height: 3em;
+    }
+
+    ::placeholder {
+      color: $white;
+    }
+  }
+
+  .signin-form__field--password:hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 4.8em;
+      transform: translateY(8.5em);
+    }
+
+    input {
+      color: $white;
+      border-color: $white;
+      background: $signIn;
+      height: 3em;
+    }
+
+    ::placeholder {
+      color: $white;
+    }
+  }
+
+  .signin-form__field--confirm:hover {
+    padding: 0 5%;
+
+    ~.signin-form__bg {
+      height: 4.8em;
+      transform: translateY(14em);
+    }
+
+    input {
+      color: $white;
+      border-color: $white;
+      background: $signIn;
+      height: 3em;
+      margin-top: 0;
+    }
+
+    ::placeholder {
+      color: $white;
+    }
+  }
+
   .signin-form__footer:hover {
     padding: 0 5%;
 
     ~.signin-form__bg {
-      height: 5.6em;
-      transform: translateY(16.6em);
+      height: 3.8em;
+      transform: translateY(18.6em);
     }
 
     p,
     .signin-form__link {
-      color: $white;
+      color: $text-primary;
     }
 
     .signin-form__submit {

@@ -1,3 +1,4 @@
+
 export const LOGIN_FIELDS = [
     {
         name: 'email',
@@ -29,5 +30,10 @@ export const RESET_FIELDS = [
         name: 'confirm',
         label: 'Confirm',
         form: { required: true, validate: 'confirm' }
+    },
+    {
+        name: 'otp',
+        label: 'OTP Code',
+        form: { required: true, validate: 'otp' }
     }
 ]

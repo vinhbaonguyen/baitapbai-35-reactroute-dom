@@ -1,27 +1,22 @@
 import { getModalStyle } from '@/constants/modalStyles'
-import { alertError } from '@/utils/alert'
+
+import { confirmPickerSelection } from '@/utils/confirmPickerSelection'
 import React, { useRef, useState } from 'react'
 import Draggable from 'react-draggable'
 import Modal from 'react-modal'
-export default function BranchPickerModal({ current = null, branchOpts = [], onSelect, onClose }) {
-    const [picked, setPicked] = useState(current)
+export default function BranchPickerModal({ selected , branchOpts = [], onSave, onClose,onEmptyConfirm }) {
+    const [picked, setPicked] = useState(selected || null)
 
     const handlePick = (branch) => {
-        if (!picked) {
-            setPicked(branch);
-            onSelect(branch);
-            return
-        };
-        if (picked === branch) {
-
-            setPicked(null);
-            onSelect(null)
-            return
-        }
-        setPicked(branch)
-
-        alertError({ title: 'Bạn chỉ có thể chọn duy nhất 1 khóa học' })
+       setPicked(prev => (prev === branch ? null : branch))
     }
+    const handleConfirm = () => confirmPickerSelection({
+        picked,
+        onSave,
+        onClose,
+        onEmptyConfirm,
+        emptyTitle: 'Bạn chưa chọn Chi Nhánh'
+    })
     const nodeRef = useRef(null)
     return (
         <Modal
@@ -33,7 +28,7 @@ export default function BranchPickerModal({ current = null, branchOpts = [], onS
             ariaHideApp={false}
             contentElement={(props, children) => (
                 <Draggable
-                    handle='.modal__title'
+                    handle='.modal__header'
                     nodeRef={nodeRef}
                     defaultPosition={{ x: -180, y: -270 }}
                     position={null}
@@ -45,10 +40,11 @@ export default function BranchPickerModal({ current = null, branchOpts = [], onS
 
             )}
         >
-            <h4 className='modal__title'>Chọn Chi Nhánh</h4>
+            <h4 className='modal__header'>Chọn Chi Nhánh</h4>
             <div className='picker-list'>
                 {branchOpts?.map(b => {
-                    const isActive = current === b.value;
+                    // const isActive = current === b.value;
+                    const isActive = picked === b.value;
                     return (
                         <div
                             key={b.value}
@@ -68,6 +64,14 @@ export default function BranchPickerModal({ current = null, branchOpts = [], onS
             <div className="modal__footer">
                 <button className='btn btn--outline' onClick={onClose} >
                     Đóng
+                </button>
+                <button
+                    type='button'
+                    className='btn btn--primary'
+                    // disabled={!picked}
+                    onClick={handleConfirm}
+                >
+                    Xác nhận
                 </button>
             </div>
         </Modal>

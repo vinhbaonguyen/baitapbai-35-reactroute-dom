@@ -6,9 +6,10 @@ import { renderCell } from './../common/table/tableRender.jsx';
 import { buildFieldMap } from '../../utils/field.util';
 
 function DataTable({ keyField, columns, data = [],
-  onEdit, onDelete, onHistory,
+  onEdit, onDelete, onHistory, onArchive,
   currentPage, itemsPerPage, onReorder,
   onView, // đối với Component nào cần show DetailModal thì truyền props này ví dụ như Lecture
+  onCellAction, // đối với Component nào cần hiển thị data liên kết ví dụ như Class mỗi Class hiển thị danh sách sinh viên
   disableSelfEdit = false, // ✅ mặc định false — chỉ User page truyền true
   fields
 }) {
@@ -34,11 +35,24 @@ function DataTable({ keyField, columns, data = [],
         <Reorder.Group as='tbody' axis='y' values={data} onReorder={onReorder}>
           {data?.length > 0
             ? data?.map((row, i) => (
+              console.log("Row Data:", row),
               <Reorder.Item as='tr' key={row[keyField]} value={row} style={{ cursor: 'grab' }}>
-                <td>{(currentPage - 1) * itemsPerPage + i + 1}</td>
+                <td>
+                  {(currentPage - 1) * itemsPerPage + i + 1}
+                </td>
                 {columns.map(col => (
                   <td key={col.field}>
-                    {renderCell(col, row, fieldMap)}
+                    {col.type === 'countModal' && onCellAction ? (
+                      <button
+                        type="button"
+                        className="btn btn--outline btn--students"
+                        onClick={() => onCellAction(col, row)}
+                      >
+                        👥 {row[col.relationKey]?.length || 0} SV
+                      </button>
+                    ) : (
+                      renderCell(col, row, fieldMap)
+                    )}
                   </td>
                 ))}
                 <td>
@@ -51,22 +65,30 @@ function DataTable({ keyField, columns, data = [],
                         View More
                       </button>
                     )}
-                    {canEdit && (
+                    {canEdit && onEdit && (
                       <button
-                        className="btn btn--outline"
+                        className="btn btn--outline btn--action"
                         onClick={() => onEdit(row)}
                         disabled={disableSelfEdit && row.id === currentUser?.id}
                         title={disableSelfEdit && row.id === currentUser?.id ? 'Không thể edit chính mình' : ''}
                       >
                         Edit
                       </button>)}
-                    {canDelete &&
+                    {canDelete && onDelete &&
                       (<button
                         className="btn btn--danger"
                         onClick={() => onDelete(keyField, row[keyField])}
                       >
                         Delete
                       </button>)}
+                    {onArchive && (
+                      <button
+                        className="btn btn--archive"
+                        onClick={() => onArchive(row)}
+                      >
+                        📦 Archive
+                      </button>
+                    )}
                     {onHistory &&
                       (<button
                         className="btn btn--history"

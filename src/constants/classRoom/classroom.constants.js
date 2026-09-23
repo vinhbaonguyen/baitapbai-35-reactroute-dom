@@ -59,12 +59,46 @@ export const CLASS_COLORS = [
 // Fields dùng cho compareData khi Edit
 
 export const SCHEDULE_FIELDS = [
-    { name: 'classId', form: { type: 'number', compare: true } },
-    { name: 'days', form: { type: 'array', compare: true } },
-    { name: 'startTime', form: { type: 'text', compare: true } },
-    { name: 'endTime', form: { type: 'text', compare: true } },
-    { name: 'room', form: { type: 'text', compare: true } },
-    { name: 'duration', form: { type: 'number', compare: true } },
-    { name: 'startDate', form: { type: 'date', compare: true } }, // ✅ Ngày khai giảng
-    { name: 'endDate', form: { type: 'date', compare: true } }, // ✅ Ngày bế giảng
+    {
+        name: 'classId',
+        form: { type: 'number', compare: true },
+        history: { type: 'number', show: false }
+    },
+    {
+        name: 'days',
+        form: { type: 'array', compare: true },
+        history: { type: 'array', show: true }
+
+    },
+    {
+        name: 'startTime',
+        form: { type: 'text', compare: true },
+        history: { type: 'text', show: true }
+    },
+    {
+        name: 'endTime',
+        form: { type: 'text', compare: true },
+        history: { type: 'text', show: false }
+    },
+    {
+        name: 'room',
+        form: { type: 'text', compare: true },
+        history: { type: 'text', show: true }
+    },
+    {
+        name: 'duration',
+        form: { type: 'number', compare: true },
+        history: { type: 'number', show: true }
+    },// ✅ Ngày khai giảng
+    {
+        name: 'startDate',
+        form: { type: 'date', compare: true },
+        history: { type: 'date', show: true }
+
+    }, // ✅ Ngày bế giảng
+    {
+        name: 'endDate',
+        form: { type: 'date', compare: true },
+        history: { type: 'date', show: true }
+    },
 ]

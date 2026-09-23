@@ -4,31 +4,17 @@ import Modal from 'react-modal'
 import { getModalStyle } from '../../constants/modalStyles'
 import { formatDateDisplay } from '../../utils/date.utils.js'
 import Draggable from 'react-draggable'
+import SectionTitle from '@/components/common/detailmodal/SectionTitle'
+import InfoRow from '@/components/common/detailmodal/InfoRow'
+import TagList from '@/components/common/detailmodal/TagList'
+import { formatVND } from '@/utils/formatVND'
 
-// ── Helper components ──────────────────────────────────────────────────────
-const SectionTitle = ({ children }) => (
-    <p className="ld-section">{children}</p>
-)
-const InfoRow = ({ label, value }) => (
-    <div className="ld-row">
-        <span className="ld-row__label">{label}</span>
-        <span className="ld-row__value">{value}</span>
-    </div>
-
-)
-const TagList = ({ items = [] }) => (
-    <div className="ld-tags">
-        {items.length > 0
-            ? items.map((item, index) => <span className='ld-tag' key={index}>{item}</span>)
-            : <span className='ld-empty'>Chưa Có</span>
-        }
-    </div>
-
-)
-// ── Main component ─────────────────────────────────────────────────────────
 export default function LectureDetailModal({ lecture, onClose }) {
     const nodeRef = useRef(null)
-    if (!lecture) return null
+    if (!lecture) {
+        console.warn("⚠️ LectureDetailModal: 'lecture' không tồn tại.");
+        return null;        
+    }
     return (
         <Modal
             isOpen={true}
@@ -41,15 +27,13 @@ export default function LectureDetailModal({ lecture, onClose }) {
                 <Draggable
                     handle='.ld-header'
                     nodeRef={nodeRef}
-                    defaultPosition={{ x: -180, y: -390 }}
+                    defaultPosition={{ x: -180, y: -320 }}
                     position={null}
-
                 >
                     <div {...props} ref={nodeRef}>
                         {children}
                     </div>
                 </Draggable>
-
             )}
         >
             {/* Header */}
@@ -97,6 +81,8 @@ export default function LectureDetailModal({ lecture, onClose }) {
             <SectionTitle>💰 Thông Tin Lương</SectionTitle>
             <div className="ld-grid">
                 <InfoRow label="Hình Thức" value={lecture.salaryType === 'hourly' ? 'Lương Giờ' : 'Lương Tháng'} />
+                <InfoRow label="Lương Tháng" value={lecture.monthSalary ? `${formatVND(lecture.monthSalary)}` : '-'} />
+
                 <InfoRow label="Đơn Giá" value={lecture.hourRate ? `${lecture.hourRate}/h` : '-'} />
                 <InfoRow label="Tổng Giờ" value={lecture.totalHours ? `${lecture.totalHours}/h` : '-'} />
             </div>

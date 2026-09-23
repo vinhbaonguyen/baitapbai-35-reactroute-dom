@@ -1,4 +1,4 @@
-import { del, get, patch, post } from "../utils/requestAPI"
+import { del, get, post, put } from "../utils/requestAPI"
 
 
 const PATH = 'classes'
@@ -14,13 +14,15 @@ export const getByCourseId = (courseId) =>
 // Tạo class mới
 export const create = (data) => post(PATH, data)
 // Cập nhật class
-export const update = (id,data) => patch(`${PATH}/${id}`,data)
+export const update = (id,data) => put(`${PATH}/${id}`,data)
 // Xóa class
 export const remove = (id) => del(`${PATH}/${id}`)
 // Thay đổi bằng cách kéo và thả trong TableData
-export const updateOrder = async (reorderedPageData, startIndex) => {
-    const promises = reorderedPageData.map((item, index) => {
-        return patch(`${PATH}/${item.id}`, { sortOrder: startIndex + index })
-    })
-    return Promise.all(promises)
-}
+// export const updateOrder = async (reorderedPageData, startIndex) => {
+//     const promises = reorderedPageData.map((item, index) => {
+//         return patch(`${PATH}/reorder/${item.id}`, { sortOrder: startIndex + index })
+//     })
+//     return Promise.all(promises)
+// }
+
+export const updateOrder = (items) => put(`${PATH}/reorder`, items)

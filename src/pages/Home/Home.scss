@@ -32,53 +32,219 @@
   min-height: 100%;
   padding: 24px;
   font-family: 'Segoe UI', sans-serif;
+
+  // ── Topbar ────────────────────────────────────────────────────────────────
+  &__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  &__greeting {
+    font-size: 2rem;
+    font-weight: 900;
+    color: $text-home;
+    margin: 0 0 4px;
+    letter-spacing: -.5px;
+  }
+
+  &__sub {
+    color: $text-light;
+    margin: 0;
+    font-size: .95rem;
+
+  }
+
+  &__clock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: $text-light;
+    font-size: .85rem;
+
+    strong {
+      font-size: 1.4rem;
+      color: $primary-home;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  // ── Stats row ──────────────────────────────────────────────────────────────
+  &__stats {
+    @include grid-col(4);
+    margin-bottom: 24px;
+
+    @media (max-width: 900px) {
+      @include grid-col(1)
+    }
+  }
 }
 
-// ── Topbar ─────────────────────────────────────────────────────────────────
-.home__topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 24px;
+// CSS của WarningCard ==========================
+.warning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0;
 }
 
-.home__greeting {
-  font-size: 2rem;
-  font-weight: 900;
-  color: $text-home;
-  margin: 0 0 4px;
-  letter-spacing: -.5px;
-}
-
-.home__sub {
-  color: $text-light;
-  margin: 0;
-  font-size: .95rem;
-}
-
-.home__clock {
+.warning-card {
+  // background: $warning;
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  color: $text-light;
-  font-size: .85rem;
+  height: 100%; // ⭐ BẮT BUỘC
+  min-height: 220px; // ⭐ Đảm bảo không quá thấp
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); // Đổ bóng nhẹ nhàng cho sống động
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  strong {
-    font-size: 1.4rem;
-    color: $primary-home;
-    font-variant-numeric: tabular-nums;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #eab308; // Mặc định màu vàng cảnh báo
+  }
+
+  // Bạn có thể thêm modifier riêng cho từng loại card nếu muốn sinh động:
+  &--danger::before {
+    background: #ef4444;
+  }
+
+  // Đỏ cho học viên chưa xếp lớp
+  &--warning::before {
+    background: #f97316;
+  }
+
+  // Cam cho lớp chưa có lịch
+  &--info::before {
+    background: #3b82f6;
+  }
+
+  // Xanh cho giáo viên chưa có lớp
+
+
+  &--empty {
+    background: $card-bg;
+    border: 1px dashed $header-bottom;
+    text-align: center;
+    color: $text-light;
+  }
+
+  &__header {
+    font-weight: 700;
+    font-size: 1rem;
+    color: $text-home;
+    flex-shrink: 0; // giữ nguyên vị trí
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1; // ⭐ PHẦN NÀY GIÃN RA ĐỂ 3 CARD BẰNG NHAU
+  }
+
+  &__more {
+    font-size: .8rem;
+    color: $text-light;
+  }
+
+  &__footer {
+    margin-top: auto; // ⭐ Đẩy footer xuống đáy card
+    flex-shrink: 0;
+
+  }
+
+  &__empty {
+    font-size: .9rem;
   }
 }
 
-// ── Stats row ──────────────────────────────────────────────────────────────
-.home__stats {
-  @include grid-col(4);
-  margin-bottom: 24px;
+.warning-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 
-  @media (max-width: 900px) {
-    @include grid-col(1)
+  &__name {
+    font-weight: 600;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding-left: 24px; // Đẩy lùi vào để thẳng hàng dưới tên User
+  }
+
+  // Custom lại các badge môn học/trạng thái thay vì dùng emoji ❌ thô sơ
+  &__badge-item {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+    display: inline-flex;
+    align-items: center;
+
+    &--skill {
+      background: #fef2f2;
+      color: #dc2626;
+      border-color: #fecaca;
+    }
+
+    &--class-code {
+      background: #f0fdf4;
+      color: #16a34a;
+      border-color: #bbf7d0;
+    }
+  }
+
+}
+
+// Thiết kế lại Nút bấm (Button) cho hiện đại, tiệp màu với Card
+.warning-btn {
+  width: 100%; // Cho nút dài ra bằng khung nhìn rất kiên cố
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+
+  background: #f3f4f6;
+  color: #1f2937;
+
+  &:hover {
+    background: #1f2937;
+    color: #ffffff;
   }
 }
+
 
 .stat {
   background: $white;
@@ -155,7 +321,7 @@
   @include grid-3col;
   align-items: start;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1250px) {
     @include grid-col(2)
   }
 
@@ -169,6 +335,78 @@
   flex-direction: column;
   gap: 16px;
 
+}
+
+/* ─────────────────────────────── */
+/*  Unassigned Students            */
+/* ─────────────────────────────── */
+
+.unassigned {
+  &__courses {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-left: 6px;
+  }
+
+  &__course-badge {
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 0.5px solid var(--color-border-warning);
+    color: var(--color-text-warning);
+
+    &.is-assigned {
+      border-color: var(--color-border-success);
+      color: var(--color-text-success);
+    }
+  }
+
+  &__more {
+    font-size: .8rem;
+    color: $text-light;
+    margin-top: 4px;
+    display: inline-block;
+  }
+
+  &__actions {
+    margin-top: 12px;
+  }
+
+  &__btn {
+    background: $primary-home;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: .85rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      opacity: .85;
+    }
+  }
+}
+
+.unschedule {
+  &__btn {
+    background: $primary;
+    color: $header-bottom;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: .85rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      opacity: .85;
+    }
+
+  }
 }
 
 // ── Card ───────────────────────────────────────────────────────────────────
@@ -185,7 +423,7 @@
     margin: 0 0 14px;
   }
 
-  &__head {
+  &__header {
     @include flex-center-space-between;
     margin-bottom: 14px;
 
@@ -232,12 +470,27 @@
   }
 }
 
+.card-warning {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: $warning;
+  flex-shrink: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+// style={{ width: 120, height: 120, borderRadius: '50%', background: '#e5e7eb', flexShrink: 0 }}
 // ── Filter tabs ────────────────────────────────────────────────────────────
 .tabs {
   display: flex;
   gap: 6px;
   margin-bottom: 14px;
   flex-wrap: wrap;
+
 
   &__btn {
     padding: 5px 12px;
@@ -248,6 +501,7 @@
     cursor: pointer;
     transition: all $transition;
     color: $text-light;
+
 
     &--active {
       background: $primary-home;
@@ -264,6 +518,8 @@
 
 // ── Student list ───────────────────────────────────────────────────────────
 .student-list {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -348,15 +604,27 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  margin-top: 15px;
 
   &__donut {
     width: 120px;
     height: 120px;
     border-radius: 50%;
+    display: block;
     flex-shrink: 0;
-    // background injected via inline style (conic-gradient)
     -webkit-mask: radial-gradient(circle at center, transparent 38%, black 38%);
     mask: radial-gradient(circle at center, transparent 38%, black 38%);
+
+    // ✅ Bootstrap 4 có rule prefers-reduced-motion làm tắt animation
+    // Dùng !important để Animate.css không bị đè
+    &.animate__animated {
+      animation-duration: 0.8s !important;
+      animation-fill-mode: both !important;
+    }
+
+    &--waiting {
+      opacity: 0;
+    }
   }
 
   &__legend {
@@ -379,19 +647,30 @@
     border-radius: 3px;
     flex-shrink: 0;
   }
+
+
 }
+
 
 // ── Data table ─────────────────────────────────────────────────────────────
 .table-wrap {
-  overflow-x: auto;
+  // overflow-x: auto;
   max-height: 340px;
-  overflow-y: auto;
+  overflow-y: auto; // Cho phép cuộn dọc dữ liệu để thấy hiệu ứng sticky
+  overflow-x: auto; // Bật cuộn ngang phòng khi màn hình nhỏ
+  position: relative; // Tạo điểm neo vững chắc cho sticky tính tọa độ
+  margin-top: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
 }
 
 .data-table {
   width: 100%;
-  border-collapse: collapse;
+  // border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: .85rem;
+  
 
   th {
     text-align: left;
@@ -402,6 +681,14 @@
     text-transform: uppercase;
     letter-spacing: .4px;
     border-bottom: 2px solid #f0e8e0;
+
+    // TÍCH HỢP STICKY VÀO CLASS CỦA BẠN:
+    &.course-table__th {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: #ffffff; // Thay bằng màu nền thích hợp ($bg hoặc #fff) để tránh lộ chữ khi cuộn data bên dưới lên
+    }
   }
 
   td {
@@ -417,6 +704,62 @@
 
   tr:hover td {
     background: #fdf8f4;
+  }
+}
+
+
+// Cố định header dính sát mép trên cho các thẻ th mang class của bạn
+.course-table__th {
+  position: sticky !important;
+  top: 0;
+  z-index: 10;
+  background-color: #fafafa !important; // Bắt buộc có màu nền để che chữ bên dưới chạy lên khi cuộn
+  border-bottom: 2px solid #e5e7eb !important;
+}
+
+/* ── Next Class cell ─────────────────────────────────────────────── */
+.next-class {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: default;
+  white-space: nowrap;
+
+  &__code {
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  /* Tooltip */
+  &__tooltip {
+    position: absolute;
+    top: 120%;
+    left: -90%;
+    min-width: 180px;
+    background: $bg-gradient;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+    font-size: .75rem;
+    line-height: 1.3;
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(4px);
+    transition: opacity .2s ease, transform .2s ease;
+
+    p {
+      margin: 2px 0;
+    }
+  }
+
+  &:hover .next-class__tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 }
 
@@ -482,7 +825,7 @@
   text-align: left;
   color: $error;
   padding: '20px 0';
-  font-size: .78rem; 
+  font-size: .78rem;
 }
 
 .schedule {
@@ -545,7 +888,8 @@
       color: $text-light;
       margin: 0 0 3px;
     }
-    &-noschedule{
+
+    &-noschedule {
       color: $warning;
       font-size: 0.72rem;
       margin: 0;
@@ -636,4 +980,565 @@
   border-radius: 20px;
   font-size: .8rem;
   font-weight: 600;
+}
+
+
+// Phần hiển thị đóng học phí của Sinh Viên 
+.fee-by-class {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+
+    &:hover {
+      background: var(--color-bg-hover, #f3f4f6);
+    }
+  }
+
+  &__info {
+    flex: 0 0 110px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    strong {
+      font-size: 13px;
+    }
+
+    small {
+      font-size: 11px;
+      color: var(--color-text-secondary);
+    }
+  }
+
+  &__bar {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: #fee2e2;
+    overflow: hidden;
+  }
+
+  &__bar-paid {
+    height: 100%;
+    background: #22c55e;
+  }
+
+  &__count {
+    flex: 0 0 50px;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+/* ─────────────────────────────── */
+/*  Enrollment Status Modal        */
+/* ─────────────────────────────── */
+
+.enroll-modal {
+  padding: 0;
+  background: $white;
+  border-radius: 12px;
+  box-shadow: $shadow;
+  overflow: hidden;
+
+  &__header {
+    background: $primary;
+    padding: 6px 12px;
+    cursor: move;
+
+    &-content {
+      @include flex-center-space-between;
+    }
+
+    &-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: $white;
+    }
+
+    &-btn {
+      background: none;
+      border: none;
+      color: $white;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    &-title-main {
+      font-size: .95rem;
+      color: $text-primary ;
+      margin: 8px 0 16px;
+    }
+  }
+}
+
+/* ─────────────────────────────── */
+/*  Summary Section                */
+/* ─────────────────────────────── */
+
+.enroll-summary {
+  display: flex;
+  gap: 16px;
+  // padding: 16px 20px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+
+  &__pills {
+    display: flex;
+    gap: 12px;
+
+  }
+
+  &__pill {
+    padding: 6px 14px;
+    border-radius: $radius;
+    border: 1px solid;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  &__pill-value {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__pill-label {
+    font-size: 11px;
+    color: $text-light;
+  }
+
+  &__progress {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__progress-label {
+    font-size: 11px;
+    color: $text-light;
+  }
+
+  &__progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 99px;
+    overflow: hidden;
+
+    &-fill {
+      height: 100%;
+      background: $success;
+      border-radius: 99px;
+      transition: width .4s ease;
+    }
+  }
+
+  &__legend {
+    display: flex;
+    gap: 8px;
+    font-size: 10px;
+    color: $text-light
+  }
+
+}
+
+
+/* ─────────────────────────────── */
+/*  Toolbar                        */
+/* ─────────────────────────────── */
+.enroll-toolbar {
+  // display: flex;
+  // justify-content: space-between;
+  @include flex-center-space-between;
+  // padding: 12px 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+
+  &__filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+
+
+  }
+
+  &__filter-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: $content-bg;
+    border: 1px solid $bg;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+
+    &--active {
+      background: $primary-home;
+      color: $white;
+      border-color: $primary-home;
+
+    }
+
+  }
+
+  &__filter-count {
+    font-size: 11px;
+    opacity: .8;
+
+
+  }
+
+  &__search {
+    flex: 1;
+    min-width: 200px;
+    padding: 7px 12px;
+    border: 1px solid $border;
+    border-radius: 6px;
+    font-size: 13px;
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+}
+
+/* ─────────────────────────────── */
+/*  Table                          */
+/* ─────────────────────────────── */
+
+.enroll-table {
+  width: 100%;
+  overflow-y: auto;
+  max-height: calc(85vh - 250px);
+  position: relative;
+
+  &__inner {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  &__th {
+    padding: 4px 8px;
+    font-weight: 600;
+    color: $text-secondary;
+    border-bottom: 1px solid $header-bottom;
+    background: $bg;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  &__row.is-even {
+    background: $white;
+
+  }
+
+  &__row.is-odd {
+    background: $bg-stripe;
+
+  }
+
+  &__cell {
+    padding: 4px 8px;
+    border-bottom: 1px solid $header-bottom;
+  }
+
+  &__student-name {
+    font-weight: 600;
+    color: $text-primary;
+
+  }
+
+  &__student-code {
+    font-size: 11px;
+    color: $text-muted;
+    margin-top: 2px;
+  }
+
+  &__course {
+    color: $text-primary;
+  }
+
+  &__class-code {
+    font-weight: 600;
+    color: $text-primary;
+    white-space: nowrap;
+
+  }
+
+  &__class-status {
+    font-size: 11px;
+    color: $text-muted
+  }
+
+  &__btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    // font-weight: 500;
+    border: 1px solid transparent;
+
+    &--assign {
+      background: #fef2f2;
+      color: #dc2626;
+      border-color: #fecaca;
+    }
+
+    &--schedule {
+      background: #fffbeb;
+      color: #d97706;
+      border-color: #fde68a;
+      white-space: nowrap;
+    }
+  }
+
+  &__schedule-time {
+    font-weight: 600;
+    color: #374151;
+  }
+
+  &__schedule-meta {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 2px;
+  }
+
+  &__status-pill {
+    padding: 2px 4px;
+    border-radius: 6px;
+    font-size: 11px;
+    border: 1px solid;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    white-space: nowrap;
+  }
+
+  &__dash {
+    color: #d1d5db;
+    font-size: 12px;
+  }
+
+  &__empty {
+    text-align: center;
+    padding: 20px;
+    color: #9ca3af;
+  }
+
+
+
+
+
+}
+
+
+/* ─────────────────────────────── */
+/*  Footer                         */
+/* ─────────────────────────────── */
+
+.enroll-footer {
+  @include flex-center-space-between;
+  padding: 6px 12px;
+  border-top: 1px solid $text-muted;
+  background: content-bg;
+
+  &__count {
+    font-size: 12px;
+    color: $text-secondary;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__btn {
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &--class {
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+    }
+
+    &--schedule {
+      background: #fffbeb;
+      color: #d97706;
+      border: 1px solid #fde68a;
+    }
+
+    &--close {
+      background: $text-home;
+      color: $white;
+      border: none;
+    }
+  }
+}
+
+// CSS cho AssignClassPopup
+
+.assign {
+  &__header {
+    background: linear-gradient(135deg, #1f2937, #374151);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__body {
+    padding: 0px;
+  }
+
+  &__header-info {}
+
+  &__title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  &__subtitle {
+    color: #9ca3af;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  &__close-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+
+
+  &__desc {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 12px;
+  }
+
+  &__empty {
+    padding: 24px;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 13px;
+    background: #f9fafb;
+    border-radius: 8px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fafafa;
+    cursor: pointer;
+    // transition: .15s;
+
+    &:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+    }
+  }
+
+  &__item-left {}
+
+  &__course-name {
+    font-weight: 600;
+    color: #111827;
+    font-size: 14px;
+  }
+
+  &__students {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 4px;
+  }
+
+  &__students-list {
+    color: #374151;
+    font-weight: 500;
+  }
+
+  &__badge {
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+
+  &__badge-count {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  &__badge-note {
+    font-size: 10px;
+    color: #9ca3af;
+    margin-top: 3px;
+  }
+
+  &__footer {
+    padding: 12px 20px;
+    border-top: 1px solid #f3f4f6;
+    background: #f9fafb;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__cancel-btn {
+    padding: 7px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    font-size: 13px;
+    font-weight: 500;
+
+    &:hover {
+      background: $warning ;
+      color: $white;
+      font-weight: 500;
+    }
+  }
 }

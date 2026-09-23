@@ -12,7 +12,7 @@ export default function FormRenderer({
     variant,
     layout,
     setPicker,
-    validateField,    
+    validateField,
     extraDisabled,
     displayMaps
 }) {
@@ -26,17 +26,17 @@ export default function FormRenderer({
     };
     // ===== Helper: map display value =====
     const getDisplayValue = (fieldName, value) => {
-        if(!displayMaps || !displayMaps[fieldName]) return undefined;
+        if (!displayMaps || !displayMaps[fieldName]) return undefined;
 
         const map = displayMaps?.[fieldName];
-       
+
         if (Array.isArray(value)) {
-            return value.map(id => map[id] || id).join(', ');
+            // return value.map(id => map[id] || id).join(', ');
+            return value.map(id => map[id]).filter(Boolean).join(', ');
+
         }
         return map[value] || '';
     };
-
-
     return (
         <>
             {fields
@@ -45,16 +45,17 @@ export default function FormRenderer({
                     // ✅ 2. Ưu tiên config mới (form), fallback config cũ
                     const type = normalizeType(f);
                     const required = f.form?.required ?? false;
-                    const options = f.form?.options || [];                    
+                    const options = f.form?.options || [];
                     const isDisabled = extraDisabled?.[f.name] ?? f.form?.disabled ?? false;
-                    let value = form[f.name] ?? '';
+                    const isFormatedNumber = f.form?.format === 'currency';
+                    let value = form?.[f.name] ?? '';
+                    if (f.name === 'status') console.log('🔍 DEBUG status value:', value, '| typeof:', typeof value);
                     const displayValue = getDisplayValue(f.name, value);
                     if (!type) {
                         console.warn(`⚠ Field "${f.name}" thiếu form.type → bỏ qua`)
                         return null;
                     }
-
-                    return (
+                    return (                        
                         <React.Fragment key={f.name} >
                             <FormItem
                                 label={f.label}
@@ -123,7 +124,7 @@ export default function FormRenderer({
                                         onOpen={() => {
                                             if (!isDisabled) {
                                                 setPicker(f.form.pickerKey);
-                                                validateField(f.name);
+                                                validateField?.(f.name);
                                             }
                                         }}
                                         error={errors[f.name]}
@@ -132,24 +133,92 @@ export default function FormRenderer({
                                 }
                                 {/* ===== INPUT DEFAULT ===== */}
                                 {['text', 'number', 'date', 'email'].includes(type) && (
-                                    <input
-                                        name={f.name}
-                                        type={type}
-                                        value={value}
-                                        onChange={onChange}
-                                        onBlur={handleBlur}
-                                        disabled={isDisabled}
-                                        required={required}
-                                        placeholder={f.form.placeholder}
-                                        readOnly={f.form.readOnly}
-                                    />
+                                    isFormatedNumber ? (
+                                        <input
+                                            name={f.name}
+                                            type='text'
+                                            value={
+                                                value === '' || value === null
+                                                    ? ''
+                                                    : Number(value).toLocaleString('vi-VN')
+                                            }
+                                            onChange={(e) => {
+                                                const raw = e.target.value.replace(/\D/g, '')
+                                                onChange({
+                                                    target: { name: f.name, value: raw === '' ? '' : Number(raw) }
+                                                });
+                                            }}
+                                            onBlur={handleBlur}
+                                            disabled={isDisabled}
+                                            required={required}
+                                            placeholder={f.form.placeholder}
+                                            readOnly={f.form.readOnly}
+                                        />
+                                    ) : (
+                                        (
+                                            <input
+                                                name={f.name}
+                                                type={type}
+                                                value={value}
+                                                onChange={onChange}
+                                                onBlur={handleBlur}
+                                                disabled={isDisabled}
+                                                required={required}
+                                                placeholder={f.form.placeholder}
+                                                readOnly={f.form.readOnly}
+                                            />
+                                        )
+                                    )
                                 )}
-                                {/* ===== UNKNOWN TYPE ===== */}
-                                {!['select', 'radio', 'picker', 'text', 'number', 'date', 'email'].includes(type) && (
-                                    <div style={{ color: 'red' }}>
-                                        ⚠ Không hỗ trợ type: {type}
+                                {/* ===== CHECKBOX ===== */}
+                                {type === 'checkbox' && (
+                                    <div className='form-item__check-box-group'>
+                                        <input
+                                            id={f.name} // Khuyên dùng: thêm id để khi click vào chữ label ô checkbox cũng tự tích
+                                            type='checkbox'
+                                            name={f.name}
+                                            checked={!!value} // Ép kiểu về boolean để tránh lỗi undefined
+                                            onChange={onChange}
+                                            onBlur={handleBlur}
+                                            disabled={isDisabled}
+                                        />
+                                        {/* Sửa label ở đây: hiển thị nội dung động theo giá trị value */}
+                                        <label htmlFor={f.name} className='form-item__check-box-label'>
+                                            {value
+                                                ? (f.form.activeLabel || 'chưa định nghĩa trong constanst')
+                                                : (f.form.inactiveLabel || 'chưa định nghĩa trong constanst')
+                                            }
+                                        </label>
                                     </div>
                                 )}
+                                {/* ===== TEXTAREA ===== */}
+                                {
+                                    type === 'textarea' && (
+                                        <textarea
+                                            className='form-item__textarea'
+                                            name={f.name}
+                                            value={value}
+                                            onChange={onChange}
+                                            onBlur={handleBlur}
+                                            disabled={isDisabled}
+                                            required={required}
+                                            placeholder={f.form.placeholder}
+                                            readOnly={f.form.readOnly}
+                                            rows={f.form.rows || 3} // Mặc định 4 dòng nếu không cấu hình
+                                            style={{ width: '100%' }}
+                                        />
+                                    )
+                                }
+                                {/* ===== UNKNOWN TYPE ===== */}
+                                {![
+                                    'select', 'radio', 'picker',
+                                    'text', 'number', 'date',
+                                    'email', 'checkbox', 'textarea'
+                                ].includes(type) && (
+                                        <div style={{ color: 'red' }}>
+                                            ⚠ Không hỗ trợ type: {type}
+                                        </div>
+                                    )}
                             </FormItem>
                         </React.Fragment>
                     )

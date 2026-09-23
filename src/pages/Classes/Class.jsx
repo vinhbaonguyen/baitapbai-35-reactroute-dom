@@ -1,26 +1,36 @@
 import useComponentData from '@/hooks/useComponentData';
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import useAuditLog from '@/hooks/useAuditLog';
-import { CLASSES_FIELDS } from '@/constants/classes/classes.fields';
 import PageHeader from '@/components/PageComponent/PageHeader';
 import Toolbar from '@/components/PageComponent/Toolbar';
-import { CLASSES_SORT_OPTION, CLASSES_TABLE_COLUMNS } from '@/constants/classes/classes.constant';
 import DataTable from '@/components/PageComponent/DataTable';
 import ClassModal from './ClassModal';
 import HistoryModal from '@/components/PageComponent/HistoryModal';
 import Pagination from '@/components/PageComponent/Pagination';
 import * as lectureService from '../../services/lectureService';
 import * as classService from '@/services/classService';
-import { alertError } from '@/utils/alert';
+import { alertConfirm, alertError } from '@/utils/alert';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectClasses, selectCourses, selectLectures } from '@/store/selectors/masterDataSelectors';
+import { selectClasses, selectCourses, selectLectures, selectStudentClass, selectStudents } from '@/store/selectors/masterDataSelectors';
 import { updateMasterEntity } from '@/actions/masterDataAction';
-
+import { useLocation, useNavigate } from 'react-router-dom';
+import {
+  CLASSES_FIELDS,
+  CLASSES_SORT_OPTION,
+  CLASSES_TABLE_COLUMNS
+} from '@/constants/classes/classes.master.fieldsConfig';
+import ClassStudentListModal from '@/components/CommonPickers/ClassStudentListModal';
 
 export default function Class() {
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const auditLog = useAuditLog('classes');
   const [historyItem, setHistoryItem] = useState(null);
-  const dispatch = useDispatch();
+  const [viewingStudentsClass, setViewingStudentsClass] = useState(null);
+  const [initialCourseId, setInitialCourseId] = useState(null);
+  const [initialLectureId, setInitialLectureId] = useState(null);
 
   const {
     data, setData, visibleData, loading, error,
@@ -35,19 +45,40 @@ export default function Class() {
   // tải Data từ store bằng useSelector
   const lectureData = useSelector(selectLectures);
   const courseData = useSelector(selectCourses);
-  const allClasses = useSelector(selectClasses)
-  console.log("Giá trị của Lecture Data",allClasses); 
+  const allClasses = useSelector(selectClasses);
+  const studentClassData = useSelector(selectStudentClass);
+  const studentData = useSelector(selectStudents);
+  // console.log("Giá trị của Lecture Data",allClasses); 
 
-  // ✅ mappedData — là data chứa lectureName và courseName phục vụ 
-  // hiển thị cho DataTable ở cột Tên Giáo Viên và Tên Khóa học
-  // ✅ Map từ visibleData (đã sort + paginate) thay vì data gốc  
   const mappedData = useMemo(() => {
-    return visibleData.map(cls => ({
-      ...cls,
-      lectureName: lectureData.find(l => l.id === cls.lectureId)?.lectureName || '',
-      courseName: courseData.find(c => c.id === cls.courseId)?.courseName || ''
-    }))
-  }, [visibleData, lectureData, courseData]);
+    return visibleData.map(cls => {
+      // Lấy danh sách studentId thuộc lớp này từ bảng student-class (Redux)
+      const studentIds = studentClassData
+        .filter(sc => Number(sc.classId) === Number(cls.id))
+        .map(sc => Number(sc.studentId));
+
+      const activeStudents = studentIds
+        .map(sid => studentData.find(s => Number(s.id) === Number(sid)))
+        .filter(s => s && s.status !== 'Completed');
+      
+      const activeStudentIds = activeStudents.map(s => Number(s.id));
+
+      const studentNames = activeStudents
+        .map(s => s.studentName)
+        .filter(Boolean)
+        .join(', ');
+
+      return {
+        ...cls,
+        lectureName: lectureData.find(l => l.id === cls.lectureId)?.lectureName || '',
+        courseName: courseData.find(c => c.id === cls.courseId)?.courseName || '',
+        studentList: activeStudentIds,    // giữ dạng mảng id — phòng khi chỗ khác cần
+        studentNames: studentNames,  // 👈 chuỗi đã join, dùng để hiển thị ở table
+        classNumber: activeStudentIds.length  // 🔥 luôn tính live từ studentClassData — không tin classNumber thô trong Redux `classes` (dễ bị stale sau sync, xem ghi chú)
+      }
+    });
+  }, [visibleData, lectureData, courseData, studentClassData, studentData]);
+
 
   // ✅ Custom save riêng cho ClassModal không dùng handleSave của useComponentData
   // Giống handleSaveStudent trong Student.jsx
@@ -127,8 +158,6 @@ export default function Class() {
     auditLog.fetchLogs(classes.id)
   }, [auditLog]);
 
-
-
   // ✅ Bọc handleReorder — strip extra fields trước khi truyền vào useReorder
   // Lý do: DataTable nhận mappedData (có lectureName, courseName)
   //        Khi user kéo thả, onReorder trả về mappedData items
@@ -140,6 +169,47 @@ export default function Class() {
       .filter(Boolean); // bỏ qua item không tìm thấy (an toàn)
     handleReorder(reorderedRaw);
   }, [data, handleReorder]);
+
+  const handleCellAction = useCallback((col, row) => {
+    if (col.type === 'countModal' && col.relationKey === 'studentList') {
+      setViewingStudentsClass(row);
+    }
+  }, [])
+
+  // Logic Nhận giá trị từ navigate của trang Home chuyển qua 
+  useEffect(() => {
+    const { openEditClassCode, openCreateWithCourseId, openCreateWithLectureId } = location.state ?? {};
+    console.log("openEditClassCode", openEditClassCode);
+    console.log("openCreateWithCourseId", openCreateWithCourseId);
+    console.log("openCreateWithLectureId", openCreateWithLectureId);
+
+
+    // ── CASE 1: Mở Edit theo classCode ──────────────────────────
+    if (openEditClassCode && data.length > 0) {
+      const targetClass = data.find(cls => cls.classCode === openEditClassCode)
+      if (targetClass) {
+        handleEdit(targetClass); // ← mở modal Edit với item đó
+      } else {
+        alertConfirm({ title: `Không tìm thấy class:${openEditClassCode}` })
+      }
+      navigate(location.pathname, { replace: true, state: {} })
+      return;
+    }
+    // ── CASE 2 + CASE 3: Mở Create với courseId và hoặc lectureId ──────────────
+    if (openCreateWithCourseId || openCreateWithLectureId) {
+      console.log("openCreateWithCourseId:", openCreateWithCourseId);
+
+      handleAdd();
+      // eslint-disable-next-line
+      if (openCreateWithCourseId) setInitialCourseId(Number(openCreateWithCourseId))
+      if (openCreateWithLectureId) setInitialLectureId(Number(openCreateWithLectureId));
+
+      // Xóa state sau khi đọc
+      navigate(location.pathname, { replace: true, state: {} })
+      return;
+    }
+  }, [data, location.state, handleEdit, handleAdd, location.pathname, navigate])
+
 
   if (loading) return <div className='pageWrapper'>Đang tải...</div>
 
@@ -179,15 +249,23 @@ export default function Class() {
         itemsPerPage={itemsPerPage}
         // data={visibleData}
         data={mappedData}      // dùng mappedData để hiển thị tên Giáo Viên , và tên khóa học
+        onCellAction={handleCellAction}
       />
       {isModalOpen && (
         <ClassModal
           onSave={handleClassSave} // ✅ dùng custom, không dùng handleSave
-          onClose={() => { setIsModalOpen(false); setEditItem(null) }}
+          onClose={() => {
+            setIsModalOpen(false);
+            setEditItem(null);
+            setInitialCourseId(null);// ✅ reset khi đóng
+            setInitialLectureId(null)
+          }}
           // ✅ truyền writeLog để ClassModal ghi history
           onWriteLog={auditLog.writeLog} // ✅ truyền thẳng, không wrap gì thêm
           editItem={editItem}
           allClasses={data}
+          initialCourseId={initialCourseId}  // ✅ prop mới
+          initialLectureId={initialLectureId}
 
         />
       )}
@@ -200,6 +278,17 @@ export default function Class() {
           fields={CLASSES_FIELDS}
         />
       )}
+      {
+        (viewingStudentsClass && (
+          <ClassStudentListModal
+            onClose={() => setViewingStudentsClass(null)}
+            classCode={viewingStudentsClass.classCode}
+            students={viewingStudentsClass.studentList
+              .map(id => studentData.find(s => Number(s.id) === Number(id)))
+              .filter(Boolean)}
+          />
+        ))
+      }
       <Pagination
         currentPage={currentPage}
         pageCount={pageCount}

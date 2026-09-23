@@ -1,0 +1,3904 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "baitapbai-35-reactroute-dom",
+    "languages": [
+      "javascript",
+      "jsx"
+    ],
+    "frameworks": [
+      "React"
+    ],
+    "description": "Auto-generated project analysis.",
+    "analyzedAt": "2026-07-08T22:46:31.320Z",
+    "gitCommitHash": "b9812be0708e337e4e3de261ad7ccac7d909fbce"
+  },
+  "nodes": [
+    {
+      "id": "file:eslint.config.js",
+      "type": "file",
+      "name": "eslint.config.js",
+      "filePath": "eslint.config.js",
+      "summary": "React source file eslint.config.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/actions/authActions.js",
+      "type": "file",
+      "name": "authActions.js",
+      "filePath": "src/actions/authActions.js",
+      "summary": "React source file src/actions/authActions.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/actions/masterDataAction.js",
+      "type": "file",
+      "name": "masterDataAction.js",
+      "filePath": "src/actions/masterDataAction.js",
+      "summary": "React source file src/actions/masterDataAction.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/actions/scoreAction.js",
+      "type": "file",
+      "name": "scoreAction.js",
+      "filePath": "src/actions/scoreAction.js",
+      "summary": "React source file src/actions/scoreAction.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/App.css",
+      "type": "file",
+      "name": "App.css",
+      "filePath": "src/App.css",
+      "summary": "Stylesheet file src/App.css",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/App.jsx",
+      "type": "file",
+      "name": "App.jsx",
+      "filePath": "src/App.jsx",
+      "summary": "React source file src/App.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/assets/styles/abstracts/_mixins.scss",
+      "type": "file",
+      "name": "_mixins.scss",
+      "filePath": "src/assets/styles/abstracts/_mixins.scss",
+      "summary": "Stylesheet file src/assets/styles/abstracts/_mixins.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/assets/styles/abstracts/_variables.scss",
+      "type": "file",
+      "name": "_variables.scss",
+      "filePath": "src/assets/styles/abstracts/_variables.scss",
+      "summary": "Stylesheet file src/assets/styles/abstracts/_variables.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/assets/styles/base/_global.scss",
+      "type": "file",
+      "name": "_global.scss",
+      "filePath": "src/assets/styles/base/_global.scss",
+      "summary": "Stylesheet file src/assets/styles/base/_global.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/assets/styles/common.scss",
+      "type": "file",
+      "name": "common.scss",
+      "filePath": "src/assets/styles/common.scss",
+      "summary": "Stylesheet file src/assets/styles/common.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/assets/styles/pages/main.scss",
+      "type": "file",
+      "name": "main.scss",
+      "filePath": "src/assets/styles/pages/main.scss",
+      "summary": "Stylesheet file src/assets/styles/pages/main.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/components/common/table/tableRender.jsx",
+      "type": "file",
+      "name": "tableRender.jsx",
+      "filePath": "src/components/common/table/tableRender.jsx",
+      "summary": "React source file src/components/common/table/tableRender.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/BranchPickerModal.jsx",
+      "type": "file",
+      "name": "BranchPickerModal.jsx",
+      "filePath": "src/components/CommonPickers/BranchPickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/BranchPickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/ClassPickerModal.jsx",
+      "type": "file",
+      "name": "ClassPickerModal.jsx",
+      "filePath": "src/components/CommonPickers/ClassPickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/ClassPickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/ContractPickerModal.jsx",
+      "type": "file",
+      "name": "ContractPickerModal.jsx",
+      "filePath": "src/components/CommonPickers/ContractPickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/ContractPickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/CoursePickerModal.jsx",
+      "type": "file",
+      "name": "CoursePickerModal.jsx",
+      "filePath": "src/components/CommonPickers/CoursePickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/CoursePickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/DegreePickerModal.jsx",
+      "type": "file",
+      "name": "DegreePickerModal.jsx",
+      "filePath": "src/components/CommonPickers/DegreePickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/DegreePickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/LecturePickerModal.jsx",
+      "type": "file",
+      "name": "LecturePickerModal.jsx",
+      "filePath": "src/components/CommonPickers/LecturePickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/LecturePickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/ScoreStudentPickerModal.jsx",
+      "type": "file",
+      "name": "ScoreStudentPickerModal.jsx",
+      "filePath": "src/components/CommonPickers/ScoreStudentPickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/ScoreStudentPickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/SkillPickerModal.jsx",
+      "type": "file",
+      "name": "SkillPickerModal.jsx",
+      "filePath": "src/components/CommonPickers/SkillPickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/SkillPickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "type": "file",
+      "name": "SpecialtyPickerModal.jsx",
+      "filePath": "src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/StatusPickerModal.jsx",
+      "type": "file",
+      "name": "StatusPickerModal.jsx",
+      "filePath": "src/components/CommonPickers/StatusPickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/StatusPickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/StudentListPickerModal copy.jsx",
+      "type": "file",
+      "name": "StudentListPickerModal copy.jsx",
+      "filePath": "src/components/CommonPickers/StudentListPickerModal copy.jsx",
+      "summary": "React source file src/components/CommonPickers/StudentListPickerModal copy.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CommonPickers/StudentListPickerModal.jsx",
+      "type": "file",
+      "name": "StudentListPickerModal.jsx",
+      "filePath": "src/components/CommonPickers/StudentListPickerModal.jsx",
+      "summary": "React source file src/components/CommonPickers/StudentListPickerModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/Footer/Footer.jsx",
+      "type": "file",
+      "name": "Footer.jsx",
+      "filePath": "src/components/Footer/Footer.jsx",
+      "summary": "React source file src/components/Footer/Footer.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/Footer/Footer.scss",
+      "type": "file",
+      "name": "Footer.scss",
+      "filePath": "src/components/Footer/Footer.scss",
+      "summary": "Stylesheet file src/components/Footer/Footer.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/components/FormControls/FormItem.jsx",
+      "type": "file",
+      "name": "FormItem.jsx",
+      "filePath": "src/components/FormControls/FormItem.jsx",
+      "summary": "React source file src/components/FormControls/FormItem.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/FormControls/FormRenderer.jsx",
+      "type": "file",
+      "name": "FormRenderer.jsx",
+      "filePath": "src/components/FormControls/FormRenderer.jsx",
+      "summary": "React source file src/components/FormControls/FormRenderer.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/FormControls/PickerBtn.jsx",
+      "type": "file",
+      "name": "PickerBtn.jsx",
+      "filePath": "src/components/FormControls/PickerBtn.jsx",
+      "summary": "React source file src/components/FormControls/PickerBtn.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/FormControls/PickerControl.jsx",
+      "type": "file",
+      "name": "PickerControl.jsx",
+      "filePath": "src/components/FormControls/PickerControl.jsx",
+      "summary": "React source file src/components/FormControls/PickerControl.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/Header/Header.jsx",
+      "type": "file",
+      "name": "Header.jsx",
+      "filePath": "src/components/Header/Header.jsx",
+      "summary": "React source file src/components/Header/Header.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/Header/Header.scss",
+      "type": "file",
+      "name": "Header.scss",
+      "filePath": "src/components/Header/Header.scss",
+      "summary": "Stylesheet file src/components/Header/Header.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/components/PageComponent/DataTable.jsx",
+      "type": "file",
+      "name": "DataTable.jsx",
+      "filePath": "src/components/PageComponent/DataTable.jsx",
+      "summary": "React source file src/components/PageComponent/DataTable.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PageComponent/HistoryModal.jsx",
+      "type": "file",
+      "name": "HistoryModal.jsx",
+      "filePath": "src/components/PageComponent/HistoryModal.jsx",
+      "summary": "React source file src/components/PageComponent/HistoryModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PageComponent/PageComponent.scss",
+      "type": "file",
+      "name": "PageComponent.scss",
+      "filePath": "src/components/PageComponent/PageComponent.scss",
+      "summary": "Stylesheet file src/components/PageComponent/PageComponent.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/components/PageComponent/PageHeader.jsx",
+      "type": "file",
+      "name": "PageHeader.jsx",
+      "filePath": "src/components/PageComponent/PageHeader.jsx",
+      "summary": "React source file src/components/PageComponent/PageHeader.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PageComponent/Pagination.jsx",
+      "type": "file",
+      "name": "Pagination.jsx",
+      "filePath": "src/components/PageComponent/Pagination.jsx",
+      "summary": "React source file src/components/PageComponent/Pagination.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PageComponent/SharedModal.jsx",
+      "type": "file",
+      "name": "SharedModal.jsx",
+      "filePath": "src/components/PageComponent/SharedModal.jsx",
+      "summary": "React source file src/components/PageComponent/SharedModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PageComponent/Toolbar.jsx",
+      "type": "file",
+      "name": "Toolbar.jsx",
+      "filePath": "src/components/PageComponent/Toolbar.jsx",
+      "summary": "React source file src/components/PageComponent/Toolbar.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/ProtectRoute.jsx",
+      "type": "file",
+      "name": "ProtectRoute.jsx",
+      "filePath": "src/components/ProtectRoute.jsx",
+      "summary": "React source file src/components/ProtectRoute.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/classes/classes.constant.js",
+      "type": "file",
+      "name": "classes.constant.js",
+      "filePath": "src/constants/classes/classes.constant.js",
+      "summary": "React source file src/constants/classes/classes.constant.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/classes/classes.fields.js",
+      "type": "file",
+      "name": "classes.fields.js",
+      "filePath": "src/constants/classes/classes.fields.js",
+      "summary": "React source file src/constants/classes/classes.fields.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/classRoom/classroom.constants.js",
+      "type": "file",
+      "name": "classroom.constants.js",
+      "filePath": "src/constants/classRoom/classroom.constants.js",
+      "summary": "React source file src/constants/classRoom/classroom.constants.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/courses/course.constants.jsx",
+      "type": "file",
+      "name": "course.constants.jsx",
+      "filePath": "src/constants/courses/course.constants.jsx",
+      "summary": "React source file src/constants/courses/course.constants.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/courses/course.fields.js",
+      "type": "file",
+      "name": "course.fields.js",
+      "filePath": "src/constants/courses/course.fields.js",
+      "summary": "React source file src/constants/courses/course.fields.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/home/enrollmentstatusmodal.constants.js",
+      "type": "file",
+      "name": "enrollmentstatusmodal.constants.js",
+      "filePath": "src/constants/home/enrollmentstatusmodal.constants.js",
+      "summary": "React source file src/constants/home/enrollmentstatusmodal.constants.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/lecturer/lecture.fields.js",
+      "type": "file",
+      "name": "lecture.fields.js",
+      "filePath": "src/constants/lecturer/lecture.fields.js",
+      "summary": "React source file src/constants/lecturer/lecture.fields.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/lecturer/lecturer.constants.js",
+      "type": "file",
+      "name": "lecturer.constants.js",
+      "filePath": "src/constants/lecturer/lecturer.constants.js",
+      "summary": "React source file src/constants/lecturer/lecturer.constants.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/login/login.fields.js",
+      "type": "file",
+      "name": "login.fields.js",
+      "filePath": "src/constants/login/login.fields.js",
+      "summary": "React source file src/constants/login/login.fields.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/modalStyles.js",
+      "type": "file",
+      "name": "modalStyles.js",
+      "filePath": "src/constants/modalStyles.js",
+      "summary": "React source file src/constants/modalStyles.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/profile/profile.password.fields.js",
+      "type": "file",
+      "name": "profile.password.fields.js",
+      "filePath": "src/constants/profile/profile.password.fields.js",
+      "summary": "React source file src/constants/profile/profile.password.fields.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/register/register.fields.js",
+      "type": "file",
+      "name": "register.fields.js",
+      "filePath": "src/constants/register/register.fields.js",
+      "summary": "React source file src/constants/register/register.fields.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/score/score.constants.js",
+      "type": "file",
+      "name": "score.constants.js",
+      "filePath": "src/constants/score/score.constants.js",
+      "summary": "React source file src/constants/score/score.constants.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/score/score.fields.js",
+      "type": "file",
+      "name": "score.fields.js",
+      "filePath": "src/constants/score/score.fields.js",
+      "summary": "React source file src/constants/score/score.fields.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/students/student.constants.jsx",
+      "type": "file",
+      "name": "student.constants.jsx",
+      "filePath": "src/constants/students/student.constants.jsx",
+      "summary": "React source file src/constants/students/student.constants.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/students/student.fields.js",
+      "type": "file",
+      "name": "student.fields.js",
+      "filePath": "src/constants/students/student.fields.js",
+      "summary": "React source file src/constants/students/student.fields.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/users/user.constants.jsx",
+      "type": "file",
+      "name": "user.constants.jsx",
+      "filePath": "src/constants/users/user.constants.jsx",
+      "summary": "React source file src/constants/users/user.constants.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/constants/users/user.fields.js",
+      "type": "file",
+      "name": "user.fields.js",
+      "filePath": "src/constants/users/user.fields.js",
+      "summary": "React source file src/constants/users/user.fields.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/helpers/homeHelpers.js",
+      "type": "file",
+      "name": "homeHelpers.js",
+      "filePath": "src/helpers/homeHelpers.js",
+      "summary": "React source file src/helpers/homeHelpers.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useAuditLog.jsx",
+      "type": "file",
+      "name": "useAuditLog.jsx",
+      "filePath": "src/hooks/useAuditLog.jsx",
+      "summary": "React source file src/hooks/useAuditLog.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useComponentData.jsx",
+      "type": "file",
+      "name": "useComponentData.jsx",
+      "filePath": "src/hooks/useComponentData.jsx",
+      "summary": "React source file src/hooks/useComponentData.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useCrud.jsx",
+      "type": "file",
+      "name": "useCrud.jsx",
+      "filePath": "src/hooks/useCrud.jsx",
+      "summary": "React source file src/hooks/useCrud.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useFetchData.jsx",
+      "type": "file",
+      "name": "useFetchData.jsx",
+      "filePath": "src/hooks/useFetchData.jsx",
+      "summary": "React source file src/hooks/useFetchData.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useFetchMasterData.js",
+      "type": "file",
+      "name": "useFetchMasterData.js",
+      "filePath": "src/hooks/useFetchMasterData.js",
+      "summary": "React source file src/hooks/useFetchMasterData.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useForm.jsx",
+      "type": "file",
+      "name": "useForm.jsx",
+      "filePath": "src/hooks/useForm.jsx",
+      "summary": "React source file src/hooks/useForm.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useLookupMap.js",
+      "type": "file",
+      "name": "useLookupMap.js",
+      "filePath": "src/hooks/useLookupMap.js",
+      "summary": "React source file src/hooks/useLookupMap.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/usePagination.jsx",
+      "type": "file",
+      "name": "usePagination.jsx",
+      "filePath": "src/hooks/usePagination.jsx",
+      "summary": "React source file src/hooks/usePagination.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useReorder.jsx",
+      "type": "file",
+      "name": "useReorder.jsx",
+      "filePath": "src/hooks/useReorder.jsx",
+      "summary": "React source file src/hooks/useReorder.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useSearch.jsx",
+      "type": "file",
+      "name": "useSearch.jsx",
+      "filePath": "src/hooks/useSearch.jsx",
+      "summary": "React source file src/hooks/useSearch.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useSort.jsx",
+      "type": "file",
+      "name": "useSort.jsx",
+      "filePath": "src/hooks/useSort.jsx",
+      "summary": "React source file src/hooks/useSort.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/index.css",
+      "type": "file",
+      "name": "index.css",
+      "filePath": "src/index.css",
+      "summary": "Stylesheet file src/index.css",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/layouts/LayoutDefault.jsx",
+      "type": "file",
+      "name": "LayoutDefault.jsx",
+      "filePath": "src/layouts/LayoutDefault.jsx",
+      "summary": "React source file src/layouts/LayoutDefault.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/layouts/LayoutDefault.scss",
+      "type": "file",
+      "name": "LayoutDefault.scss",
+      "filePath": "src/layouts/LayoutDefault.scss",
+      "summary": "Stylesheet file src/layouts/LayoutDefault.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/main.jsx",
+      "type": "file",
+      "name": "main.jsx",
+      "filePath": "src/main.jsx",
+      "summary": "React source file src/main.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/About.jsx",
+      "type": "file",
+      "name": "About.jsx",
+      "filePath": "src/pages/About.jsx",
+      "summary": "React source file src/pages/About.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/blog/BlogLayout.jsx",
+      "type": "file",
+      "name": "BlogLayout.jsx",
+      "filePath": "src/pages/blog/BlogLayout.jsx",
+      "summary": "React source file src/pages/blog/BlogLayout.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/blog/BlogNews.jsx",
+      "type": "file",
+      "name": "BlogNews.jsx",
+      "filePath": "src/pages/blog/BlogNews.jsx",
+      "summary": "React source file src/pages/blog/BlogNews.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/blog/BlogRelated.jsx",
+      "type": "file",
+      "name": "BlogRelated.jsx",
+      "filePath": "src/pages/blog/BlogRelated.jsx",
+      "summary": "React source file src/pages/blog/BlogRelated.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Cart/Cart.jsx",
+      "type": "file",
+      "name": "Cart.jsx",
+      "filePath": "src/pages/Cart/Cart.jsx",
+      "summary": "React source file src/pages/Cart/Cart.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Classes/Class.jsx",
+      "type": "file",
+      "name": "Class.jsx",
+      "filePath": "src/pages/Classes/Class.jsx",
+      "summary": "React source file src/pages/Classes/Class.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Classes/ClassModal.jsx",
+      "type": "file",
+      "name": "ClassModal.jsx",
+      "filePath": "src/pages/Classes/ClassModal.jsx",
+      "summary": "React source file src/pages/Classes/ClassModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/ClassSchedule/ClassSchedule.jsx",
+      "type": "file",
+      "name": "ClassSchedule.jsx",
+      "filePath": "src/pages/ClassSchedule/ClassSchedule.jsx",
+      "summary": "React source file src/pages/ClassSchedule/ClassSchedule.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/ClassSchedule/ClassSchedule.scss",
+      "type": "file",
+      "name": "ClassSchedule.scss",
+      "filePath": "src/pages/ClassSchedule/ClassSchedule.scss",
+      "summary": "Stylesheet file src/pages/ClassSchedule/ClassSchedule.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/pages/ClassSchedule/ScheduleGridCell.jsx",
+      "type": "file",
+      "name": "ScheduleGridCell.jsx",
+      "filePath": "src/pages/ClassSchedule/ScheduleGridCell.jsx",
+      "summary": "React source file src/pages/ClassSchedule/ScheduleGridCell.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Contact.jsx",
+      "type": "file",
+      "name": "Contact.jsx",
+      "filePath": "src/pages/Contact.jsx",
+      "summary": "React source file src/pages/Contact.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Course/Course.jsx",
+      "type": "file",
+      "name": "Course.jsx",
+      "filePath": "src/pages/Course/Course.jsx",
+      "summary": "React source file src/pages/Course/Course.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/AssignClassPopup.jsx",
+      "type": "file",
+      "name": "AssignClassPopup.jsx",
+      "filePath": "src/pages/Home/components/AssignClassPopup.jsx",
+      "summary": "React source file src/pages/Home/components/AssignClassPopup.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/DonutChart.jsx",
+      "type": "file",
+      "name": "DonutChart.jsx",
+      "filePath": "src/pages/Home/components/DonutChart.jsx",
+      "summary": "React source file src/pages/Home/components/DonutChart.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/EnrollmentFooter.jsx",
+      "type": "file",
+      "name": "EnrollmentFooter.jsx",
+      "filePath": "src/pages/Home/components/EnrollmentFooter.jsx",
+      "summary": "React source file src/pages/Home/components/EnrollmentFooter.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/EnrollmentHeader.jsx",
+      "type": "file",
+      "name": "EnrollmentHeader.jsx",
+      "filePath": "src/pages/Home/components/EnrollmentHeader.jsx",
+      "summary": "React source file src/pages/Home/components/EnrollmentHeader.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/EnrollmentSummary.jsx",
+      "type": "file",
+      "name": "EnrollmentSummary.jsx",
+      "filePath": "src/pages/Home/components/EnrollmentSummary.jsx",
+      "summary": "React source file src/pages/Home/components/EnrollmentSummary.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/EnrollmentTable.jsx",
+      "type": "file",
+      "name": "EnrollmentTable.jsx",
+      "filePath": "src/pages/Home/components/EnrollmentTable.jsx",
+      "summary": "React source file src/pages/Home/components/EnrollmentTable.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/EnrollmentToolbar.jsx",
+      "type": "file",
+      "name": "EnrollmentToolbar.jsx",
+      "filePath": "src/pages/Home/components/EnrollmentToolbar.jsx",
+      "summary": "React source file src/pages/Home/components/EnrollmentToolbar.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/HomeClassSchedule.jsx",
+      "type": "file",
+      "name": "HomeClassSchedule.jsx",
+      "filePath": "src/pages/Home/components/HomeClassSchedule.jsx",
+      "summary": "React source file src/pages/Home/components/HomeClassSchedule.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/HomeFilterCard.jsx",
+      "type": "file",
+      "name": "HomeFilterCard.jsx",
+      "filePath": "src/pages/Home/components/HomeFilterCard.jsx",
+      "summary": "React source file src/pages/Home/components/HomeFilterCard.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/LectureAssignmentTable.jsx",
+      "type": "file",
+      "name": "LectureAssignmentTable.jsx",
+      "filePath": "src/pages/Home/components/LectureAssignmentTable.jsx",
+      "summary": "React source file src/pages/Home/components/LectureAssignmentTable.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/WarningCard.jsx",
+      "type": "file",
+      "name": "WarningCard.jsx",
+      "filePath": "src/pages/Home/components/WarningCard.jsx",
+      "summary": "React source file src/pages/Home/components/WarningCard.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/components/WarningCards.jsx",
+      "type": "file",
+      "name": "WarningCards.jsx",
+      "filePath": "src/pages/Home/components/WarningCards.jsx",
+      "summary": "React source file src/pages/Home/components/WarningCards.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "type": "file",
+      "name": "Enrollmentstatusmodal.jsx",
+      "filePath": "src/pages/Home/Enrollmentstatusmodal.jsx",
+      "summary": "React source file src/pages/Home/Enrollmentstatusmodal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/Home.jsx",
+      "type": "file",
+      "name": "Home.jsx",
+      "filePath": "src/pages/Home/Home.jsx",
+      "summary": "React source file src/pages/Home/Home.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Home/Home.scss",
+      "type": "file",
+      "name": "Home.scss",
+      "filePath": "src/pages/Home/Home.scss",
+      "summary": "Stylesheet file src/pages/Home/Home.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "type": "file",
+      "name": "Lectureassignmentmodal.jsx",
+      "filePath": "src/pages/Home/Lectureassignmentmodal.jsx",
+      "summary": "React source file src/pages/Home/Lectureassignmentmodal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Lecturer/Lecture.jsx",
+      "type": "file",
+      "name": "Lecture.jsx",
+      "filePath": "src/pages/Lecturer/Lecture.jsx",
+      "summary": "React source file src/pages/Lecturer/Lecture.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Lecturer/LectureDetailModal.jsx",
+      "type": "file",
+      "name": "LectureDetailModal.jsx",
+      "filePath": "src/pages/Lecturer/LectureDetailModal.jsx",
+      "summary": "React source file src/pages/Lecturer/LectureDetailModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Lecturer/LectureDetailModal.scss",
+      "type": "file",
+      "name": "LectureDetailModal.scss",
+      "filePath": "src/pages/Lecturer/LectureDetailModal.scss",
+      "summary": "Stylesheet file src/pages/Lecturer/LectureDetailModal.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/pages/Lecturer/LectureModal.jsx",
+      "type": "file",
+      "name": "LectureModal.jsx",
+      "filePath": "src/pages/Lecturer/LectureModal.jsx",
+      "summary": "React source file src/pages/Lecturer/LectureModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Lecturer/LectureModal.scss",
+      "type": "file",
+      "name": "LectureModal.scss",
+      "filePath": "src/pages/Lecturer/LectureModal.scss",
+      "summary": "Stylesheet file src/pages/Lecturer/LectureModal.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/pages/NotFound/NotFound.jsx",
+      "type": "file",
+      "name": "NotFound.jsx",
+      "filePath": "src/pages/NotFound/NotFound.jsx",
+      "summary": "React source file src/pages/NotFound/NotFound.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/NotFound/NotFound.scss",
+      "type": "file",
+      "name": "NotFound.scss",
+      "filePath": "src/pages/NotFound/NotFound.scss",
+      "summary": "Stylesheet file src/pages/NotFound/NotFound.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/pages/Profile/Profile.jsx",
+      "type": "file",
+      "name": "Profile.jsx",
+      "filePath": "src/pages/Profile/Profile.jsx",
+      "summary": "React source file src/pages/Profile/Profile.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Profile/Profile.scss",
+      "type": "file",
+      "name": "Profile.scss",
+      "filePath": "src/pages/Profile/Profile.scss",
+      "summary": "Stylesheet file src/pages/Profile/Profile.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/pages/Register/Register.jsx",
+      "type": "file",
+      "name": "Register.jsx",
+      "filePath": "src/pages/Register/Register.jsx",
+      "summary": "React source file src/pages/Register/Register.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Register/Register.scss",
+      "type": "file",
+      "name": "Register.scss",
+      "filePath": "src/pages/Register/Register.scss",
+      "summary": "Stylesheet file src/pages/Register/Register.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/pages/Score/Score.jsx",
+      "type": "file",
+      "name": "Score.jsx",
+      "filePath": "src/pages/Score/Score.jsx",
+      "summary": "React source file src/pages/Score/Score.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Score/ScoreDetailModal.jsx",
+      "type": "file",
+      "name": "ScoreDetailModal.jsx",
+      "filePath": "src/pages/Score/ScoreDetailModal.jsx",
+      "summary": "React source file src/pages/Score/ScoreDetailModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Score/ScoreModal.jsx",
+      "type": "file",
+      "name": "ScoreModal.jsx",
+      "filePath": "src/pages/Score/ScoreModal.jsx",
+      "summary": "React source file src/pages/Score/ScoreModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/SignIn/AuthHeader.jsx",
+      "type": "file",
+      "name": "AuthHeader.jsx",
+      "filePath": "src/pages/SignIn/AuthHeader.jsx",
+      "summary": "React source file src/pages/SignIn/AuthHeader.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/SignIn/ForgotForm.jsx",
+      "type": "file",
+      "name": "ForgotForm.jsx",
+      "filePath": "src/pages/SignIn/ForgotForm.jsx",
+      "summary": "React source file src/pages/SignIn/ForgotForm.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/SignIn/LoginForm.jsx",
+      "type": "file",
+      "name": "LoginForm.jsx",
+      "filePath": "src/pages/SignIn/LoginForm.jsx",
+      "summary": "React source file src/pages/SignIn/LoginForm.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/SignIn/ResetForm.jsx",
+      "type": "file",
+      "name": "ResetForm.jsx",
+      "filePath": "src/pages/SignIn/ResetForm.jsx",
+      "summary": "React source file src/pages/SignIn/ResetForm.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/SignIn/SignFormWrapper.jsx",
+      "type": "file",
+      "name": "SignFormWrapper.jsx",
+      "filePath": "src/pages/SignIn/SignFormWrapper.jsx",
+      "summary": "React source file src/pages/SignIn/SignFormWrapper.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/SignIn/SignIn.jsx",
+      "type": "file",
+      "name": "SignIn.jsx",
+      "filePath": "src/pages/SignIn/SignIn.jsx",
+      "summary": "React source file src/pages/SignIn/SignIn.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/SignIn/SignIn.scss",
+      "type": "file",
+      "name": "SignIn.scss",
+      "filePath": "src/pages/SignIn/SignIn.scss",
+      "summary": "Stylesheet file src/pages/SignIn/SignIn.scss",
+      "tags": [
+        "source",
+        "code",
+        "stylesheet"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/pages/Student/Student.jsx",
+      "type": "file",
+      "name": "Student.jsx",
+      "filePath": "src/pages/Student/Student.jsx",
+      "summary": "React source file src/pages/Student/Student.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Student/StudentDetailModal.jsx",
+      "type": "file",
+      "name": "StudentDetailModal.jsx",
+      "filePath": "src/pages/Student/StudentDetailModal.jsx",
+      "summary": "React source file src/pages/Student/StudentDetailModal.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/Users/User.jsx",
+      "type": "file",
+      "name": "User.jsx",
+      "filePath": "src/pages/Users/User.jsx",
+      "summary": "React source file src/pages/Users/User.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/reducers/authReducers.js",
+      "type": "file",
+      "name": "authReducers.js",
+      "filePath": "src/reducers/authReducers.js",
+      "summary": "React source file src/reducers/authReducers.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/reducers/index.js",
+      "type": "file",
+      "name": "index.js",
+      "filePath": "src/reducers/index.js",
+      "summary": "React source file src/reducers/index.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/reducers/masterDataReducer.js",
+      "type": "file",
+      "name": "masterDataReducer.js",
+      "filePath": "src/reducers/masterDataReducer.js",
+      "summary": "React source file src/reducers/masterDataReducer.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/reducers/scoreReducer.js",
+      "type": "file",
+      "name": "scoreReducer.js",
+      "filePath": "src/reducers/scoreReducer.js",
+      "summary": "React source file src/reducers/scoreReducer.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/routes/index.jsx",
+      "type": "file",
+      "name": "index.jsx",
+      "filePath": "src/routes/index.jsx",
+      "summary": "React source file src/routes/index.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/auditLogService.js",
+      "type": "file",
+      "name": "auditLogService.js",
+      "filePath": "src/services/auditLogService.js",
+      "summary": "React source file src/services/auditLogService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/classScheduleService.js",
+      "type": "file",
+      "name": "classScheduleService.js",
+      "filePath": "src/services/classScheduleService.js",
+      "summary": "React source file src/services/classScheduleService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/classService.js",
+      "type": "file",
+      "name": "classService.js",
+      "filePath": "src/services/classService.js",
+      "summary": "React source file src/services/classService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/courseService.js",
+      "type": "file",
+      "name": "courseService.js",
+      "filePath": "src/services/courseService.js",
+      "summary": "React source file src/services/courseService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/lectureService.js",
+      "type": "file",
+      "name": "lectureService.js",
+      "filePath": "src/services/lectureService.js",
+      "summary": "React source file src/services/lectureService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/scoreService.js",
+      "type": "file",
+      "name": "scoreService.js",
+      "filePath": "src/services/scoreService.js",
+      "summary": "React source file src/services/scoreService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/studentClassService.js",
+      "type": "file",
+      "name": "studentClassService.js",
+      "filePath": "src/services/studentClassService.js",
+      "summary": "React source file src/services/studentClassService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/studentCourseService.js",
+      "type": "file",
+      "name": "studentCourseService.js",
+      "filePath": "src/services/studentCourseService.js",
+      "summary": "React source file src/services/studentCourseService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/studentService.js",
+      "type": "file",
+      "name": "studentService.js",
+      "filePath": "src/services/studentService.js",
+      "summary": "React source file src/services/studentService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/userService.js",
+      "type": "file",
+      "name": "userService.js",
+      "filePath": "src/services/userService.js",
+      "summary": "React source file src/services/userService.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/store/selectors/masterDataSelectors.js",
+      "type": "file",
+      "name": "masterDataSelectors.js",
+      "filePath": "src/store/selectors/masterDataSelectors.js",
+      "summary": "React source file src/store/selectors/masterDataSelectors.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/store/selectors/scoreSelectors.js",
+      "type": "file",
+      "name": "scoreSelectors.js",
+      "filePath": "src/store/selectors/scoreSelectors.js",
+      "summary": "React source file src/store/selectors/scoreSelectors.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/utils/alert.js",
+      "type": "file",
+      "name": "alert.js",
+      "filePath": "src/utils/alert.js",
+      "summary": "React source file src/utils/alert.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/utils/class.utils.js",
+      "type": "file",
+      "name": "class.utils.js",
+      "filePath": "src/utils/class.utils.js",
+      "summary": "React source file src/utils/class.utils.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/utils/compareData.js",
+      "type": "file",
+      "name": "compareData.js",
+      "filePath": "src/utils/compareData.js",
+      "summary": "React source file src/utils/compareData.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/utils/date.utils.js",
+      "type": "file",
+      "name": "date.utils.js",
+      "filePath": "src/utils/date.utils.js",
+      "summary": "React source file src/utils/date.utils.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/utils/field.util.jsx",
+      "type": "file",
+      "name": "field.util.jsx",
+      "filePath": "src/utils/field.util.jsx",
+      "summary": "React source file src/utils/field.util.jsx",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/utils/requestAPI.js",
+      "type": "file",
+      "name": "requestAPI.js",
+      "filePath": "src/utils/requestAPI.js",
+      "summary": "React source file src/utils/requestAPI.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/utils/string.utils.js",
+      "type": "file",
+      "name": "string.utils.js",
+      "filePath": "src/utils/string.utils.js",
+      "summary": "React source file src/utils/string.utils.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/validators/formValidator.js",
+      "type": "file",
+      "name": "formValidator.js",
+      "filePath": "src/validators/formValidator.js",
+      "summary": "React source file src/validators/formValidator.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:vite.config.js",
+      "type": "file",
+      "name": "vite.config.js",
+      "filePath": "vite.config.js",
+      "summary": "React source file vite.config.js",
+      "tags": [
+        "source",
+        "code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/App.jsx",
+      "target": "file:src/hooks/useFetchMasterData.js",
+      "from": "file:src/App.jsx",
+      "to": "file:src/hooks/useFetchMasterData.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/common/table/tableRender.jsx",
+      "target": "file:src/utils/field.util.jsx",
+      "from": "file:src/components/common/table/tableRender.jsx",
+      "to": "file:src/utils/field.util.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/ClassPickerModal.jsx",
+      "target": "file:src/services/classService.js",
+      "from": "file:src/components/CommonPickers/ClassPickerModal.jsx",
+      "to": "file:src/services/classService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/ClassPickerModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/components/CommonPickers/ClassPickerModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/ContractPickerModal.jsx",
+      "target": "file:src/constants/lecturer/lecturer.constants.js",
+      "from": "file:src/components/CommonPickers/ContractPickerModal.jsx",
+      "to": "file:src/constants/lecturer/lecturer.constants.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/ContractPickerModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/components/CommonPickers/ContractPickerModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/CoursePickerModal.jsx",
+      "target": "file:src/components/PageComponent/PageComponent.scss",
+      "from": "file:src/components/CommonPickers/CoursePickerModal.jsx",
+      "to": "file:src/components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/DegreePickerModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/components/CommonPickers/DegreePickerModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/LecturePickerModal.jsx",
+      "target": "file:src/components/PageComponent/PageComponent.scss",
+      "from": "file:src/components/CommonPickers/LecturePickerModal.jsx",
+      "to": "file:src/components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/SkillPickerModal.jsx",
+      "target": "file:src/constants/lecturer/lecturer.constants.js",
+      "from": "file:src/components/CommonPickers/SkillPickerModal.jsx",
+      "to": "file:src/constants/lecturer/lecturer.constants.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/SkillPickerModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/components/CommonPickers/SkillPickerModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "target": "file:src/constants/lecturer/lecturer.constants.js",
+      "from": "file:src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "to": "file:src/constants/lecturer/lecturer.constants.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/StatusPickerModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/components/CommonPickers/StatusPickerModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/StudentListPickerModal copy.jsx",
+      "target": "file:src/services/studentCourseService.js",
+      "from": "file:src/components/CommonPickers/StudentListPickerModal copy.jsx",
+      "to": "file:src/services/studentCourseService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/StudentListPickerModal copy.jsx",
+      "target": "file:src/services/studentService.js",
+      "from": "file:src/components/CommonPickers/StudentListPickerModal copy.jsx",
+      "to": "file:src/services/studentService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CommonPickers/StudentListPickerModal.jsx",
+      "target": "file:src/services/studentCourseService.js",
+      "from": "file:src/components/CommonPickers/StudentListPickerModal.jsx",
+      "to": "file:src/services/studentCourseService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/Footer/Footer.jsx",
+      "target": "file:src/components/Footer/Footer.scss",
+      "from": "file:src/components/Footer/Footer.jsx",
+      "to": "file:src/components/Footer/Footer.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/FormControls/FormRenderer.jsx",
+      "target": "file:src/components/FormControls/FormItem.jsx",
+      "from": "file:src/components/FormControls/FormRenderer.jsx",
+      "to": "file:src/components/FormControls/FormItem.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/FormControls/FormRenderer.jsx",
+      "target": "file:src/components/FormControls/PickerControl.jsx",
+      "from": "file:src/components/FormControls/FormRenderer.jsx",
+      "to": "file:src/components/FormControls/PickerControl.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/Header/Header.jsx",
+      "target": "file:src/actions/authActions.js",
+      "from": "file:src/components/Header/Header.jsx",
+      "to": "file:src/actions/authActions.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/Header/Header.jsx",
+      "target": "file:src/components/Header/Header.scss",
+      "from": "file:src/components/Header/Header.jsx",
+      "to": "file:src/components/Header/Header.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/DataTable.jsx",
+      "target": "file:src/components/common/table/tableRender.jsx",
+      "from": "file:src/components/PageComponent/DataTable.jsx",
+      "to": "file:src/components/common/table/tableRender.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/DataTable.jsx",
+      "target": "file:src/utils/field.util.jsx",
+      "from": "file:src/components/PageComponent/DataTable.jsx",
+      "to": "file:src/utils/field.util.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/DataTable.jsx",
+      "target": "file:src/components/PageComponent/PageComponent.scss",
+      "from": "file:src/components/PageComponent/DataTable.jsx",
+      "to": "file:src/components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/HistoryModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/components/PageComponent/HistoryModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/HistoryModal.jsx",
+      "target": "file:src/utils/date.utils.js",
+      "from": "file:src/components/PageComponent/HistoryModal.jsx",
+      "to": "file:src/utils/date.utils.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/HistoryModal.jsx",
+      "target": "file:src/utils/field.util.jsx",
+      "from": "file:src/components/PageComponent/HistoryModal.jsx",
+      "to": "file:src/utils/field.util.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/HistoryModal.jsx",
+      "target": "file:src/components/PageComponent/PageComponent.scss",
+      "from": "file:src/components/PageComponent/HistoryModal.jsx",
+      "to": "file:src/components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/PageHeader.jsx",
+      "target": "file:src/components/PageComponent/PageComponent.scss",
+      "from": "file:src/components/PageComponent/PageHeader.jsx",
+      "to": "file:src/components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/Pagination.jsx",
+      "target": "file:src/components/PageComponent/PageComponent.scss",
+      "from": "file:src/components/PageComponent/Pagination.jsx",
+      "to": "file:src/components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/hooks/useForm.jsx",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/hooks/useForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/components/FormControls/FormRenderer.jsx",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/components/FormControls/FormRenderer.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/components/CommonPickers/ClassPickerModal.jsx",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/components/CommonPickers/ClassPickerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/components/FormControls/FormItem.jsx",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/components/FormControls/FormItem.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/components/CommonPickers/StatusPickerModal.jsx",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/components/CommonPickers/StatusPickerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/components/FormControls/PickerControl.jsx",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/components/FormControls/PickerControl.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/components/CommonPickers/CoursePickerModal.jsx",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/components/CommonPickers/CoursePickerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/SharedModal.jsx",
+      "target": "file:src/components/PageComponent/PageComponent.scss",
+      "from": "file:src/components/PageComponent/SharedModal.jsx",
+      "to": "file:src/components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PageComponent/Toolbar.jsx",
+      "target": "file:src/components/PageComponent/PageComponent.scss",
+      "from": "file:src/components/PageComponent/Toolbar.jsx",
+      "to": "file:src/components/PageComponent/PageComponent.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useAuditLog.jsx",
+      "target": "file:src/services/auditLogService.js",
+      "from": "file:src/hooks/useAuditLog.jsx",
+      "to": "file:src/services/auditLogService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useComponentData.jsx",
+      "target": "file:src/hooks/useFetchData.jsx",
+      "from": "file:src/hooks/useComponentData.jsx",
+      "to": "file:src/hooks/useFetchData.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useComponentData.jsx",
+      "target": "file:src/hooks/useSearch.jsx",
+      "from": "file:src/hooks/useComponentData.jsx",
+      "to": "file:src/hooks/useSearch.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useComponentData.jsx",
+      "target": "file:src/hooks/useCrud.jsx",
+      "from": "file:src/hooks/useComponentData.jsx",
+      "to": "file:src/hooks/useCrud.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useComponentData.jsx",
+      "target": "file:src/hooks/usePagination.jsx",
+      "from": "file:src/hooks/useComponentData.jsx",
+      "to": "file:src/hooks/usePagination.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useComponentData.jsx",
+      "target": "file:src/hooks/useSort.jsx",
+      "from": "file:src/hooks/useComponentData.jsx",
+      "to": "file:src/hooks/useSort.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useComponentData.jsx",
+      "target": "file:src/hooks/useReorder.jsx",
+      "from": "file:src/hooks/useComponentData.jsx",
+      "to": "file:src/hooks/useReorder.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useComponentData.jsx",
+      "target": "file:src/utils/compareData.js",
+      "from": "file:src/hooks/useComponentData.jsx",
+      "to": "file:src/utils/compareData.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useFetchMasterData.js",
+      "target": "file:src/services/courseService.js",
+      "from": "file:src/hooks/useFetchMasterData.js",
+      "to": "file:src/services/courseService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useFetchMasterData.js",
+      "target": "file:src/services/studentService.js",
+      "from": "file:src/hooks/useFetchMasterData.js",
+      "to": "file:src/services/studentService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useFetchMasterData.js",
+      "target": "file:src/services/lectureService.js",
+      "from": "file:src/hooks/useFetchMasterData.js",
+      "to": "file:src/services/lectureService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useFetchMasterData.js",
+      "target": "file:src/services/classService.js",
+      "from": "file:src/hooks/useFetchMasterData.js",
+      "to": "file:src/services/classService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useFetchMasterData.js",
+      "target": "file:src/services/classScheduleService.js",
+      "from": "file:src/hooks/useFetchMasterData.js",
+      "to": "file:src/services/classScheduleService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useFetchMasterData.js",
+      "target": "file:src/services/studentClassService.js",
+      "from": "file:src/hooks/useFetchMasterData.js",
+      "to": "file:src/services/studentClassService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useFetchMasterData.js",
+      "target": "file:src/services/studentCourseService.js",
+      "from": "file:src/hooks/useFetchMasterData.js",
+      "to": "file:src/services/studentCourseService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/hooks/useForm.jsx",
+      "target": "file:src/validators/formValidator.js",
+      "from": "file:src/hooks/useForm.jsx",
+      "to": "file:src/validators/formValidator.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/layouts/LayoutDefault.jsx",
+      "target": "file:src/components/Header/Header.jsx",
+      "from": "file:src/layouts/LayoutDefault.jsx",
+      "to": "file:src/components/Header/Header.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/layouts/LayoutDefault.jsx",
+      "target": "file:src/components/Footer/Footer.jsx",
+      "from": "file:src/layouts/LayoutDefault.jsx",
+      "to": "file:src/components/Footer/Footer.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/layouts/LayoutDefault.jsx",
+      "target": "file:src/layouts/LayoutDefault.scss",
+      "from": "file:src/layouts/LayoutDefault.jsx",
+      "to": "file:src/layouts/LayoutDefault.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.jsx",
+      "target": "file:src/App.jsx",
+      "from": "file:src/main.jsx",
+      "to": "file:src/App.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.jsx",
+      "target": "file:src/reducers/index.js",
+      "from": "file:src/main.jsx",
+      "to": "file:src/reducers/index.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.jsx",
+      "target": "file:src/assets/styles/pages/main.scss",
+      "from": "file:src/main.jsx",
+      "to": "file:src/assets/styles/pages/main.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Classes/Class.jsx",
+      "target": "file:src/pages/Classes/ClassModal.jsx",
+      "from": "file:src/pages/Classes/Class.jsx",
+      "to": "file:src/pages/Classes/ClassModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Classes/Class.jsx",
+      "target": "file:src/services/lectureService.js",
+      "from": "file:src/pages/Classes/Class.jsx",
+      "to": "file:src/services/lectureService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Classes/ClassModal.jsx",
+      "target": "file:src/services/studentClassService.js",
+      "from": "file:src/pages/Classes/ClassModal.jsx",
+      "to": "file:src/services/studentClassService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/ClassSchedule/ClassSchedule.jsx",
+      "target": "file:src/pages/ClassSchedule/ScheduleGridCell.jsx",
+      "from": "file:src/pages/ClassSchedule/ClassSchedule.jsx",
+      "to": "file:src/pages/ClassSchedule/ScheduleGridCell.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/ClassSchedule/ClassSchedule.jsx",
+      "target": "file:src/pages/ClassSchedule/ClassSchedule.scss",
+      "from": "file:src/pages/ClassSchedule/ClassSchedule.jsx",
+      "to": "file:src/pages/ClassSchedule/ClassSchedule.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/services/courseService.js",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/services/courseService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/hooks/useComponentData.jsx",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/hooks/useComponentData.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/components/PageComponent/PageHeader.jsx",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/components/PageComponent/PageHeader.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/components/PageComponent/Toolbar.jsx",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/components/PageComponent/Toolbar.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/components/PageComponent/DataTable.jsx",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/components/PageComponent/DataTable.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/components/PageComponent/SharedModal.jsx",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/components/PageComponent/SharedModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/components/PageComponent/Pagination.jsx",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/components/PageComponent/Pagination.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/hooks/useAuditLog.jsx",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/hooks/useAuditLog.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/components/PageComponent/HistoryModal.jsx",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/components/PageComponent/HistoryModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/constants/courses/course.constants.jsx",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/constants/courses/course.constants.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Course/Course.jsx",
+      "target": "file:src/constants/courses/course.fields.js",
+      "from": "file:src/pages/Course/Course.jsx",
+      "to": "file:src/constants/courses/course.fields.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/components/LectureAssignmentTable.jsx",
+      "target": "file:src/pages/Home/components/AssignClassPopup.jsx",
+      "from": "file:src/pages/Home/components/LectureAssignmentTable.jsx",
+      "to": "file:src/pages/Home/components/AssignClassPopup.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/components/WarningCards.jsx",
+      "target": "file:src/pages/Home/components/WarningCard.jsx",
+      "from": "file:src/pages/Home/components/WarningCards.jsx",
+      "to": "file:src/pages/Home/components/WarningCard.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "target": "file:src/pages/Home/components/EnrollmentSummary.jsx",
+      "from": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "to": "file:src/pages/Home/components/EnrollmentSummary.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "target": "file:src/pages/Home/components/EnrollmentToolbar.jsx",
+      "from": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "to": "file:src/pages/Home/components/EnrollmentToolbar.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "target": "file:src/pages/Home/components/EnrollmentTable.jsx",
+      "from": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "to": "file:src/pages/Home/components/EnrollmentTable.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "target": "file:src/pages/Home/components/EnrollmentFooter.jsx",
+      "from": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "to": "file:src/pages/Home/components/EnrollmentFooter.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "target": "file:src/pages/Home/components/EnrollmentHeader.jsx",
+      "from": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "to": "file:src/pages/Home/components/EnrollmentHeader.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/services/scoreService.js",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/services/scoreService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/pages/ClassSchedule/ClassSchedule.jsx",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/pages/ClassSchedule/ClassSchedule.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/pages/Home/components/WarningCards.jsx",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/pages/Home/components/WarningCards.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/pages/Home/components/HomeFilterCard.jsx",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/pages/Home/components/HomeFilterCard.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/pages/Home/components/HomeClassSchedule.jsx",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/pages/Home/components/HomeClassSchedule.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/pages/Home/Enrollmentstatusmodal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/pages/Home/components/DonutChart.jsx",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/pages/Home/components/DonutChart.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/pages/Student/StudentDetailModal.jsx",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/pages/Student/StudentDetailModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Home.jsx",
+      "target": "file:src/pages/Home/Home.scss",
+      "from": "file:src/pages/Home/Home.jsx",
+      "to": "file:src/pages/Home/Home.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "target": "file:src/pages/Home/components/EnrollmentHeader.jsx",
+      "from": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "to": "file:src/pages/Home/components/EnrollmentHeader.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "target": "file:src/pages/Home/components/EnrollmentToolbar.jsx",
+      "from": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "to": "file:src/pages/Home/components/EnrollmentToolbar.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "target": "file:src/pages/Home/components/EnrollmentSummary.jsx",
+      "from": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "to": "file:src/pages/Home/components/EnrollmentSummary.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "target": "file:src/pages/Home/components/LectureAssignmentTable.jsx",
+      "from": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "to": "file:src/pages/Home/components/LectureAssignmentTable.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "target": "file:src/pages/Home/components/EnrollmentFooter.jsx",
+      "from": "file:src/pages/Home/Lectureassignmentmodal.jsx",
+      "to": "file:src/pages/Home/components/EnrollmentFooter.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/components/PageComponent/PageHeader.jsx",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/components/PageComponent/PageHeader.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/components/PageComponent/Toolbar.jsx",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/components/PageComponent/Toolbar.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/hooks/useComponentData.jsx",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/hooks/useComponentData.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/hooks/useAuditLog.jsx",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/hooks/useAuditLog.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/services/lectureService.js",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/services/lectureService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/components/PageComponent/DataTable.jsx",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/components/PageComponent/DataTable.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/pages/Lecturer/LectureDetailModal.jsx",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/pages/Lecturer/LectureDetailModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/components/PageComponent/Pagination.jsx",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/components/PageComponent/Pagination.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/components/PageComponent/HistoryModal.jsx",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/components/PageComponent/HistoryModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/pages/Lecturer/LectureModal.jsx",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/pages/Lecturer/LectureModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/constants/lecturer/lecturer.constants.js",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/constants/lecturer/lecturer.constants.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/Lecture.jsx",
+      "target": "file:src/constants/lecturer/lecture.fields.js",
+      "from": "file:src/pages/Lecturer/Lecture.jsx",
+      "to": "file:src/constants/lecturer/lecture.fields.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureDetailModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/pages/Lecturer/LectureDetailModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureDetailModal.jsx",
+      "target": "file:src/utils/date.utils.js",
+      "from": "file:src/pages/Lecturer/LectureDetailModal.jsx",
+      "to": "file:src/utils/date.utils.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureDetailModal.jsx",
+      "target": "file:src/pages/Lecturer/LectureDetailModal.scss",
+      "from": "file:src/pages/Lecturer/LectureDetailModal.jsx",
+      "to": "file:src/pages/Lecturer/LectureDetailModal.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/constants/lecturer/lecturer.constants.js",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/constants/lecturer/lecturer.constants.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/components/CommonPickers/ContractPickerModal.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/components/CommonPickers/ContractPickerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/components/CommonPickers/SkillPickerModal.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/components/CommonPickers/SkillPickerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/components/CommonPickers/ClassPickerModal.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/components/CommonPickers/ClassPickerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/components/CommonPickers/StatusPickerModal.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/components/CommonPickers/StatusPickerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/hooks/useForm.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/hooks/useForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/components/FormControls/FormRenderer.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/components/FormControls/FormRenderer.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/components/FormControls/FormItem.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/components/FormControls/FormItem.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/components/FormControls/PickerControl.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/components/FormControls/PickerControl.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/constants/lecturer/lecture.fields.js",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/constants/lecturer/lecture.fields.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/utils/field.util.jsx",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/utils/field.util.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/pages/Lecturer/LectureModal.scss",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/pages/Lecturer/LectureModal.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Lecturer/LectureModal.jsx",
+      "target": "file:src/assets/styles/common.scss",
+      "from": "file:src/pages/Lecturer/LectureModal.jsx",
+      "to": "file:src/assets/styles/common.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/NotFound/NotFound.jsx",
+      "target": "file:src/pages/NotFound/NotFound.scss",
+      "from": "file:src/pages/NotFound/NotFound.jsx",
+      "to": "file:src/pages/NotFound/NotFound.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/actions/authActions.js",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/actions/authActions.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/services/userService.js",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/services/userService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/components/PageComponent/PageHeader.jsx",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/components/PageComponent/PageHeader.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/constants/users/user.fields.js",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/constants/users/user.fields.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/hooks/useForm.jsx",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/hooks/useForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/components/FormControls/FormRenderer.jsx",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/components/FormControls/FormRenderer.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/components/FormControls/FormItem.jsx",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/components/FormControls/FormItem.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/utils/string.utils.js",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/utils/string.utils.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/utils/date.utils.js",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/utils/date.utils.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Profile/Profile.jsx",
+      "target": "file:src/pages/Profile/Profile.scss",
+      "from": "file:src/pages/Profile/Profile.jsx",
+      "to": "file:src/pages/Profile/Profile.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Register/Register.jsx",
+      "target": "file:src/constants/register/register.fields.js",
+      "from": "file:src/pages/Register/Register.jsx",
+      "to": "file:src/constants/register/register.fields.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Register/Register.jsx",
+      "target": "file:src/services/userService.js",
+      "from": "file:src/pages/Register/Register.jsx",
+      "to": "file:src/services/userService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Register/Register.jsx",
+      "target": "file:src/hooks/useForm.jsx",
+      "from": "file:src/pages/Register/Register.jsx",
+      "to": "file:src/hooks/useForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Register/Register.jsx",
+      "target": "file:src/components/FormControls/FormItem.jsx",
+      "from": "file:src/pages/Register/Register.jsx",
+      "to": "file:src/components/FormControls/FormItem.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Register/Register.jsx",
+      "target": "file:src/pages/Register/Register.scss",
+      "from": "file:src/pages/Register/Register.jsx",
+      "to": "file:src/pages/Register/Register.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Register/Register.jsx",
+      "target": "file:src/assets/styles/common.scss",
+      "from": "file:src/pages/Register/Register.jsx",
+      "to": "file:src/assets/styles/common.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Score/Score.jsx",
+      "target": "file:src/pages/Score/ScoreDetailModal.jsx",
+      "from": "file:src/pages/Score/Score.jsx",
+      "to": "file:src/pages/Score/ScoreDetailModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Score/Score.jsx",
+      "target": "file:src/pages/Score/ScoreModal.jsx",
+      "from": "file:src/pages/Score/Score.jsx",
+      "to": "file:src/pages/Score/ScoreModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Score/ScoreDetailModal.jsx",
+      "target": "file:src/pages/Lecturer/LectureDetailModal.scss",
+      "from": "file:src/pages/Score/ScoreDetailModal.jsx",
+      "to": "file:src/pages/Lecturer/LectureDetailModal.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/ForgotForm.jsx",
+      "target": "file:src/constants/login/login.fields.js",
+      "from": "file:src/pages/SignIn/ForgotForm.jsx",
+      "to": "file:src/constants/login/login.fields.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/ForgotForm.jsx",
+      "target": "file:src/hooks/useForm.jsx",
+      "from": "file:src/pages/SignIn/ForgotForm.jsx",
+      "to": "file:src/hooks/useForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/ForgotForm.jsx",
+      "target": "file:src/pages/SignIn/SignFormWrapper.jsx",
+      "from": "file:src/pages/SignIn/ForgotForm.jsx",
+      "to": "file:src/pages/SignIn/SignFormWrapper.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/ForgotForm.jsx",
+      "target": "file:src/pages/SignIn/AuthHeader.jsx",
+      "from": "file:src/pages/SignIn/ForgotForm.jsx",
+      "to": "file:src/pages/SignIn/AuthHeader.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/LoginForm.jsx",
+      "target": "file:src/pages/SignIn/SignFormWrapper.jsx",
+      "from": "file:src/pages/SignIn/LoginForm.jsx",
+      "to": "file:src/pages/SignIn/SignFormWrapper.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/LoginForm.jsx",
+      "target": "file:src/pages/SignIn/AuthHeader.jsx",
+      "from": "file:src/pages/SignIn/LoginForm.jsx",
+      "to": "file:src/pages/SignIn/AuthHeader.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/LoginForm.jsx",
+      "target": "file:src/constants/login/login.fields.js",
+      "from": "file:src/pages/SignIn/LoginForm.jsx",
+      "to": "file:src/constants/login/login.fields.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/LoginForm.jsx",
+      "target": "file:src/hooks/useForm.jsx",
+      "from": "file:src/pages/SignIn/LoginForm.jsx",
+      "to": "file:src/hooks/useForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/ResetForm.jsx",
+      "target": "file:src/pages/SignIn/SignFormWrapper.jsx",
+      "from": "file:src/pages/SignIn/ResetForm.jsx",
+      "to": "file:src/pages/SignIn/SignFormWrapper.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/ResetForm.jsx",
+      "target": "file:src/pages/SignIn/AuthHeader.jsx",
+      "from": "file:src/pages/SignIn/ResetForm.jsx",
+      "to": "file:src/pages/SignIn/AuthHeader.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/ResetForm.jsx",
+      "target": "file:src/hooks/useForm.jsx",
+      "from": "file:src/pages/SignIn/ResetForm.jsx",
+      "to": "file:src/hooks/useForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/SignIn.jsx",
+      "target": "file:src/services/userService.js",
+      "from": "file:src/pages/SignIn/SignIn.jsx",
+      "to": "file:src/services/userService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/SignIn.jsx",
+      "target": "file:src/actions/authActions.js",
+      "from": "file:src/pages/SignIn/SignIn.jsx",
+      "to": "file:src/actions/authActions.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/SignIn.jsx",
+      "target": "file:src/pages/SignIn/LoginForm.jsx",
+      "from": "file:src/pages/SignIn/SignIn.jsx",
+      "to": "file:src/pages/SignIn/LoginForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/SignIn.jsx",
+      "target": "file:src/pages/SignIn/ForgotForm.jsx",
+      "from": "file:src/pages/SignIn/SignIn.jsx",
+      "to": "file:src/pages/SignIn/ForgotForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/SignIn.jsx",
+      "target": "file:src/pages/SignIn/ResetForm.jsx",
+      "from": "file:src/pages/SignIn/SignIn.jsx",
+      "to": "file:src/pages/SignIn/ResetForm.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/SignIn/SignIn.jsx",
+      "target": "file:src/pages/SignIn/SignIn.scss",
+      "from": "file:src/pages/SignIn/SignIn.jsx",
+      "to": "file:src/pages/SignIn/SignIn.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Student/Student.jsx",
+      "target": "file:src/services/studentService.js",
+      "from": "file:src/pages/Student/Student.jsx",
+      "to": "file:src/services/studentService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Student/Student.jsx",
+      "target": "file:src/pages/Student/StudentDetailModal.jsx",
+      "from": "file:src/pages/Student/Student.jsx",
+      "to": "file:src/pages/Student/StudentDetailModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Student/StudentDetailModal.jsx",
+      "target": "file:src/constants/modalStyles.js",
+      "from": "file:src/pages/Student/StudentDetailModal.jsx",
+      "to": "file:src/constants/modalStyles.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Student/StudentDetailModal.jsx",
+      "target": "file:src/utils/date.utils.js",
+      "from": "file:src/pages/Student/StudentDetailModal.jsx",
+      "to": "file:src/utils/date.utils.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Student/StudentDetailModal.jsx",
+      "target": "file:src/pages/Lecturer/LectureDetailModal.scss",
+      "from": "file:src/pages/Student/StudentDetailModal.jsx",
+      "to": "file:src/pages/Lecturer/LectureDetailModal.scss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/services/userService.js",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/services/userService.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/components/PageComponent/PageHeader.jsx",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/components/PageComponent/PageHeader.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/components/PageComponent/Toolbar.jsx",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/components/PageComponent/Toolbar.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/hooks/useComponentData.jsx",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/hooks/useComponentData.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/hooks/useAuditLog.jsx",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/hooks/useAuditLog.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/components/PageComponent/DataTable.jsx",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/components/PageComponent/DataTable.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/components/PageComponent/SharedModal.jsx",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/components/PageComponent/SharedModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/components/PageComponent/HistoryModal.jsx",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/components/PageComponent/HistoryModal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/components/PageComponent/Pagination.jsx",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/components/PageComponent/Pagination.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/constants/users/user.fields.js",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/constants/users/user.fields.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/Users/User.jsx",
+      "target": "file:src/constants/users/user.constants.jsx",
+      "from": "file:src/pages/Users/User.jsx",
+      "to": "file:src/constants/users/user.constants.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/reducers/authReducers.js",
+      "target": "file:src/actions/authActions.js",
+      "from": "file:src/reducers/authReducers.js",
+      "to": "file:src/actions/authActions.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/reducers/index.js",
+      "target": "file:src/reducers/authReducers.js",
+      "from": "file:src/reducers/index.js",
+      "to": "file:src/reducers/authReducers.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/reducers/index.js",
+      "target": "file:src/reducers/masterDataReducer.js",
+      "from": "file:src/reducers/index.js",
+      "to": "file:src/reducers/masterDataReducer.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/reducers/scoreReducer.js",
+      "target": "file:src/constants/score/score.constants.js",
+      "from": "file:src/reducers/scoreReducer.js",
+      "to": "file:src/constants/score/score.constants.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/layouts/LayoutDefault.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/layouts/LayoutDefault.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/Home/Home.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/Home/Home.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/Contact.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/Contact.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/blog/BlogLayout.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/blog/BlogLayout.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/blog/BlogNews.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/blog/BlogNews.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/blog/BlogRelated.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/blog/BlogRelated.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/About.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/About.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/Register/Register.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/Register/Register.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/Course/Course.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/Course/Course.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/Classes/Class.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/Classes/Class.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/SignIn/SignIn.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/SignIn/SignIn.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/components/ProtectRoute.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/components/ProtectRoute.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/Users/User.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/Users/User.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/Profile/Profile.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/Profile/Profile.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/NotFound/NotFound.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/NotFound/NotFound.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/routes/index.jsx",
+      "target": "file:src/pages/Lecturer/Lecture.jsx",
+      "from": "file:src/routes/index.jsx",
+      "to": "file:src/pages/Lecturer/Lecture.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/services/auditLogService.js",
+      "target": "file:src/utils/requestAPI.js",
+      "from": "file:src/services/auditLogService.js",
+      "to": "file:src/utils/requestAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/services/classService.js",
+      "target": "file:src/utils/requestAPI.js",
+      "from": "file:src/services/classService.js",
+      "to": "file:src/utils/requestAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/services/courseService.js",
+      "target": "file:src/utils/requestAPI.js",
+      "from": "file:src/services/courseService.js",
+      "to": "file:src/utils/requestAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/services/lectureService.js",
+      "target": "file:src/utils/requestAPI.js",
+      "from": "file:src/services/lectureService.js",
+      "to": "file:src/utils/requestAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/services/userService.js",
+      "target": "file:src/utils/requestAPI.js",
+      "from": "file:src/services/userService.js",
+      "to": "file:src/utils/requestAPI.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/utils/class.utils.js",
+      "target": "file:src/utils/string.utils.js",
+      "from": "file:src/utils/class.utils.js",
+      "to": "file:src/utils/string.utils.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/utils/field.util.jsx",
+      "target": "file:src/utils/date.utils.js",
+      "from": "file:src/utils/field.util.jsx",
+      "to": "file:src/utils/date.utils.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

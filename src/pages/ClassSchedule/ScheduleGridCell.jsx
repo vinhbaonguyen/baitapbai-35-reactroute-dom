@@ -11,6 +11,7 @@ function ScheduleGridCell({
   enriched,
   allClasses,
   courses,
+  highlightedScheduleIds,
   dragOverCell,
   draggedClassId,
   isCellConflict,
@@ -40,12 +41,17 @@ function ScheduleGridCell({
 
   if (scheds.length > 0) {
     const maxDuration = Math.max(...scheds.map(s => s.duration))
-    const totalSlots  = maxDuration * SLOTS_PER_HOUR
-    const span        = Math.min(totalSlots, TIME_SLOTS.length - tIdx)
-    const isExpanded  = expandedCell?.day === day.key && expandedCell?.time === time
+    const totalSlots = maxDuration * SLOTS_PER_HOUR
+    const span = Math.min(totalSlots, TIME_SLOTS.length - tIdx)
+    const isExpanded = expandedCell?.day === day.key && expandedCell?.time === time
     // isConflict khi drag qua cell đã có lịch
-    const isConflict  = isOver && draggedClassId
+    const isConflict = isOver && draggedClassId
       && isCellConflict(draggedClassId, day.key, time)
+
+    // ✅ Helper: đang search mà sched này KHÔNG khớp → làm mờ; sched này khớp → highlight nổi bật
+    const isSearching = highlightedScheduleIds !== null
+    const isDimmed = (sched) => isSearching && !highlightedScheduleIds.has(sched.id)
+    const isMatched = (sched) => isSearching && highlightedScheduleIds.has(sched.id)
 
     return (
       <td
@@ -81,11 +87,14 @@ function ScheduleGridCell({
                     key={sched.id}
                     className={`sg-stack__card ${isTop ? 'sg-stack__card--top' : ''}`}
                     style={{
-                      background:  getColor(sched.classId),
+                      background: getColor(sched.classId),
                       // Mỗi card bên dưới dịch xuống + thu nhỏ dần
-                      transform:   `translateY(${(arr.length - 1 - i) * 5}px) scale(${1 - (arr.length - 1 - i) * 0.03})`,
-                      zIndex:      i + 1,
-                      opacity:     isTop ? 1 : 0.75,
+                      transform: `translateY(${(arr.length - 1 - i) * 5}px) scale(${1 - (arr.length - 1 - i) * 0.03})`,
+                      zIndex: i + 1,
+                      // opacity: isTop ? 1 : 0.75,
+                      opacity: isDimmed(sched) ? 0.2 : (isTop ? 1 : 0.75),
+                      outline: isMatched(sched) ? '3px solid #fbbf24' : 'none',
+                      outlineOffset: isMatched(sched) ? '-2px' : 0,
                     }}
                   >
                     {isTop && (
@@ -106,46 +115,61 @@ function ScheduleGridCell({
             </div>
           )
           : scheds.length === 1
-          ? (
-            // ── Single block bình thường ────────────────────────────────
-            <div
-              className="sg-block"
-              style={{ background: getColor(scheds[0].classId) }}
-              onClick={() => onEdit(scheds[0])}
-              title={`${scheds[0].classCode} | ${scheds[0].startTime}–${scheds[0].endTime} | ${scheds[0].room}`}
-            >
-              <button className="sg-block__del"
-                onClick={e => { e.stopPropagation(); onDelete(scheds[0].id) }}
-              >✕</button>
-              <span className="sg-block__code">{scheds[0].classCode}</span>
-              <span className="sg-block__time">{scheds[0].startTime}–{scheds[0].endTime}</span>
-              <span className="sg-block__room">📍 {scheds[0].room}</span>
-            </div>
-          )
-          : (
-            // ── Expanded: list tất cả ───────────────────────────────────
-            <div className="sg-expanded">
-              <button
-                className="sg-expanded__close"
-                onClick={() => onSetExpandedCell(null)}
-              >▲ Thu gọn</button>
-              {scheds.map(sched => (
-                <div
-                  key={sched.id}
-                  className="sg-block sg-block--mini"
-                  style={{ background: getColor(sched.classId) }}
-                  onClick={() => onEdit(sched)}
-                >
-                  <button className="sg-block__del"
-                    onClick={e => { e.stopPropagation(); onDelete(sched.id) }}
-                  >✕</button>
-                  <span className="sg-block__code">{sched.classCode}</span>
-                  <span className="sg-block__time">{sched.startTime}–{sched.endTime}</span>
-                  <span className="sg-block__room">📍 {sched.room}</span>
-                </div>
-              ))}
-            </div>
-          )
+            ? (
+              // ── Single block bình thường ────────────────────────────────
+              <div
+                // className="sg-block"
+                className={`sg-block ${isMatched(scheds[0]) ? 'sg-block--match' : ''}`}
+                // style={{ background: getColor(scheds[0].classId) }}
+                style={{
+                  background: getColor(scheds[0].classId),
+                  opacity: isDimmed(scheds[0]) ? 0.25 : 1,
+                  outline: isMatched(scheds[0]) ? '3px solid #fbbf24' : 'none',
+                  outlineOffset: isMatched(scheds[0]) ? '-2px' : 0,
+                }}
+
+                onClick={() => onEdit(scheds[0])}
+                title={`${scheds[0].classCode} | ${scheds[0].startTime}–${scheds[0].endTime} | ${scheds[0].room}`}
+              >
+                <button className="sg-block__del"
+                  onClick={e => { e.stopPropagation(); onDelete(scheds[0].id) }}
+                >✕</button>
+                <span className="sg-block__code">{scheds[0].classCode}</span>
+                <span className="sg-block__time">{scheds[0].startTime}–{scheds[0].endTime}</span>
+                <span className="sg-block__room">📍 {scheds[0].room}</span>
+              </div>
+            )
+            : (
+              // ── Expanded: list tất cả ───────────────────────────────────
+              <div className="sg-expanded">
+                <button
+                  className="sg-expanded__close"
+                  onClick={() => onSetExpandedCell(null)}
+                >▲ Thu gọn</button>
+                {scheds.map(sched => (
+                  <div
+                    key={sched.id}
+                    className="sg-block sg-block--mini"
+                    // style={{ background: getColor(sched.classId) }}
+                    style={{
+                      background: getColor(sched.classId),
+                      opacity: isDimmed(sched) ? 0.25 : 1,
+                      outline: isMatched(sched) ? '3px solid #fbbf24' : 'none',
+                      outlineOffset: isMatched(sched) ? '-2px' : 0,
+                    }}
+
+                    onClick={() => onEdit(sched)}
+                  >
+                    <button className="sg-block__del"
+                      onClick={e => { e.stopPropagation(); onDelete(sched.id) }}
+                    >✕</button>
+                    <span className="sg-block__code">{sched.classCode}</span>
+                    <span className="sg-block__time">{sched.startTime}–{sched.endTime}</span>
+                    <span className="sg-block__room">📍 {sched.room}</span>
+                  </div>
+                ))}
+              </div>
+            )
         }
       </td>
     )
@@ -154,13 +178,13 @@ function ScheduleGridCell({
   // ── Câu hỏi 3: cell trống → droppable ─────────────────────────────────
   const isConflict = isOver && draggedClassId
     && isCellConflict(draggedClassId, day.key, time)
-  const isInForm   = formDays.includes(day.key)
+  const isInForm = formDays.includes(day.key)
     && formStartTime === time
     && formClassId
 
   let cellClass = 'sg__cell'
-  if (isConflict)    cellClass += ' sg__cell--conflict'
-  else if (isOver)   cellClass += ' sg__cell--over'
+  if (isConflict) cellClass += ' sg__cell--conflict'
+  else if (isOver) cellClass += ' sg__cell--over'
   else if (isInForm) cellClass += ' sg__cell--selected'
 
   return (
@@ -173,7 +197,7 @@ function ScheduleGridCell({
     >
       {/* Ghost preview */}
       {isOver && draggedClassId && !isConflict && (() => {
-        const cls    = allClasses?.find(c => Number(c.id) === draggedClassId)
+        const cls = allClasses?.find(c => Number(c.id) === draggedClassId)
         const course = courses?.find(c => Number(c.id) === Number(cls?.courseId))
         return (
           <div className="sg-block sg-block--ghost"

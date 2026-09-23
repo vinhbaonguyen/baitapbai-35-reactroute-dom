@@ -1,9 +1,10 @@
-import React, { memo } from 'react'
+import React, { memo, useRef } from 'react'
 import Modal from 'react-modal'
 import './PageComponent.scss'
 import { getModalStyle } from '../../constants/modalStyles'
 import { formatDateHistory } from '../../utils/date.utils'
 import { buildFieldMap, formatValue } from '../../utils/field.util.jsx'
+import Draggable from 'react-draggable'
 
 
 
@@ -16,6 +17,7 @@ const ACTION_CONFIG = {
 
 function HistoryModal({ entityCode, logs, loading, onClose, fields = [] }) {
   const fieldMap = buildFieldMap(fields)
+  const nodeRef = useRef(null)
   return (
     <Modal
       isOpen={true}
@@ -24,6 +26,17 @@ function HistoryModal({ entityCode, logs, loading, onClose, fields = [] }) {
       shouldFocusAfterRender={false}
       shouldReturnFocusAfterClose={false}
       ariaHideApp={false}              // ✅ tắt aria-hide hoàn toàn
+      contentElement={(props, children) => (
+        <Draggable
+          handle='.modal__title'
+          nodeRef={nodeRef}
+          defaultPosition={{ x: -180, y: -270 }}
+          position={null}>
+          <div {...props} ref={nodeRef}>
+            {children}
+          </div>
+        </Draggable>
+      )}
     >
       <div className="history-modal__header">
         <h4 className="modal__title">
@@ -40,6 +53,7 @@ function HistoryModal({ entityCode, logs, loading, onClose, fields = [] }) {
         <div className="history-timeline">
           {logs?.map((log, i) => {
             const cfg = ACTION_CONFIG[log?.action] || ACTION_CONFIG.UPDATE
+            const isDelete = log?.action === 'DELETE';
             return (
               <div key={log?.id} className="history-timeline__item">
 
@@ -78,8 +92,10 @@ function HistoryModal({ entityCode, logs, loading, onClose, fields = [] }) {
                       <thead>
                         <tr>
                           <th>Field</th>
-                          <th>Giá trị cũ</th>
-                          <th>Giá trị mới</th>
+                          {/* <th>Giá trị cũ</th> */}
+                          {/* <th>Giá trị mới</th> */}
+                          <th>{isDelete ? 'Giá trị (trước khi xóa)' : 'Giá trị cũ'}</th>
+                          {!isDelete && <th>Giá trị mới</th>}
                         </tr>
                       </thead>
                       <tbody>
@@ -87,12 +103,12 @@ function HistoryModal({ entityCode, logs, loading, onClose, fields = [] }) {
                           const fieldConfig = fieldMap[f.field]
                           return (
                             <tr key={j}>
-                              <td><code>{f.field}</code></td>
+                              <td><code>{fieldConfig?.label || f.field}</code></td>
                               <td className="history-table__old">
-                                {formatValue(f.oldValue, fieldConfig,'history')}
+                                {formatValue(f.oldValue, fieldConfig, 'history')}
                               </td>
                               <td className="history-table__new">
-                                {formatValue(f.newValue, fieldConfig,'history')}
+                                {formatValue(f.newValue, fieldConfig, 'history')}
                               </td>
                             </tr>
                           )

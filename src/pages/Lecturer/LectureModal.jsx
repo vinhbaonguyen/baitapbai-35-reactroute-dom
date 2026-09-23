@@ -3,12 +3,13 @@ import Modal from 'react-modal'
 import Swal from 'sweetalert2'
 import { useSelector } from 'react-redux'
 
-import {
-    CONTRACT_DESCRIPTION,
-    CONTRACT_SALARY,
-    LECTURE_DEGREE_OPTIONS,
-    LECTURE_STATUS_OPTIONS,
-} from '../../constants/lecturer/lecturer.constants'
+// import {
+//     CONTRACT_DESCRIPTION,
+//     CONTRACT_SALARY,
+//     LECTURE_DEGREE_OPTIONS,
+//     LECTURE_STATUS_OPTIONS,   
+// } from '../../constants/lecturer/lecturer.constants'
+// import { LECTURE_FIELDS } from '../../constants/lecturer/lecture.fields'
 
 import { getModalStyle } from '../../constants/modalStyles'
 import './LectureModal.scss'
@@ -22,28 +23,22 @@ import useForm from '../../hooks/useForm'
 import FormRenderer from '../../components/FormControls/FormRenderer'
 import FormItem from '../../components/FormControls/FormItem'
 import { PickerControl } from '../../components/FormControls/PickerControl'
-import { LECTURE_FIELDS } from '../../constants/lecturer/lecture.fields'
+
 import { buildFormFields } from '../../utils/field.util.jsx'
 import { alertError } from '@/utils/alert'
 import Draggable from 'react-draggable'
 import { selectClasses } from '@/store/selectors/masterDataSelectors'
 import DegreePickerModal from '@/components/CommonPickers/DegreePickerModal'
+import { generateCode } from '@/utils/codeGenerator'
+import InputNumber from '@/components/FormControls/InputNumber'
+import {
+    CONTRACT_DESCRIPTION,
+    CONTRACT_SALARY,
+    LECTURE_DEGREE_OPTIONS,
+    LECTURE_FIELDS,
+    LECTURE_STATUS_OPTIONS
+} from '@/constants/lecturer/lecture.master.fieldsConfig'
 
-
-// Tự sinh lectureCode dựa vào loại HĐ + danh sách GV hiện có
-const generateCode = (contractType, allLectures) => {
-    // 1. Lọc ra danh sách các mã thuộc loại hợp đồng này (VD: ["CT-001", "CT-002"])
-    const codes = allLectures
-        .filter(l => l.lectureCode?.startsWith(contractType + '-'))
-        .map(l => {
-            // Tách phần số sau dấu gạch ngang (VD: "002" -> 2)
-            const parts = l.lectureCode?.split('-');
-            return parseInt(parts[1], 10) || 0;
-        })
-    // 2. Tìm số lớn nhất trong danh sách đó
-    const maxNum = codes.length > 0 ? Math.max(...codes) : 0
-    return `${contractType}-${String(maxNum + 1).padStart(3, '0')}`
-}
 
 const LECTURE_INFORMATION = buildFormFields(
     LECTURE_FIELDS,
@@ -59,7 +54,7 @@ const LECTURE_INFORMATION = buildFormFields(
         ]
     })
 
-export default function LectureModal({ editItem, allLectures = [], onSave, onClose }) {
+export default function LectureModal({ editItem, allLectures = [], specialtyData = [], onSave, onClose }) {
     const user = useSelector(state => state.auth.currentUser)
     const isAdmin = user?.role === 'ADMIN'
 
@@ -73,7 +68,9 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
         setFieldValue,
         validate,
         validateField,
-        getSubmitData } = useForm({
+        getSubmitData
+    } = useForm(
+        {
             fields: LECTURE_FIELDS,
             editItem: editItem,
             dependencies: { allLectures },
@@ -86,11 +83,13 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                 }
                 return updatedForm;
             }
-        });
+        }
+    );
 
     const handleSubmit = async (e) => {
         if (e) e.preventDefault();
-        const err = validate()
+        const err = validate();       
+        
         if (err) {
             alertError({ title: `Vui lòng nhập "${err}"` })
             return
@@ -129,9 +128,9 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                 ariaHideApp={false}              // ✅ tắt aria-hide hoàn toàn
                 contentElement={(props, children) => (
                     <Draggable
-                        handle='.modal__title'
+                        handle='.modal__header'
                         nodeRef={nodeRef}
-                        defaultPosition={{ x: -180, y: -430 }}
+                        defaultPosition={{ x: -180, y: -330 }}
                         position={null}
                     >
                         <div {...props} ref={nodeRef}>
@@ -140,7 +139,7 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                     </Draggable>
                 )}
             >
-                <h4 className="modal__title">
+                <h4 className="modal__header">
                     {isEdit ? `✏️ Sửa: ${editItem.lectureName}` : '➕ Thêm Giảng Viên Mới'}
                 </h4>
 
@@ -160,6 +159,7 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                         onOpen={setPicker}
                         placeholder='Chọn loại hợp đồng...'
                         error={errors.contractType}
+                        
                     />
                 </FormItem>
                 {/* Hiển thị Mã Giáo viên sau khi chọn xong loại Hợp đồng */}
@@ -186,7 +186,7 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                     editItem={editItem}
                     variant='lecture'
                     layout='horizontal'
-                />                
+                />
                 <FormItem
                     label='Bằng Cấp'
                     name='degree'
@@ -194,7 +194,7 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                     layout='horizontal'
                     variant='lecture'
                 >
-                    <PickerControl 
+                    <PickerControl
                         value={form.degree}
                         pickerKey='degree'
                         placeholder='Chọn Bằng Cấp của Giáo Viên'
@@ -206,17 +206,17 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                 {/* ── Chuyên môn ── */}
                 <FormItem
                     label='Chuyên Môn'
-                    name='specialty'
-                    error={errors.specialty}
+                    name='specialtyName'
+                    error={errors.specialtyName}
                     layout='horizontal'
                     variant='lecture'
                 >
                     <PickerControl
-                        value={form.specialty}
+                        value={form.specialtyName}
                         pickerKey='specialty'
                         placeholder='Chọn Chuyên Môn Của Giáo Viên'
                         onOpen={setPicker}
-                        error={errors.specialty}
+                        error={errors.specialtyName}
                         displayType='text'
                     />
                 </FormItem>
@@ -269,7 +269,7 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                                     variant='lecture'
                                     error={errors.hourRate}
                                 >
-                                    <input
+                                    <InputNumber
                                         type="number"
                                         value={form.hourRate ?? ''}
                                         name='hourRate'
@@ -299,10 +299,10 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                                     layout='horizontal'
                                     variant='lecture'
                                 >
-                                    <input
-                                        type='text'
-                                        value={totalSalary || ''}
-                                        disabled
+                                    <InputNumber
+                                        name='totalSalary'
+                                        value={totalSalary ?? ''}
+                                        readOnly={true}
                                     />
                                 </FormItem>
                             </>
@@ -315,12 +315,12 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                                 layout='horizontal'
                                 variant='lecture'
                             >
-                                <input
+                                <InputNumber
                                     name='monthSalary'
-                                    type="number"
                                     value={form.monthSalary ?? ''}
                                     onChange={onChange}
-                                    placeholder="VD: 15000000" />
+                                    placeholder='VD: 15000000'
+                                />
                             </FormItem>
                         )}
                     </>
@@ -354,14 +354,21 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
             {/* ── Sub-modals ─────────────────────────────────────────────── */}
             {picker === 'contract' && (
                 <ContractPickerModal
-                    current={form.contractType}
+                    selected={form.contractType}
                     isAdmin={isAdmin}
-                    onSelect={(contractType) => {
+                    isEditMode={!!editItem}
+                    onSave={(contractType) => {
                         setFieldValue('contractType', contractType)
+                        validateField('contractType')
                         setPicker(null)
                     }}
                     onClose={() => {
                         // LOGIC QUAN TRỌNG: Khi đóng modal, nếu chưa có giá trị thì báo lỗi ngay
+                        // validateField('contractType')
+                        setPicker(null)
+                    }}
+                    onEmptyConfirm={() => {
+                        setFieldValue('contractType', '')
                         validateField('contractType')
                         setPicker(null)
                     }}
@@ -372,8 +379,16 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
                     selected={form.skills}
                     onSave={(val) => {
                         setFieldValue('skills', val)
+                        validateField('skills')
                         setPicker(null)
                     }}
+                    onEmptyConfirm={() => {
+                        // user xác nhận "không chọn gì" → coi như giá trị rỗng, bắt lỗ
+                        setFieldValue('skills', []);
+                        validateField('skills')
+                        setPicker(null)
+                    }}
+
                     onClose={() => {
                         validateField('skills');
                         setPicker(null)
@@ -398,31 +413,63 @@ export default function LectureModal({ editItem, allLectures = [], onSave, onClo
             )}
             {picker === 'status' && (
                 <StatusPickerModal
-                    current={form.status}
+                    selected={form.status}
                     statusOpts={LECTURE_STATUS_OPTIONS}
-                    onSelect={val => { setFieldValue('status', val); setPicker(null) }}
-                    onClose={() => { setPicker(null); validateField('status') }}
+                    onSave={val => {
+                        setFieldValue('status', val);
+                        validateField('status')
+                        setPicker(null)
+                    }}
+                    onEmptyConfirm={() => {
+                        setFieldValue('status', '');
+                        validateField('status')
+                        setPicker(null)
+                    }}
+                    onClose={() => { setPicker(null) }}
                 />
             )}
             {picker === 'specialty' && (
                 <SpecialtyPickerModal
-                    current={form.specialty}
-                    onSelect={(val) => {
-                        setFieldValue('specialty', val);
-                        setPicker(null);
+                    selected={form.specialtyId}
+                    specialtyData={specialtyData}
+                    onSave={(val) => {
+                        setFieldValue('specialtyId', val?.id || null);
+                        setFieldValue('specialtyName', val?.name || '');
+                        validateField('specialtyId'),
+                            validateField('specialtyName'),
+                            setPicker(null);
+                    }}
+                    onEmptyConfirm={() => {
+                        setFieldValue('specialtyId', null);
+                        setFieldValue('specialtyName', '');
+                        validateField('specialtyId');
+                        validateField('specialtyName');
+                        setPicker(null)
                     }}
                     onClose={() => {
-                        validateField('specialty')
+                        // validateField('specialty')
                         setPicker(null)
                     }}
                 />
             )}
             {picker === 'degree' && (
                 <DegreePickerModal
-                    current={form?.degree}
+                    selected={form?.degree}
                     degreeOpts={LECTURE_DEGREE_OPTIONS}
-                    onSelect={val => {setFieldValue('degree',val);setPicker(null)}}
-                    onClose={()=>{setPicker(null);validateField('degree')}}
+                    onSave={val => {
+                        setFieldValue('degree', val);
+                        validateField('degree')
+                        setPicker(null)
+                    }}
+                    onEmptyConfirm={() => {
+                        setFieldValue('degree', '')
+                        validateField('degree')
+                        setPicker(null)
+                    }}
+                    onClose={() => {
+                        setPicker(null);
+                        // validateField('degree')
+                    }}
                 />
             )}
         </>

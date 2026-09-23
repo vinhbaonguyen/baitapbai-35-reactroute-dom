@@ -1,10 +1,54 @@
 {
   "version": "1.0.0",
-  "gitCommitHash": "unknown",
-  "generatedAt": "2026-05-29T12:07:48.678Z",
+  "gitCommitHash": "b9812be0708e337e4e3de261ad7ccac7d909fbce",
+  "generatedAt": "2026-07-09T11:17:18.481Z",
   "files": {
-    "actions/authActions.js": {
-      "filePath": "actions/authActions.js",
+    "eslint.config.js": {
+      "filePath": "eslint.config.js",
+      "contentHash": "bceb70e27d6dd774b2e61672d86f5fffa1d74db526b8b1cb2687dd3dc4976b89",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@eslint/js",
+          "specifiers": [
+            "js"
+          ]
+        },
+        {
+          "source": "globals",
+          "specifiers": [
+            "globals"
+          ]
+        },
+        {
+          "source": "eslint-plugin-react-hooks",
+          "specifiers": [
+            "reactHooks"
+          ]
+        },
+        {
+          "source": "eslint-plugin-react-refresh",
+          "specifiers": [
+            "reactRefresh"
+          ]
+        },
+        {
+          "source": "eslint/config",
+          "specifiers": [
+            "defineConfig",
+            "globalIgnores"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 31,
+      "hasStructuralAnalysis": true
+    },
+    "src/actions/authActions.js": {
+      "filePath": "src/actions/authActions.js",
       "contentHash": "ec8bb0fb9a0c80ceec7c9d7a208aabd4f3ded375257b1004b4ea57dd6c3ac29c",
       "functions": [
         {
@@ -33,8 +77,8 @@
       "totalLines": 17,
       "hasStructuralAnalysis": true
     },
-    "actions/masterDataAction.js": {
-      "filePath": "actions/masterDataAction.js",
+    "src/actions/masterDataAction.js": {
+      "filePath": "src/actions/masterDataAction.js",
       "contentHash": "3d9cc6e4352b824926e0003eff56ae625e06919b2d5ec3cfee4bb03b7d7e318c",
       "functions": [
         {
@@ -67,8 +111,61 @@
       "totalLines": 27,
       "hasStructuralAnalysis": true
     },
-    "App.css": {
-      "filePath": "App.css",
+    "src/actions/scoreAction.js": {
+      "filePath": "src/actions/scoreAction.js",
+      "contentHash": "28219dd82126c35c22bbfd0bc551a37b771c8bef1c9609f6bdc6b9000dd12ff5",
+      "functions": [
+        {
+          "name": "setScores",
+          "params": [
+            "scores"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "addScore",
+          "params": [
+            "score"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "updateScoreAction",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "deleteScoreAction",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "SET_SCORES",
+        "ADD_SCORE",
+        "UPDATE_SCORE",
+        "DELETE_SCORE",
+        "setScores",
+        "addScore",
+        "updateScoreAction",
+        "deleteScoreAction"
+      ],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "src/App.css": {
+      "filePath": "src/App.css",
       "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "functions": [],
       "classes": [],
@@ -77,8 +174,8 @@
       "totalLines": 1,
       "hasStructuralAnalysis": false
     },
-    "App.jsx": {
-      "filePath": "App.jsx",
+    "src/App.jsx": {
+      "filePath": "src/App.jsx",
       "contentHash": "d7ca230b2bb4b3ae15a9f2de6c89ef3dfeca0ca1027e36fd941c0b9ef95c358a",
       "functions": [
         {
@@ -109,12 +206,14 @@
           ]
         }
       ],
-      "exports": [],
+      "exports": [
+        "default"
+      ],
       "totalLines": 14,
       "hasStructuralAnalysis": true
     },
-    "assets/styles/abstracts/_mixins.scss": {
-      "filePath": "assets/styles/abstracts/_mixins.scss",
+    "src/assets/styles/abstracts/_mixins.scss": {
+      "filePath": "src/assets/styles/abstracts/_mixins.scss",
       "contentHash": "da7959a2387f79a0ac4a0bcff0134cf8df3c42bed7e24324f463d730a5f3f768",
       "functions": [],
       "classes": [],
@@ -123,18 +222,18 @@
       "totalLines": 126,
       "hasStructuralAnalysis": false
     },
-    "assets/styles/abstracts/_variables.scss": {
-      "filePath": "assets/styles/abstracts/_variables.scss",
-      "contentHash": "5e130607f85fdc6067226dd161db898747ae5ce7e4646c5fdfb884c98e704991",
+    "src/assets/styles/abstracts/_variables.scss": {
+      "filePath": "src/assets/styles/abstracts/_variables.scss",
+      "contentHash": "be9b01071321dd18314be1ad799f257892eae57ebd65da217d42dde1aa5a0d2c",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 95,
+      "totalLines": 97,
       "hasStructuralAnalysis": false
     },
-    "assets/styles/base/_global.scss": {
-      "filePath": "assets/styles/base/_global.scss",
+    "src/assets/styles/base/_global.scss": {
+      "filePath": "src/assets/styles/base/_global.scss",
       "contentHash": "12ecffba29ea795b616e4fce09f4afc636f81dd409469a7d4c3460ce198336a2",
       "functions": [],
       "classes": [],
@@ -143,18 +242,18 @@
       "totalLines": 21,
       "hasStructuralAnalysis": false
     },
-    "assets/styles/common.scss": {
-      "filePath": "assets/styles/common.scss",
-      "contentHash": "9fa8e9e5da64a869101f1001b19665677b05e7beb38a7e71c20a0795bfca7483",
+    "src/assets/styles/common.scss": {
+      "filePath": "src/assets/styles/common.scss",
+      "contentHash": "24234d971147b14167df71b3cf08a7b20d82e8fb410dcd3809a655a89f6c94b0",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 418,
+      "totalLines": 303,
       "hasStructuralAnalysis": false
     },
-    "assets/styles/pages/main.scss": {
-      "filePath": "assets/styles/pages/main.scss",
+    "src/assets/styles/pages/main.scss": {
+      "filePath": "src/assets/styles/pages/main.scss",
       "contentHash": "1a5e72cc35e21aed01533c6ec91d6d8e7a503aa7c467b3ca2ca28af319cc2299",
       "functions": [],
       "classes": [],
@@ -163,9 +262,9 @@
       "totalLines": 28,
       "hasStructuralAnalysis": false
     },
-    "components/common/table/tableRender.jsx": {
-      "filePath": "components/common/table/tableRender.jsx",
-      "contentHash": "7f4fd963302e3211a0a566bc9873583763d8b9bd88fa97af79a23c02e85c7721",
+    "src/components/common/table/tableRender.jsx": {
+      "filePath": "src/components/common/table/tableRender.jsx",
+      "contentHash": "8aee105bb5e6b44dc6785ba369d727ba743bce829b79b1cdcdf051310267cd1f",
       "functions": [
         {
           "name": "renderCell",
@@ -175,11 +274,17 @@
             "fieldMap"
           ],
           "exported": true,
-          "lineCount": 47
+          "lineCount": 85
         }
       ],
       "classes": [],
       "imports": [
+        {
+          "source": "@/constants/score/score.constants.js",
+          "specifiers": [
+            "CERTIFICATE_OPTIONS"
+          ]
+        },
         {
           "source": "../../../utils/field.util.jsx",
           "specifiers": [
@@ -190,18 +295,31 @@
       "exports": [
         "renderCell"
       ],
-      "totalLines": 49,
+      "totalLines": 88,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/BranchPickerModal.jsx": {
-      "filePath": "components/CommonPickers/BranchPickerModal.jsx",
-      "contentHash": "654199573ba9daad7d69fae0266f8ef6a7e4d997876ee78b7422a8d113f6aa82",
+    "src/components/CommonPickers/BranchPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/BranchPickerModal.jsx",
+      "contentHash": "4544242ea3de12c1b03673565bbeb71c93efecadc096c6ea88b50ce695c6531a",
       "functions": [
         {
           "name": "BranchPickerModal",
-          "params": [],
-          "exported": true,
-          "lineCount": 70
+          "params": [
+            "{ current",
+            "branchOpts",
+            "onSelect",
+            "onClose }"
+          ],
+          "exported": false,
+          "lineCount": 71
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "branch"
+          ],
+          "exported": false,
+          "lineCount": 16
         }
       ],
       "classes": [],
@@ -240,20 +358,30 @@
         }
       ],
       "exports": [
-        "BranchPickerModal"
+        "default"
       ],
-      "totalLines": 76,
+      "totalLines": 77,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/ClassPickerModal.jsx": {
-      "filePath": "components/CommonPickers/ClassPickerModal.jsx",
-      "contentHash": "aa657e149f6e10a5632d7d65866fab72149511cb78b4a3f47a2b8671778b2d4e",
+    "src/components/CommonPickers/ClassPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/ClassPickerModal.jsx",
+      "contentHash": "305ffec3df1ed86fa07bbb53fde6ebb0d90e18813d95eaaa76ca8068aafc03bf",
       "functions": [
         {
-          "name": "ClassPickerModal",
-          "params": [],
-          "exported": true,
-          "lineCount": 80
+          "name": "getKey",
+          "params": [
+            "cls"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "toggle",
+          "params": [
+            "key"
+          ],
+          "exported": false,
+          "lineCount": 11
         }
       ],
       "classes": [],
@@ -280,6 +408,12 @@
           ]
         },
         {
+          "source": "@/services/classService",
+          "specifiers": [
+            "* as classService"
+          ]
+        },
+        {
           "source": "../../constants/modalStyles",
           "specifiers": [
             "getModalStyle"
@@ -293,20 +427,26 @@
         }
       ],
       "exports": [
-        "ClassPickerModal"
+        "default"
       ],
-      "totalLines": 87,
+      "totalLines": 153,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/ContractPickerModal.jsx": {
-      "filePath": "components/CommonPickers/ContractPickerModal.jsx",
-      "contentHash": "a272b1d7fec39a32d83c3850c1a3b82ca12ecdb19fe1bea20fcf54a3ce106be1",
+    "src/components/CommonPickers/ContractPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/ContractPickerModal.jsx",
+      "contentHash": "c68c520c14ea43c5f4a382e1d1766de964fb596439f40d343d1ac9387985ddcf",
       "functions": [
         {
           "name": "ContractPickerModal",
-          "params": [],
-          "exported": true,
-          "lineCount": 63
+          "params": [
+            "{ current",
+            "onSelect",
+            "onClose",
+            "isAdmin",
+            "isEditMode }"
+          ],
+          "exported": false,
+          "lineCount": 68
         }
       ],
       "classes": [],
@@ -344,20 +484,42 @@
         }
       ],
       "exports": [
-        "ContractPickerModal"
+        "default"
       ],
-      "totalLines": 71,
+      "totalLines": 76,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/CoursePickerModal.jsx": {
-      "filePath": "components/CommonPickers/CoursePickerModal.jsx",
-      "contentHash": "430dc0d6469eaa44f0369bdc665535d3c81438f2ea622c750788e87ea0a3ba17",
+    "src/components/CommonPickers/CoursePickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/CoursePickerModal.jsx",
+      "contentHash": "ca002eb81a357ef64c39df3aa000e1a79db6f8798c7f41892bb2ab8522f86e15",
       "functions": [
         {
-          "name": "CoursePickerModal",
+          "name": "normalizeSelected",
           "params": [],
-          "exported": true,
-          "lineCount": 89
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "isActive",
+          "params": [
+            "courseId"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "courseId"
+          ],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "handleConfirm",
+          "params": [],
+          "exported": false,
+          "lineCount": 23
         }
       ],
       "classes": [],
@@ -390,31 +552,56 @@
           ]
         },
         {
-          "source": "../../components/PageComponent/PageComponent.scss",
-          "specifiers": []
-        },
-        {
           "source": "react-draggable",
           "specifiers": [
             "Draggable"
           ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertConfirm"
+          ]
+        },
+        {
+          "source": "../../components/PageComponent/PageComponent.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "CoursePickerModal"
+        "default"
       ],
-      "totalLines": 99,
+      "totalLines": 196,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/DegreePickerModal.jsx": {
-      "filePath": "components/CommonPickers/DegreePickerModal.jsx",
-      "contentHash": "466d29138a2459852fbd44dfa36cf6b57d1084fe4808078ba0d10b8de8ae3a07",
+    "src/components/CommonPickers/DegreePickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/DegreePickerModal.jsx",
+      "contentHash": "c5c134d3e84f6f81cf4c200528210d6bf9dbcd205fb3816cb55382793e535fc1",
       "functions": [
         {
           "name": "DegreePickerModal",
+          "params": [
+            "{ current",
+            "onSelect",
+            "onClose",
+            "degreeOpts"
+          ],
+          "exported": false,
+          "lineCount": 73
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "degree"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "handleConfirm",
           "params": [],
-          "exported": true,
-          "lineCount": 52
+          "exported": false,
+          "lineCount": 5
         }
       ],
       "classes": [],
@@ -423,7 +610,8 @@
           "source": "react",
           "specifiers": [
             "React",
-            "useRef"
+            "useRef",
+            "useState"
           ]
         },
         {
@@ -446,20 +634,33 @@
         }
       ],
       "exports": [
-        "DegreePickerModal"
+        "default"
       ],
-      "totalLines": 58,
+      "totalLines": 79,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/LecturePickerModal.jsx": {
-      "filePath": "components/CommonPickers/LecturePickerModal.jsx",
-      "contentHash": "0e5264b31cfbddd6b6d864e23375ac5fe6acff0901d608f40d081fe3497d0ddf",
+    "src/components/CommonPickers/LecturePickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/LecturePickerModal.jsx",
+      "contentHash": "6de301f0af9b85cffab23c92fba616027dae758c7aa61ee377ba6f7f0f29f697",
       "functions": [
         {
           "name": "LecturePickerModal",
-          "params": [],
-          "exported": true,
+          "params": [
+            "{ lectureData",
+            "selected",
+            "onSave",
+            "onClose }"
+          ],
+          "exported": false,
           "lineCount": 91
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "lectureId"
+          ],
+          "exported": false,
+          "lineCount": 13
         }
       ],
       "classes": [],
@@ -492,8 +693,75 @@
           ]
         },
         {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
           "source": "../../components/PageComponent/PageComponent.scss",
           "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 101,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CommonPickers/ScoreStudentPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/ScoreStudentPickerModal.jsx",
+      "contentHash": "c6e820e110c48c9251b1e916054299ce43cfc77d1e6d55e576cd50b9140a58cb",
+      "functions": [
+        {
+          "name": "handlePick",
+          "params": [
+            "studentId"
+          ],
+          "exported": false,
+          "lineCount": 2
+        },
+        {
+          "name": "handleConfirm",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectStudents"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
         },
         {
           "source": "react-draggable",
@@ -503,20 +771,38 @@
         }
       ],
       "exports": [
-        "LecturePickerModal"
+        "default"
       ],
-      "totalLines": 101,
+      "totalLines": 161,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/SkillPickerModal.jsx": {
-      "filePath": "components/CommonPickers/SkillPickerModal.jsx",
-      "contentHash": "9aeeb6d65d723935bdfaac8d08aa10f455cc094d0cc4b5f43444b4141a6bb769",
+    "src/components/CommonPickers/SkillPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/SkillPickerModal.jsx",
+      "contentHash": "f6beac0f7635ebebc45a9545a9fe8df8985353b13232cbf4c4667cd3fefd7f74",
       "functions": [
         {
           "name": "SkillPickerModal",
+          "params": [
+            "{ selected",
+            "onSave",
+            "onClose }"
+          ],
+          "exported": false,
+          "lineCount": 116
+        },
+        {
+          "name": "toogle",
+          "params": [
+            "skill"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "addCustom",
           "params": [],
-          "exported": true,
-          "lineCount": 94
+          "exported": false,
+          "lineCount": 5
         }
       ],
       "classes": [],
@@ -525,6 +811,7 @@
           "source": "react",
           "specifiers": [
             "React",
+            "useMemo",
             "useRef",
             "useState"
           ]
@@ -555,20 +842,39 @@
         }
       ],
       "exports": [
-        "SkillPickerModal"
+        "default"
       ],
-      "totalLines": 102,
+      "totalLines": 125,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/SpecialtyPickerModal.jsx": {
-      "filePath": "components/CommonPickers/SpecialtyPickerModal.jsx",
-      "contentHash": "6bbf68745a98bf653de00539f4cd8abd08476869080c2ded2632ddacd7df8c9b",
+    "src/components/CommonPickers/SpecialtyPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/SpecialtyPickerModal.jsx",
+      "contentHash": "b0ac64c94d2d88a384e1cca7533e4aecd3893a0b1992ae1b792cc714fe6f8dd6",
       "functions": [
         {
           "name": "SpecialtyPickerModal",
+          "params": [
+            "{ current",
+            "onSelect",
+            "onClose",
+            "modalTitle }"
+          ],
+          "exported": false,
+          "lineCount": 70
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "specialtyName"
+          ],
+          "exported": false,
+          "lineCount": 2
+        },
+        {
+          "name": "handleConfirm",
           "params": [],
-          "exported": true,
-          "lineCount": 47
+          "exported": false,
+          "lineCount": 5
         }
       ],
       "classes": [],
@@ -577,7 +883,8 @@
           "source": "react",
           "specifiers": [
             "React",
-            "useRef"
+            "useRef",
+            "useState"
           ]
         },
         {
@@ -606,20 +913,39 @@
         }
       ],
       "exports": [
-        "SpecialtyPickerModal"
+        "default"
       ],
-      "totalLines": 55,
+      "totalLines": 78,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/StatusPickerModal.jsx": {
-      "filePath": "components/CommonPickers/StatusPickerModal.jsx",
-      "contentHash": "16958b5e7863d5585de7895e90ce9af42dbe097c7cb39acd49b27a46908c53c1",
+    "src/components/CommonPickers/StatusPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/StatusPickerModal.jsx",
+      "contentHash": "bfa480fc04727663489ff06323465bc079bbc6a666869e899173dab46e1d1e03",
       "functions": [
         {
           "name": "StatusPickerModal",
+          "params": [
+            "{ current",
+            "onSelect",
+            "onClose",
+            "statusOpts"
+          ],
+          "exported": false,
+          "lineCount": 72
+        },
+        {
+          "name": "handlePick",
+          "params": [
+            "status"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "handleConfirm",
           "params": [],
-          "exported": true,
-          "lineCount": 52
+          "exported": false,
+          "lineCount": 5
         }
       ],
       "classes": [],
@@ -628,7 +954,8 @@
           "source": "react",
           "specifiers": [
             "React",
-            "useRef"
+            "useRef",
+            "useState"
           ]
         },
         {
@@ -651,20 +978,42 @@
         }
       ],
       "exports": [
-        "StatusPickerModal"
+        "default"
       ],
-      "totalLines": 58,
+      "totalLines": 78,
       "hasStructuralAnalysis": true
     },
-    "components/CommonPickers/StudentListPickerModal.jsx": {
-      "filePath": "components/CommonPickers/StudentListPickerModal.jsx",
-      "contentHash": "0c07050fd75e859c473017ce28a4472a2113859781fa8e8bb0183a07595f8c7f",
+    "src/components/CommonPickers/StudentListPickerModal.jsx": {
+      "filePath": "src/components/CommonPickers/StudentListPickerModal.jsx",
+      "contentHash": "7edf67a38d26caa964e54df4a0fabd62624ad98f132104b90827edff55d31b55",
       "functions": [
         {
-          "name": "StudentListPickerModal",
-          "params": [],
-          "exported": true,
-          "lineCount": 137
+          "name": "formatVND",
+          "params": [
+            "amount"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "buildGmailLink",
+          "params": [
+            "{ to",
+            "subject",
+            "body }"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "buildSendMailLink",
+          "params": [
+            "{ student",
+            "courseName",
+            "tuitionFee }"
+          ],
+          "exported": false,
+          "lineCount": 10
         }
       ],
       "classes": [],
@@ -673,7 +1022,9 @@
           "source": "react",
           "specifiers": [
             "React",
+            "useCallback",
             "useEffect",
+            "useMemo",
             "useRef",
             "useState"
           ]
@@ -685,21 +1036,30 @@
           ]
         },
         {
-          "source": "../../services/studentCourseService.js",
-          "specifiers": [
-            "* as studentCourseService"
-          ]
-        },
-        {
-          "source": "../../services/studentService.js",
-          "specifiers": [
-            "* as studentService"
-          ]
-        },
-        {
-          "source": "@/constants/modalStyles.js",
+          "source": "@/constants/modalStyles",
           "specifiers": [
             "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectStudents",
+            "selectCourses",
+            "selectClasses",
+            "selectStudentClass"
+          ]
+        },
+        {
+          "source": "../../services/studentCourseService",
+          "specifiers": [
+            "* as studentCourseService"
           ]
         },
         {
@@ -707,22 +1067,28 @@
           "specifiers": [
             "Draggable"
           ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertInfo"
+          ]
         }
       ],
       "exports": [
-        "StudentListPickerModal"
+        "default"
       ],
-      "totalLines": 145,
+      "totalLines": 545,
       "hasStructuralAnalysis": true
     },
-    "components/Footer/Footer.jsx": {
-      "filePath": "components/Footer/Footer.jsx",
+    "src/components/Footer/Footer.jsx": {
+      "filePath": "src/components/Footer/Footer.jsx",
       "contentHash": "d1ddb826fa3e47fdb71e3f28e3743fc60a2405f96de79754080c23400205ede4",
       "functions": [
         {
           "name": "Footer",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 11
         }
       ],
@@ -740,13 +1106,13 @@
         }
       ],
       "exports": [
-        "Footer"
+        "default"
       ],
       "totalLines": 14,
       "hasStructuralAnalysis": true
     },
-    "components/Footer/Footer.scss": {
-      "filePath": "components/Footer/Footer.scss",
+    "src/components/Footer/Footer.scss": {
+      "filePath": "src/components/Footer/Footer.scss",
       "contentHash": "4c40ef00cfb4b0a6736f652f00f2f40dc13b429afd80b823af49dcdeabdc057f",
       "functions": [],
       "classes": [],
@@ -755,17 +1121,10 @@
       "totalLines": 22,
       "hasStructuralAnalysis": false
     },
-    "components/FormControls/FormItem.jsx": {
-      "filePath": "components/FormControls/FormItem.jsx",
+    "src/components/FormControls/FormItem.jsx": {
+      "filePath": "src/components/FormControls/FormItem.jsx",
       "contentHash": "e1faf469f9f0b661cd14179d03995162c10ffb881b0f942feace2a1e843a0c1a",
-      "functions": [
-        {
-          "name": "FormItem",
-          "params": [],
-          "exported": true,
-          "lineCount": 35
-        }
-      ],
+      "functions": [],
       "classes": [],
       "imports": [
         {
@@ -776,20 +1135,31 @@
         }
       ],
       "exports": [
-        "FormItem"
+        "default"
       ],
       "totalLines": 38,
       "hasStructuralAnalysis": true
     },
-    "components/FormControls/FormRenderer.jsx": {
-      "filePath": "components/FormControls/FormRenderer.jsx",
-      "contentHash": "31d35fb53b79ce7cda9c864a9512c82bd41b09ebab3487a18663ca2fa6e9a72b",
+    "src/components/FormControls/FormRenderer.jsx": {
+      "filePath": "src/components/FormControls/FormRenderer.jsx",
+      "contentHash": "f66d4e4490146f028263ffb5e00f8c468afc663562493c567e15a1a6446c01a5",
       "functions": [
         {
-          "name": "FormRenderer",
-          "params": [],
-          "exported": true,
-          "lineCount": 155
+          "name": "normalizeType",
+          "params": [
+            "f"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "getDisplayValue",
+          "params": [
+            "fieldName",
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 10
         }
       ],
       "classes": [],
@@ -814,20 +1184,20 @@
         }
       ],
       "exports": [
-        "FormRenderer"
+        "default"
       ],
-      "totalLines": 160,
+      "totalLines": 203,
       "hasStructuralAnalysis": true
     },
-    "components/FormControls/PickerBtn.jsx": {
-      "filePath": "components/FormControls/PickerBtn.jsx",
+    "src/components/FormControls/PickerBtn.jsx": {
+      "filePath": "src/components/FormControls/PickerBtn.jsx",
       "contentHash": "8e8e2781577e5c225abd33eee559b4ecf1b41cf0de480606e62cc48cfe2acbdc",
       "functions": [
         {
-          "name": "PickerBtn",
+          "name": "renderContent",
           "params": [],
-          "exported": true,
-          "lineCount": 47
+          "exported": false,
+          "lineCount": 20
         }
       ],
       "classes": [],
@@ -845,8 +1215,8 @@
       "totalLines": 49,
       "hasStructuralAnalysis": true
     },
-    "components/FormControls/PickerControl.jsx": {
-      "filePath": "components/FormControls/PickerControl.jsx",
+    "src/components/FormControls/PickerControl.jsx": {
+      "filePath": "src/components/FormControls/PickerControl.jsx",
       "contentHash": "e1f1cec372e3ba13807b660766a18dd15024cfb1e6d51d00df6ccda70a355db8",
       "functions": [
         {
@@ -859,12 +1229,6 @@
           ],
           "exported": false,
           "lineCount": 32
-        },
-        {
-          "name": "PickerControl",
-          "params": [],
-          "exported": true,
-          "lineCount": 20
         }
       ],
       "classes": [],
@@ -882,15 +1246,21 @@
       "totalLines": 67,
       "hasStructuralAnalysis": true
     },
-    "components/Header/Header.jsx": {
-      "filePath": "components/Header/Header.jsx",
+    "src/components/Header/Header.jsx": {
+      "filePath": "src/components/Header/Header.jsx",
       "contentHash": "fdd8a49c03ca78e112018cbe12032fd9cdd0b0a813ed8eb5a66697c70f3768a0",
       "functions": [
         {
           "name": "Header",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 51
+        },
+        {
+          "name": "handleLogoutIn",
+          "params": [],
+          "exported": false,
+          "lineCount": 6
         }
       ],
       "classes": [],
@@ -914,10 +1284,6 @@
           ]
         },
         {
-          "source": "./Header.scss",
-          "specifiers": []
-        },
-        {
           "source": "react-redux",
           "specifiers": [
             "useDispatch",
@@ -930,16 +1296,20 @@
             "loginAction",
             "logoutAction"
           ]
+        },
+        {
+          "source": "./Header.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "Header"
+        "default"
       ],
       "totalLines": 58,
       "hasStructuralAnalysis": true
     },
-    "components/Header/Header.scss": {
-      "filePath": "components/Header/Header.scss",
+    "src/components/Header/Header.scss": {
+      "filePath": "src/components/Header/Header.scss",
       "contentHash": "6b7e64801a5a89a5b29de4f56490c3942703dd38a7b06fd44936513c070c2f1c",
       "functions": [],
       "classes": [],
@@ -948,17 +1318,10 @@
       "totalLines": 169,
       "hasStructuralAnalysis": false
     },
-    "components/PageComponent/DataTable.jsx": {
-      "filePath": "components/PageComponent/DataTable.jsx",
-      "contentHash": "7f4fa0a9b8157f21a8caed7f6b4286b094e0aaf5e088caa1f7203f43da618677",
-      "functions": [
-        {
-          "name": "DataTable",
-          "params": [],
-          "exported": false,
-          "lineCount": 84
-        }
-      ],
+    "src/components/PageComponent/DataTable.jsx": {
+      "filePath": "src/components/PageComponent/DataTable.jsx",
+      "contentHash": "dfa6b9768bfd82b490415d895bd5d68b5d26e7e1617fd15887d4fea8971b527c",
+      "functions": [],
       "classes": [],
       "imports": [
         {
@@ -968,10 +1331,6 @@
             "memo",
             "useMemo"
           ]
-        },
-        {
-          "source": "./PageComponent.scss",
-          "specifiers": []
         },
         {
           "source": "react-redux",
@@ -996,19 +1355,31 @@
           "specifiers": [
             "buildFieldMap"
           ]
+        },
+        {
+          "source": "./PageComponent.scss",
+          "specifiers": []
         }
       ],
-      "exports": [],
+      "exports": [
+        "default"
+      ],
       "totalLines": 92,
       "hasStructuralAnalysis": true
     },
-    "components/PageComponent/HistoryModal.jsx": {
-      "filePath": "components/PageComponent/HistoryModal.jsx",
+    "src/components/PageComponent/HistoryModal.jsx": {
+      "filePath": "src/components/PageComponent/HistoryModal.jsx",
       "contentHash": "3155fff546c4375c47c1f6f22b2438c3f98524425f1b4688c85594f583726921",
       "functions": [
         {
           "name": "HistoryModal",
-          "params": [],
+          "params": [
+            "{ entityCode",
+            "logs",
+            "loading",
+            "onClose",
+            "fields"
+          ],
           "exported": false,
           "lineCount": 100
         }
@@ -1029,10 +1400,6 @@
           ]
         },
         {
-          "source": "./PageComponent.scss",
-          "specifiers": []
-        },
-        {
           "source": "../../constants/modalStyles",
           "specifiers": [
             "getModalStyle"
@@ -1050,29 +1417,38 @@
             "buildFieldMap",
             "formatValue"
           ]
+        },
+        {
+          "source": "./PageComponent.scss",
+          "specifiers": []
         }
       ],
-      "exports": [],
+      "exports": [
+        "default"
+      ],
       "totalLines": 118,
       "hasStructuralAnalysis": true
     },
-    "components/PageComponent/PageComponent.scss": {
-      "filePath": "components/PageComponent/PageComponent.scss",
-      "contentHash": "0bc6eb27707524ba2c8cd1922d44f5834f11b821d4c8ade1c8b051ad54b2f0a1",
+    "src/components/PageComponent/PageComponent.scss": {
+      "filePath": "src/components/PageComponent/PageComponent.scss",
+      "contentHash": "256abf2e1a298d87ed4729985453932f6016bb26dca1728a62548a43922b4eb8",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 582,
+      "totalLines": 1256,
       "hasStructuralAnalysis": false
     },
-    "components/PageComponent/PageHeader.jsx": {
-      "filePath": "components/PageComponent/PageHeader.jsx",
+    "src/components/PageComponent/PageHeader.jsx": {
+      "filePath": "src/components/PageComponent/PageHeader.jsx",
       "contentHash": "d910ced53271d0216863e90b9d4ec75683b0438419b2a24f78085bc45311cc98",
       "functions": [
         {
           "name": "PageHeader",
-          "params": [],
+          "params": [
+            "{title",
+            "desc}"
+          ],
           "exported": false,
           "lineCount": 8
         }
@@ -1091,21 +1467,16 @@
           "specifiers": []
         }
       ],
-      "exports": [],
+      "exports": [
+        "default"
+      ],
       "totalLines": 13,
       "hasStructuralAnalysis": true
     },
-    "components/PageComponent/Pagination.jsx": {
-      "filePath": "components/PageComponent/Pagination.jsx",
+    "src/components/PageComponent/Pagination.jsx": {
+      "filePath": "src/components/PageComponent/Pagination.jsx",
       "contentHash": "8aa9cf3eaee4513c49627b1cb8c3932ffcf94bf277848d8ec5f38f6e0b040db8",
-      "functions": [
-        {
-          "name": "Pagination",
-          "params": [],
-          "exported": false,
-          "lineCount": 81
-        }
-      ],
+      "functions": [],
       "classes": [],
       "imports": [
         {
@@ -1120,19 +1491,47 @@
           "specifiers": []
         }
       ],
-      "exports": [],
+      "exports": [
+        "default"
+      ],
       "totalLines": 84,
       "hasStructuralAnalysis": true
     },
-    "components/PageComponent/SharedModal.jsx": {
-      "filePath": "components/PageComponent/SharedModal.jsx",
-      "contentHash": "4c8767af89cf8115701e9a733e15be05e7db359fc71d039b2f6d6d12b1f83866",
+    "src/components/PageComponent/SharedModal.jsx": {
+      "filePath": "src/components/PageComponent/SharedModal.jsx",
+      "contentHash": "631852fa6611c126f4eeb7e5fc4ee0467294538ac98acc79a579b5431e30643b",
       "functions": [
         {
           "name": "SharedModal",
-          "params": [],
+          "params": [
+            "{ title",
+            "fields",
+            "editItem",
+            "onSave",
+            "onClose",
+            "statusOpts",
+            "newCode",
+            "courseData",
+            "displayMaps }"
+          ],
           "exported": false,
-          "lineCount": 140
+          "lineCount": 252
+        },
+        {
+          "name": "handleTogglePaid",
+          "params": [
+            "courseId"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 12
         }
       ],
       "classes": [],
@@ -1144,18 +1543,10 @@
           ]
         },
         {
-          "source": "./PageComponent.scss",
-          "specifiers": []
-        },
-        {
           "source": "sweetalert2",
           "specifiers": [
             "Swal"
           ]
-        },
-        {
-          "source": "sweetalert2/dist/sweetalert2.min.css",
-          "specifiers": []
         },
         {
           "source": "react",
@@ -1216,7 +1607,7 @@
           ]
         },
         {
-          "source": "@/constants/students/student.constants",
+          "source": "@/constants/students/student.constants.jsx",
           "specifiers": [
             "STUDENT_STATUS_OPTIONS"
           ]
@@ -1238,23 +1629,32 @@
           "specifiers": [
             "Draggable"
           ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "./PageComponent.scss",
+          "specifiers": []
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
         }
       ],
-      "exports": [],
-      "totalLines": 162,
+      "exports": [
+        "default"
+      ],
+      "totalLines": 275,
       "hasStructuralAnalysis": true
     },
-    "components/PageComponent/Toolbar.jsx": {
-      "filePath": "components/PageComponent/Toolbar.jsx",
+    "src/components/PageComponent/Toolbar.jsx": {
+      "filePath": "src/components/PageComponent/Toolbar.jsx",
       "contentHash": "63df698d69611a4a33ebefeb34509f9eef01d06118c511e04dcb18eebd88b2b8",
-      "functions": [
-        {
-          "name": "Toolbar",
-          "params": [],
-          "exported": false,
-          "lineCount": 45
-        }
-      ],
+      "functions": [],
       "classes": [],
       "imports": [
         {
@@ -1269,18 +1669,22 @@
           "specifiers": []
         }
       ],
-      "exports": [],
+      "exports": [
+        "default"
+      ],
       "totalLines": 50,
       "hasStructuralAnalysis": true
     },
-    "components/ProtectRoute.jsx": {
-      "filePath": "components/ProtectRoute.jsx",
+    "src/components/ProtectRoute.jsx": {
+      "filePath": "src/components/ProtectRoute.jsx",
       "contentHash": "00167a23852295e7a7936775c7e3007eb32efbb0f17a4d256beb554062e5bb13",
       "functions": [
         {
           "name": "ProtectRoute",
-          "params": [],
-          "exported": true,
+          "params": [
+            "{ children }"
+          ],
+          "exported": false,
           "lineCount": 7
         }
       ],
@@ -1306,13 +1710,13 @@
         }
       ],
       "exports": [
-        "ProtectRoute"
+        "default"
       ],
       "totalLines": 12,
       "hasStructuralAnalysis": true
     },
-    "constants/classes/classes.constant.js": {
-      "filePath": "constants/classes/classes.constant.js",
+    "src/constants/classes/classes.constant.js": {
+      "filePath": "src/constants/classes/classes.constant.js",
       "contentHash": "c898b6a500ab8b1986421c7a060d1460e7f4216a8c7d93b5e19ad1c4b1f6ebda",
       "functions": [],
       "classes": [],
@@ -1326,8 +1730,8 @@
       "totalLines": 42,
       "hasStructuralAnalysis": true
     },
-    "constants/classes/classes.fields.js": {
-      "filePath": "constants/classes/classes.fields.js",
+    "src/constants/classes/classes.fields.js": {
+      "filePath": "src/constants/classes/classes.fields.js",
       "contentHash": "4e60a50799ae4b18e926dc80f14ceb8078e6932cabe3609d0b2cd8ebafcb8fe5",
       "functions": [],
       "classes": [],
@@ -1338,13 +1742,16 @@
       "totalLines": 121,
       "hasStructuralAnalysis": true
     },
-    "constants/classRoom/classroom.constants.js": {
-      "filePath": "constants/classRoom/classroom.constants.js",
+    "src/constants/classRoom/classroom.constants.js": {
+      "filePath": "src/constants/classRoom/classroom.constants.js",
       "contentHash": "3f9b388d3d0500c6e64dbb49bbaf8076c55da14684d8a8fb14b8e3a41447bd75",
       "functions": [
         {
           "name": "generateTimeSlots",
-          "params": [],
+          "params": [
+            "startHour",
+            "endHour"
+          ],
           "exported": false,
           "lineCount": 11
         }
@@ -1364,10 +1771,19 @@
       "totalLines": 71,
       "hasStructuralAnalysis": true
     },
-    "constants/courses/course.constants.jsx": {
-      "filePath": "constants/courses/course.constants.jsx",
-      "contentHash": "5f7f1aac4e8d56da931ae02b2e5b5592dce9a3ca98958481fcd896d63a70bba8",
-      "functions": [],
+    "src/constants/courses/course.constants.jsx": {
+      "filePath": "src/constants/courses/course.constants.jsx",
+      "contentHash": "ee89a79afcf17689548590003e77cbb673c45705159f90934506bc60c0afeabf",
+      "functions": [
+        {
+          "name": "formatVND",
+          "params": [
+            "amount"
+          ],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
       "classes": [],
       "imports": [],
       "exports": [
@@ -1375,36 +1791,71 @@
         "COURSE_SORT_OPTIONS",
         "COURSE_STATUS_OPTIONS"
       ],
-      "totalLines": 29,
+      "totalLines": 44,
       "hasStructuralAnalysis": true
     },
-    "constants/courses/course.fields.js": {
-      "filePath": "constants/courses/course.fields.js",
-      "contentHash": "228ef5174f5b567d0b03b01b449560f56838c1f37637ab77c4270e8dac490fc2",
+    "src/constants/courses/course.fields.js": {
+      "filePath": "src/constants/courses/course.fields.js",
+      "contentHash": "dd3b67083a93a3ce6d4902b44e37533f7f0fa362a8f756f13eead122467ae107",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [
         "COURSE_FIELDS"
       ],
-      "totalLines": 66,
+      "totalLines": 78,
       "hasStructuralAnalysis": true
     },
-    "constants/lecturer/lecture.fields.js": {
-      "filePath": "constants/lecturer/lecture.fields.js",
-      "contentHash": "111797fb2088f117ca4fe61c8f5c39a3a2e199aa62857f68bfc453cb8d04332c",
+    "src/constants/home/enrollmentstatusmodal.constants.js": {
+      "filePath": "src/constants/home/enrollmentstatusmodal.constants.js",
+      "contentHash": "d508958c34f4e5f240d62feea86abb0ec72581eaebdfec59edc7f7cb53c65ecc",
+      "functions": [
+        {
+          "name": "getSummaryPillsConfig",
+          "params": [
+            "summary"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getSummaryPills",
+          "params": [
+            "summary"
+          ],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "getSummaryPillsConfig",
+        "ENROLLTABLE_SCHEDULE_STATUS",
+        "FILTERS",
+        "DAY_MAP",
+        "ENROLLTABLE_COLUMN_NAME",
+        "TABLE_HEADERS",
+        "getSummaryPills"
+      ],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/lecturer/lecture.fields.js": {
+      "filePath": "src/constants/lecturer/lecture.fields.js",
+      "contentHash": "c84ec988e8118310ab7ac769fb36454fa18999d08938a9c878bf0f3afffa22ea",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [
         "LECTURE_FIELDS"
       ],
-      "totalLines": 161,
+      "totalLines": 160,
       "hasStructuralAnalysis": true
     },
-    "constants/lecturer/lecturer.constants.js": {
-      "filePath": "constants/lecturer/lecturer.constants.js",
-      "contentHash": "a4380376f2c8904e3e430830f3584d2b18f6721220a8ec74c7ba1169d36dd19f",
+    "src/constants/lecturer/lecturer.constants.js": {
+      "filePath": "src/constants/lecturer/lecturer.constants.js",
+      "contentHash": "977ecc1a148fd0e40dd5daf4bcc1db411cbd469f9fdc9277d8db99b62bf10a68",
       "functions": [],
       "classes": [],
       "imports": [],
@@ -1422,8 +1873,8 @@
       "totalLines": 100,
       "hasStructuralAnalysis": true
     },
-    "constants/login/login.fields.js": {
-      "filePath": "constants/login/login.fields.js",
+    "src/constants/login/login.fields.js": {
+      "filePath": "src/constants/login/login.fields.js",
       "contentHash": "f2590190c29e9bc6d265de748d356f2f24ebec75a0fa57a1430bdd77ff2cdb1b",
       "functions": [],
       "classes": [],
@@ -1436,8 +1887,8 @@
       "totalLines": 33,
       "hasStructuralAnalysis": true
     },
-    "constants/modalStyles.js": {
-      "filePath": "constants/modalStyles.js",
+    "src/constants/modalStyles.js": {
+      "filePath": "src/constants/modalStyles.js",
       "contentHash": "66ce62ffe537a9266e66c3f03b3194a379cda3da7a88ab9d5c5ca7eb1a0a5980",
       "functions": [
         {
@@ -1458,8 +1909,8 @@
       "totalLines": 29,
       "hasStructuralAnalysis": true
     },
-    "constants/profile/profile.password.fields.js": {
-      "filePath": "constants/profile/profile.password.fields.js",
+    "src/constants/profile/profile.password.fields.js": {
+      "filePath": "src/constants/profile/profile.password.fields.js",
       "contentHash": "f9b2fed7fffaba86fb557e19adb4508ea83213148be7b8e6ad8087859875bf80",
       "functions": [
         {
@@ -1468,7 +1919,7 @@
             "isAdmin"
           ],
           "exported": true,
-          "lineCount": 17
+          "lineCount": 6
         }
       ],
       "classes": [],
@@ -1479,8 +1930,8 @@
       "totalLines": 17,
       "hasStructuralAnalysis": true
     },
-    "constants/register/register.fields.js": {
-      "filePath": "constants/register/register.fields.js",
+    "src/constants/register/register.fields.js": {
+      "filePath": "src/constants/register/register.fields.js",
       "contentHash": "5126d0d5bbf4bc99a4c16e4060962baff8d9a7b001370cdc2732f8ed0c7568a6",
       "functions": [],
       "classes": [],
@@ -1491,9 +1942,36 @@
       "totalLines": 45,
       "hasStructuralAnalysis": true
     },
-    "constants/students/student.constants.js": {
-      "filePath": "constants/students/student.constants.js",
-      "contentHash": "0e5be6e75bf54cbc29a14a9ae5de7caf5e29bf399b6bd8bbed27796fdd74d2d9",
+    "src/constants/score/score.constants.js": {
+      "filePath": "src/constants/score/score.constants.js",
+      "contentHash": "5e75edad1bd82ce0bbb879f6f536d81027bbdc2f791352a740f43dd12085debc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "SCORE_RESULT_OPTIONS",
+        "CERTIFICATE_OPTIONS",
+        "SCORE_TABLE_COLUMNS",
+        "SCORE_SORT_OPTIONS"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/score/score.fields.js": {
+      "filePath": "src/constants/score/score.fields.js",
+      "contentHash": "a71ecc02c04edac6d55a8464f77b85f80e0f29219549176a7c1dc718f32c2747",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "SCORE_FIELDS"
+      ],
+      "totalLines": 151,
+      "hasStructuralAnalysis": true
+    },
+    "src/constants/students/student.constants.jsx": {
+      "filePath": "src/constants/students/student.constants.jsx",
+      "contentHash": "cb03e6713223f070ca60ba7e23760e009a586613cc3231690090f5064ba9a237",
       "functions": [],
       "classes": [],
       "imports": [],
@@ -1502,23 +1980,23 @@
         "STUDENT_SORT_OPTIONS",
         "STUDENT_STATUS_OPTIONS"
       ],
-      "totalLines": 22,
+      "totalLines": 41,
       "hasStructuralAnalysis": true
     },
-    "constants/students/student.fields.js": {
-      "filePath": "constants/students/student.fields.js",
-      "contentHash": "d8acbfda6ddcbd03be165b6fcdc95322c2328e87a95e786cfdf349fb455dc590",
+    "src/constants/students/student.fields.js": {
+      "filePath": "src/constants/students/student.fields.js",
+      "contentHash": "4bbcce824b5e0b217ee07883068021cc168fb73b72bb4d2418fbf081b64fde7d",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [
         "STUDENTS_FIELDS"
       ],
-      "totalLines": 102,
+      "totalLines": 150,
       "hasStructuralAnalysis": true
     },
-    "constants/users/user.constants.jsx": {
-      "filePath": "constants/users/user.constants.jsx",
+    "src/constants/users/user.constants.jsx": {
+      "filePath": "src/constants/users/user.constants.jsx",
       "contentHash": "5b7836c155703e2b4188b4f2bf00246fbf930ef04d826c50a606a60aee03eaed",
       "functions": [],
       "classes": [],
@@ -1538,8 +2016,8 @@
       "totalLines": 25,
       "hasStructuralAnalysis": true
     },
-    "constants/users/user.fields.js": {
-      "filePath": "constants/users/user.fields.js",
+    "src/constants/users/user.fields.js": {
+      "filePath": "src/constants/users/user.fields.js",
       "contentHash": "9b6f33d4f361bc5f3c95e775c592e9ef70ca041d05f5cad66590d5a29d86731f",
       "functions": [],
       "classes": [],
@@ -1550,17 +2028,81 @@
       "totalLines": 83,
       "hasStructuralAnalysis": true
     },
-    "hooks/useAuditLog.jsx": {
-      "filePath": "hooks/useAuditLog.jsx",
-      "contentHash": "a202be8911aedc3590feb9098b6f596f86c1056ef248a4d3ba5b552385deaa87",
+    "src/helpers/homeHelpers.js": {
+      "filePath": "src/helpers/homeHelpers.js",
+      "contentHash": "215a2deb8683662b61ee880e4dcd0be6836b90df16691e5fc0f78e15397342a5",
+      "functions": [
+        {
+          "name": "buildScoreStats",
+          "params": [
+            "scores"
+          ],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "getDonutData",
+          "params": [
+            "stats"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "getLegendData",
+          "params": [
+            "stats"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "getGreeting",
+          "params": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "buildConicGradient",
+          "params": [
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "feeDonutData",
+          "params": [
+            "feeOverview"
+          ],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "buildScoreStats",
+        "getDonutData",
+        "getLegendData",
+        "getGreeting",
+        "buildConicGradient",
+        "feeDonutData"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useAuditLog.jsx": {
+      "filePath": "src/hooks/useAuditLog.jsx",
+      "contentHash": "3d20c9a0f400556c0217d01c4d7863e3cad0814ea46d07c8e0fc65ad6092ab34",
       "functions": [
         {
           "name": "useAuditLog",
           "params": [
             "entityType"
           ],
-          "exported": true,
-          "lineCount": 44
+          "exported": false,
+          "lineCount": 48
         }
       ],
       "classes": [],
@@ -1587,25 +2129,15 @@
         }
       ],
       "exports": [
-        "useAuditLog"
+        "default"
       ],
-      "totalLines": 49,
+      "totalLines": 53,
       "hasStructuralAnalysis": true
     },
-    "hooks/useComponentData.jsx": {
-      "filePath": "hooks/useComponentData.jsx",
-      "contentHash": "dd42f42f67b40933b59e10992796f4392090863d226e615a2127bd5bd2866994",
-      "functions": [
-        {
-          "name": "useComponentData",
-          "params": [
-            "service",
-            "searchField"
-          ],
-          "exported": true,
-          "lineCount": 149
-        }
-      ],
+    "src/hooks/useComponentData.jsx": {
+      "filePath": "src/hooks/useComponentData.jsx",
+      "contentHash": "1f3a42f9a5d726831bf8ba5bd5a2f8fd6a97a1ca3e3d5bdfa46248b67ce54424",
+      "functions": [],
       "classes": [],
       "imports": [
         {
@@ -1669,13 +2201,13 @@
         }
       ],
       "exports": [
-        "useComponentData"
+        "default"
       ],
-      "totalLines": 159,
+      "totalLines": 170,
       "hasStructuralAnalysis": true
     },
-    "hooks/useCrud.jsx": {
-      "filePath": "hooks/useCrud.jsx",
+    "src/hooks/useCrud.jsx": {
+      "filePath": "src/hooks/useCrud.jsx",
       "contentHash": "8e8c9ce8d9cd0bd1cd5191af0b672094ff73113f8630e44d7828c755ab3dd6ee",
       "functions": [
         {
@@ -1683,8 +2215,33 @@
           "params": [
             "service"
           ],
-          "exported": true,
+          "exported": false,
           "lineCount": 7
+        },
+        {
+          "name": "create",
+          "params": [
+            "formData"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "formData"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": false,
+          "lineCount": 3
         }
       ],
       "classes": [],
@@ -1697,22 +2254,23 @@
         }
       ],
       "exports": [
-        "useCrud"
+        "default"
       ],
       "totalLines": 9,
       "hasStructuralAnalysis": true
     },
-    "hooks/useFetchData.jsx": {
-      "filePath": "hooks/useFetchData.jsx",
-      "contentHash": "f7cbce8670b9039f3d51e39d518436c52d742bc6acee66f31cf21cf2f46bea03",
+    "src/hooks/useFetchData.jsx": {
+      "filePath": "src/hooks/useFetchData.jsx",
+      "contentHash": "724a4fa5be3b442b48bcc10bbebb8afc2f8aff1804bf8cb8b714f71ed8f0d630",
       "functions": [
         {
           "name": "useFetchData",
           "params": [
-            "service"
+            "service",
+            "enrich"
           ],
-          "exported": true,
-          "lineCount": 30
+          "exported": false,
+          "lineCount": 32
         }
       ],
       "classes": [],
@@ -1728,20 +2286,20 @@
         }
       ],
       "exports": [
-        "useFetchData"
+        "default"
       ],
-      "totalLines": 33,
+      "totalLines": 35,
       "hasStructuralAnalysis": true
     },
-    "hooks/useFetchMasterData.js": {
-      "filePath": "hooks/useFetchMasterData.js",
-      "contentHash": "35c6dc42cf69526f5575dcd74c23a5ca2b22d60884fd160226f89ec0ad3552c5",
+    "src/hooks/useFetchMasterData.js": {
+      "filePath": "src/hooks/useFetchMasterData.js",
+      "contentHash": "f4225262ca6646f1464a4168d43001d8fa4ccbe1571e495d61c4719d14938dca",
       "functions": [
         {
           "name": "useFetchMasterData",
           "params": [],
-          "exported": true,
-          "lineCount": 18
+          "exported": false,
+          "lineCount": 20
         }
       ],
       "classes": [],
@@ -1796,6 +2354,18 @@
           ]
         },
         {
+          "source": "../services/studentClassService",
+          "specifiers": [
+            "* as studentClassService"
+          ]
+        },
+        {
+          "source": "../services/studentCourseService",
+          "specifiers": [
+            "* as studentCourseService"
+          ]
+        },
+        {
           "source": "@/actions/masterDataAction",
           "specifiers": [
             "setMasterData"
@@ -1803,20 +2373,33 @@
         }
       ],
       "exports": [
-        "useFetchMasterData"
+        "default"
       ],
-      "totalLines": 29,
+      "totalLines": 33,
       "hasStructuralAnalysis": true
     },
-    "hooks/useForm.jsx": {
-      "filePath": "hooks/useForm.jsx",
-      "contentHash": "7b90747d7901b47a61d7d6d03011a9fc0edad0a6147c549e748bec52427a110c",
+    "src/hooks/useForm.jsx": {
+      "filePath": "src/hooks/useForm.jsx",
+      "contentHash": "d724fc446ed1c554d484605d225cec406d55568b107abbeeadafee71576e8347",
       "functions": [
         {
           "name": "useForm",
-          "params": [],
-          "exported": true,
-          "lineCount": 130
+          "params": [
+            "{ fields",
+            "editItem",
+            "dependencies",
+            "onFieldsChange }"
+          ],
+          "exported": false,
+          "lineCount": 129
+        },
+        {
+          "name": "handleBlur",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 12
         }
       ],
       "classes": [],
@@ -1838,22 +2421,23 @@
         }
       ],
       "exports": [
-        "useForm"
+        "default"
       ],
-      "totalLines": 141,
+      "totalLines": 140,
       "hasStructuralAnalysis": true
     },
-    "hooks/useLookupMap.js": {
-      "filePath": "hooks/useLookupMap.js",
+    "src/hooks/useLookupMap.js": {
+      "filePath": "src/hooks/useLookupMap.js",
       "contentHash": "d7124f76a5cfedad6c49a6430ea900267c1de0709b05546c8c771c197056b2b5",
       "functions": [
         {
           "name": "useLookupMaps",
           "params": [
             "data",
+            "keyField",
             "fieldName"
           ],
-          "exported": true,
+          "exported": false,
           "lineCount": 7
         }
       ],
@@ -1867,19 +2451,22 @@
         }
       ],
       "exports": [
-        "useLookupMaps"
+        "default"
       ],
       "totalLines": 9,
       "hasStructuralAnalysis": true
     },
-    "hooks/usePagination.jsx": {
-      "filePath": "hooks/usePagination.jsx",
+    "src/hooks/usePagination.jsx": {
+      "filePath": "src/hooks/usePagination.jsx",
       "contentHash": "530677a1dbbe3d5e2f6f81f9191bf3cef5bfc64f20bd7392c083012f76cbfac6",
       "functions": [
         {
           "name": "usePagination",
-          "params": [],
-          "exported": true,
+          "params": [
+            "data",
+            "initialPageSize"
+          ],
+          "exported": false,
           "lineCount": 31
         }
       ],
@@ -1896,22 +2483,15 @@
         }
       ],
       "exports": [
-        "usePagination"
+        "default"
       ],
       "totalLines": 34,
       "hasStructuralAnalysis": true
     },
-    "hooks/useReorder.jsx": {
-      "filePath": "hooks/useReorder.jsx",
+    "src/hooks/useReorder.jsx": {
+      "filePath": "src/hooks/useReorder.jsx",
       "contentHash": "e0d03b1d101d8dacd2829928fdad2b32a3da70c67015d5bf7a6d0a6c5bcdd1b6",
-      "functions": [
-        {
-          "name": "useReorder",
-          "params": [],
-          "exported": true,
-          "lineCount": 52
-        }
-      ],
+      "functions": [],
       "classes": [],
       "imports": [
         {
@@ -1935,20 +2515,30 @@
         }
       ],
       "exports": [
-        "useReorder"
+        "default"
       ],
       "totalLines": 56,
       "hasStructuralAnalysis": true
     },
-    "hooks/useSearch.jsx": {
-      "filePath": "hooks/useSearch.jsx",
+    "src/hooks/useSearch.jsx": {
+      "filePath": "src/hooks/useSearch.jsx",
       "contentHash": "3335d7c26e9240b326ef3e0c8a0e4d3356ca90e045d901c105e53a49801b58bc",
       "functions": [
         {
           "name": "useSearch",
-          "params": [],
-          "exported": true,
+          "params": [
+            "delay"
+          ],
+          "exported": false,
           "lineCount": 24
+        },
+        {
+          "name": "onSearchChange",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 7
         }
       ],
       "classes": [],
@@ -1963,20 +2553,37 @@
         }
       ],
       "exports": [
-        "useSearch"
+        "default"
       ],
       "totalLines": 27,
       "hasStructuralAnalysis": true
     },
-    "hooks/useSort.jsx": {
-      "filePath": "hooks/useSort.jsx",
-      "contentHash": "d41df56b042a21e10bf508f5d30a18e01b8dfbe68cf88eeb0b04d37c17351f0d",
+    "src/hooks/useSort.jsx": {
+      "filePath": "src/hooks/useSort.jsx",
+      "contentHash": "7d42b4f9910b7a2055e921371afb78b58a9de17763044e7ba9ad0c1589d54a12",
       "functions": [
         {
           "name": "useSort",
+          "params": [
+            "data",
+            "customSort"
+          ],
+          "exported": false,
+          "lineCount": 59
+        },
+        {
+          "name": "onSortField",
+          "params": [
+            "field"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "toggleSortOrder",
           "params": [],
-          "exported": true,
-          "lineCount": 54
+          "exported": false,
+          "lineCount": 4
         }
       ],
       "classes": [],
@@ -1991,13 +2598,13 @@
         }
       ],
       "exports": [
-        "useSort"
+        "default"
       ],
-      "totalLines": 57,
+      "totalLines": 62,
       "hasStructuralAnalysis": true
     },
-    "index.css": {
-      "filePath": "index.css",
+    "src/index.css": {
+      "filePath": "src/index.css",
       "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "functions": [],
       "classes": [],
@@ -2006,15 +2613,35 @@
       "totalLines": 1,
       "hasStructuralAnalysis": false
     },
-    "layouts/LayoutDefault.jsx": {
-      "filePath": "layouts/LayoutDefault.jsx",
-      "contentHash": "b49583e2d6a1d33286ff63024aac2802c4b341698004da905ec58ce24fff6437",
+    "src/layouts/LayoutDefault.jsx": {
+      "filePath": "src/layouts/LayoutDefault.jsx",
+      "contentHash": "d7c6f2ed3d37236a9b3161dcfb69041a0006e8c81b24b9f22751c0803edc81a2",
       "functions": [
         {
           "name": "LayoutDefault",
           "params": [],
-          "exported": true,
-          "lineCount": 80
+          "exported": false,
+          "lineCount": 81
+        },
+        {
+          "name": "navLinkActive",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "closeMenu",
+          "params": [],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "handleBlogEnter",
+          "params": [],
+          "exported": false,
+          "lineCount": 7
         }
       ],
       "classes": [],
@@ -2034,10 +2661,6 @@
           ]
         },
         {
-          "source": "./LayoutDefault.scss",
-          "specifiers": []
-        },
-        {
           "source": "react-router-dom",
           "specifiers": [
             "NavLink",
@@ -2055,27 +2678,31 @@
           "specifiers": [
             "Footer"
           ]
+        },
+        {
+          "source": "./LayoutDefault.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "LayoutDefault"
+        "default"
       ],
-      "totalLines": 87,
+      "totalLines": 88,
       "hasStructuralAnalysis": true
     },
-    "layouts/LayoutDefault.scss": {
-      "filePath": "layouts/LayoutDefault.scss",
-      "contentHash": "cff345f0dabb9e702521cdbce66cbc2826e57c198ac9579189cb9ff916cc0387",
+    "src/layouts/LayoutDefault.scss": {
+      "filePath": "src/layouts/LayoutDefault.scss",
+      "contentHash": "77a5871e2364743db7bd9ef84edb72c91a4e75a3b5e0fcdc08dd5294634fa3ba",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 176,
+      "totalLines": 177,
       "hasStructuralAnalysis": false
     },
-    "main.jsx": {
-      "filePath": "main.jsx",
-      "contentHash": "c814fe284dd8600a90d41dd0734a7dfb20676d737430fcc6ff5f2b277f54a02c",
+    "src/main.jsx": {
+      "filePath": "src/main.jsx",
+      "contentHash": "ed127674e860452e6828294ba8488ab2222c2e10e84c7ea7f0aed823c53bc67e",
       "functions": [],
       "classes": [],
       "imports": [
@@ -2096,10 +2723,6 @@
           "specifiers": [
             "App"
           ]
-        },
-        {
-          "source": "./assets/styles/pages/main.scss",
-          "specifiers": []
         },
         {
           "source": "redux",
@@ -2124,20 +2747,28 @@
           "specifiers": [
             "Modal"
           ]
+        },
+        {
+          "source": "./assets/styles/pages/main.scss",
+          "specifiers": []
+        },
+        {
+          "source": "animate.css",
+          "specifiers": []
         }
       ],
       "exports": [],
-      "totalLines": 24,
+      "totalLines": 25,
       "hasStructuralAnalysis": true
     },
-    "pages/About.jsx": {
-      "filePath": "pages/About.jsx",
+    "src/pages/About.jsx": {
+      "filePath": "src/pages/About.jsx",
       "contentHash": "2d294a38e82e94bc6eb92347a71024dc54442c3af1ddb5baba6413ca02c70d52",
       "functions": [
         {
           "name": "About",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 5
         }
       ],
@@ -2151,19 +2782,19 @@
         }
       ],
       "exports": [
-        "About"
+        "default"
       ],
       "totalLines": 8,
       "hasStructuralAnalysis": true
     },
-    "pages/blog/BlogLayout.jsx": {
-      "filePath": "pages/blog/BlogLayout.jsx",
+    "src/pages/blog/BlogLayout.jsx": {
+      "filePath": "src/pages/blog/BlogLayout.jsx",
       "contentHash": "782f375d34fc638b843d0c7bcc9030af498ddc0f60db75f0862c033c375b8b74",
       "functions": [
         {
           "name": "BlogLayout",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 11
         }
       ],
@@ -2183,19 +2814,19 @@
         }
       ],
       "exports": [
-        "BlogLayout"
+        "default"
       ],
       "totalLines": 15,
       "hasStructuralAnalysis": true
     },
-    "pages/blog/BlogNews.jsx": {
-      "filePath": "pages/blog/BlogNews.jsx",
+    "src/pages/blog/BlogNews.jsx": {
+      "filePath": "src/pages/blog/BlogNews.jsx",
       "contentHash": "39ce73bcc068a008678e964294aa25f5192b64ee0d87c7b1c13e9ac0e02fceb5",
       "functions": [
         {
           "name": "BlogNews",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 5
         }
       ],
@@ -2209,19 +2840,19 @@
         }
       ],
       "exports": [
-        "BlogNews"
+        "default"
       ],
       "totalLines": 8,
       "hasStructuralAnalysis": true
     },
-    "pages/blog/BlogRelated.jsx": {
-      "filePath": "pages/blog/BlogRelated.jsx",
+    "src/pages/blog/BlogRelated.jsx": {
+      "filePath": "src/pages/blog/BlogRelated.jsx",
       "contentHash": "71577d18151bd01f795fd8c69f4d5aa9501ba7eabcdd8b9d2473d4eab6821db2",
       "functions": [
         {
           "name": "BlogRelated",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 5
         }
       ],
@@ -2235,19 +2866,19 @@
         }
       ],
       "exports": [
-        "BlogRelated"
+        "default"
       ],
       "totalLines": 8,
       "hasStructuralAnalysis": true
     },
-    "pages/Cart/Cart.jsx": {
-      "filePath": "pages/Cart/Cart.jsx",
+    "src/pages/Cart/Cart.jsx": {
+      "filePath": "src/pages/Cart/Cart.jsx",
       "contentHash": "e9b9e88526e6c61622782b16ddd5ee91ca36d60b255c2cf717d65386d9215ff0",
       "functions": [
         {
           "name": "Cart",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 5
         }
       ],
@@ -2261,20 +2892,20 @@
         }
       ],
       "exports": [
-        "Cart"
+        "default"
       ],
       "totalLines": 8,
       "hasStructuralAnalysis": true
     },
-    "pages/Classes/Class.jsx": {
-      "filePath": "pages/Classes/Class.jsx",
-      "contentHash": "c731e7525ff43f79319c5abbef3a6d6884de3a5922d68c6c079ec7b4c07c2162",
+    "src/pages/Classes/Class.jsx": {
+      "filePath": "src/pages/Classes/Class.jsx",
+      "contentHash": "0e548ebb14689ab28e859c929a137a58adc99316cf37ed0868c9f80fc64b661d",
       "functions": [
         {
           "name": "Class",
           "params": [],
-          "exported": true,
-          "lineCount": 195
+          "exported": false,
+          "lineCount": 241
         }
       ],
       "classes": [],
@@ -2290,6 +2921,7 @@
           "specifiers": [
             "React",
             "useCallback",
+            "useEffect",
             "useMemo",
             "useState"
           ]
@@ -2364,7 +2996,9 @@
         {
           "source": "@/utils/alert",
           "specifiers": [
-            "alertError"
+            "alertConfirm",
+            "alertError",
+            "alertInfo"
           ]
         },
         {
@@ -2387,17 +3021,24 @@
           "specifiers": [
             "updateMasterEntity"
           ]
+        },
+        {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useLocation",
+            "useNavigate"
+          ]
         }
       ],
       "exports": [
-        "Class"
+        "default"
       ],
-      "totalLines": 215,
+      "totalLines": 262,
       "hasStructuralAnalysis": true
     },
-    "pages/Classes/ClassModal.jsx": {
-      "filePath": "pages/Classes/ClassModal.jsx",
-      "contentHash": "0fa352c10549f2a0f26dce28cc60c8d3b80d7751603a817a958934431aadfc99",
+    "src/pages/Classes/ClassModal.jsx": {
+      "filePath": "src/pages/Classes/ClassModal.jsx",
+      "contentHash": "bc188e014c6d9173cb711ce6e6e3ce996d258ffe55841080e27574026615c7eb",
       "functions": [
         {
           "name": "generateClassCodeForClass",
@@ -2410,10 +3051,12 @@
           "lineCount": 4
         },
         {
-          "name": "ClassModal",
-          "params": [],
-          "exported": true,
-          "lineCount": 350
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 92
         }
       ],
       "classes": [],
@@ -2456,6 +3099,12 @@
           "source": "@/constants/modalStyles",
           "specifiers": [
             "getModalStyle"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
           ]
         },
         {
@@ -2516,6 +3165,12 @@
           ]
         },
         {
+          "source": "@/services/studentCourseService",
+          "specifiers": [
+            "* as studentCourseService"
+          ]
+        },
+        {
           "source": "@/utils/compareData",
           "specifiers": [
             "compareData"
@@ -2544,19 +3199,20 @@
           "specifiers": [
             "selectCourses",
             "selectLectures",
+            "selectStudentCourse",
             "selectStudents"
           ]
         }
       ],
       "exports": [
-        "ClassModal"
+        "default"
       ],
-      "totalLines": 377,
+      "totalLines": 472,
       "hasStructuralAnalysis": true
     },
-    "pages/ClassSchedule/ClassSchedule.jsx": {
-      "filePath": "pages/ClassSchedule/ClassSchedule.jsx",
-      "contentHash": "93c46c648494e603c7cd09ccd15de523d66c7a730198ff8193e3e0579aca85ce",
+    "src/pages/ClassSchedule/ClassSchedule.jsx": {
+      "filePath": "src/pages/ClassSchedule/ClassSchedule.jsx",
+      "contentHash": "46626fecf522dcb4a6de0733413ec69db3276b8444d4739b47194f3ec900e109",
       "functions": [
         {
           "name": "getColor",
@@ -2564,7 +3220,7 @@
             "classId"
           ],
           "exported": false,
-          "lineCount": 1
+          "lineCount": 8
         },
         {
           "name": "addHours",
@@ -2586,8 +3242,103 @@
         {
           "name": "ClassSchedule",
           "params": [],
-          "exported": true,
-          "lineCount": 485
+          "exported": false,
+          "lineCount": 567
+        },
+        {
+          "name": "checkRoomConflict",
+          "params": [
+            "formData",
+            "excludeId"
+          ],
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "isCellConflict",
+          "params": [
+            "classId",
+            "dayKey",
+            "time"
+          ],
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "handleDragStart",
+          "params": [
+            "e",
+            "classId"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "handleDragEnd",
+          "params": [],
+          "exported": false,
+          "lineCount": 23
+        },
+        {
+          "name": "handleCellDrop",
+          "params": [
+            "e",
+            "day",
+            "time"
+          ],
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "toggleDay",
+          "params": [
+            "day"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "setField",
+          "params": [
+            "field",
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "validate",
+          "params": [],
+          "exported": false,
+          "lineCount": 17
+        },
+        {
+          "name": "handleSave",
+          "params": [],
+          "exported": false,
+          "lineCount": 61
+        },
+        {
+          "name": "handleDelete",
+          "params": [
+            "id"
+          ],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "handleEdit",
+          "params": [
+            "sched"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "resetForm",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
         }
       ],
       "classes": [],
@@ -2596,6 +3347,7 @@
           "source": "react",
           "specifiers": [
             "React",
+            "useEffect",
             "useMemo",
             "useState"
           ]
@@ -2667,19 +3419,26 @@
           ]
         },
         {
+          "source": "react-router-dom",
+          "specifiers": [
+            "useLocation",
+            "useNavigate"
+          ]
+        },
+        {
           "source": "./ClassSchedule.scss",
           "specifiers": []
         }
       ],
       "exports": [
-        "ClassSchedule"
+        "default"
       ],
-      "totalLines": 523,
+      "totalLines": 605,
       "hasStructuralAnalysis": true
     },
-    "pages/ClassSchedule/ClassSchedule.scss": {
-      "filePath": "pages/ClassSchedule/ClassSchedule.scss",
-      "contentHash": "73a99fca248702417867ea63ca5213b81fa0b78b66a6c57cd5527b94fda798e2",
+    "src/pages/ClassSchedule/ClassSchedule.scss": {
+      "filePath": "src/pages/ClassSchedule/ClassSchedule.scss",
+      "contentHash": "6a0e2a8356cc6c27e18730b3aadea74fee2ce79b9683d25e295d20104140ac36",
       "functions": [],
       "classes": [],
       "imports": [],
@@ -2687,9 +3446,9 @@
       "totalLines": 779,
       "hasStructuralAnalysis": false
     },
-    "pages/ClassSchedule/ScheduleGridCell.jsx": {
-      "filePath": "pages/ClassSchedule/ScheduleGridCell.jsx",
-      "contentHash": "ec28157713391bbdc4c23d5af158a19f201546a7486fee3437fbce3ffab4d82a",
+    "src/pages/ClassSchedule/ScheduleGridCell.jsx": {
+      "filePath": "src/pages/ClassSchedule/ScheduleGridCell.jsx",
+      "contentHash": "36efd91c9bb13367ecd11c7842e97cbf5a7f287f0acd79a2055855ca1d79bb2f",
       "functions": [
         {
           "name": "getColor",
@@ -2697,13 +3456,23 @@
             "classId"
           ],
           "exported": false,
-          "lineCount": 1
+          "lineCount": 215
         },
         {
-          "name": "ScheduleGridCell",
-          "params": [],
+          "name": "isDimmed",
+          "params": [
+            "sched"
+          ],
           "exported": false,
-          "lineCount": 189
+          "lineCount": 5
+        },
+        {
+          "name": "isMatched",
+          "params": [
+            "sched"
+          ],
+          "exported": false,
+          "lineCount": 5
         }
       ],
       "classes": [],
@@ -2725,18 +3494,20 @@
           ]
         }
       ],
-      "exports": [],
-      "totalLines": 199,
+      "exports": [
+        "default"
+      ],
+      "totalLines": 222,
       "hasStructuralAnalysis": true
     },
-    "pages/Contact.jsx": {
-      "filePath": "pages/Contact.jsx",
+    "src/pages/Contact.jsx": {
+      "filePath": "src/pages/Contact.jsx",
       "contentHash": "b7c5910880b5cead5e2fbe4a929438b21f58e1e3edb307529c3999b393def81e",
       "functions": [
         {
           "name": "Contact",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 5
         }
       ],
@@ -2750,19 +3521,19 @@
         }
       ],
       "exports": [
-        "Contact"
+        "default"
       ],
       "totalLines": 8,
       "hasStructuralAnalysis": true
     },
-    "pages/Course/Course.jsx": {
-      "filePath": "pages/Course/Course.jsx",
+    "src/pages/Course/Course.jsx": {
+      "filePath": "src/pages/Course/Course.jsx",
       "contentHash": "fe2b3cb146497de4cd42be64a604bbdd979511642d7051b033c447c7495c5817",
       "functions": [
         {
           "name": "Course",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 118
         }
       ],
@@ -2858,34 +3629,482 @@
         }
       ],
       "exports": [
-        "Course"
+        "default"
       ],
       "totalLines": 134,
       "hasStructuralAnalysis": true
     },
-    "pages/Home/Home.jsx": {
-      "filePath": "pages/Home/Home.jsx",
-      "contentHash": "dc3522d78fa32681256fc41893a4d6f88a158b86c5d0930524dda692861afcf1",
+    "src/pages/Home/components/AssignClassPopup.jsx": {
+      "filePath": "src/pages/Home/components/AssignClassPopup.jsx",
+      "contentHash": "6c1cde1e93183688cb1250a52aec0f1bdaedab84d1240b4caf4045070f653fa1",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 137,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/DonutChart.jsx": {
+      "filePath": "src/pages/Home/components/DonutChart.jsx",
+      "contentHash": "d3387a2190a8e89a0309f7ca7ca976358258f1a3829d735ba42c1d0dde85c9bc",
       "functions": [
         {
-          "name": "buildConicGradient",
+          "name": "DonutChart",
           "params": [
-            "data"
+            "{ data }"
           ],
-          "exported": false,
-          "lineCount": 9
+          "exported": true,
+          "lineCount": 45
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/helpers/homeHelpers",
+          "specifiers": [
+            "buildConicGradient"
+          ]
         },
         {
-          "name": "getGreeting",
-          "params": [],
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        }
+      ],
+      "exports": [
+        "DonutChart"
+      ],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentFooter.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentFooter.jsx",
+      "contentHash": "5f458eaf91d6d57c262016f3a6b0cedea241be6882f77ca8bea7acc9f8464715",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentHeader.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentHeader.jsx",
+      "contentHash": "ca482696fd19887a4c9b054b1e4a64d382a5f4da64ecafed20818a7ba64dc94c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentSummary.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentSummary.jsx",
+      "contentHash": "55a1d04e5db630cdfbb47fc1530c45a7565dc847433544ad3d8b0568c4ca17a9",
+      "functions": [
+        {
+          "name": "EnrollmentSummary",
+          "params": [
+            "{ summary",
+            "summaryPills }"
+          ],
           "exported": false,
-          "lineCount": 6
+          "lineCount": 45
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentTable.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentTable.jsx",
+      "contentHash": "eeca0e8ed7fcb7685cf8b856173e4bb1e54d16d02f68b61cf19731e5495d7ae5",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect"
+          ]
         },
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "DAY_MAP",
+            "ENROLLTABLE_COLUMN_NAME",
+            "ENROLLTABLE_SCHEDULE_STATUS"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 120,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/EnrollmentToolbar.jsx": {
+      "filePath": "src/pages/Home/components/EnrollmentToolbar.jsx",
+      "contentHash": "3d2cff39313851d3eb4352ba6dd64387cabc4c421e66bec05cf1a2b3009ea31f",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "FILTERS"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/HomeClassSchedule.jsx": {
+      "filePath": "src/pages/Home/components/HomeClassSchedule.jsx",
+      "contentHash": "08beb985d2dfa7aa77ce2722ad6e3e4e6ddce81f1922222ac446cea4b9aaa3b1",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "DAY_MAP"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 83,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/HomeFilterCard.jsx": {
+      "filePath": "src/pages/Home/components/HomeFilterCard.jsx",
+      "contentHash": "3227178f71459f75f117bbcb6b51b9924883303bcd98820ffab6fe556ab35e45",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 58,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/LectureAssignmentTable.jsx": {
+      "filePath": "src/pages/Home/components/LectureAssignmentTable.jsx",
+      "contentHash": "5185ba6a0e127a5fc1a4ace74d9177cd556cb73cc844560de41736d66da9ed4f",
+      "functions": [
+        {
+          "name": "handleOpenAssignPopup",
+          "params": [
+            "row"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "handleSelectCourse",
+          "params": [
+            "courseId"
+          ],
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "DAY_MAP",
+            "TABLE_HEADERS"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useState"
+          ]
+        },
+        {
+          "source": "./AssignClassPopup",
+          "specifiers": [
+            "AssignClassPopup"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 149,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/WarningCard.jsx": {
+      "filePath": "src/pages/Home/components/WarningCard.jsx",
+      "contentHash": "eef0028ae2c4155f735b0c8d6b5ac2d63c90f4a88f25fb844f2447ad3b953263",
+      "functions": [
+        {
+          "name": "WarningCard",
+          "params": [
+            "{ icon",
+            "title",
+            "items",
+            "renderItem",
+            "footer",
+            "type",
+            "variants }"
+          ],
+          "exported": false,
+          "lineCount": 50
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 54,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/components/WarningCards.jsx": {
+      "filePath": "src/pages/Home/components/WarningCards.jsx",
+      "contentHash": "43d6ea8b377ec28c4af46dc2360b0870e624ab2de3784cf8ad8abaa58aeb5692",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "./WarningCard",
+          "specifiers": [
+            "WarningCard"
+          ]
+        },
+        {
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 113,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/Enrollmentstatusmodal.jsx": {
+      "filePath": "src/pages/Home/Enrollmentstatusmodal.jsx",
+      "contentHash": "10f030c12bc087da96ca41c7a8f29f027eb879c35d14e2cf8c1fbb4fb63831de",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "getSummaryPillsConfig"
+          ]
+        },
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useMemo"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentSummary",
+          "specifiers": [
+            "EnrollmentSummary"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentToolbar",
+          "specifiers": [
+            "EnrollmentToolbar"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentTable",
+          "specifiers": [
+            "EnrollmentTable"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentFooter",
+          "specifiers": [
+            "EnrollmentFooter"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentHeader",
+          "specifiers": [
+            "EnrollmentHeader"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 201,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Home/Home.jsx": {
+      "filePath": "src/pages/Home/Home.jsx",
+      "contentHash": "60d10ac651b7baf684aa0ef05b138519ea68b2cec7c0a912363965f989b26db5",
+      "functions": [
         {
           "name": "Home",
           "params": [],
-          "exported": true,
-          "lineCount": 410
+          "exported": false,
+          "lineCount": 793
+        },
+        {
+          "name": "goToEditClass",
+          "params": [
+            "classId"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "handleCourseRowClick",
+          "params": [
+            "course"
+          ],
+          "exported": false,
+          "lineCount": 9
         }
       ],
       "classes": [],
@@ -2906,8 +4125,10 @@
           ]
         },
         {
-          "source": "./Home.scss",
-          "specifiers": []
+          "source": "framer-motion",
+          "specifiers": [
+            "motion"
+          ]
         },
         {
           "source": "react-redux",
@@ -2922,13 +4143,8 @@
             "selectClassSchedules",
             "selectCourses",
             "selectLectures",
-            "selectStudents"
-          ]
-        },
-        {
-          "source": "@/constants/students/student.constants",
-          "specifiers": [
-            "STUDENT_STATUS_OPTIONS"
+            "selectStudents",
+            "selectStudentClass"
           ]
         },
         {
@@ -2942,33 +4158,198 @@
           "specifiers": [
             "COURSE_STATUS_OPTIONS"
           ]
+        },
+        {
+          "source": "@/hooks/useLookupMap",
+          "specifiers": [
+            "useLookupMaps"
+          ]
+        },
+        {
+          "source": "../../services/scoreService",
+          "specifiers": [
+            "* as scoreService"
+          ]
+        },
+        {
+          "source": "./../ClassSchedule/ClassSchedule",
+          "specifiers": [
+            "ClassSchedule"
+          ]
+        },
+        {
+          "source": "@/constants/students/student.constants.jsx",
+          "specifiers": [
+            "STUDENT_STATUS_OPTIONS"
+          ]
+        },
+        {
+          "source": "@/helpers/homeHelpers",
+          "specifiers": [
+            "buildScoreStats",
+            "feeDonutData",
+            "getDonutData",
+            "getGreeting",
+            "getLegendData"
+          ]
+        },
+        {
+          "source": "./components/WarningCards",
+          "specifiers": [
+            "WarningCards"
+          ]
+        },
+        {
+          "source": "./components/HomeFilterCard",
+          "specifiers": [
+            "HomeFilterCard"
+          ]
+        },
+        {
+          "source": "./components/HomeClassSchedule",
+          "specifiers": [
+            "HomeClassSchedule"
+          ]
+        },
+        {
+          "source": "./Enrollmentstatusmodal",
+          "specifiers": [
+            "Enrollmentstatusmodal"
+          ]
+        },
+        {
+          "source": "./components/DonutChart",
+          "specifiers": [
+            "DonutChart"
+          ]
+        },
+        {
+          "source": "./Lectureassignmentmodal",
+          "specifiers": [
+            "Lectureassignmentmodal"
+          ]
+        },
+        {
+          "source": "../Student/StudentDetailModal",
+          "specifiers": [
+            "StudentDetailModal"
+          ]
+        },
+        {
+          "source": "./Home.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "Home"
+        "default"
       ],
-      "totalLines": 454,
+      "totalLines": 845,
       "hasStructuralAnalysis": true
     },
-    "pages/Home/Home.scss": {
-      "filePath": "pages/Home/Home.scss",
-      "contentHash": "bc3af4ea949e2df2b95f74180503c84a11da70ef2e39ec7a1a01d949de60d7ea",
+    "src/pages/Home/Home.scss": {
+      "filePath": "src/pages/Home/Home.scss",
+      "contentHash": "be94ba21cd91cc9d0e33ad0c8e76839c7defa77df1a7705bca1c6dcc8a5ede98",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 639,
+      "totalLines": 1544,
       "hasStructuralAnalysis": false
     },
-    "pages/Lecturer/Lecture.jsx": {
-      "filePath": "pages/Lecturer/Lecture.jsx",
-      "contentHash": "0bb901236ca5cee1da52a35e9157dca77422bfc1adbdfb28cdd4613777b13d4a",
+    "src/pages/Home/Lectureassignmentmodal.jsx": {
+      "filePath": "src/pages/Home/Lectureassignmentmodal.jsx",
+      "contentHash": "a9ac531673a46bc6c40ebeb35394de97a6ae2a0bcf337f04454c29ef3211ec8a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentHeader",
+          "specifiers": [
+            "EnrollmentHeader"
+          ]
+        },
+        {
+          "source": "@/constants/home/enrollmentstatusmodal.constants",
+          "specifiers": [
+            "getSummaryPills"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentToolbar",
+          "specifiers": [
+            "EnrollmentToolbar"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentSummary",
+          "specifiers": [
+            "EnrollmentSummary"
+          ]
+        },
+        {
+          "source": "./components/LectureAssignmentTable",
+          "specifiers": [
+            "LectureAssignmentTable"
+          ]
+        },
+        {
+          "source": "./components/EnrollmentFooter",
+          "specifiers": [
+            "EnrollmentFooter"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 196,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Lecturer/Lecture.jsx": {
+      "filePath": "src/pages/Lecturer/Lecture.jsx",
+      "contentHash": "87c8c6af3de03d9b708967fd24e76510f6a3f3ac8298b58e589b4b35427b088b",
       "functions": [
         {
           "name": "Lecture",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 120
+        },
+        {
+          "name": "handleHistory",
+          "params": [
+            "lecture"
+          ],
+          "exported": false,
+          "lineCount": 5
         }
       ],
       "classes": [],
@@ -3076,38 +4457,48 @@
         }
       ],
       "exports": [
-        "Lecture"
+        "default"
       ],
       "totalLines": 138,
       "hasStructuralAnalysis": true
     },
-    "pages/Lecturer/LectureDetailModal.jsx": {
-      "filePath": "pages/Lecturer/LectureDetailModal.jsx",
-      "contentHash": "6723b7cc8198ab5a364c35e542abe993f5b30890c30d3f6cd63df3a2cd212798",
+    "src/pages/Lecturer/LectureDetailModal.jsx": {
+      "filePath": "src/pages/Lecturer/LectureDetailModal.jsx",
+      "contentHash": "f6e82dc4088007301b456af963625df25f8499d25b73015a96da503ce8abebbd",
       "functions": [
         {
           "name": "SectionTitle",
-          "params": [],
+          "params": [
+            "{ children }"
+          ],
           "exported": false,
-          "lineCount": 3
+          "lineCount": 1
         },
         {
           "name": "InfoRow",
-          "params": [],
+          "params": [
+            "{ label",
+            "value }"
+          ],
           "exported": false,
-          "lineCount": 7
+          "lineCount": 1
         },
         {
           "name": "TagList",
-          "params": [],
+          "params": [
+            "{ items"
+          ],
           "exported": false,
-          "lineCount": 9
+          "lineCount": 1
         },
         {
           "name": "LectureDetailModal",
-          "params": [],
-          "exported": true,
-          "lineCount": 87
+          "params": [
+            "{ lecture",
+            "onClose }"
+          ],
+          "exported": false,
+          "lineCount": 85
         }
       ],
       "classes": [],
@@ -3118,10 +4509,6 @@
             "React",
             "useRef"
           ]
-        },
-        {
-          "source": "./LectureDetailModal.scss",
-          "specifiers": []
         },
         {
           "source": "react-modal",
@@ -3146,27 +4533,31 @@
           "specifiers": [
             "Draggable"
           ]
+        },
+        {
+          "source": "./LectureDetailModal.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "LectureDetailModal"
+        "default"
       ],
-      "totalLines": 116,
+      "totalLines": 114,
       "hasStructuralAnalysis": true
     },
-    "pages/Lecturer/LectureDetailModal.scss": {
-      "filePath": "pages/Lecturer/LectureDetailModal.scss",
-      "contentHash": "f72f67239257733189fc667339ede114d917e86ebaf8d2fba564720807f91292",
+    "src/pages/Lecturer/LectureDetailModal.scss": {
+      "filePath": "src/pages/Lecturer/LectureDetailModal.scss",
+      "contentHash": "a793f1946a601a777e082b401ffaaba8bf65a5f75386175516dbda4599f35153",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 132,
+      "totalLines": 162,
       "hasStructuralAnalysis": false
     },
-    "pages/Lecturer/LectureModal.jsx": {
-      "filePath": "pages/Lecturer/LectureModal.jsx",
-      "contentHash": "25180675ca9923dd36aedb9b0ce056d3b819c48352c6aad1d5ed0ce339c88922",
+    "src/pages/Lecturer/LectureModal.jsx": {
+      "filePath": "src/pages/Lecturer/LectureModal.jsx",
+      "contentHash": "ef9e8ced127bc1d5ad11dc8fbac2d07dd8edf7abbed2be6f1f7251273ef7be37",
       "functions": [
         {
           "name": "generateCode",
@@ -3179,9 +4570,22 @@
         },
         {
           "name": "LectureModal",
-          "params": [],
-          "exported": true,
-          "lineCount": 369
+          "params": [
+            "{ editItem",
+            "allLectures",
+            "onSave",
+            "onClose }"
+          ],
+          "exported": false,
+          "lineCount": 373
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 9
         }
       ],
       "classes": [],
@@ -3228,14 +4632,6 @@
           "specifiers": [
             "getModalStyle"
           ]
-        },
-        {
-          "source": "./LectureModal.scss",
-          "specifiers": []
-        },
-        {
-          "source": "../../assets/styles/common.scss",
-          "specifiers": []
         },
         {
           "source": "../../components/CommonPickers/ContractPickerModal",
@@ -3326,16 +4722,24 @@
           "specifiers": [
             "DegreePickerModal"
           ]
+        },
+        {
+          "source": "./LectureModal.scss",
+          "specifiers": []
+        },
+        {
+          "source": "../../assets/styles/common.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "LectureModal"
+        "default"
       ],
-      "totalLines": 430,
+      "totalLines": 434,
       "hasStructuralAnalysis": true
     },
-    "pages/Lecturer/LectureModal.scss": {
-      "filePath": "pages/Lecturer/LectureModal.scss",
+    "src/pages/Lecturer/LectureModal.scss": {
+      "filePath": "src/pages/Lecturer/LectureModal.scss",
       "contentHash": "5124c3996a731cc10f0bf2fb78ac85f9a9a0c1930942d303ad78ba8d4d4db477",
       "functions": [],
       "classes": [],
@@ -3344,14 +4748,14 @@
       "totalLines": 16,
       "hasStructuralAnalysis": false
     },
-    "pages/NotFound/NotFound.jsx": {
-      "filePath": "pages/NotFound/NotFound.jsx",
+    "src/pages/NotFound/NotFound.jsx": {
+      "filePath": "src/pages/NotFound/NotFound.jsx",
       "contentHash": "1ac2f2e3be4b5089be48b002b19dd322e1eb55ab56747507a49ef83394edbdab",
       "functions": [
         {
           "name": "NotFound",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 22
         }
       ],
@@ -3383,13 +4787,13 @@
         }
       ],
       "exports": [
-        "NotFound"
+        "default"
       ],
       "totalLines": 27,
       "hasStructuralAnalysis": true
     },
-    "pages/NotFound/NotFound.scss": {
-      "filePath": "pages/NotFound/NotFound.scss",
+    "src/pages/NotFound/NotFound.scss": {
+      "filePath": "src/pages/NotFound/NotFound.scss",
       "contentHash": "901434ec7356311e5a4f9174ec9af0eff7ed8f945013cbd616ddb954544b50ac",
       "functions": [],
       "classes": [],
@@ -3398,15 +4802,33 @@
       "totalLines": 20,
       "hasStructuralAnalysis": false
     },
-    "pages/Profile/Profile.jsx": {
-      "filePath": "pages/Profile/Profile.jsx",
+    "src/pages/Profile/Profile.jsx": {
+      "filePath": "src/pages/Profile/Profile.jsx",
       "contentHash": "55b37f5133c1bf7d2ef8560f0a423de70361b7d6cca9b58eb091abd0af12810a",
       "functions": [
         {
           "name": "Profile",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 269
+        },
+        {
+          "name": "validatePassword",
+          "params": [],
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "handleSavePwd",
+          "params": [],
+          "exported": false,
+          "lineCount": 36
+        },
+        {
+          "name": "handleSaveProfile",
+          "params": [],
+          "exported": false,
+          "lineCount": 69
         }
       ],
       "classes": [],
@@ -3442,10 +4864,6 @@
           "specifiers": [
             "PageHeader"
           ]
-        },
-        {
-          "source": "./Profile.scss",
-          "specifiers": []
         },
         {
           "source": "../../constants/users/user.fields",
@@ -3508,16 +4926,20 @@
           "specifiers": [
             "buildFormFields"
           ]
+        },
+        {
+          "source": "./Profile.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "Profile"
+        "default"
       ],
       "totalLines": 287,
       "hasStructuralAnalysis": true
     },
-    "pages/Profile/Profile.scss": {
-      "filePath": "pages/Profile/Profile.scss",
+    "src/pages/Profile/Profile.scss": {
+      "filePath": "src/pages/Profile/Profile.scss",
       "contentHash": "978744080344b4f1b6ffd4bb2573cc820f517f84d1c0efcfa239267ccf85180a",
       "functions": [],
       "classes": [],
@@ -3526,15 +4948,23 @@
       "totalLines": 92,
       "hasStructuralAnalysis": false
     },
-    "pages/Register/Register.jsx": {
-      "filePath": "pages/Register/Register.jsx",
+    "src/pages/Register/Register.jsx": {
+      "filePath": "src/pages/Register/Register.jsx",
       "contentHash": "5854a5f1544ddaa1de7de58bb088ef635ee3a0a8b280b8d72256cb3cce8a136d",
       "functions": [
         {
           "name": "Register",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 98
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 39
         }
       ],
       "classes": [],
@@ -3552,18 +4982,6 @@
           "specifiers": [
             "Swal"
           ]
-        },
-        {
-          "source": "sweetalert2/dist/sweetalert2.min.css",
-          "specifiers": []
-        },
-        {
-          "source": "./Register.scss",
-          "specifiers": []
-        },
-        {
-          "source": "../../assets/styles/common.scss",
-          "specifiers": []
         },
         {
           "source": "react-router-dom",
@@ -3602,16 +5020,28 @@
             "alertError",
             "alertSuccess"
           ]
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
+        },
+        {
+          "source": "./Register.scss",
+          "specifiers": []
+        },
+        {
+          "source": "../../assets/styles/common.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "Register"
+        "default"
       ],
       "totalLines": 110,
       "hasStructuralAnalysis": true
     },
-    "pages/Register/Register.scss": {
-      "filePath": "pages/Register/Register.scss",
+    "src/pages/Register/Register.scss": {
+      "filePath": "src/pages/Register/Register.scss",
       "contentHash": "588dc16b6d25469f4a06d4a392d1fa45bf678b7157ac7f66fb900f3dd5028bf6",
       "functions": [],
       "classes": [],
@@ -3620,14 +5050,367 @@
       "totalLines": 117,
       "hasStructuralAnalysis": false
     },
-    "pages/SignIn/AuthHeader.jsx": {
-      "filePath": "pages/SignIn/AuthHeader.jsx",
+    "src/pages/Score/Score.jsx": {
+      "filePath": "src/pages/Score/Score.jsx",
+      "contentHash": "d23da664002a7ff250e8d6657f940844fdb6cf8063d71ca267f1d1b23b19b552",
+      "functions": [
+        {
+          "name": "Score",
+          "params": [],
+          "exported": false,
+          "lineCount": 128
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useCallback",
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/Toolbar",
+          "specifiers": [
+            "Toolbar"
+          ]
+        },
+        {
+          "source": "@/services/scoreService",
+          "specifiers": [
+            "* as scoreServive"
+          ]
+        },
+        {
+          "source": "@/constants/score/score.fields",
+          "specifiers": [
+            "SCORE_FIELDS"
+          ]
+        },
+        {
+          "source": "@/hooks/useComponentData",
+          "specifiers": [
+            "useComponentData"
+          ]
+        },
+        {
+          "source": "@/hooks/useAuditLog",
+          "specifiers": [
+            "useAuditLog"
+          ]
+        },
+        {
+          "source": "@/constants/score/score.constants",
+          "specifiers": [
+            "SCORE_SORT_OPTIONS",
+            "SCORE_TABLE_COLUMNS"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/PageHeader",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/DataTable",
+          "specifiers": [
+            "DataTable"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectClasses",
+            "selectCourses",
+            "selectStudents"
+          ]
+        },
+        {
+          "source": "./ScoreDetailModal",
+          "specifiers": [
+            "ScoreDetailModal"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/HistoryModal",
+          "specifiers": [
+            "HistoryModal"
+          ]
+        },
+        {
+          "source": "@/components/PageComponent/Pagination",
+          "specifiers": [
+            "Pagination"
+          ]
+        },
+        {
+          "source": "./ScoreModal",
+          "specifiers": [
+            "ScoreModal"
+          ]
+        },
+        {
+          "source": "@/hooks/useLookupMap",
+          "specifiers": [
+            "useLookupMaps"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 148,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Score/ScoreDetailModal.jsx": {
+      "filePath": "src/pages/Score/ScoreDetailModal.jsx",
+      "contentHash": "028a7a432c23112778e71b4f2e77771c72d207236ae6a48353114f89086b8f93",
+      "functions": [
+        {
+          "name": "SectionTitle",
+          "params": [
+            "{ children }"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "InfoRow",
+          "params": [
+            "{ label",
+            "value }"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "ScoreDetailModal",
+          "params": [
+            "{score",
+            "onClose}"
+          ],
+          "exported": false,
+          "lineCount": 69
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "@/utils/date.utils",
+          "specifiers": [
+            "formatDateDisplay"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useRef"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "../Lecturer/LectureDetailModal.scss",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 87,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/Score/ScoreModal.jsx": {
+      "filePath": "src/pages/Score/ScoreModal.jsx",
+      "contentHash": "5a86442c42045cba2547b32b632de3516f7d2f8bdb2e3e1d270a354a11d9e090",
+      "functions": [
+        {
+          "name": "calculateResult",
+          "params": [
+            "score1",
+            "score2"
+          ],
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "ScoreModal",
+          "params": [
+            "{ editItem",
+            "onClose",
+            "onSave",
+            "existingScores"
+          ],
+          "exported": false,
+          "lineCount": 327
+        },
+        {
+          "name": "lockedFields",
+          "params": [
+            "("
+          ],
+          "exported": false,
+          "lineCount": 26
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/constants/modalStyles",
+          "specifiers": [
+            "getModalStyle"
+          ]
+        },
+        {
+          "source": "@/constants/score/score.fields",
+          "specifiers": [
+            "SCORE_FIELDS"
+          ]
+        },
+        {
+          "source": "@/hooks/useForm",
+          "specifiers": [
+            "useForm"
+          ]
+        },
+        {
+          "source": "@/store/selectors/masterDataSelectors",
+          "specifiers": [
+            "selectClasses",
+            "selectClassSchedules",
+            "selectCourses",
+            "selectStudents"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "React",
+            "useEffect",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "react-modal",
+          "specifiers": [
+            "Modal"
+          ]
+        },
+        {
+          "source": "react-redux",
+          "specifiers": [
+            "useSelector"
+          ]
+        },
+        {
+          "source": "@/services/studentClassService",
+          "specifiers": [
+            "* as studentClassService"
+          ]
+        },
+        {
+          "source": "@/utils/alert",
+          "specifiers": [
+            "alertError"
+          ]
+        },
+        {
+          "source": "react-draggable",
+          "specifiers": [
+            "Draggable"
+          ]
+        },
+        {
+          "source": "@/components/FormControls/FormRenderer",
+          "specifiers": [
+            "FormRenderer"
+          ]
+        },
+        {
+          "source": "@/hooks/useLookupMap",
+          "specifiers": [
+            "useLookupMaps"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/CoursePickerModal",
+          "specifiers": [
+            "CoursePickerModal"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/ClassPickerModal",
+          "specifiers": [
+            "ClassPickerModal"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/StudentListPickerModal",
+          "specifiers": [
+            "StudentListPickerModal"
+          ]
+        },
+        {
+          "source": "@/components/CommonPickers/ScoreStudentPickerModal",
+          "specifiers": [
+            "ScoreStudentPickerModal"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 369,
+      "hasStructuralAnalysis": true
+    },
+    "src/pages/SignIn/AuthHeader.jsx": {
+      "filePath": "src/pages/SignIn/AuthHeader.jsx",
       "contentHash": "0d7663250806fc723880fcab55002cea5fc3806a4e22e77f9287b3210d6ab98c",
       "functions": [
         {
           "name": "AuthHeader",
-          "params": [],
-          "exported": true,
+          "params": [
+            "{ title",
+            "subtitle }"
+          ],
+          "exported": false,
           "lineCount": 9
         }
       ],
@@ -3641,20 +5424,32 @@
         }
       ],
       "exports": [
-        "AuthHeader"
+        "default"
       ],
       "totalLines": 12,
       "hasStructuralAnalysis": true
     },
-    "pages/SignIn/ForgotForm.jsx": {
-      "filePath": "pages/SignIn/ForgotForm.jsx",
+    "src/pages/SignIn/ForgotForm.jsx": {
+      "filePath": "src/pages/SignIn/ForgotForm.jsx",
       "contentHash": "42086388d4550a3e245c79dd694eec4c56955bcb7b7e74035eefad7c7fa7d738",
       "functions": [
         {
           "name": "ForgotForm",
-          "params": [],
-          "exported": true,
+          "params": [
+            "{ loading",
+            "onSubmit",
+            "onGoToLogin }"
+          ],
+          "exported": false,
           "lineCount": 59
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 13
         }
       ],
       "classes": [],
@@ -3684,10 +5479,6 @@
           ]
         },
         {
-          "source": "sweetalert2/dist/sweetalert2.min.css",
-          "specifiers": []
-        },
-        {
           "source": "./SignFormWrapper",
           "specifiers": [
             "SignFormWrapper"
@@ -3698,23 +5489,40 @@
           "specifiers": [
             "AuthHeader"
           ]
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
         }
       ],
       "exports": [
-        "ForgotForm"
+        "default"
       ],
       "totalLines": 68,
       "hasStructuralAnalysis": true
     },
-    "pages/SignIn/LoginForm.jsx": {
-      "filePath": "pages/SignIn/LoginForm.jsx",
+    "src/pages/SignIn/LoginForm.jsx": {
+      "filePath": "src/pages/SignIn/LoginForm.jsx",
       "contentHash": "b7c537c289d60fe448558230351a7b6edcd16a15c95243ed40ba5342b80f2748",
       "functions": [
         {
           "name": "LoginForm",
-          "params": [],
-          "exported": true,
+          "params": [
+            "{ onSubmit",
+            "loading",
+            "onGotoForgot",
+            "onGotoRegister }"
+          ],
+          "exported": false,
           "lineCount": 89
+        },
+        {
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 13
         }
       ],
       "classes": [],
@@ -3761,20 +5569,22 @@
         }
       ],
       "exports": [
-        "LoginForm"
+        "default"
       ],
       "totalLines": 96,
       "hasStructuralAnalysis": true
     },
-    "pages/SignIn/ResetForm.jsx": {
-      "filePath": "pages/SignIn/ResetForm.jsx",
+    "src/pages/SignIn/ResetForm.jsx": {
+      "filePath": "src/pages/SignIn/ResetForm.jsx",
       "contentHash": "35cfe6acccff96da5b4255e6d58d8f61fbe188ef9a3a122636dfe397852fea1c",
       "functions": [
         {
-          "name": "ResetForm",
-          "params": [],
-          "exported": true,
-          "lineCount": 67
+          "name": "handleSubmit",
+          "params": [
+            "e"
+          ],
+          "exported": false,
+          "lineCount": 13
         }
       ],
       "classes": [],
@@ -3790,10 +5600,6 @@
           "specifiers": [
             "Swal"
           ]
-        },
-        {
-          "source": "sweetalert2/dist/sweetalert2.min.css",
-          "specifiers": []
         },
         {
           "source": "./SignFormWrapper",
@@ -3818,22 +5624,30 @@
           "specifiers": [
             "RESET_FIELDS"
           ]
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
         }
       ],
       "exports": [
-        "ResetForm"
+        "default"
       ],
       "totalLines": 76,
       "hasStructuralAnalysis": true
     },
-    "pages/SignIn/SignFormWrapper.jsx": {
-      "filePath": "pages/SignIn/SignFormWrapper.jsx",
+    "src/pages/SignIn/SignFormWrapper.jsx": {
+      "filePath": "src/pages/SignIn/SignFormWrapper.jsx",
       "contentHash": "cfdb644737f03016fe98f10c211d7bf9fbf5843a59e564b364c94309c0b3f0e3",
       "functions": [
         {
           "name": "SignFormWrapper",
-          "params": [],
-          "exported": true,
+          "params": [
+            "{ className",
+            "onSubmit",
+            "children }"
+          ],
+          "exported": false,
           "lineCount": 9
         }
       ],
@@ -3847,20 +5661,44 @@
         }
       ],
       "exports": [
-        "SignFormWrapper"
+        "default"
       ],
       "totalLines": 12,
       "hasStructuralAnalysis": true
     },
-    "pages/SignIn/SignIn.jsx": {
-      "filePath": "pages/SignIn/SignIn.jsx",
+    "src/pages/SignIn/SignIn.jsx": {
+      "filePath": "src/pages/SignIn/SignIn.jsx",
       "contentHash": "e16155862fb61172285469daa023794c6c96d688f1eb70166121f40f171e29f7",
       "functions": [
         {
           "name": "SignIn",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 135
+        },
+        {
+          "name": "handleLogin",
+          "params": [
+            "data"
+          ],
+          "exported": false,
+          "lineCount": 37
+        },
+        {
+          "name": "handleFindAccount",
+          "params": [
+            "data"
+          ],
+          "exported": false,
+          "lineCount": 24
+        },
+        {
+          "name": "handleResetPassword",
+          "params": [
+            "data"
+          ],
+          "exported": false,
+          "lineCount": 28
         }
       ],
       "classes": [],
@@ -3873,18 +5711,10 @@
           ]
         },
         {
-          "source": "./SignIn.scss",
-          "specifiers": []
-        },
-        {
           "source": "sweetalert2",
           "specifiers": [
             "Swal"
           ]
-        },
-        {
-          "source": "sweetalert2/dist/sweetalert2.min.css",
-          "specifiers": []
         },
         {
           "source": "../../services/userService",
@@ -3936,16 +5766,24 @@
             "alertError",
             "alertSuccess"
           ]
+        },
+        {
+          "source": "./SignIn.scss",
+          "specifiers": []
+        },
+        {
+          "source": "sweetalert2/dist/sweetalert2.min.css",
+          "specifiers": []
         }
       ],
       "exports": [
-        "SignIn"
+        "default"
       ],
       "totalLines": 148,
       "hasStructuralAnalysis": true
     },
-    "pages/SignIn/SignIn.scss": {
-      "filePath": "pages/SignIn/SignIn.scss",
+    "src/pages/SignIn/SignIn.scss": {
+      "filePath": "src/pages/SignIn/SignIn.scss",
       "contentHash": "3d3b932dff6470dc005f2a6e948d6c6707035ac01948641c9fff127753dc35eb",
       "functions": [],
       "classes": [],
@@ -3954,15 +5792,31 @@
       "totalLines": 433,
       "hasStructuralAnalysis": false
     },
-    "pages/Student/Student.jsx": {
-      "filePath": "pages/Student/Student.jsx",
-      "contentHash": "3693844a6ca83283297177bcbfa71a840c84b129ff961b75a489ca977b4b855b",
+    "src/pages/Student/Student.jsx": {
+      "filePath": "src/pages/Student/Student.jsx",
+      "contentHash": "85a853cfee40b5b041d1f45cceb8fe1226fec2233f43ae53fcef418519e2ec6d",
       "functions": [
         {
           "name": "Student",
           "params": [],
-          "exported": true,
-          "lineCount": 216
+          "exported": false,
+          "lineCount": 419
+        },
+        {
+          "name": "generateStudentCode",
+          "params": [
+            "existingStudents"
+          ],
+          "exported": false,
+          "lineCount": 22
+        },
+        {
+          "name": "handleSaveStudent",
+          "params": [
+            "formData"
+          ],
+          "exported": false,
+          "lineCount": 209
         }
       ],
       "classes": [],
@@ -3972,6 +5826,8 @@
           "specifiers": [
             "React",
             "useCallback",
+            "useEffect",
+            "useMemo",
             "useState"
           ]
         },
@@ -4012,7 +5868,7 @@
           ]
         },
         {
-          "source": "@/constants/students/student.constants",
+          "source": "@/constants/students/student.constants.jsx",
           "specifiers": [
             "STUDENT_SORT_OPTIONS",
             "STUDENT_STATUS_OPTIONS",
@@ -4096,38 +5952,50 @@
         }
       ],
       "exports": [
-        "Student"
+        "default"
       ],
-      "totalLines": 239,
+      "totalLines": 442,
       "hasStructuralAnalysis": true
     },
-    "pages/Student/StudentDetailModal.jsx": {
-      "filePath": "pages/Student/StudentDetailModal.jsx",
-      "contentHash": "d5175b0cf39542acf36a578fb6d5702bec7402ef56c362e285044d40b5c10aa3",
+    "src/pages/Student/StudentDetailModal.jsx": {
+      "filePath": "src/pages/Student/StudentDetailModal.jsx",
+      "contentHash": "3c7f424cbebdace5b5176c54ccff0eb85fe4e29f32b227e273a7349162700d10",
       "functions": [
         {
           "name": "SectionTitle",
-          "params": [],
+          "params": [
+            "{ children }"
+          ],
           "exported": false,
-          "lineCount": 3
+          "lineCount": 1
         },
         {
           "name": "InfoRow",
-          "params": [],
+          "params": [
+            "{ label",
+            "value }"
+          ],
           "exported": false,
-          "lineCount": 7
+          "lineCount": 1
         },
         {
           "name": "TagList",
-          "params": [],
+          "params": [
+            "{ items"
+          ],
           "exported": false,
-          "lineCount": 9
+          "lineCount": 1
         },
         {
           "name": "StudentDetailModal",
-          "params": [],
-          "exported": true,
-          "lineCount": 76
+          "params": [
+            "{ student",
+            "onClose",
+            "courseData",
+            "studentCourses }"
+          ],
+          "exported": false,
+          "lineCount": 152
         }
       ],
       "classes": [],
@@ -4138,10 +6006,6 @@
             "React",
             "useRef"
           ]
-        },
-        {
-          "source": "../Lecturer/LectureDetailModal.scss",
-          "specifiers": []
         },
         {
           "source": "react-modal",
@@ -4172,23 +6036,35 @@
           "specifiers": [
             "Draggable"
           ]
+        },
+        {
+          "source": "../Lecturer/LectureDetailModal.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "StudentDetailModal"
+        "default"
       ],
-      "totalLines": 106,
+      "totalLines": 182,
       "hasStructuralAnalysis": true
     },
-    "pages/Users/User.jsx": {
-      "filePath": "pages/Users/User.jsx",
+    "src/pages/Users/User.jsx": {
+      "filePath": "src/pages/Users/User.jsx",
       "contentHash": "9adc2a363b2f4d54bab6a4a9ced3f7a95e8bc76f066e6bf93a089a32ecb91821",
       "functions": [
         {
           "name": "User",
           "params": [],
-          "exported": true,
+          "exported": false,
           "lineCount": 86
+        },
+        {
+          "name": "handleHistory",
+          "params": [
+            "user"
+          ],
+          "exported": false,
+          "lineCount": 4
         }
       ],
       "classes": [],
@@ -4267,24 +6143,29 @@
             "USER_SORT_OPTIONS",
             "USER_STATUS_OPTIONS"
           ]
+        },
+        {
+          "source": "./User.scss",
+          "specifiers": []
         }
       ],
       "exports": [
-        "User"
+        "default"
       ],
       "totalLines": 103,
       "hasStructuralAnalysis": true
     },
-    "reducers/authReducers.js": {
-      "filePath": "reducers/authReducers.js",
+    "src/reducers/authReducers.js": {
+      "filePath": "src/reducers/authReducers.js",
       "contentHash": "d366520a841b2b9d154906a1c82224395fb09d035e1d86132c1913a48b150229",
       "functions": [
         {
           "name": "authReducer",
           "params": [
+            "state",
             "action"
           ],
-          "exported": true,
+          "exported": false,
           "lineCount": 21
         }
       ],
@@ -4299,13 +6180,13 @@
         }
       ],
       "exports": [
-        "authReducer"
+        "default"
       ],
       "totalLines": 30,
       "hasStructuralAnalysis": true
     },
-    "reducers/index.js": {
-      "filePath": "reducers/index.js",
+    "src/reducers/index.js": {
+      "filePath": "src/reducers/index.js",
       "contentHash": "0ed294349092833e0e3e6e7c02671a5dfd77a0a2be7e08de54d6895a5561f90e",
       "functions": [],
       "classes": [],
@@ -4329,21 +6210,24 @@
           ]
         }
       ],
-      "exports": [],
+      "exports": [
+        "default"
+      ],
       "totalLines": 31,
       "hasStructuralAnalysis": true
     },
-    "reducers/masterDataReducer.js": {
-      "filePath": "reducers/masterDataReducer.js",
-      "contentHash": "3a9b48ccf8d33f71aa4f469c16d0077fbff01519c5b7ddf7f9019803e445b942",
+    "src/reducers/masterDataReducer.js": {
+      "filePath": "src/reducers/masterDataReducer.js",
+      "contentHash": "46d303c363cc325b6e42457e76e2ab4b967740dfddaeea4e6128f2afc4938d87",
       "functions": [
         {
           "name": "masterDataReducer",
           "params": [
+            "state",
             "action"
           ],
-          "exported": true,
-          "lineCount": 41
+          "exported": false,
+          "lineCount": 43
         }
       ],
       "classes": [],
@@ -4357,14 +6241,46 @@
         }
       ],
       "exports": [
-        "masterDataReducer"
+        "default"
       ],
-      "totalLines": 52,
+      "totalLines": 57,
       "hasStructuralAnalysis": true
     },
-    "routes/index.jsx": {
-      "filePath": "routes/index.jsx",
-      "contentHash": "8aac4bd8da25144d8b87733a2d652b84c3d61deaa319272b2ba2d2d16b36dac4",
+    "src/reducers/scoreReducer.js": {
+      "filePath": "src/reducers/scoreReducer.js",
+      "contentHash": "7dc1bcc7cfa9f43049962611ff51bab0cb3039ecb92db45bf87582b74ce24db2",
+      "functions": [
+        {
+          "name": "scoreReducer",
+          "params": [
+            "state",
+            "action"
+          ],
+          "exported": false,
+          "lineCount": 35
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../constants/score/score.constants",
+          "specifiers": [
+            "SET_SCORES",
+            "ADD_SCORE",
+            "UPDATE_SCORE",
+            "DELETE_SCORE"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 47,
+      "hasStructuralAnalysis": true
+    },
+    "src/routes/index.jsx": {
+      "filePath": "src/routes/index.jsx",
+      "contentHash": "521bef89be5e10bdafc259fb3a28090349e62da72d56700fcbc49f3caaed99c4",
       "functions": [],
       "classes": [],
       "imports": [
@@ -4488,16 +6404,22 @@
           "specifiers": [
             "ClassSchedule"
           ]
+        },
+        {
+          "source": "@/pages/Score/Score",
+          "specifiers": [
+            "Score"
+          ]
         }
       ],
       "exports": [
         "router"
       ],
-      "totalLines": 58,
+      "totalLines": 60,
       "hasStructuralAnalysis": true
     },
-    "services/auditLogService.js": {
-      "filePath": "services/auditLogService.js",
+    "src/services/auditLogService.js": {
+      "filePath": "src/services/auditLogService.js",
       "contentHash": "ee7257598098f89c1fe26d73ebbf2c68e303867c17d918c456d096ab6f214472",
       "functions": [
         {
@@ -4535,15 +6457,15 @@
       "totalLines": 11,
       "hasStructuralAnalysis": true
     },
-    "services/classScheduleService.js": {
-      "filePath": "services/classScheduleService.js",
+    "src/services/classScheduleService.js": {
+      "filePath": "src/services/classScheduleService.js",
       "contentHash": "7c2548332b15b755fc6ba66c797952e065ac527d20187fe86e81d3b7bf2befb5",
       "functions": [
         {
           "name": "getAll",
           "params": [],
           "exported": true,
-          "lineCount": 1
+          "lineCount": 2
         },
         {
           "name": "getByClassId",
@@ -4559,7 +6481,7 @@
             "data"
           ],
           "exported": true,
-          "lineCount": 1
+          "lineCount": 2
         },
         {
           "name": "update",
@@ -4601,10 +6523,16 @@
       "totalLines": 10,
       "hasStructuralAnalysis": true
     },
-    "services/classService.js": {
-      "filePath": "services/classService.js",
+    "src/services/classService.js": {
+      "filePath": "src/services/classService.js",
       "contentHash": "9334f2f36282b15068963318bab29f8d24bb5ba4d48f8440ced3f648e3f46ff6",
       "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
         {
           "name": "getAll",
           "params": [],
@@ -4633,7 +6561,7 @@
             "data"
           ],
           "exported": true,
-          "lineCount": 1
+          "lineCount": 3
         },
         {
           "name": "update",
@@ -4686,8 +6614,8 @@
       "totalLines": 27,
       "hasStructuralAnalysis": true
     },
-    "services/courseService.js": {
-      "filePath": "services/courseService.js",
+    "src/services/courseService.js": {
+      "filePath": "src/services/courseService.js",
       "contentHash": "4d44e0ceafcdba9914e1b1bf43ad7c2f2eada155d0d53e1e8c4961837c066935",
       "functions": [
         {
@@ -4702,7 +6630,7 @@
             "data"
           ],
           "exported": true,
-          "lineCount": 1
+          "lineCount": 4
         },
         {
           "name": "update",
@@ -4753,8 +6681,8 @@
       "totalLines": 27,
       "hasStructuralAnalysis": true
     },
-    "services/lectureService.js": {
-      "filePath": "services/lectureService.js",
+    "src/services/lectureService.js": {
+      "filePath": "src/services/lectureService.js",
       "contentHash": "a4c654a4546cee6e971bae19ba128b32a26755449c110143779673fb32a933d9",
       "functions": [
         {
@@ -4769,7 +6697,7 @@
             "lecture"
           ],
           "exported": true,
-          "lineCount": 1
+          "lineCount": 3
         },
         {
           "name": "update",
@@ -4820,10 +6748,101 @@
       "totalLines": 18,
       "hasStructuralAnalysis": true
     },
-    "services/studentClassService.js": {
-      "filePath": "services/studentClassService.js",
-      "contentHash": "356ed69a3794ebd05560f7ef28c91e6ea963a8449e32fbb9cd60ef8d275b79ac",
+    "src/services/scoreService.js": {
+      "filePath": "src/services/scoreService.js",
+      "contentHash": "1d8d020b272817c26203131961c678cdbf8ba827528f851f63c1886aef01741a",
       "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getByClass",
+          "params": [
+            "classId"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getByStudent",
+          "params": [
+            "studentId"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "create",
+          "params": [
+            "score"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "update",
+          "params": [
+            "id",
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "remove",
+          "params": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updateOrder",
+          "params": [
+            "reorderedPageData",
+            "startIndex"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/utils/requestAPI",
+          "specifiers": [
+            "del",
+            "get",
+            "patch",
+            "post"
+          ]
+        }
+      ],
+      "exports": [
+        "getAll",
+        "getByClass",
+        "getByStudent",
+        "create",
+        "update",
+        "remove",
+        "updateOrder"
+      ],
+      "totalLines": 30,
+      "hasStructuralAnalysis": true
+    },
+    "src/services/studentClassService.js": {
+      "filePath": "src/services/studentClassService.js",
+      "contentHash": "72d52de3fadf681a1894200173ccbe32929acabd012aec5887e7c3c840be11d8",
+      "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
         {
           "name": "getByStudentId",
           "params": [
@@ -4846,7 +6865,7 @@
             "data"
           ],
           "exported": true,
-          "lineCount": 1
+          "lineCount": 3
         },
         {
           "name": "remove",
@@ -4868,7 +6887,8 @@
         {
           "name": "assignStudents",
           "params": [
-            "classId"
+            "classId",
+            "studentIds"
           ],
           "exported": true,
           "lineCount": 14
@@ -4887,6 +6907,7 @@
         }
       ],
       "exports": [
+        "getAll",
         "getByStudentId",
         "getByClassId",
         "create",
@@ -4894,13 +6915,25 @@
         "update",
         "assignStudents"
       ],
-      "totalLines": 36,
+      "totalLines": 38,
       "hasStructuralAnalysis": true
     },
-    "services/studentCourseService.js": {
-      "filePath": "services/studentCourseService.js",
-      "contentHash": "4dd2b8591aa6c0a705ea57aed953e9cec8acf796ffca15ab02e6b1ac763553b8",
+    "src/services/studentCourseService.js": {
+      "filePath": "src/services/studentCourseService.js",
+      "contentHash": "2f2dd058ffc571f74617d0314889c5b41f9a48ca7802c6d74494faeb9930f22d",
       "functions": [
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "getAll",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
         {
           "name": "getByStudent",
           "params": [
@@ -4921,10 +6954,11 @@
           "name": "create",
           "params": [
             "studentId",
-            "courseId"
+            "courseId",
+            "hasPaidFee"
           ],
           "exported": true,
-          "lineCount": 6
+          "lineCount": 7
         },
         {
           "name": "update",
@@ -4939,6 +6973,15 @@
           "name": "remove",
           "params": [
             "id"
+          ],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "updatePaidFee",
+          "params": [
+            "id",
+            "hasPaidFee"
           ],
           "exported": true,
           "lineCount": 2
@@ -4957,24 +7000,26 @@
         }
       ],
       "exports": [
+        "getAll",
         "getByStudent",
         "getByCourse",
         "create",
         "update",
-        "remove"
+        "remove",
+        "updatePaidFee"
       ],
-      "totalLines": 26,
+      "totalLines": 35,
       "hasStructuralAnalysis": true
     },
-    "services/studentService.js": {
-      "filePath": "services/studentService.js",
-      "contentHash": "24d719fdad381c3796cf7d0473e420b3c564f8f051c28e04a8003c58632142ea",
+    "src/services/studentService.js": {
+      "filePath": "src/services/studentService.js",
+      "contentHash": "7484cf0aca00c466436005545ae0153eb41f3078a84a2fd081c7501cfc395fec",
       "functions": [
         {
           "name": "getAll",
           "params": [],
           "exported": true,
-          "lineCount": 1
+          "lineCount": 15
         },
         {
           "name": "create",
@@ -4982,7 +7027,7 @@
             "student"
           ],
           "exported": true,
-          "lineCount": 1
+          "lineCount": 2
         },
         {
           "name": "update",
@@ -5030,11 +7075,11 @@
         "remove",
         "updateOrder"
       ],
-      "totalLines": 15,
+      "totalLines": 29,
       "hasStructuralAnalysis": true
     },
-    "services/userService.js": {
-      "filePath": "services/userService.js",
+    "src/services/userService.js": {
+      "filePath": "src/services/userService.js",
       "contentHash": "82a93fba50b0584498114ee6c26a5e542668240da4f73f8589b00b537af0e46e",
       "functions": [
         {
@@ -5066,7 +7111,7 @@
             "user"
           ],
           "exported": true,
-          "lineCount": 1
+          "lineCount": 3
         },
         {
           "name": "update",
@@ -5119,47 +7164,10 @@
       "totalLines": 29,
       "hasStructuralAnalysis": true
     },
-    "store/selectors/masterDataSelectors.js": {
-      "filePath": "store/selectors/masterDataSelectors.js",
-      "contentHash": "bae1b12a77ea7693d0495320da7cb8d3e17b749a9b7fa5135a7daac4b21bf01d",
-      "functions": [
-        {
-          "name": "selectCourses",
-          "params": [],
-          "exported": true,
-          "lineCount": 1
-        },
-        {
-          "name": "selectLectures",
-          "params": [],
-          "exported": true,
-          "lineCount": 1
-        },
-        {
-          "name": "selectStudents",
-          "params": [],
-          "exported": true,
-          "lineCount": 1
-        },
-        {
-          "name": "selectClasses",
-          "params": [],
-          "exported": true,
-          "lineCount": 1
-        },
-        {
-          "name": "selectClassSchedules",
-          "params": [],
-          "exported": true,
-          "lineCount": 1
-        },
-        {
-          "name": "selectMasterLoaded",
-          "params": [],
-          "exported": true,
-          "lineCount": 1
-        }
-      ],
+    "src/store/selectors/masterDataSelectors.js": {
+      "filePath": "src/store/selectors/masterDataSelectors.js",
+      "contentHash": "d3f7bb7ae93ccfd94e988c1d7bd947b95f600eae121b4e72d733014a1b17a8f8",
+      "functions": [],
       "classes": [],
       "imports": [],
       "exports": [
@@ -5168,13 +7176,69 @@
         "selectStudents",
         "selectClasses",
         "selectClassSchedules",
-        "selectMasterLoaded"
+        "selectStudentClass",
+        "selectMasterLoaded",
+        "selectStudentCourse"
       ],
-      "totalLines": 13,
+      "totalLines": 15,
       "hasStructuralAnalysis": true
     },
-    "utils/alert.js": {
-      "filePath": "utils/alert.js",
+    "src/store/selectors/scoreSelectors.js": {
+      "filePath": "src/store/selectors/scoreSelectors.js",
+      "contentHash": "0462181b949aa7e7ade4ea446b7e0c4b118ade0011363de273c972f66be7328a",
+      "functions": [
+        {
+          "name": "selectScoresByClassId",
+          "params": [
+            "state",
+            "classId"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "selectScoresByStudentId",
+          "params": [
+            "state",
+            "studentId"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "selectScoreById",
+          "params": [
+            "state",
+            "scoreId"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "selectScoresByCourseId",
+          "params": [
+            "state",
+            "courseId"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "selectScoresList",
+        "selectScoresLoaded",
+        "selectScoresByClassId",
+        "selectScoresByStudentId",
+        "selectScoreById",
+        "selectScoresByCourseId"
+      ],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "src/utils/alert.js": {
+      "filePath": "src/utils/alert.js",
       "contentHash": "360d084d9cd3dab893da6ce15e784a5c24e4523fe71a2f433dc4a9bb158b87cc",
       "functions": [
         {
@@ -5187,29 +7251,31 @@
         },
         {
           "name": "alertSuccess",
-          "params": [],
+          "params": [
+            "{title",
+            "...options}"
+          ],
           "exported": true,
           "lineCount": 9
         },
         {
           "name": "alertError",
-          "params": [],
+          "params": [
+            "{title",
+            "...options}"
+          ],
           "exported": true,
           "lineCount": 7
         },
         {
           "name": "alertInfo",
           "params": [
-            "title"
+            "title",
+            "text",
+            "options"
           ],
           "exported": true,
           "lineCount": 8
-        },
-        {
-          "name": "alertConfirm",
-          "params": [],
-          "exported": true,
-          "lineCount": 19
         }
       ],
       "classes": [],
@@ -5234,13 +7300,17 @@
       "totalLines": 62,
       "hasStructuralAnalysis": true
     },
-    "utils/class.utils.js": {
-      "filePath": "utils/class.utils.js",
+    "src/utils/class.utils.js": {
+      "filePath": "src/utils/class.utils.js",
       "contentHash": "6bef899c3948192410fab7dcc83e9d011103931964a5848880f1749041c99f6d",
       "functions": [
         {
           "name": "generateClassCode",
-          "params": [],
+          "params": [
+            "{ courseName",
+            "branch",
+            "index }"
+          ],
           "exported": true,
           "lineCount": 10
         },
@@ -5269,15 +7339,28 @@
       "totalLines": 26,
       "hasStructuralAnalysis": true
     },
-    "utils/compareData.js": {
-      "filePath": "utils/compareData.js",
+    "src/utils/compareData.js": {
+      "filePath": "src/utils/compareData.js",
       "contentHash": "200c91c872ef468f12f6f087b1678280b0c84b7230d0033f565fa9f25f362d85",
       "functions": [
         {
           "name": "compareData",
-          "params": [],
+          "params": [
+            "{ formData",
+            "editItem",
+            "fields }"
+          ],
           "exported": true,
           "lineCount": 49
+        },
+        {
+          "name": "normalizedByField",
+          "params": [
+            "value",
+            "fieldConfig"
+          ],
+          "exported": false,
+          "lineCount": 17
         }
       ],
       "classes": [],
@@ -5295,17 +7378,26 @@
       "totalLines": 53,
       "hasStructuralAnalysis": true
     },
-    "utils/date.utils.js": {
-      "filePath": "utils/date.utils.js",
+    "src/utils/date.utils.js": {
+      "filePath": "src/utils/date.utils.js",
       "contentHash": "16f468bb6e9168fd11ba33a94a6295985868f5dad47f6310a4962d4ca7dc0349",
       "functions": [
         {
           "name": "formatDateDisplay",
           "params": [
-            "date"
+            "date",
+            "locale"
           ],
           "exported": true,
           "lineCount": 7
+        },
+        {
+          "name": "formatDate",
+          "params": [
+            "date"
+          ],
+          "exported": false,
+          "lineCount": 8
         },
         {
           "name": "formatDateHistory",
@@ -5325,30 +7417,25 @@
       "totalLines": 18,
       "hasStructuralAnalysis": true
     },
-    "utils/field.util.jsx": {
-      "filePath": "utils/field.util.jsx",
+    "src/utils/field.util.jsx": {
+      "filePath": "src/utils/field.util.jsx",
       "contentHash": "6939d72a3a2bdb6b13ecfad03bb1b3a7e8336b8c55765567b16e49afcdc62af8",
       "functions": [
-        {
-          "name": "buildFormFields",
-          "params": [
-            "fields"
-          ],
-          "exported": true,
-          "lineCount": 59
-        },
         {
           "name": "formatValue",
           "params": [
             "value",
-            "fieldConfig"
+            "fieldConfig",
+            "mode"
           ],
           "exported": true,
           "lineCount": 22
         },
         {
           "name": "buildFieldMap",
-          "params": [],
+          "params": [
+            "fields"
+          ],
           "exported": true,
           "lineCount": 6
         }
@@ -5370,8 +7457,8 @@
       "totalLines": 93,
       "hasStructuralAnalysis": true
     },
-    "utils/requestAPI.js": {
-      "filePath": "utils/requestAPI.js",
+    "src/utils/requestAPI.js": {
+      "filePath": "src/utils/requestAPI.js",
       "contentHash": "54b629fbe1cb778ac780126e704330cd854545cd358008c96287581f27f649d7",
       "functions": [
         {
@@ -5428,19 +7515,23 @@
       "totalLines": 40,
       "hasStructuralAnalysis": true
     },
-    "utils/string.utils.js": {
-      "filePath": "utils/string.utils.js",
+    "src/utils/string.utils.js": {
+      "filePath": "src/utils/string.utils.js",
       "contentHash": "c3090b68cf3bb69f689367f2bd7ab7476e97bd3a94919c4306b873e7cbe8bea1",
       "functions": [
         {
           "name": "getInitials",
-          "params": [],
+          "params": [
+            "fullName"
+          ],
           "exported": true,
           "lineCount": 8
         },
         {
           "name": "toCourseCode",
-          "params": [],
+          "params": [
+            "courseName"
+          ],
           "exported": true,
           "lineCount": 16
         }
@@ -5454,15 +7545,17 @@
       "totalLines": 26,
       "hasStructuralAnalysis": true
     },
-    "validators/formValidator.js": {
-      "filePath": "validators/formValidator.js",
+    "src/validators/formValidator.js": {
+      "filePath": "src/validators/formValidator.js",
       "contentHash": "475001d3d914c9318884ace7b0a20e42a64582a71c33937db4a8f8d8447d35dc",
       "functions": [
         {
           "name": "validateForm",
           "params": [
             "form",
-            "fields"
+            "fields",
+            "fieldName",
+            "editItem"
           ],
           "exported": true,
           "lineCount": 21
@@ -5485,6 +7578,43 @@
         "validateForm"
       ],
       "totalLines": 71,
+      "hasStructuralAnalysis": true
+    },
+    "vite.config.js": {
+      "filePath": "vite.config.js",
+      "contentHash": "fc105bf7f2ee3c567f765e1e4f63a5c3856989140a1fac0f854f2b98ae4d8fcd",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vite",
+          "specifiers": [
+            "defineConfig"
+          ]
+        },
+        {
+          "source": "@vitejs/plugin-react-swc",
+          "specifiers": [
+            "react"
+          ]
+        },
+        {
+          "source": "path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "totalLines": 26,
       "hasStructuralAnalysis": true
     }
   }

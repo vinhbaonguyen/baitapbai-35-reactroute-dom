@@ -18,7 +18,8 @@ import NotFound from '../pages/NotFound/NotFound'
 import Lecture from '../pages/Lecturer/Lecture'
 import Student from '@/pages/Student/Student'
 import ClassSchedule from '@/pages/ClassSchedule/ClassSchedule'
-
+import Score from '@/pages/Score/Score'
+import AuditLogPage from '@/pages/AuditLogPage/AuditLogPage'
 
 const routes = [
     { path: '/', element: <Navigate to='/sign-in' replace /> },
@@ -43,6 +44,8 @@ const routes = [
             { path: 'contact', element: <Contact /> },
             { path: 'lecture', element: <Lecture /> },
             { path: 'schedule', element: <ClassSchedule /> },
+            { path: 'score', element: <Score /> },
+            { path: 'auditLog', element: <AuditLogPage/>},
             {
                 path: 'blog',
                 element: <BlogLayout />,

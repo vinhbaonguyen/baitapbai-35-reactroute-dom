@@ -123,11 +123,36 @@
     color: $primary;
     border: 1.5px solid $primary;
     white-space: nowrap;
+    font-size: 12px;
+    padding: 4px 8px;
 
     &:hover {
       background: $primary;
       color: $white;
     }
+  }
+
+  &--paid {
+    background: $orange;
+  }
+
+  &--unpaid {
+    background: $bg-stripe
+  }
+
+  &--action {
+    padding: 8px 16px;
+  }
+
+  &--warning {
+    font-size: 12px;
+    padding: 6px 12px;
+    color: $warning
+  }
+
+  &--cancel {
+    padding: 6px 12px;
+    color: $error
   }
 
   &--history {
@@ -151,9 +176,35 @@
       background: #4BAF8A;
       color: $white
     }
+  }
+
+  &--archive {
+    background: $archive;
+    color: $text;
+    border: 1.5px solid #8B2F2F;
+    white-space: nowrap;
+
+    &:hover {
+      background: #AF4A4A;
+      color: $white
+    }
+  }
+
+  &--students {
+    background: $archive;
+    color: $text;
+    border: 1.5px solid $purple;
+    white-space: nowrap;
+
+    &:hover {
+      background: $success;
+      color: $white
+    }
 
   }
 }
+
+
 
 // ── Table ──────────────────────────────────────────────────────────────────
 .table-wrap {
@@ -219,12 +270,15 @@
 
 // ── Badge ──────────────────────────────────────────────────────────────────
 .badge {
-  &--active {
+
+  &--active,
+  &--fee {
     @include badge-base(#e6fffa, #047481, 1px solid #b2f5ea);
   }
 
   &--probation,
-  &--planned {
+  &--planned,
+  &--nofee {
     @include badge-base(#ebf8ff, #2b6cb0, 1px solid #bee3f8);
   }
 
@@ -260,23 +314,237 @@
   &--user {
     @include badge-base(#dbeafe, #1e40af, 1px solid #c0d2e4);
   }
+
   &--studying {
     @include badge-base(#c6bddd, #1908a0, 1px solid #6aa5e1)
   }
-  
+
 }
 
-// ── Modal ──────────────────────────────────────────────────────────────────
-
+// liên quan đến Enrollmentstatusmodal.jsx nhưng cũng liên quan đến các Modal khác đó !!
 .modal {
+
+  &__header {
+    @include flex-center-space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid $header-bottom;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 20px;
+    background: 'linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%)';
+
+    &-content {
+      display: flex;
+      // flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    &-btn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: $text-light;
+      line-height: 1;
+      padding: 2px 4px;
+    }
+
+    &-content-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: $text-primary;
+    }
+
+    &-content-title-main {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: $text-light;
+
+    }
+  }
+
+  &__toolbar {
+    padding: 12px 24px;
+    border-bottom: 1px solid $primary;
+    background: $white;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &-filter-btns {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+
+      & button {
+        font-size: 12px;
+        padding: 4px 12px;
+        border-radius: 99px;
+        border: 1px solid;
+        cursor: pointer;
+
+      }
+    }
+
+    &-filter-btn {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 99px;
+      border: 1px solid #d1d5db;
+      cursor: pointer;
+      font-weight: 400;
+      background: $white;
+      color: #4b5563;
+      transition: all .15s;
+
+      &:hover {
+        border-color: #1f2937;
+        color: #1f2937;
+      }
+
+      &--active {
+        background: #1f2937;
+        color: $white;
+        border-color: #1f2937;
+        font-weight: 600;
+      }
+
+      &__count {
+        margin-left: 4px;
+        opacity: .7;
+
+      }
+
+    }
+
+    & input {
+      flex: 1;
+      margin-left: auto;
+      font-size: 13px;
+      padding: 6px 12px;
+      border: 1px solid $text-muted;
+      border-radius: 8px;
+      outline: none;
+    }
+  }
+
+  &__table {
+    overflow-y: auto;
+    max-height: calc(85vh - 260px);
+
+    & table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+
+      & thead {
+        & tr {
+          background: $white;
+          position: sticky;
+          top: 0;
+          z-index: 1;
+
+          & th {
+            padding: 10px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: $text-light;
+            font-size: 12px;
+            border-bottom: 1px solid $text-secondary;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      & tbody {
+        & tr {
+          & td {
+            padding: 40px;
+            text-align: left;
+            color: $text-light;
+            font-size: 13px;
+
+            & .modal_table-classCode-status {
+              font-size: 12px;
+              color: $primary;
+              padding: 2px 8px;
+              border-radius: 6px;
+              background: $white;
+              border: 1px solid #bfdbfe;
+              font-weight: 500;
+            }
+
+            & .modal_table-classSchedule {
+              font-size: 11px;
+              padding: 2px 8px;
+              border-radius: 6px;
+              cursor: pointer;
+              background: $white;
+              color: $error;
+              border: 1px solid $pink;
+              font-weight: 500;
+
+              &:hover {
+                background: $purple;
+                color: $white;
+              }
+
+            }
+
+            & .modal_table-gotoclassSchedule {
+              font-size: 11px;
+              padding: 2px 8px;
+              border-radius: 6px;
+              cursor: pointer;
+              background: #fffbeb;
+              color: #d97706;
+              border: 1px solid #fde68a;
+              font-weight: 500;
+              white-space: nowrap;
+            }
+
+            & .modal_table-classScheduleStatus {
+              font-size: 11px;
+              padding: 3px 10px;
+              border-radius: 99px;
+              font-weight: 600;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__summary {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  &__scroll-body {
+    max-height: 360px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
 
   // CSS của modal được thiết lập src\constants\modalStyles.js
   &__title {
+    @include flex-center-space-between;
     font-size: 1.1rem;
     font-weight: 700;
     margin: 0 0 40px;
     color: $text;
+    background: 'linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%)';
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #e5e7eb;
   }
+
 
   &__footer {
     display: flex;
@@ -284,7 +552,408 @@
     gap: 10px;
     margin-top: 24px;
   }
+
+  &__warning-box {
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+
+    &--locked {
+      background: #fff1f0;
+      border: 1px solid #ffa39e;
+      color: #cf1322
+    }
+
+    &--pending {
+      background: #fff7e6;
+      border: 1px solid #ffd591;
+      color: #d46b08;
+    }
+  }
+
+  //StudentListPickerModal
+  &__course {
+    @include flex-center-space-between;
+    background: $card-bg;
+    border-radius: $radius;
+    padding: 10px 14px;
+    margin: 0;
+    font-size: 13px;
+
+    &-title,
+    &-fee {
+      color: $text-primary;
+    }
+  }
+
+  &__statistics {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 2px;
+    padding: 4px 6px;
+    border-bottom: 1px solid $text-light;
+
+    &-warning {
+      padding: 10px 12px;
+      border-radius: $radius;
+      background: $warning;
+      color: $error;
+      font-size: 13px;
+      line-height: 1.4
+    }
+  }
+
+  &__filter {
+    display: flex;
+    gap: 0;
+    margin-bottom: 10px;
+    // border-bottom: 1px solid $primary;
+    padding: 6px 12px;
+
+    &-btn {
+      padding: 6px 4px;
+      font-size: 13px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-weight: 400;
+      color: $text-secondary;
+      margin-bottom: -1px;
+
+      &--active {
+        border-bottom: 2px solid $primary;
+        color: $text-home;
+        font-weight: 500;
+      }
+
+    }
+
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    // margin: 4px 8px;
+    // padding: 0 8px;
+    margin-bottom: 16px;
+
+    & input {
+      flex: 1;
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: $radius;
+    }
+
+
+  }
+
+  &__student {
+    max-height: 320px;
+    overflow-y: auto;
+    border-top: 1px solid $header-bottom;
+
+    &-list {
+      padding: 20px;
+      text-align: left;
+      color: $text-secondary;
+      font-size: 13px
+    }
+
+    .student-row {
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      gap: 12px;
+      border-bottom: 0.5px solid $text-secondary;
+      color: $text-home;
+      transition: background 0.15s;
+
+      &:nth-child(even) {
+        background: $header-bottom
+      }
+
+      &:nth-child(odd) {
+        background: $header-bottom
+      }
+
+      input {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+
+        &:disabled {
+          cursor: not-allowed
+        }
+      }
+
+      &:hover {
+        background: $text-muted;
+        color: $white
+      }
+
+      button {
+        background: none;
+        border: 0.5px solid $border-color;
+        border-radius: $radius;
+        padding: 4px 8px;
+        cursor: pointer;
+        font-size: 13px;
+        color: $warning;
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: $error;
+          text-underline-offset: 3px;
+        }
+      }
+    }
+
+    .studentInitialCharacter {
+      @include flex-center;
+      font-size: 12px;
+      font-weight: 500;
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+
+      &--paid {
+        background: $success;
+        color: $black;
+      }
+
+      &--unpaid {
+        background: $warning;
+        color: $text-home
+      }
+    }
+
+    .studentInfo {
+      flex: 1;
+      min-width: 0;
+
+      &--name {
+        font-size: 13px;
+        font-weight: 500;
+        color: $text-primary;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &--other {
+        font-size: 12px;
+        color: $text-home;
+      }
+
+      &--checkmask {
+        color: $success;
+        font-size: 16px;
+        font-weight: 700;
+        flex-shrink: 0;
+
+      }
+
+
+
+    }
+
+
+
+
+  }
+
+  &__footer {
+    @include flex-center-space-between;
+    margin-top: 12px;
+
+    &-left {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    &-right {
+      @include flex-center;
+      gap: 8px
+    }
+
+    // style={{ display: 'flex', gap: '8px', alignItems: 'center' }}
+  }
+
 }
+
+//Picker Modal Component trong components\CommonPickers===========
+// ClassPickerModal
+.picker-grid {
+  @include grid-col(4);
+  width: 100%;
+
+  &__course {
+    @include grid-col(5)
+  }
+}
+
+.picker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  // Tạo thêm modifier cho dạng hàng (row)
+  &--row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+
+.picker-item {
+  @include flex-center;
+  gap: 12px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #dee2e6;
+  background: $white;
+  transition: all .15s;
+
+  &:hover {
+    border-color: $primary;
+    background-color: #f8f9fa;
+  }
+
+  &--active {
+    border-color: $primary;
+    background: #eaf3fb;
+    font-weight: 700;
+
+    .picker-item__text {
+      font-weight: 700;
+      color: $text;
+    }
+
+    .picker-item__check {
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    color: $text;
+  }
+
+  &__icon {
+    @include flex-center;
+    width: 32px;
+    font-size: 1.8rem;
+  }
+
+  &__content {
+    // flex: 1;
+    // width: calc(width / 5);
+    @include flex-center-col;
+
+    &--label {
+      margin: 0;
+      font-weight: 700;
+      color: $text;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    &--desc {
+      margin-bottom: 4px;
+      font-size: 0.8rem;
+      color: $warning;
+      // white-space: nowrap;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__label,
+  &__desc {
+    margin: 0px;
+  }
+}
+
+//Phần này chuyên cho SkillPickerModal phần input other Skill và 
+// CoursePickerModal phần search
+.picker-other {
+  // display: flex;
+  margin: 8px 0px;
+  // flex: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  width: 100%;
+  // margin-right: 8px;
+  border: 1.5px solid $border;
+  outline: none;
+  font-size: 0.9rem;
+
+  &__input {
+    width: 100%;
+    border-radius: $radius;
+    margin-bottom: 12px;
+
+  }
+
+
+}
+
+.picker-other-display {
+  margin-bottom: 8px;
+
+  &__quantity {
+    font-size: 0.78rem;
+    color: $text-light;
+    margin: 0 0 6px;
+    font-weight: 700;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px
+  }
+
+  &__skill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: $primary;
+    color: $white;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  &__delete {
+    cursor: pointer;
+    font-weight: 900;
+  }
+}
+
+.warning {
+  color: $warning;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
 
 // ── History Modal ──────────────────────────────────────────────────────────
 .history-modal {
@@ -428,7 +1097,7 @@
   }
 }
 
-// ── Pagination ─────────────────────────────────────────────────────────────
+// ── Pagination component─────────────────────────────────────────────────────────────
 .pagination {
   display: flex;
   flex-direction: column;
@@ -568,6 +1237,76 @@
   }
 }
 
+//---- pagination cho Page AuditLogPage-------------------------
+.audit-log-page__pagination {
+  @include flex-center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 12px 0;
+  font-size: 14px;
+  color: $text-secondary;
+
+  // Nút điều hướng
+  &-btn {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+
+    border: 2px solid $border-color;
+    border-radius: 8px;
+    background: $card-bg;
+    color: $text-primary;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all .2s ease;
+    line-height: 1;
+
+    &:hover:not(:disabled) {
+      border-color: $primary-color;
+      color: $primary-color;
+      background: rgba(99, 102, 241, .06);
+      transform: translateY(-1px);
+      box-shadow: $shadow-sm;
+    }
+
+    &:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+  }
+
+  // Thông tin trang
+  &-info {
+    font-size: 14px;
+    color: $text-secondary;
+
+    strong {
+      color: $text-primary;
+      font-weight: 600;
+    }
+  }
+
+  &-total {
+    opacity: .8;
+  }
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    gap: 8px;
+
+    &-btn {
+      min-width: 36px;
+      height: 36px;
+      font-size: 14px;
+    }
+  }
+
+}
+
 // ── Menu overlay ───────────────────────────────────────────────────────────
 .menu-overlay {
   display: none;
@@ -578,5 +1317,38 @@
     inset: 0;
     background: rgba(0, 0, 0, .5);
     z-index: 150;
+  }
+}
+
+//==================================
+.modal__paid-fee {
+  margin: 8px 16px 12px;
+
+  .modal__paid-fee-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+  }
+}
+
+.paid-fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+
+  th,
+  td {
+    padding: 7px 10px;
+    border: 1px solid #e0e0e0;
+  }
+
+  th {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+
+  tr:hover td {
+    background: #fafafa;
   }
 }

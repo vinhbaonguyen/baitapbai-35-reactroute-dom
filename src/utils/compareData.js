@@ -3,18 +3,20 @@ import { isEqual } from 'lodash';
 
 export function compareData({ formData, editItem, fields }) {
     const normalizedByField = (value, fieldConfig) => {
-        if (value === null || value === undefined) return '';
-
         const type = fieldConfig?.form?.type;
+         // ✅ Xử lý 'array' TRƯỚC — đảm bảo LUÔN trả về mảng, kể cả khi value là null/undefined
+        if (type === 'array') {
+            return Array.isArray(value) ? [...value].sort() : [];
+        }
+        if(value === null || value === undefined) return '';
+
         switch (type) {
             case 'number': {
                 let num = Number(value);
                 return isNaN(num) ? '' : num;
             }
             case 'date':
-                return value ? value.split('T')[0] : '';
-            case 'array':
-                return Array.isArray(value) ? [...value].sort() : [];
+                return value ? value.split('T')[0] : '';           
             default:
                 return typeof value === 'string' ? value.trim() : value;
         }

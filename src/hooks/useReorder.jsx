@@ -13,6 +13,12 @@ export default function useReorder({
         // 1.🧠 tính index trong toàn bộ data
         const startIndex = (currentPage - 1) * itemsPerPage;
 
+        // 1️⃣ Tính sortOrder mới cho từng item
+        const payload = reorderedPageData.map((item, index) => ({
+            id: item.id,
+            sortOrder: startIndex + index
+        }));
+
         // 2. Cập nhật State để UI thay đổi ngay lập tức
         // setData(newData);
         setData(prev => {
@@ -21,20 +27,23 @@ export default function useReorder({
             return newData
         })
         // 🔥 lưu payload mới nhất
-        latestPayloadRef.current = {
-            data: reorderedPageData,
-            startIndex
-        }
+        // latestPayloadRef.current = {
+        //     data: reorderedPageData,
+        //     startIndex
+        // }
+        latestPayloadRef.current = payload;
 
         // 4. Hủy timer cũ nếu còn đang chờ
         if (deboundRef.current) clearTimeout(deboundRef.current)
         // 5. Debound gọi API sau 2500ms khi ngừng kéo
         deboundRef.current = setTimeout(async () => {
             try {
-                const { data, startIndex } = latestPayloadRef.current
-                if (service.updateOrder) {
-                    await service.updateOrder(data, startIndex)
-                }
+                // const { data, startIndex } = latestPayloadRef.current
+                // if (service.updateOrder) {
+                //     await service.updateOrder(data, startIndex)
+                // }
+                await service.updateOrder(latestPayloadRef.current)
+                Swal.fire({ icon: 'success', title: 'Cập nhật vị trí thành công!' })
             } catch {
                 Swal.fire({ icon: 'error', title: 'Cập nhật vị trí thất bại!' })
             }
@@ -42,11 +51,12 @@ export default function useReorder({
     }, [setData, currentPage, itemsPerPage, service]);
     //6 memory leak (clean up)
     useEffect(() => {
-        return () => {
-            if (deboundRef.current) {
-                clearTimeout(deboundRef.current)
-            }
-        }
+        // return () => {
+        //     if (deboundRef.current) {
+        //         clearTimeout(deboundRef.current)
+        //     }
+        // }
+        return () => {if (deboundRef.current) clearTimeout(deboundRef.current)};
     }, [])
 
     return {

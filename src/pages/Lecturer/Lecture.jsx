@@ -9,18 +9,20 @@ import LectureDetailModal from './LectureDetailModal';
 import Pagination from '../../components/PageComponent/Pagination';
 import HistoryModal from '../../components/PageComponent/HistoryModal';
 import LectureModal from './LectureModal';
-import { SORT_OPTION, LECTURE_TABLE_COLUMNS } from '../../constants/lecturer/lecturer.constants';
-import { LECTURE_FIELDS } from '../../constants/lecturer/lecture.fields';
+// import { SORT_OPTION, LECTURE_TABLE_COLUMNS } from '../../constants/lecturer/lecturer.constants';
+// import { LECTURE_FIELDS } from '../../constants/lecturer/lecture.fields';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateMasterEntity } from '@/actions/masterDataAction';
-import { selectClasses } from '@/store/selectors/masterDataSelectors';
+import { selectClasses, selectSpecialties } from '@/store/selectors/masterDataSelectors';
+import { LECTURE_FIELDS, LECTURE_TABLE_COLUMNS, SORT_OPTION } from '@/constants/lecturer/lecture.master.fieldsConfig';
 
 export default function Lecture() {
     const auditLog = useAuditLog('lectures');
     const [historyItem, setHistoryItem] = useState(null);
     const [detailItem, setDetaiItem] = useState(null);
     const dispatch = useDispatch();
-    const allClasses = useSelector(selectClasses)
+    const allClasses = useSelector(selectClasses);
+    const specialtyData = useSelector(selectSpecialties);
 
     const {
         data, visibleData, loading, error,
@@ -44,7 +46,7 @@ export default function Lecture() {
     const handleHistory = (lecture) => {
         setHistoryItem(lecture)
         auditLog.fetchLogs(lecture.id)
-        console.log("Nội Dung của History", lecture);
+        // console.log("Nội Dung của History", lecture);
     }
     // Map tự cập nhật mỗi khi allClasses thay đổi trong Redux
     // VD: { 4: ['HCM-W-2605-01', 'ĐN-W-2605-02'], 6: ['ĐN-C-2605-01'] }
@@ -89,17 +91,17 @@ export default function Lecture() {
                 onSortField={onSortField}
             />
             <DataTable
+                keyField="id"
                 columns={LECTURE_TABLE_COLUMNS}
                 data={visibleData}
-                keyField="id"
+                fields={LECTURE_FIELDS}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
-                onHistory={handleHistory}                
+                onHistory={handleHistory}
                 onView={handleView}
                 currentPage={currentPage}
                 itemsPerPage={itemsPerPage}
                 onReorder={handleReorder}
-                fields={LECTURE_FIELDS}
             />
             {detailItem && (
                 <LectureDetailModal
@@ -111,6 +113,7 @@ export default function Lecture() {
                 <LectureModal
                     editItem={editItem}
                     allLectures={data}
+                    specialtyData={specialtyData}
                     onSave={handleSave}
                     onClose={() => { setIsModalOpen(false); setEditItem(null) }}
                 />

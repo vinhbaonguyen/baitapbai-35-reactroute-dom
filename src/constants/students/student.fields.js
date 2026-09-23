@@ -64,16 +64,25 @@ export const STUDENTS_FIELDS = [
             required: true,
             type: 'text',
             skipRender: false,
-            inputType:'picker',
-            pickerKey:'status',
-            placeholder:'Chọn Trạng thái'
-            
+            inputType: 'picker',
+            pickerKey: 'status',
+            placeholder: 'Chọn Trạng thái'
+
         },
         table: { type: 'status' },
         history: { type: 'status' }
-    },    
+    }, 
     {
-        name: 'courseId',
+        field: 'paidSummary',
+        label: 'Học phí',
+        form: { hidden: true },
+        table: { type: 'text' },
+        history: { type: 'text' }
+    }
+    ,
+
+    {
+        name: 'courseIds',
         label: 'Khóa học đăng ký',
         form: {
             required: true,
@@ -82,8 +91,18 @@ export const STUDENTS_FIELDS = [
             pickerKey: 'coursePicker',
             placeholder: 'Chọn Khóa học'
         },
-        table: { type: 'text' },
+        table: { hidden: true },
         history: { type: 'text' }
+    },
+    {
+        name: 'courseNames',
+        label: 'Tên khóa học đăng ký',
+        form: {
+            compare: false,
+            hidden: true
+        },
+        table: { type: 'text' },
+        history: { hidden: true }
     },
     {
         name: 'createdAt',
@@ -99,4 +118,19 @@ export const STUDENTS_FIELDS = [
         table: { type: 'date' },
         history: { type: 'date' }
     },
+    {
+        name: 'courseUd',
+        label: 'Khóa học (ID)',
+        form: { hidden: true },
+        table: { hidden: true },
+        history: { type: 'text' }
+    },
+    {
+        name: 'courseName',
+        label: 'Tên khóa học',
+        form: { hidden: true },
+        table: { hidden: true },
+        history: { type: 'text' }
+    }
+
 ]

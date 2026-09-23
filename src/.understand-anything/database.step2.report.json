@@ -1,0 +1,220 @@
+[
+  {
+    "type": "split-course-array",
+    "originalId": 18,
+    "newId": 18,
+    "studentId": 100,
+    "from": [
+      22
+    ],
+    "to": 22
+  },
+  {
+    "type": "split-course-array",
+    "originalId": 19,
+    "newId": 19,
+    "studentId": 101,
+    "from": [
+      10,
+      17,
+      20
+    ],
+    "to": 10
+  },
+  {
+    "type": "split-course-array",
+    "originalId": 19,
+    "newId": 21,
+    "studentId": 101,
+    "from": [
+      10,
+      17,
+      20
+    ],
+    "to": 17
+  },
+  {
+    "type": "split-course-array",
+    "originalId": 19,
+    "newId": 22,
+    "studentId": 101,
+    "from": [
+      10,
+      17,
+      20
+    ],
+    "to": 20
+  },
+  {
+    "type": "split-course-array",
+    "originalId": 20,
+    "newId": 20,
+    "studentId": 102,
+    "from": [
+      15,
+      8,
+      9,
+      19
+    ],
+    "to": 15
+  },
+  {
+    "type": "split-course-array",
+    "originalId": 20,
+    "newId": 23,
+    "studentId": 102,
+    "from": [
+      15,
+      8,
+      9,
+      19
+    ],
+    "to": 8
+  },
+  {
+    "type": "split-course-array",
+    "originalId": 20,
+    "newId": 24,
+    "studentId": 102,
+    "from": [
+      15,
+      8,
+      9,
+      19
+    ],
+    "to": 9
+  },
+  {
+    "type": "split-course-array",
+    "originalId": 20,
+    "newId": 25,
+    "studentId": 102,
+    "from": [
+      15,
+      8,
+      9,
+      19
+    ],
+    "to": 19
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 2,
+    "from": 14,
+    "to": [
+      14
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 3,
+    "from": 7,
+    "to": [
+      7
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 4,
+    "from": 9,
+    "to": [
+      9
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 5,
+    "from": 1,
+    "to": [
+      1
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 6,
+    "from": 9,
+    "to": [
+      9
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 7,
+    "from": 2,
+    "to": [
+      2
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 8,
+    "from": 5,
+    "to": [
+      5
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 10,
+    "from": 7,
+    "to": [
+      7
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 11,
+    "from": 15,
+    "to": [
+      15
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 12,
+    "from": 8,
+    "to": [
+      8
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 13,
+    "from": 18,
+    "to": [
+      18
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 14,
+    "from": 15,
+    "to": [
+      15
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 15,
+    "from": 15,
+    "to": [
+      15
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 16,
+    "from": 4,
+    "to": [
+      4
+    ]
+  },
+  {
+    "type": "sync-student-courseId-array",
+    "studentId": 99,
+    "from": 5,
+    "to": [
+      5
+    ]
+  }
+]

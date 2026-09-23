@@ -9,3 +9,8 @@
 # *.log
 # tmp/
 # .DS_Store
+
+# Exclude previous Understand Anything outputs and temporary analysis files.
+.understand-anything/
+tmp/
+intermediate/

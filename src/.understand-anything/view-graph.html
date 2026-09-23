@@ -1,42 +1,121 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Sơ Đồ Cấu Trúc Dự Án Vạn Năng</title>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <style type="text/css">
-        body { margin: 0; padding: 0; background-color: #1a1a1a; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; }
-        #title-bar { padding: 15px; background-color: #242424; text-align: center; font-size: 20px; font-weight: bold; border-bottom: 2px solid #3a3a3a; }
-        #network-container { width: 100vw; height: calc(100vh - 65px); cursor: grab; }
-        #network-container:active { cursor: grabbing; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        #title-bar {
+            padding: 15px;
+            background-color: #242424;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid #3a3a3a;
+        }
+
+        #search-panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: #141414;
+            border-bottom: 1px solid #2e2e2e;
+        }
+
+        #search-panel input {
+            /* flex: 1; */
+            width: 500px;
+            min-width: 180px;
+            border: 1px solid #3a3a3a;
+            border-radius: 6px;
+            background: #0f1720;
+            color: #fff;
+            padding: 8px 10px;
+            outline: none;
+        }
+
+        #search-panel input:focus {
+            border-color: #5c9df4;
+            box-shadow: 0 0 0 3px rgba(92, 157, 244, 0.12);
+        }
+
+        #search-panel button {
+            border: none;
+            background: #0b4863;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        #search-panel button:hover {
+            background: #176a9e;
+        }
+
+        #node-search-info {
+            color: #b8c6ff;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        #network-container {
+            width: 100vw;
+            height: calc(100vh - 105px);
+            cursor: grab;
+        }
+
+        #network-container:active {
+            cursor: grabbing;
+        }
     </style>
 </head>
+
 <body>
     <div id="title-bar">Bộ Lọc Sơ Đồ Vạn Năng (Tự Động Phân Tích & Bù Liên Kết Cho Mọi Dự Án)</div>
+
+    <div id="search-panel">
+        <input id="node-search-input" type="text" placeholder="Search node name or path..." />
+        <button id="node-search-btn">Search</button>
+        <button id="node-search-prev" title="Previous result">◂</button>
+        <button id="node-search-next" title="Next result">▸</button>
+        <span id="node-search-info"></span>
+    </div>
     <div id="network-container"></div>
     <div id="layers-panel" aria-hidden="false">
         <button id="layers-toggle">Layers ▸</button>
         <div id="layers-list" hidden></div>
     </div>
-    <div id="tour-panel" aria-hidden="false">
+    <!-- <div id="tour-panel" aria-hidden="false">
         <button id="tour-toggle">Tour ▸</button>
         <div id="tour-list" hidden></div>
         <div id="tour-controls" hidden>
             <div id="tour-info" style="padding:8px 12px;margin-bottom:8px;font-size:13px;color:#f3f3f3"></div>
             <div style="display:flex;gap:8px;padding:0 12px 12px 12px;">
-                <button id="tour-start" style="flex:1;padding:8px">Start Tour</button>
-                <button id="tour-prev" style="flex:1;padding:8px">◂ Prev</button>
-                <button id="tour-next" style="flex:1;padding:8px">Next ▸</button>
-                <button id="tour-stop" style="flex:1;padding:8px">Stop</button>
+                <button id="tour-start" style="flex:1;padding:8px;cursor:pointer;">Start Tour</button>
+                <button id="tour-prev" style="flex:1;padding:8px;cursor:pointer;">◂ Prev</button>
+                <button id="tour-next" style="flex:1;padding:8px;cursor:pointer;">Next ▸</button>
+                <button id="tour-stop" style="flex:1;padding:8px;cursor:pointer;">Stop</button>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script type="text/javascript">
-        // Layers panel styles & helpers
+        // Layers & Tour panel styles
         const style = document.createElement('style');
         style.innerHTML = `
-            #layers-panel{position:fixed;right:12px;top:72px;width:260px;background:#0f1720;color:#fff;border:1px solid #2b2b2b;border-radius:8px;z-index:9999;box-shadow:0 6px 24px rgba(0,0,0,0.6);overflow:hidden}
+            #layers-panel{position:fixed;right:12px;top:102px;width:260px;background:#0f1720;color:#fff;border:1px solid #2b2b2b;border-radius:8px;z-index:9999;box-shadow:0 6px 24px rgba(0,0,0,0.6);overflow:hidden}
             #layers-panel #layers-toggle{width:100%;background:#111827;border:none;color:#fff;padding:8px 12px;text-align:left;font-weight:600;cursor:pointer}
             #layers-list{max-height:60vh;overflow:auto;padding:8px 12px}
             .layer-item{display:flex;align-items:center;gap:8px;padding:6px;border-bottom:1px dashed rgba(255,255,255,0.03)}
@@ -44,380 +123,589 @@
             #layers-panel.highlight{outline:3px solid rgba(255,193,7,0.9);transform:translateY(-4px)}
             @keyframes pulseOutline{0%{box-shadow:0 0 0 0 rgba(255,193,7,0.0)}50%{box-shadow:0 0 12px 6px rgba(255,193,7,0.14)}100%{box-shadow:0 0 0 0 rgba(255,193,7,0.0)}}
             #layers-panel.pulse{animation:pulseOutline 1.2s ease-in-out 2}
-            /* Tour dropdown styles */
-            #tour-panel{position:fixed;right:12px;top:320px;width:320px;background:#071021;color:#fff;border:1px solid #142033;border-radius:8px;z-index:9999;box-shadow:0 6px 24px rgba(0,0,0,0.6);overflow:hidden}
-            #tour-panel #tour-toggle{width:100%;background:#081826;border:none;color:#fff;padding:8px 12px;text-align:left;font-weight:600;cursor:pointer}
-            #tour-list{max-height:40vh;overflow:auto;padding:8px 12px}
-            .tour-dropdown{display:flex;flex-direction:column;gap:6px;padding:6px}
-            .tour-item{padding:8px 10px;border-radius:6px;background:transparent;color:#dfeffb;cursor:pointer;border:1px solid transparent}
-            .tour-item:hover{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.04)}
-            .tour-item.selected{background:linear-gradient(90deg,#0b3954,#0f5b7d);border-color:rgba(255,255,255,0.06);box-shadow:0 4px 10px rgba(10,30,60,0.6)}
+            
+            // #tour-panel{position:fixed;right:12px;top:320px;width:320px;background:#071021;color:#fff;border:1px solid #142033;border-radius:8px;z-index:9999;box-shadow:0 6px 24px rgba(0,0,0,0.6);overflow:hidden}
+            // #tour-panel #tour-toggle{width:100%;background:#081826;border:none;color:#fff;padding:8px 12px;text-align:left;font-weight:600;cursor:pointer}
+            // #tour-list{max-height:40vh;overflow:auto;padding:8px 12px}
+            // .tour-dropdown{display:flex;flex-direction:column;gap:6px;padding:6px}
+            // .tour-item{padding:8px 10px;border-radius:6px;background:transparent;color:#dfeffb;cursor:pointer;border:1px solid transparent}
+            // .tour-item:hover{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.04)}
+            // .tour-item.selected{background:linear-gradient(90deg,#0b3954,#0f5b7d);border-color:rgba(255,255,255,0.06);box-shadow:0 4px 10px rgba(10,30,60,0.6)}
         `;
         document.head.appendChild(style);
-        // Hàm dọn dẹp và chuẩn hóa ID đường dẫn tổng quát
-        function cleanNodeId(id) {
-            if (!id) return "";
-            let s = id.trim().toLowerCase();
-            s = s.replace(/^file:/, '');
-            s = s.replace(/^(\.\.\/)+/, '');
-            s = s.replace(/^(\.\/)+/, '');
-            s = s.replace(/^@\//, '');
-            if (!s.endsWith('.jsx') && !s.endsWith('.js') && !s.endsWith('.scss') && !s.endsWith('.css') && !s.endsWith('.ts') && !s.endsWith('.tsx')) {
-                s = s + '.jsx';
+
+        const nodeSet = new Map();
+
+        // --- SEARCH STATE ---
+        let searchMatches = [];
+        let searchIndex = -1;
+        let searchActiveNodeId = null;
+        let searchOriginalNodeState = null;
+
+
+        // --- TOUR STATE ---
+        let globalActiveTour = null;
+        let globalSteps = [];
+        let globalIdx = -1;
+        let currentHighlightedNodeId = null;
+
+        document.getElementById("node-search-btn").onclick = () =>
+            runNodeSearch(document.getElementById("node-search-input").value);
+
+        document.getElementById("node-search-input").onkeydown = (e) => {
+            if (e.key === "Enter") runNodeSearch(e.target.value);
+        };
+
+        document.getElementById("node-search-prev").onclick = () =>
+            focusSearchResult(searchIndex - 1);
+
+        document.getElementById("node-search-next").onclick = () =>
+            focusSearchResult(searchIndex + 1);
+
+        // --- CLEAR SEARCH HIGHLIGHTS ---
+        function clearSearchHighlights() {
+            if (window._blinkTimer) {
+                clearInterval(window._blinkTimer);
+                window._blinkTimer = null;
             }
-            return s;
+
+            if (searchActiveNodeId && searchOriginalNodeState && window.nodesDataSet) {
+                nodesDataSet.update(Object.assign({ id: searchActiveNodeId }, searchOriginalNodeState));
+            }
+
+            searchActiveNodeId = null;
+            searchOriginalNodeState = null;
         }
 
-        // Hàm trích xuất tên thư mục cha hoặc tiền tố để tìm liên kết tương quan
+        function cloneSearchValue(value) {
+            if (value === undefined || value === null) return value;
+            if (typeof value !== 'object') return value;
+            return JSON.parse(JSON.stringify(value));
+        }
+
+        function getSearchFileName(node, id) {
+            const path = node.filePath || id || '';
+            return path.split('/').pop() || '';
+        }
+
+        function getSearchScore(node, id, q) {
+            const label = (node.label || '').toLowerCase();
+            const name = (node.name || '').toLowerCase();
+            const fileName = getSearchFileName(node, id).toLowerCase();
+            const path = (node.filePath || id || '').toLowerCase();
+            const summary = (node.summary || '').toLowerCase();
+            const layerText = (node.layerText || '').toLowerCase();
+
+            if (label === q || name === q || fileName === q) return 1000;
+            if (label.startsWith(q) || name.startsWith(q) || fileName.startsWith(q)) return 900;
+            if (label.includes(q) || name.includes(q) || fileName.includes(q)) return 800;
+            if (path.split('/').some(part => part === q)) return 500;
+            if (path.split('/').some(part => part.startsWith(q))) return 400;
+            if (path.includes(q)) return 300;
+            if (summary.includes(q)) return 200;
+            if (layerText.includes(q)) return 100;
+            return 0;
+        }
+
+        // --- UPDATE SEARCH INFO ---
+        function updateSearchInfo() {
+            const info = document.getElementById('node-search-info');
+            if (!info) return;
+
+            if (!searchMatches.length) {
+                info.textContent = '0 / 0';
+            } else {
+                info.textContent = (searchIndex + 1) + ' / ' + searchMatches.length;
+            }
+        }
+        // --- FOCUS SEARCH RESULT ---
+        function focusSearchResult(i) {
+            if (!searchMatches.length) return;
+
+            if (i < 0) i = searchMatches.length - 1;
+            if (i >= searchMatches.length) i = 0;
+
+            searchIndex = i;
+            const id = searchMatches[i];
+            clearSearchHighlights();
+            applyFocusHighlight(id);
+
+            try {
+                network.focus(id, { scale: 1.35, animation: { duration: 420 } });
+                network.selectNodes([id]);
+            } catch (e) { }
+
+            updateSearchInfo();
+        }
+
+        function applyFocusHighlight(id) {
+            const node = nodesDataSet.get(id);
+            if (!node) return;
+
+            searchActiveNodeId = id;
+            searchOriginalNodeState = {
+                color: cloneSearchValue(node.color),
+                size: node.size,
+                borderWidth: node.borderWidth
+            };
+
+            let toggle = false;
+            const focusColor = { background: "#fff176", border: "#ff6f00" };
+            const pulseColor = { background: "#ffffff", border: "#ffffff" };
+            const focusSize = Math.max((node.size || 26) + 14, 40);
+
+            nodesDataSet.update({
+                id,
+                color: focusColor,
+                borderWidth: 5,
+                size: focusSize
+            });
+
+            window._blinkTimer = setInterval(() => {
+                nodesDataSet.update({
+                    id,
+                    color: toggle ? focusColor : pulseColor,
+                    borderWidth: 5,
+                    size: focusSize
+                });
+                toggle = !toggle;
+            }, 350);
+        }
+
+
+        // --- RUN SEARCH ---
+        function runNodeSearch(keyword) {
+            clearSearchHighlights();
+            searchMatches = [];
+            searchIndex = -1;
+
+            const q = (keyword || '').trim().toLowerCase();
+            if (!q) {
+                updateSearchInfo();
+                try { network.unselectAll(); } catch (e) { }
+                return;
+            }
+
+            const scoredMatches = [];
+
+            nodeSet.forEach((node, id) => {
+                const haystack = [
+                    id,
+                    node.id,
+                    node.label,
+                    node.name,
+                    node.filePath,
+                    node.searchText,
+                    node.title
+                ].filter(Boolean).join(' ').toLowerCase();
+
+                if (haystack.includes(q)) {
+                    scoredMatches.push({
+                        id,
+                        score: getSearchScore(node, id, q),
+                        label: (node.label || id).toLowerCase()
+                    });
+                }
+            });
+
+            scoredMatches.sort((a, b) => {
+                if (b.score !== a.score) return b.score - a.score;
+                if (a.label.length !== b.label.length) return a.label.length - b.label.length;
+                return a.label.localeCompare(b.label);
+            });
+            searchMatches = scoredMatches.map(match => match.id);
+
+            if (!searchMatches.length) {
+                updateSearchInfo();
+                return;
+            }
+            searchIndex = 0;
+            focusSearchResult(0);
+        }
+
+        function cleanNodeId(id) {
+            if (!id) return "";
+            let s = id.trim();
+            if (s.startsWith("file:")) s = s.slice(5);
+
+            return s; // ❗ KHÔNG lowercase nữa
+        }
+
         function getModuleName(path) {
             const parts = path.split('/');
-            if (parts.length > 1) {
-                // Nếu nằm trong thư mục con (ví dụ: pages/course/course.jsx -> lấy "course")
-                return parts[parts.length - 2];
-            }
-            // Nếu nằm ở thư mục ngoài, lấy phần chữ đầu tiên trước dấu chấm
+            if (parts.length > 1) return parts[parts.length - 2];
             return parts[0].split('.')[0].replace('constant', '').replace('field', '').replace('modal', '').replace('picker', '');
         }
 
-                fetch('knowledge-graph.validated.json')
+        fetch('knowledge-graph.validated.json')
             .then(response => response.json())
             .then(data => {
-                const nodeSet = new Map();
                 const rawNodes = data.nodes || [];
                 const rawEdges = data.edges || [];
-
                 let mainRouterId = "";
 
-                // 1. 🌟 PHÂN NHÓM MÀU SẮC THEO KIẾN TRÚC TỔNG QUÁT (Áp dụng cho mọi dự án)
+                const layerMap = new Map();
+                if (Array.isArray(data.layers)) {
+                    data.layers.forEach(l => {
+                        (l.nodeIds || []).forEach(nid => {
+                            const clean = cleanNodeId(nid);
+                            if (!clean) return;
+                            const arr = layerMap.get(clean) || [];
+                            arr.push(l.name || l.id);
+                            layerMap.set(clean, arr);
+                        });
+                    });
+                }
+
                 rawNodes.forEach(node => {
-                    if (node.type !== 'file') return;
-                    
+                    // if (node.type !== 'file') return;
                     const cleanId = cleanNodeId(node.id);
                     if (!cleanId) return;
 
-                    // Tự động nhận diện file Router chính của hệ thống
                     if (cleanId.includes('route') || cleanId.includes('app.js') || cleanId.includes('main.')) {
                         if (!mainRouterId || cleanId.includes('index') || cleanId.includes('router')) {
                             mainRouterId = cleanId;
                         }
                     }
 
-                    let nodeColor = '#2196f3'; // Xanh dương: File thông thường (Utils, Services, Hooks)
-                    let size = 26; 
+                    let nodeColor = '#2196f3';
+                    let size = 26;
 
-                    if (cleanId.includes('page/') || cleanId.includes('pages/')) { 
-                        nodeColor = '#e91e63'; // Hồng: Các màn hình giao diện chính (Pages)
-                        size = 35; 
-                    } else if (cleanId.includes('route') || cleanId.includes('router')) { 
-                        nodeColor = '#ff9800'; // Cam: Trung tâm điều hướng (Routes)
-                        size = 40; 
+                    if (cleanId.includes('page/') || cleanId.includes('pages/')) {
+                        nodeColor = '#e91e63'; size = 35;
+                    } else if (cleanId.includes('route') || cleanId.includes('router')) {
+                        nodeColor = '#ff9800'; size = 40;
                     } else if (cleanId.includes('constant') || cleanId.includes('field') || cleanId.includes('schema')) {
-                        nodeColor = '#009688'; // Xanh ngọc: File cấu hình dữ liệu (Constants/Fields)
-                        size = 24;
+                        nodeColor = '#009688'; size = 24;
                     } else if (cleanId.includes('modal') || cleanId.includes('picker') || cleanId.includes('popup')) {
-                        nodeColor = '#9c27b0'; // Tím: Các thành phần hộp thoại phụ trợ (Modals/Pickers)
-                        size = 28;
+                        nodeColor = '#9c27b0'; size = 28;
                     }
 
                     if (nodeSet.has(cleanId)) return;
-
+                    const layersForNode = layerMap.get(cleanId) || [];
+                    const titleText = (node.filePath || cleanId) + '<br/><b>Layer:</b> ' + (layersForNode.length ? layersForNode.join(', ') : 'Unlayered');
                     nodeSet.set(cleanId, {
-                        id: cleanId,
-                        label: node.name,
-                        shape: 'dot',
-                        size: size,
+                        id: cleanId, label: node.name, shape: 'dot', size: size,
                         color: { background: nodeColor, border: '#ffffff' },
                         font: { color: '#ffffff', size: 12, face: 'Segoe UI' },
+                        title: titleText,
+                        name: node.name,
+                        filePath: node.filePath || cleanId,
+                        summary: node.summary || '',
+                        layerText: layersForNode.join(' '),
+                        searchText: [
+                            node.id,
+                            node.name,
+                            node.filePath,
+                            node.summary,
+                            node.type,
+                            cleanId,
+                            layersForNode.join(' ')
+                        ].filter(Boolean).join(' '),
                         hasParentEdge: false
                     });
                 });
-
-                // 2. Nạp danh sách các đường nối hiện có từ file JSON
+                window.rawNodes = rawNodes;
+                window.nodeSet = nodeSet;
+                console.log("rawNodes length:", rawNodes.length);
                 const edgesArray = [];
                 rawEdges.forEach(edge => {
                     let from = edge.source || edge.from;
                     let to = edge.target || edge.to;
-
                     if (from && to) {
                         const cleanFrom = cleanNodeId(from);
                         const cleanTo = cleanNodeId(to);
-
                         if (nodeSet.has(cleanFrom) && nodeSet.has(cleanTo)) {
-                            const isDuplicate = edgesArray.some(e => e.from === cleanFrom && e.to === cleanTo);
-                            if (!isDuplicate) {
-                                edgesArray.push({
-                                    from: cleanFrom,
-                                    to: cleanTo,
-                                    arrows: 'to',
-                                    color: { color: '#848484' },
-                                    width: 1.5
-                                });
+                            if (!edgesArray.some(e => e.from === cleanFrom && e.to === cleanTo)) {
+                                let edgeColor = '#848484';
+                                let edgeWidth = 1.5;
+                                let edgeDashes = false;
+                                if (cleanTo.endsWith('.scss') || cleanTo.endsWith('.css')) {
+                                    edgeColor = '#ffd54f';
+                                    edgeWidth = 2.6;
+                                    edgeDashes = true;
+                                }
+                                const safeId = (cleanFrom + '->' + cleanTo).replace(/[^a-z0-9_\-\.>]/gi, '_');
+                                edgesArray.push({ id: safeId, from: cleanFrom, to: cleanTo, arrows: 'to', color: { color: edgeColor }, width: edgeWidth, dashes: edgeDashes });
                                 nodeSet.get(cleanTo).hasParentEdge = true;
                             }
                         }
                     }
                 });
 
-                // 🌟 3. THUẬT TOÁN VẠN NĂNG: Tự động phân tích tương quan thư mục để bù đắp liên kết thiếu
                 nodeSet.forEach((node, id) => {
-                    // TH 1: Bù liên kết cho các file bổ trợ (Constants, Fields, Modals, Pickers) bị mồ côi
-                    if (id.includes('constant') || id.includes('field') || id.includes('modal') || id.includes('picker')) {
-                        const moduleName = getModuleName(id); // Lấy tên phân hệ (ví dụ: "student", "product")
-                        
-                        if (moduleName && moduleName.length > 2) {
-                            nodeSet.forEach((targetNode, targetId) => {
-                                // Tìm các file Page chính thuộc cùng phân hệ đó để tự động gom cụm
-                                if ((targetId.includes('page/') || targetId.includes('pages/')) && targetId.includes(moduleName) && targetId !== id) {
-                                    const pathExists = edgesArray.some(e => 
-                                        (e.from === targetId && e.to === id) || (e.from === id && e.to === targetId)
-                                    );
-                                    if (!pathExists) {
-                                        // Nếu là Modal/Picker thì trỏ từ Page vào, nếu là Constants thì trỏ từ Page sang
-                                        const isComponent = id.includes('modal') || id.includes('picker');
-                                        edgesArray.push({
-                                            from: targetId,
-                                            to: id,
-                                            arrows: 'to',
-                                            color: { color: isComponent ? '#9c27b0' : '#009688', dash: true },
-                                            width: 1.5
-                                        });
-                                        node.hasParentEdge = true;
-                                    }
-                                }
-                            });
+                    // chỉ auto-link cho page hoặc component
+                    if (!(id.includes('pages/') || id.includes('components/'))) return;
+
+                    const moduleName = getModuleName(id);
+                    if (!moduleName || moduleName.length < 2) return;
+
+                    nodeSet.forEach((targetNode, targetId) => {
+                        if (targetId === id) return;
+
+                        // target là page
+                        if (targetId.includes('pages/') && targetId.includes(moduleName)) {
+                            if (!edgesArray.some(e => (e.from === targetId && e.to === id) || (e.from === id && e.to === targetId))) {
+                                edgesArray.push({
+                                    from: id, to: targetId, arrows: 'to',
+                                    color: { color: '#009688', dash: true }, width: 1.5
+                                });
+                            }
                         }
-                    }
+                    });
                 });
 
-                // TH 2: Kết nối bù toàn bộ các file trang chính (Pages) bị thiếu mũi tên từ Router chính
                 if (mainRouterId) {
                     nodeSet.forEach((node, id) => {
                         if ((id.includes('page/') || id.includes('pages/')) && !node.hasParentEdge && id !== mainRouterId) {
-                            // Đảm bảo chỉ bù vào file màn hình chính, bỏ qua các file con nằm sâu nếu đã có cụm
-                            edgesArray.push({
-                                from: mainRouterId,
-                                to: id,
-                                arrows: 'to',
-                                color: { color: '#ff9800', dash: true }, 
-                                width: 1.5
-                            });
+                            edgesArray.push({ from: mainRouterId, to: id, arrows: 'to', color: { color: '#ff9800', dash: true }, width: 1.5 });
                         }
                     });
                 }
 
-                // 4. Khởi tạo đồ thị
                 const container = document.getElementById('network-container');
-                const nodesDataSet = new vis.DataSet(Array.from(nodeSet.values()));
+                window.nodesDataSet = new vis.DataSet(Array.from(nodeSet.values()));
                 const edgesDataSet = new vis.DataSet(edgesArray);
                 const graphData = { nodes: nodesDataSet, edges: edgesDataSet };
 
                 const options = {
                     physics: {
                         enabled: true,
-                        barnesHut: { 
-                            gravitationalConstant: -4000, 
-                            centralGravity: 0.1, 
-                            springLength: 160,
-                            springConstant: 0.04
-                        },
+                        barnesHut: { gravitationalConstant: -4000, centralGravity: 0.1, springLength: 160, springConstant: 0.04 },
                         stabilization: { enabled: false }
                     },
                     interaction: { dragNodes: true, dragView: true, selectable: true, hover: true }
                 };
 
-                const network = new vis.Network(container, graphData, options);
+                window.network = new vis.Network(container, graphData, options);
 
-                // Đồng bộ kéo thả đóng băng tọa độ thông minh
                 network.on("dragStart", function (params) {
                     if (params.nodes.length > 0) {
-                        const nodeId = params.nodes[0];
-                        nodesDataSet.update({ id: nodeId, fixed: { x: false, y: false } });
+                        nodesDataSet.update({ id: params.nodes[0], fixed: { x: false, y: false } });
                         network.setOptions({ physics: { enabled: false } });
                     }
                 });
-
                 network.on("dragEnd", function (params) {
                     network.setOptions({ physics: { enabled: true } });
-                    if (params.nodes.length > 0) {
-                        const nodeId = params.nodes[0];
-                        nodesDataSet.update({ id: nodeId, fixed: { x: true, y: true } });
-                    }
+                    if (params.nodes.length > 0) nodesDataSet.update({ id: params.nodes[0], fixed: { x: true, y: true } });
                 });
-
                 network.on("doubleClick", function (params) {
-                    if (params.nodes.length > 0) {
-                        const nodeId = params.nodes[0];
-                        nodesDataSet.update({ id: nodeId, fixed: { x: false, y: false } });
+                    if (params.nodes.length > 0) nodesDataSet.update({ id: params.nodes[0], fixed: { x: false, y: false } });
+                });
+
+                const originalEdgeStyles = new Map();
+
+                network.on('hoverEdge', function (params) {
+                    const edgeId = params.edge;
+                    if (!edgeId) return;
+                    const e = edgesDataSet.get(edgeId);
+                    if (!e) return;
+                    if (!originalEdgeStyles.has(edgeId)) originalEdgeStyles.set(edgeId, { color: e.color, width: e.width, dashes: e.dashes });
+                    edgesDataSet.update({ id: edgeId, color: { color: '#ffab40' }, width: Math.max((e.width || 1.5) + 2, 4), dashes: true });
+                });
+
+                network.on('blurEdge', function (params) {
+                    const edgeId = params.edge;
+                    if (!edgeId) return;
+                    const orig = originalEdgeStyles.get(edgeId);
+                    if (orig) {
+                        edgesDataSet.update(Object.assign({ id: edgeId }, orig));
+                        originalEdgeStyles.delete(edgeId);
                     }
                 });
 
-                // --- Layers UI wiring ---
+                network.on('hoverNode', function (params) {
+                    const nodeId = params.node;
+                    if (!nodeId) return;
+                    const connected = network.getConnectedEdges(nodeId) || [];
+                    connected.forEach(eid => {
+                        const e = edgesDataSet.get(eid);
+                        if (!e) return;
+                        if (!originalEdgeStyles.has(eid)) originalEdgeStyles.set(eid, { color: e.color, width: e.width, dashes: e.dashes });
+                        edgesDataSet.update({ id: eid, color: { color: '#ffd54f' }, width: Math.max((e.width || 1.5) + 1.5, 3), dashes: true });
+                    });
+                });
+
+                network.on('blurNode', function (params) {
+                    const nodeId = params.node;
+                    if (!nodeId) return;
+                    const connected = network.getConnectedEdges(nodeId) || [];
+                    connected.forEach(eid => {
+                        const orig = originalEdgeStyles.get(eid);
+                        if (orig) {
+                            edgesDataSet.update(Object.assign({ id: eid }, orig));
+                            originalEdgeStyles.delete(eid);
+                        }
+                    });
+                });
+
                 const layersPanel = document.getElementById('layers-panel');
                 const layersToggle = document.getElementById('layers-toggle');
                 const layersList = document.getElementById('layers-list');
 
-                function buildLayersUI(layers){
+                function buildLayersUI(layers) {
                     layersList.innerHTML = '';
                     layers.forEach(layer => {
-                        const div = document.createElement('div');
-                        div.className = 'layer-item';
-                        const cb = document.createElement('input');
-                        cb.type = 'checkbox'; cb.checked = true; cb.id = 'cb-'+layer.id;
-                        const lbl = document.createElement('label'); lbl.htmlFor = cb.id; lbl.textContent = layer.name + ' (' + (layer.nodeIds?.length||0) + ')';
-                        div.appendChild(cb); div.appendChild(lbl);
-                        layersList.appendChild(div);
+                        const div = document.createElement('div'); div.className = 'layer-item';
+                        const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = true; cb.id = 'cb-' + layer.id;
+                        const lbl = document.createElement('label'); lbl.htmlFor = cb.id; lbl.textContent = layer.name + ' (' + (layer.nodeIds?.length || 0) + ')';
+                        div.appendChild(cb); div.appendChild(lbl); layersList.appendChild(div);
 
                         cb.addEventListener('change', () => {
-                            const show = cb.checked;
-                            (layer.nodeIds||[]).forEach(nid => {
+                            (layer.nodeIds || []).forEach(nid => {
                                 const clean = cleanNodeId(nid);
-                                if(nodesDataSet.get(clean)){
-                                    nodesDataSet.update({ id: clean, hidden: !show });
-                                }
+                                if (nodesDataSet.get(clean)) nodesDataSet.update({ id: clean, hidden: !cb.checked });
                             });
                         });
                     });
                 }
-
-                layersToggle.addEventListener('click', ()=>{
-                    const isHidden = layersList.hasAttribute('hidden');
-                    if(isHidden) { layersList.removeAttribute('hidden'); layersToggle.textContent = 'Layers ▾' }
-                    else { layersList.setAttribute('hidden',''); layersToggle.textContent = 'Layers ▸' }
+                layersToggle.addEventListener('click', () => {
+                    if (layersList.hasAttribute('hidden')) { layersList.removeAttribute('hidden'); layersToggle.textContent = 'Layers ▾' }
+                    else { layersList.setAttribute('hidden', ''); layersToggle.textContent = 'Layers ▸' }
                 });
-
-                // If the graph JSON contains layers, wire them
-                if(Array.isArray(data.layers) && data.layers.length){
+                if (Array.isArray(data.layers) && data.layers.length) {
                     buildLayersUI(data.layers);
-                    // Auto-open and highlight panel briefly
                     layersList.removeAttribute('hidden'); layersToggle.textContent = 'Layers ▾';
-                    layersPanel.classList.add('highlight','pulse');
-                    setTimeout(()=>{ layersPanel.classList.remove('pulse'); }, 2600);
+                    layersPanel.classList.add('highlight', 'pulse'); setTimeout(() => { layersPanel.classList.remove('pulse'); }, 2600);
                 }
-                // --- Tour UI wiring (robust) ---
-                const tourPanel = document.getElementById('tour-panel');
-                const tourToggle = document.getElementById('tour-toggle');
-                const tourControls = document.getElementById('tour-controls');
-                const tourInfo = document.getElementById('tour-info');
-                const tourStart = document.getElementById('tour-start');
-                const tourPrev = document.getElementById('tour-prev');
-                const tourNext = document.getElementById('tour-next');
-                const tourStop = document.getElementById('tour-stop');
 
-                function buildTourUI(tourList){
-                    if(!Array.isArray(tourList) || !tourList.length) return;
+                // const tourPanel = document.getElementById('tour-panel');
+                // const tourToggle = document.getElementById('tour-toggle');
+                // const tourControls = document.getElementById('tour-controls');
+                // const tourInfo = document.getElementById('tour-info');
+                // const tourStart = document.getElementById('tour-start');
+                // const tourPrev = document.getElementById('tour-prev');
+                // const tourNext = document.getElementById('tour-next');
+                // const tourStop = document.getElementById('tour-stop');
+
+                function findBestMatchId(nid) {
+                    if (!nid) return null;
+                    const clean = cleanNodeId(nid);
+                    if (nodesDataSet.get(clean)) return clean;
+                    const base = clean.split('/').pop().split('.')[0];
+                    for (const key of nodeSet.keys()) if (key.includes(base)) return key;
+                    return null;
+                }
+
+                function clearHighlight() {
+                    if (currentHighlightedNodeId) {
+                        const orig = nodeSet.get(currentHighlightedNodeId);
+                        if (orig) nodesDataSet.update({ id: currentHighlightedNodeId, color: orig.color, size: orig.size });
+                        currentHighlightedNodeId = null;
+                        try { network.unselectAll(); } catch (e) { }
+                    }
+                }
+
+                function focusAndHighlight(nid) {
+                    if (!nid) return;
+                    const match = findBestMatchId(nid);
+                    if (!match) return;
+                    clearHighlight();
+                    currentHighlightedNodeId = match;
+                    const node = nodesDataSet.get(match);
+                    nodesDataSet.update({ id: match, color: { background: '#ffd54f', border: '#ff6f00' }, size: Math.max(42, (node.size || 26) + 18) });
+                    try { network.focus(match, { scale: 1.4, animation: { duration: 400 } }); } catch (e) { }
+                    try { network.selectNodes([match]); } catch (e) { }
+                }
+
+                function switchAndLoadTourData(tour) {
+                    clearHighlight();
+                    globalActiveTour = tour;
+                    globalIdx = -1;
+                    tourPanel.dataset.activeTour = tour.id || (tour.title || 'tour');
+                    tourInfo.innerHTML = `<b>${tour.title}</b><div style="font-size:12px;color:#aaa;margin-top:4px">${tour.description || ''}</div>`;
+                    globalSteps = Array.isArray(tour.steps) ? tour.steps : (Array.isArray(tour.nodeIds) ? tour.nodeIds.map(nid => ({ nodeId: nid })) : []);
+                    tourControls.removeAttribute('hidden');
+                }
+
+                function runStepExecution(i) {
+                    if (i < 0 || i >= globalSteps.length) return;
+                    globalIdx = i;
+                    const step = globalSteps[i];
+                    const nid = step.nodeId || step;
+                    const title = step.title || ('Bước ' + (i + 1));
+                    const text = step.text || '';
+                    tourInfo.innerHTML = '<strong>' + title + '</strong><div style="font-size:12px;color:#dcdcdc;margin-top:6px">' + text + '</div>';
+                    focusAndHighlight(nid);
+                }
+
+                function buildTourUI(tourList) {
+                    if (!Array.isArray(tourList) || !tourList.length) return;
                     const tourListContainer = document.getElementById('tour-list');
                     tourListContainer.innerHTML = '';
 
                     const dropdown = document.createElement('div');
                     dropdown.className = 'tour-dropdown';
 
-                    // create items for each tour
                     tourList.forEach(t => {
                         const item = document.createElement('div');
                         item.className = 'tour-item';
                         item.tabIndex = 0;
                         item.textContent = t.title || t.id || 'tour';
-                        item.addEventListener('click', ()=> selectTour(t, item));
-                        item.addEventListener('keypress', (e)=>{ if(e.key === 'Enter') selectTour(t, item); });
+
+                        item.addEventListener('click', () => {
+                            Array.from(dropdown.children).forEach(ch => ch.classList.remove('selected'));
+                            item.classList.add('selected');
+                            switchAndLoadTourData(t);
+                        });
+
                         dropdown.appendChild(item);
                     });
 
                     tourListContainer.appendChild(dropdown);
 
-                    // fuzzy match helper
-                    function findBestMatchId(nid){
-                        if(!nid) return null;
-                        const clean = cleanNodeId(nid);
-                        if(nodesDataSet.get(clean)) return clean;
-                        const base = clean.split('/').pop().split('.')[0];
-                        for(const key of nodeSet.keys()) if(key.includes(base)) return key;
-                        const module = getModuleName(clean);
-                        for(const key of nodeSet.keys()) if(module && key.includes(module)) return key;
-                        return null;
-                    }
-
-                    let activeTour = null;
-                    let steps = [];
-                    let idx = -1;
-                    let currentHighlighted = null;
-
-                    function clearHighlight(){
-                        if(currentHighlighted){
-                            const orig = nodeSet.get(currentHighlighted);
-                            if(orig) nodesDataSet.update({ id: currentHighlighted, color: orig.color, size: orig.size });
-                            currentHighlighted = null;
-                            try { network.unselectAll(); } catch(e){}
-                        }
-                    }
-
-                    function focusAndHighlight(nid){
-                        if(!nid) return;
-                        const match = findBestMatchId(nid);
-                        if(!match) return;
-                        clearHighlight();
-                        currentHighlighted = match;
-                        const node = nodesDataSet.get(match);
-                        nodesDataSet.update({ id: match, color: { background:'#ffd54f', border:'#ff6f00' }, size: Math.max(42, (node.size||26)+18) });
-                        try { network.focus(match, { scale: 1.4, animation: { duration: 400 } }); } catch(e){}
-                        try { network.selectNodes([match]); } catch(e){}
-                    }
-
-                    function loadTour(tour){
-                        activeTour = tour;
-                        tourPanel.dataset.activeTour = tour.id || (tour.title||'tour');
-                        tourInfo.textContent = tour.title + ' — ' + (tour.description || '');
-                        steps = Array.isArray(tour.steps) ? tour.steps : (Array.isArray(tour.nodeIds) ? tour.nodeIds.map(nid=>({ nodeId: nid })) : []);
-                        idx = -1;
-                        tourControls.removeAttribute('hidden');
-                    }
-
-                    function showStep(i){
-                        if(i < 0 || i >= steps.length) return;
-                        idx = i;
-                        const step = steps[i];
-                        const nid = step.nodeId || step;
-                        const title = step.title || ('Step ' + (i+1));
-                        const text = step.text || '';
-                        tourInfo.innerHTML = '<strong>' + title + '</strong><div style="font-size:12px;color:#dcdcdc;margin-top:6px">' + text + '</div>';
-                        focusAndHighlight(nid);
-                    }
-
-                    function selectTour(t, itemEl){
-                        // mark selection
-                        Array.from(dropdown.children).forEach(ch => ch.classList.remove('selected'));
-                        if(itemEl) itemEl.classList.add('selected');
-                        loadTour(t);
-                    }
-
-                    // wire buttons
-                    tourStart.onclick = ()=> { if(activeTour) showStep(0); };
-                    tourPrev.onclick = ()=> { if(activeTour) showStep(Math.max(0, idx - 1)); };
-                    tourNext.onclick = ()=> { if(activeTour) showStep(Math.min(steps.length - 1, idx + 1)); };
-                    tourStop.onclick = ()=> { clearHighlight(); idx = -1; if(activeTour) tourInfo.textContent = activeTour.title + ' — ' + (activeTour.description||''); };
-
-                    // initialize: prefer classic user flow if present
                     const preferred = tourList.find(t => t.id === 'tour:classic-user-flow') || tourList[0];
-                    // select the preferred item
                     const preferredItem = Array.from(dropdown.children).find(ch => ch.textContent === (preferred.title || preferred.id));
-                    if(preferredItem) selectTour(preferred, preferredItem);
+                    if (preferredItem) {
+                        preferredItem.classList.add('selected');
+                        switchAndLoadTourData(preferred);
+                    }
                 }
 
-                tourToggle.addEventListener('click', ()=>{
-                    const isHidden = tourList.hasAttribute('hidden');
-                    if(isHidden) { tourList.removeAttribute('hidden'); tourToggle.textContent = 'Tour ▾' }
-                    else { tourList.setAttribute('hidden',''); tourToggle.textContent = 'Tour ▸' }
-                });
+                // tourStart.onclick = () => {
+                //     if (globalActiveTour && globalSteps.length > 0) runStepExecution(0);
+                // };
 
-                if(Array.isArray(data.tour) && data.tour.length){
-                    buildTourUI(data.tour);
-                    // briefly highlight tour panel so it's discoverable
-                    tourPanel.classList.add('highlight','pulse');
-                    setTimeout(()=> tourPanel.classList.remove('pulse'), 2600);
-                }
+                // tourPrev.onclick = () => {
+                //     if (globalActiveTour && globalIdx > 0) {
+                //         runStepExecution(globalIdx - 1);
+                //     }
+                // };
+
+                // tourNext.onclick = () => {
+                //     if (globalActiveTour && globalIdx < globalSteps.length - 1) {
+                //         runStepExecution(globalIdx + 1);
+                //     }
+                // };
+
+                // tourStop.onclick = () => {
+                //     clearHighlight();
+                //     globalIdx = -1;
+                //     if (globalActiveTour) {
+                //         tourInfo.innerHTML = `<b>${globalActiveTour.title}</b><div style="font-size:12px;color:#aaa;margin-top:4px">${globalActiveTour.description || ''}</div>`;
+                //     }
+                // };
+
+                // tourToggle.addEventListener('click', () => {
+                //     const tList = document.getElementById('tour-list');
+                //     const isHidden = tList.hasAttribute('hidden');
+                //     if (isHidden) { tList.removeAttribute('hidden'); tourControls.removeAttribute('hidden'); tourToggle.textContent = 'Tour ▾' }
+                //     else { tList.setAttribute('hidden', ''); tourControls.setAttribute('hidden', ''); tourToggle.textContent = 'Tour ▸' }
+                // });
+
+                // if (Array.isArray(data.tour) && data.tour.length) {
+                //     buildTourUI(data.tour);
+                //     document.getElementById('tour-list').removeAttribute('hidden');
+                //     tourControls.removeAttribute('hidden');
+                //     tourToggle.textContent = 'Tour ▾';
+                //     tourPanel.classList.add('highlight', 'pulse');
+                //     setTimeout(() => tourPanel.classList.remove('pulse'), 2600);
+                // }
             })
             .catch(err => {
                 document.getElementById('network-container').innerHTML = `<div style="padding:50px;color:#ff5722;text-align:center;">⚠️ Lỗi: ${err}</div>`;
             });
     </script>
 </body>
+
 </html>

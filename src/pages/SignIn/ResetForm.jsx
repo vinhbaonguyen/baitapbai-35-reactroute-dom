@@ -32,11 +32,26 @@ export default function ResetForm({
             onSubmit={handleSubmit}
         >
             <AuthHeader
-                title='RESET'
+                title='RESET PASSWORD Form'
                 subtitle={titleHeader ? `Hello ${titleHeader}` : ''}
             />
+            {/* 👇 THÊM MỚI: ô nhập OTP */}
+            <div className="signin-form__field signin-form__field--otp">
+                <input
+                    disabled={loading}
+                    placeholder='OTP Code'
+                    type='text'
+                    inputMode='numeric'
+                    maxLength={6}
+                    autoComplete='one-time-code'
+                    name='otp'
+                    value={form.otp || ''}
+                    onChange={onChange}
+                    autoFocus                
+                />
+            </div>
 
-            <div className="signin-form__field">
+            <div className="signin-form__field signin-form__field--password">
                 <input
                     disabled={loading}
                     placeholder="NEW PASSWORD"
@@ -47,7 +62,7 @@ export default function ResetForm({
                     onChange={onChange} />
             </div>
 
-            <div className="signin-form__field signin-form__field--password">
+            <div className="signin-form__field signin-form__field--confirm">
                 <input
                     disabled={loading}
                     placeholder="CONFIRM PASSWORD"

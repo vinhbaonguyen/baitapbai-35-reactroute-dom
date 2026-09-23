@@ -32,9 +32,11 @@ export default function useForm({ fields, editItem, dependencies = {}, onFieldsC
             if (value === '' || value === undefined || value === null) {
                 value = defaultValue ?? '';
             }
-            // ===== validate options ===== =====
+            // ===== validate options ==========
             if (options && options.length > 0) {
-                const isValid = options.includes(value);
+                // Chuẩn hóa: nếu option là object {value, label} thì lấy .value, nếu là string thì giữ nguyên
+                const optionValues = options.map(opt => typeof opt === 'object' ? opt.value : opt);
+                const isValid = optionValues.includes(value);
                 if (!isValid) {
                     value = defaultValue ?? options[0];
                 }
@@ -47,10 +49,7 @@ export default function useForm({ fields, editItem, dependencies = {}, onFieldsC
     const [form, setForm] = useState(() => initForm());
     const [errors, setErrors] = useState({});
     //Hàm reset Form Khi không thay đổi nội dung Khi USER đã sửa nhưng khg muốn lưu và muốn quay lại
-    const resetForm = useCallback(() => {
-        setForm(initForm());
-        setErrors({})
-    }, [initForm])
+    const resetForm = useCallback(() => { setForm(initForm()); setErrors({}) }, [initForm])
     // formRef — đảm bảo getSubmitData luôn đọc form mới nhất
     const formRef = useRef(form);
     useEffect(() => { formRef.current = form }, [form])
@@ -66,28 +65,25 @@ export default function useForm({ fields, editItem, dependencies = {}, onFieldsC
             finalValue = value === '' ? '' : Number(value)
         }
 
-        setForm(prev => {
-            let nextForm = { ...prev, [name]: finalValue };
-            // 👇 RESET LOGIC ĐẶT Ở ĐÂY
-            if (name === 'salaryType') {
-                nextForm = {
-                    ...nextForm,
-                    hourRate: '',
-                    totalHours: '',
-                    monthSalary: ''
-                };
-            }
-            return onFieldsChange
-                ? onFieldsChange(name, finalValue, nextForm, dependencies)
-                : nextForm;
-        });
+        let nextForm = { ...formRef.current, [name]: finalValue };
+        if (name === 'salaryType') {
+            nextForm = { ...nextForm, hourRate: '', totalHours: '', monthSalary: '' }
+        }
+        nextForm = onFieldsChange
+            ? onFieldsChange(name, finalValue, nextForm, dependencies)
+            : nextForm
+
+        formRef.current = nextForm;
+        setForm(nextForm)
         // Xóa lỗi khi có dữ liệu mới
         setErrors(prev => ({ ...prev, [name]: null }));
     }, [fields, onFieldsChange, dependencies]);
     // 3. Hàm onChange (cho Input cơ bản) User nhập ⇒ update State
     const onChange = useCallback((e) => {
-        const { name, value } = e.target;
-        setFieldValue(name, value);
+        const { name, value, type, checked } = e.target;
+        // Logic: Nếu là checkbox thì lấy giá trị checked, nếu không thì lấy value
+        const newValue = type === 'checkbox' ? checked : value;
+        setFieldValue(name, newValue);
     }, [setFieldValue]);
     // 4. Validate lẻ từng field (khi rời input hoặc đóng Picker)
     const validateField = useCallback((name) => {
@@ -97,13 +93,22 @@ export default function useForm({ fields, editItem, dependencies = {}, onFieldsC
     }, [fields, editItem])
     // 5. hàm hiển thị error khi input không còn focus
     const handleBlur = (e) => validateField(e.target.name);
-    // 6. Validate toàn bộ — validate toàn bộ khi Submit ─────────────────────────
-    const validate = useCallback(() => {
+    // 6. Validate toàn bộ form khi Submit ─────────────────────────
+    const validate = useCallback((skipFields = []) => {
         const formErrors = validateForm(formRef.current, fields, null, editItem);
         if (formErrors) {
-            setErrors(formErrors);
-            const firstKey = Object.keys(formErrors)[0];
-            return formErrors[firstKey]; // Trả về câu thông báo lỗi đầu tiên cho Swal            
+            // Bỏ qua lỗi của các field được truyền vào skipFields
+            // (VD: courseId/brand bị disabled lúc Edit -> không cần/không nên validate)
+            const filteredErrors = {...formErrors };
+            skipFields.forEach(name => delete filteredErrors[name]);
+
+            if (Object.keys(filteredErrors).length > 0) {
+                setErrors(filteredErrors);
+                const firstKey = Object.keys(filteredErrors)[0];
+                return filteredErrors[firstKey]; // Trả về câu thông báo lỗi đầu tiên cho Swal
+            }
+            setErrors({});
+            return null;      
         }
         setErrors({});
         return null;
@@ -116,11 +121,11 @@ export default function useForm({ fields, editItem, dependencies = {}, onFieldsC
             if (form?.skipSubmit) return;
             submitData[name] = formRef.current[name];
         })
-        if (editItem && editItem.id) {
-            submitData.updatedAt = new Date().toISOString()
-        } else {
-            submitData.createdAt = new Date().toISOString()
-        }
+        // if (editItem && editItem.id) {
+        //     submitData.updatedAt = new Date().toISOString()
+        // } else {
+        //     submitData.createdAt = new Date().toISOString()
+        // }
         return submitData;
 
     }, [editItem, fields]);

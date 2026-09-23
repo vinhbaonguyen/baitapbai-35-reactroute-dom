@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import * as courseService from '../../services/courseService'
 import useComponentData from '../../hooks/useComponentData'
 import PageHeader from '../../components/PageComponent/PageHeader'
@@ -10,14 +10,24 @@ import useAuditLog from '../../hooks/useAuditLog'
 import HistoryModal from '../../components/PageComponent/HistoryModal'
 import { COURSE_SORT_OPTIONS, COURSE_STATUS_OPTIONS, COURSE_TABLE_COLUMNS } from '../../constants/courses/course.constants'
 import { COURSE_FIELDS } from '../../constants/courses/course.fields'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { updateMasterEntity } from '@/actions/masterDataAction'
-
+import { generateCourseCode } from '@/utils/codeGenerator'
+import { selectSpecialties } from '@/store/selectors/masterDataSelectors'
 
 export default function Course() {
   const auditLog = useAuditLog('courses');
   const [historyItem, setHistoryItem] = useState(null);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+  const specialtyData = useSelector(selectSpecialties);
+  useEffect(() => {
+    if (!specialtyData || specialtyData.length === 0) {
+      // Fetch specialties if not already loaded
+      console.log("Data của Specialty ",specialtyData);
+      
+    }
+  }, [specialtyData]);
 
   const {
     data, visibleData, loading, error,
@@ -42,17 +52,7 @@ export default function Course() {
       }
     }
   );
-
-  const generateCourseCode = useCallback((data) => {
-    if (!data || data?.length == 0) return 'RA001';
-    const courseCodeList = data.map(d => d.courseCode);
-    let maxCourseCode = courseCodeList.reduce((max, courseCode) => {
-      let num = parseInt(courseCode.replace('RA', ''))
-      return max > num ? max : num
-    }, 0)
-
-    return `RA${String(maxCourseCode + 1).padStart(3, '0')}`
-  }, [])
+    
   const handleHistory = useCallback((course) => {
     setHistoryItem(course)
     auditLog.fetchLogs(course.id)
@@ -87,6 +87,7 @@ export default function Course() {
       <DataTable
         keyField="id"
         columns={COURSE_TABLE_COLUMNS}
+        fields={COURSE_FIELDS}
         data={visibleData}
         onEdit={handleEdit}
         onDelete={handleDelete}
@@ -94,20 +95,18 @@ export default function Course() {
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
         onReorder={handleReorder}
-        fields={COURSE_FIELDS}
       />
-
+      {/* Modal thêm sửa khóa học*/}
       {isModalOpen && (
         <SharedModal
-          // key thay đổi → React tạo lại modal → form reset đúng
           key={editItem?.courseCode ?? 'new'}
           title={editItem ? 'Sửa Khóa Học' : 'Thêm Mới Khóa Học'}
           fields={COURSE_FIELDS}
-          // khi thêm mới → truyền mã tự động vào editItem giả
           editItem={editItem ?? { courseCode: generateCourseCode(data) }}
           onSave={handleSave}
           onClose={() => setIsModalOpen(false)}
           statusOpts={COURSE_STATUS_OPTIONS}
+          specialtyData = {specialtyData}
         />
       )}
       {/* Modal lịch sử */}

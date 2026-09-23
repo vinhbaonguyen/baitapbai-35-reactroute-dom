@@ -1,14 +1,15 @@
 import { SET_MASTER_DATA, UPDATE_MASTER_ENTITY } from "@/actions/masterDataAction"
-
 const initialState = {
     courses: [],
     lectures: [],
     students: [],
     classes: [],
-    classSchedule: [],
+    classSchedules: [],
+    studentClass: [], 
+    studentCourse: [],
+    specialties: [],
     loaded: false  // flag để biết đã fetch lần đầu chưa → tránh fetch lại khi F5
 }
-
 export default function masterDataReducer(state = initialState, action) {
 
     switch (action.type) {
@@ -21,7 +22,10 @@ export default function masterDataReducer(state = initialState, action) {
                 lectures: action.payload.lectures ?? state.lectures,
                 students: action.payload.students ?? state.students,
                 classes: action.payload.classes ?? state.classes,
-                classSchedules: action.payload.classSchedule ?? state.classSchedule,
+                classSchedules: action.payload.classSchedules ?? state.classSchedules,
+                studentClass: action.payload.studentClass ?? state.studentClass,
+                studentCourse: action.payload.studentCourse ?? state.studentCourse,
+                specialties: action.payload.specialties ?? state.specialties,
                 loaded: true
             };
         case UPDATE_MASTER_ENTITY: {
@@ -39,6 +43,16 @@ export default function masterDataReducer(state = initialState, action) {
                 case 'delete':
                     updatedList = list.filter(i => i.id !== item.id)
                     break;
+                // 🔥 THÊM MỚI — thay thế TOÀN BỘ record khớp 1 điều kiện (VD classId)
+                // bằng danh sách mới nhất trả về từ BE. Dùng cho StudentClass sau khi sync,
+                // vì sync trả về cả mảng record cho 1 classId, không phải 1 item đơn theo id.
+                case 'replaceByKey': {
+                    const {key, value, items} = item;
+                    const kept = list.filter(i => i[key] !== value);
+                    updatedList = [...kept,...items];
+                    break;
+                }
+
                 default:
                     updatedList = list;
             }
@@ -48,5 +62,4 @@ export default function masterDataReducer(state = initialState, action) {
         default:
             return state;
     }
-
 }

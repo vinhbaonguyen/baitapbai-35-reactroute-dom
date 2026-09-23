@@ -1,11 +1,16 @@
 import React, { useMemo, useState } from 'react'
 
-export default function useSort(data = []) {
+export default function useSort(data = [],customSort) {
     const [sortField, setSortField] = useState('default');
     const [sortOrder, setSortOrder] = useState('asc');
 
     const sortedData = useMemo(() => {
         if (!sortField || sortField === 'default') return data;
+
+        // 🔹 Nếu có customSort → dùng customSort, vẫn dựa trên sortField + sortOrder
+        if (typeof customSort === 'function') {
+            return customSort(data, sortField, sortOrder);
+        }
 
         return [...data].sort((a, b) => {
             const valA = a[sortField] ?? ''
@@ -30,7 +35,7 @@ export default function useSort(data = []) {
                 ? String(valA).localeCompare(String(valB))
                 : String(valB).localeCompare(String(valA))
         })
-    }, [data, sortField, sortOrder]);
+    }, [data, sortField, sortOrder,customSort]);
    
     const onSortField = (field) => {
         if (!field || field === 'default') {

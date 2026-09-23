@@ -51,7 +51,10 @@ export default function LayoutDefault() {
               <li><NavLink to='/app/student' className={navLinkActive} onClick={closeMenu}>Students</NavLink></li>
               <li><NavLink to='/app/user' className={navLinkActive} onClick={closeMenu}>Users</NavLink></li>
               <li><NavLink to='/app/profile' className={navLinkActive} onClick={closeMenu}>Profile</NavLink></li>
-              <li><NavLink to='/app/schedule' className={navLinkActive} onClick={closeMenu}>Schedule</NavLink></li>
+              <li><NavLink to='/app/schedule' className={navLinkActive} onClick={closeMenu}>Class Schedule</NavLink></li>
+              <li><NavLink to='/app/score' className={navLinkActive} onClick={closeMenu}>Score</NavLink></li>
+              <li><NavLink to='/app/auditLog' className={navLinkActive} onClick={closeMenu}>Audit Log</NavLink></li>
+
 
               <li><NavLink to='/app/about' className={navLinkActive} onClick={closeMenu}>About</NavLink></li>
               <li><NavLink to='/app/contact' className={navLinkActive} onClick={closeMenu}>Contact</NavLink></li>

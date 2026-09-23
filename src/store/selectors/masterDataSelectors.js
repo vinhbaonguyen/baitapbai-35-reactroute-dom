@@ -10,4 +10,7 @@ export const selectLectures = state => state.masterData.lectures;
 export const selectStudents = state => state.masterData.students;
 export const selectClasses = state => state.masterData.classes;
 export const selectClassSchedules = state => state.masterData.classSchedules
+export const selectStudentClass = state => state.masterData.studentClass;
 export const selectMasterLoaded = state => state.masterData.loaded;
+export const selectStudentCourse = state => state.masterData.studentCourse;
+export const selectSpecialties = state => state.masterData.specialties;

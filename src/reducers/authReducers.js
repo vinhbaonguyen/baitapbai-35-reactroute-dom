@@ -5,7 +5,9 @@
 import { LOGIN, LOGOUT } from "../actions/authActions";
 const initState = {
     currentUser: JSON.parse(localStorage.getItem('currentUser')) || null,
-    isLoggedIn: !!localStorage.getItem('currentUser')}
+    // isLoggedIn: !!localStorage.getItem('currentUser')
+    isLoggedIn: !!localStorage.getItem('accessToken')
+}
 
 export default function authReducer(state = initState, action) {
     switch (action.type) {
@@ -19,6 +21,10 @@ export default function authReducer(state = initState, action) {
             }
         case LOGOUT:
             localStorage.removeItem('currentUser')
+            localStorage.removeItem('accessToken')
+            localStorage.removeItem('refreshToken')
+            localStorage.removeItem('role')
+            localStorage.removeItem('fullName')
             return {
                 ...state,
                 currentUser: null,

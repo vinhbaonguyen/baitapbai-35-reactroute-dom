@@ -1,5 +1,4 @@
-
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectClasses, selectClassSchedules, selectCourses, selectLectures } from '@/store/selectors/masterDataSelectors'
 import * as classScheduleService from '@/services/classScheduleService'
@@ -10,6 +9,7 @@ import { compareData } from '@/utils/compareData'
 import PageHeader from '@/components/PageComponent/PageHeader'
 import ScheduleGridCell from './ScheduleGridCell'   // ✅ import component mới
 import './ClassSchedule.scss'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const getColor = (classId) => CLASS_COLORS[Number(classId) % CLASS_COLORS.length]
 
@@ -38,6 +38,8 @@ const EMPTY_FORM = {
 
 export default function ClassSchedule() {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const location = useLocation()
     const allClasses = useSelector(selectClasses)
     const courses = useSelector(selectCourses)
     const lectures = useSelector(selectLectures)
@@ -50,6 +52,7 @@ export default function ClassSchedule() {
     const [draggedClassId, setDraggedClassId] = useState(null)
     const [searchClass, setSearchClass] = useState('')
     const [expandedCell, setExpandedCell] = useState(null)
+    const [searchSchedule, setSearchSchedule] = useState('')
 
     // ── Enrich ────────────────────────────────────────────────────────────
     const enriched = useMemo(() =>
@@ -67,16 +70,83 @@ export default function ClassSchedule() {
         , [schedules, allClasses, courses, lectures])
 
     // ── Filter class list ──────────────────────────────────────────────────
+    // ✅ Set chứa các classId ĐÃ có ít nhất 1 lịch học (dùng .has() cho nhanh O(1))
+    const scheduledClassIds = useMemo(() => {
+        return new Set(enriched.map(s => Number(s.classId)))
+    }, [enriched]);
+    // Lọc Class với từ tìm kiếm và điều kiện (đã sắp lớp và lớp đang edit)
     const filteredClasses = useMemo(() => {
         const s = searchClass.toLowerCase()
+        console.log("Các data của AllClass", allClasses);
+
         return allClasses?.filter(cls => {
+            // ✅ Lớp đã có lịch (nằm trong scheduledClassIds) → loại khỏi sidebar
+            //  Ngoại lệ: nếu đang Edit đúng lớp đó thì vẫn cho hiện lại (tránh mất lớp khỏi list khi sửa)
+            const isScheduled = scheduledClassIds.has(Number(cls.id));
+            const isCurrentEditting = editItem && Number(editItem.classId) === Number(cls.id)
+            if (isScheduled && !isCurrentEditting) return false;
+            // 🔥 Chỉ hiện lớp PLANNED (sẵn sàng xếp lịch) — trừ khi đang Edit đúng lớp đó
+            // (lớp đang sửa có thể đã tự chuyển ACTIVE sau khi có lịch, vẫn cần hiện để sửa tiếp)
+            if (cls.status !== "Planned" && !isCurrentEditting) return false;
+            // 🔥 COMPLETED không hiện dù đang edit hay không — giống nguyên tắc ẩn Student COMPLETED
+            if (cls.status === "Completed") return false;
+
             const course = courses?.find(c => Number(c.id) === Number(cls.courseId))
             return (
                 cls.classCode?.toLowerCase().includes(s) ||
                 course?.courseName?.toLowerCase().includes(s)
             )
         })
-    }, [allClasses, courses, searchClass])
+    }, [allClasses, courses, searchClass, scheduledClassIds, editItem]);
+
+    // ── Nhận classId từ navigate (vd: từ Home ⇒ LectureassignmentModal) ───
+    // → set form y hệt như khi kéo thả lớp vào sidebar, nhưng chưa chọn ô lưới
+    useEffect(() => {
+        const { openCreateScheduleForClassId } = location.state ?? {}
+        if (!openCreateScheduleForClassId || !allClasses.length) return;
+
+        const targetClass = allClasses.find(
+            cls => Number(cls.id) === Number(openCreateScheduleForClassId))
+
+        if (!targetClass) {
+            alertError({ title: `Không tìm thấy lớp cần xếp lịch` })
+            navigate(location.pathname, { replace: true, state: {} })
+            return
+        }
+        // ✅ Nếu lớp đã có lịch rồi → không cho tạo lại (giống logic ẩn khỏi sidebar)
+        const alreadyScheduled = schedules.some(
+            s => Number(s.classId) === Number(targetClass.id)
+        )
+
+        if (alreadyScheduled) {
+            alertConfirm({
+                title: 'Lớp này đã có lịch học',
+                text: `Lớp ${targetClass.classCode} đã được xếp lịch trước đó.`,
+                confirmText: 'Đã hiểu'
+            })
+            navigate(location.pathname, { replace: true, state: {} })
+            return
+        }
+        // ── Set form giống hệt handleCellDrop nhưng chưa chọn ngày/giờ/phòng ──
+        // Vì navigate không có "ô lưới" cụ thể, ta chỉ chọn TRƯỚC classId,
+        // user vẫn cần chọn ngày + giờ + phòng (giống bước 2 sau khi kéo thả)
+        // eslint-disable-next-line
+        setForm({
+            classId: targetClass.id,
+            days: [],
+            startTime: null,
+            duration: 1,
+            room: null,
+            startDate: '',
+            endDate: '',
+        })
+        setFormErrors({})
+        setEditItem(null)
+
+        // Xóa state sau khi đọc — tránh lặp lại khi re-render
+        navigate(location.pathname, { replace: true, state: {} })
+
+    }, [location.state, allClasses, schedules, location.pathname, navigate])
 
     // ── occupiedCells ──────────────────────────────────────────────────────   
     const occupiedCells = useMemo(() => {
@@ -103,6 +173,18 @@ export default function ClassSchedule() {
         })
         return set
     }, [enriched])
+
+    // ── ✅ Search lớp ĐÃ sắp lịch (highlight trên lưới) ────────────────────
+    const highlightedScheduleIds = useMemo(() => {
+        const s = searchSchedule.trim().toLowerCase();
+        if (!s) return null;
+        return new Set(
+            enriched
+                .filter(sch =>
+                    sch.classCode?.toLowerCase().includes(s))
+                .map(sch => sch.id)
+        )
+    }, [enriched, searchSchedule])
 
     // ── Conflict cùng phòng + cùng ngày + overlap → dùng khi Save ──────────
     const checkRoomConflict = (formData, excludeId = null) => {
@@ -228,7 +310,11 @@ export default function ClassSchedule() {
                     formData: submitData, editItem, fields: SCHEDULE_FIELDS
                 })
                 if (!isChanged) {
-                    await alertConfirm({ title: 'Không có thay đổi', confirmText: 'Tiếp tục sửa', cancelText: 'Đóng' })
+                    await alertConfirm({
+                        title: 'Không có thay đổi',
+                        confirmText: 'Tiếp tục sửa',
+                        cancelText: 'Đóng'
+                    })
                     return
                 }
                 const ok = await alertConfirm({
@@ -259,7 +345,12 @@ export default function ClassSchedule() {
                 alertSuccess({ title: 'Tạo lịch học thành công!' })
             }
             resetForm()
-        } catch { alertError({ title: 'Lưu thất bại!' }) }
+        } catch (err) {
+            alertError({
+                title: 'Lưu thất bại!',
+                text: err.message || 'Vui lòng thử lại !'
+            })
+        }
     }
 
     const handleDelete = async (id) => {
@@ -270,7 +361,12 @@ export default function ClassSchedule() {
             dispatch(updateMasterEntity('classSchedules', 'delete', { id }))
             if (editItem?.id === id) resetForm()
             alertSuccess({ title: 'Đã xóa lịch học' })
-        } catch { alertError() }
+        } catch (err) {
+            alertError({
+                title: 'Xóa Lịch Học Thất bại',
+                text: err.message || 'Vui lòng thử lại.'
+            })
+        }
     }
 
     const handleEdit = (sched) => {
@@ -305,7 +401,6 @@ export default function ClassSchedule() {
                 title="Quản Lý Lịch Học"
                 desc="Kéo lớp từ danh sách vào ô lịch để xếp thời khóa biểu"
             />
-
             <div className="cs-layout">
                 {/* LEFT */}
                 <aside className="cs-sidebar">
@@ -345,6 +440,14 @@ export default function ClassSchedule() {
 
                 {/* CENTER: Grid — dùng ScheduleGridCell */}
                 <div className="cs-grid-wrap">
+                    {/* ✅ Ô search lớp ĐÃ sắp lịch trên lưới */}
+                    <input
+                        className='cs-sidebar__search'
+                        style={{ marginBottom: 8 }}
+                        placeholder='🔍 Tìm lớp đã sắp lịch trên lưới...'
+                        value={searchSchedule}
+                        onChange={e => setSearchSchedule(e.target.value)}
+                    />
                     <table className="sg">
                         <thead>
                             <tr>
@@ -364,6 +467,7 @@ export default function ClassSchedule() {
                                             tIdx={tIdx}
                                             occupiedCells={occupiedCells}
                                             enriched={enriched}
+                                            highlightedScheduleIds={highlightedScheduleIds}
                                             allClasses={allClasses}
                                             courses={courses}
                                             dragOverCell={dragOverCell}
